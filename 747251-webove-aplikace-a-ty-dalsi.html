@@ -1,0 +1,952 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="cz">
+<head><link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.misantrop.info/rss.xml" /><link rel="alternate" type="application/rss+xml" title="RSS - Nemám vás rád" href="http://www.misantrop.info/tema-2-nemam-vas-rad.xml" /><link rel="alternate" type="application/rss+xml" title="Komentáře" href="http://www.misantrop.info/comments.xml" />
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/misantrop" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+ <title>Webové aplikace (a ty další) - Misantrop.info</title> 
+
+<link rel="stylesheet" href="css39236.css" type="text/css" title="Styl2" media="screen" />
+<link rel="alternate stylesheet" href="css34066.css" type="text/css" title="Styl1" media="screen" />
+
+<meta name="verify-v1" content="qHyecOmV/BTXodaXkGrOlj7QL+X93dTbTLojG9EU22c=" />
+<link rel="openid.server" href="http://www.myopenid.com/server" />
+<link rel="openid.delegate" href="http://adent.myopenid.com/" />
+<link rel="openid2.local_id" href="http://adent.myopenid.com" />
+<link rel="openid2.provider" href="http://www.myopenid.com/server" />
+<meta http-equiv="X-XRDS-Location" content="http://www.myopenid.com/xrds?username=adent.myopenid.com" />
+
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="keywords" content="Martin Malý, Arthur Dent, weblogy, programování, PHP, blogy, misantrop, Web2.0, technologie, elektronika" />
+
+<meta name="description" content="Webové aplikace (a ty další) - Misantrop.info" />
+</head>
+<body>
+<div id="all">
+<!-- Anal Lizer-->
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-190512-8";
+urchinTracker();
+</script>
+<!--dolizat-->
+ 
+
+<div id="adx" style="position:fixed;_position:absolute;top:5px;left:5px">
+<script type="text/javascript"><!--
+google_ad_client = "pub-3772893178572611";
+/* 120x600, vytvořeno 15.7.08 */
+google_ad_slot = "1720575805";
+google_ad_width = 120;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript"
+src="">
+</script>
+</div>
+
+<div id="head"><p id="logo"><a href="index.php"><img src="img/2zapisnik-logo.gif" alt="Misantrop.info - Web co vám doudí moudí..." /></a></p></div>
+
+<ul id="menu">
+<li><a href="index.php">Titulní stránka</a></li>
+<li><a href="http://rss.misantrop.info">Oblíbené zdroje</a></li>
+<li><a href="http://www.maly.cz/o-mn/?KeepThis=true&amp;TB_iframe=true&amp;height=500&amp;width=800" class="thickbox">O mně</a></li>
+<li><a href="http://www.bloguje.cz/vzkazy.php?send=47997">Napiš vzkaz</a></li>
+</ul>
+
+<div id="obsah">
+<div id="pole">
+<!-- Pocitadlo -->
+<p><img src="http://counter.cnw.cz/dungeon.cgi?blogmalycz&amp;6&amp;000000&amp;fff1d8&amp;on" alt=" " style="width:1px;height:1px;"/><script type="text/javascript">
+<!-- 
+var dummy =("<img src=\"http://counter.cnw.cz/trackit.cgi?blogmalycz&t2&" + escape(top.document.referrer) + "\" alt=\" \" border=\"0\" width=\"1\" height=\"1\">"); 
+// --></script>
+
+<script language="JavaScript" type="text/javascript">
+<!--
+var dummy = ('<a href="http://www.netagent.cz" target="_top"><img src="http://www.netagent.cz/agent.php?id=383&amp;ur='+escape(document.referrer)+'&amp;rw='+escape(window.screen.width)+'&amp;rh='+escape(window.screen.height)+'&amp;cd='+escape(window.screen.colorDepth)+'&amp;pt='+escape(document.title)+'&amp;lc='+escape(document.location)+'" width="1" height="1" border="0" alt="NetAgent" /></a>');
+//--></script>
+
+</p>
+<!-- Pocitadlo konec -->
+
+
+
+
+<h1>Webové aplikace (a ty další)</h1>
+
+
+
+
+
+
+
+<p>V pondělí jsem poskytoval rozhovor pro nový webzin a v jedné odpovědi jsem uvedl, že nechci už mít zaměstnání založené na vývoji internetových (webových) aplikací, a to hlavně proto, že směr, kterým se vyvíjí HTML, PHP, a ostatně i pohled na webové aplikace, se mi nelíbí a nejsem si jist, že se na tom chci podílet. Což je zkratka, a já bych to teď rád trošku rozvedl. </p>
+
+<p style="float:right; margin:0 0 1em 1em;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-3772893178572611";
+
+/* 120x240, vytvořeno 6.7.08 */
+google_ad_slot = "4855232301";
+google_ad_width = 120;
+google_ad_height = 240;
+//-->
+</script>
+<script type="text/javascript"
+src="">
+</script>
+</p>
+
+<p>Nelíbí se mi to. A to myslím vážně. V PHP vymýšlejí namespaces s velmi podivnou syntaxí nebo koncept &quot;big files&quot; místo toho, aby vymysleli třeba, hm, bytecode interpreter + kompiler zabudovaný do jádra. HTML neví, jestli je hypertextový značkovací jazyk nebo jestli je jazykem pro aplikační rozhraní. Jako chytrá horákyně bere tu trochu sémantiky, tu trochu čistě aplikačních věcí, zamíchá to a vyleze cosi, co má od každého něco a dohromady nic kloudného. <p>A ten trend, kdy aplikace běží na webu a nebozí kodéři, programátoři a designéři se horko těžko snaží udělat uživatelské rozhraní, aby to bylo <em>JAKO APLIKACE</em> a přitom naroubovatelné na hypertextovou technologii, ten se mi nelíbí už vůbec. Jasně, některé aplikace (typicky třeba jízdní řád) nepotřebují žádný složitý interface a s HTML prostředky si vystačí. Totéž třeba blogovací systémy (i když...) Ale pak je celá řada aplikací, které vyžadují rozhraní mocné, mocnější, nejmocnější, rozhraní plné panelů, čudlíků a dalších serepetiček, rozhraní schopné odezvy v reálném čase, rozhraní s vlastní logikou, a tam už vývoj naráží a na scénu nastupují šiky lidí, kteří&nbsp;&ndash; obrazně řečeno&nbsp;&ndash; z nástrojů pro sazbu knih (HTML+CSS) dělají za pomocí páček, kladek a ozubených kol (JS) něco, co se bude chovat jako bankomat.</p><p>Přitom tu jsou nástroje pro vytváření uživatelských rozhraní, co běží i v prohlížeči... Na jedné straně Flex, Silverlight či JavaFX (ech!), na druhé straně třeba XUL. Všechny tyhle věci jsou vhodné (nebo i přímo <em>určené</em>) pro vytváření uživatelských rozhraní, s komfortem, na jaký je člověk zvyklý u desktopové aplikace, a snad právě proto jsou tyto nástroje v opovržení jak u skalních a ortodoxních tvůrců webaplikací, tak u mainstreamu. Z mnoha důvodů. Prý používají prohlížeč jen jako schránku pro nějaký vlastní objekt, což není webově koncepční (a nedá se to rozumně indexovat). Prý nepoužívají Oblíbené Prohlížečové Zkratky. A hlavně neumí rozumně reagovat na tlačítko ZPĚT, které je browseru vlastní a které si uživatelé zvykli používat. Což jsou prý důvody, proč to nepoužívat, proč raději dál marnit člověkoroky práce snahou nabídnout komfortní uživatelské rozhraní a la desktopová aplikace V PROHLÍŽEČI HYPERTEXTOVÝCH DOKUMENTŮ.</p><p>Nevím, a po pravdě řečeno mi to leží v hlavě. Buď mi uniká něco, co je všem ostatním jasné a pochopitelné, nebo se většina mýlí, ale protože je to většina, tak je přijímána jako správná. Třeba to s tím tlačítkem ZPĚT: Tlačítko ZPĚT je typická věc, která koncepčně zapadá do hypertextu. Tam je jeho funkce jasná a zřejmá. Ovšem ve chvíli, kdy web začne simulovat aplikaci, a s tím i určité stavové chování, tak tlačítko ZPĚT začne dělat zmatky. Každý, kdo si kdy zkusil napsat diskusní fórum, zjistil, že tlačítko ZPĚT někdy taky může odeslat příspěvek znovu. Přitom uživatel se chová konzistentně: Napsal příspěvek, odeslal ho a chce se vrátit ZPĚT na to fórum. ;) Další problém je u navigačních &quot;tunelů&quot;, tedy u těch částí webové aplikace, kde musí za sebou následovat nějak logicky určité kroky, v nichž se má něco stát. Tam tlačítko ZPĚT dokáže nadělat takovou paseku a jeho &quot;ošetření&quot; stojí tolik sil, že bych se skoro přimlouval za možnost ho skriptem vypnout (<em>META name=&quot;noBackButton&quot;</em>). No a co teprve komplexní webové aplikace typu &quot;RSS čtečka&quot; nebo &quot;Textový editor&quot;? Tlačítko ZPĚT tam straší, ale řekněte mi: <em>Jakou má mít funkci?</em> Je to &quot;návrat zpět z aplikace&quot;? Nebo &quot;Návrat v aplikaci o jeden krok&quot;, tedy něco jako Undo (které si navíc aplikace většinou řeší samy)? A co aplikace, kde &quot;krok zpět&quot; nemá smysl? Existuje nějaké jasné koncepční pravidlo, které by říkalo: <em>Tlačítko ZPĚT má ve webové aplikaci takovou a makovou funkci</em> (která je konzistentní pro všechny webové aplikace)? Anebo analogicky: <em>ZPĚT má tutéž funkci jako XXXXXX v desktopových aplikacích</em>? Já po pravdě nenacházím analogii, nenapadá mne ani nijaká konzistentní funkce, kterou by ZPĚT mělo mít, takže mi z toho vychází, že jestli je něco pro webové aplikace naprosto nekoncepční a nanic, tak je to právě tohle browserové tlačítko. A snahy přiřadit mu nějakou &quot;app-specific&quot; funkci naprosto nekoncepčně znásilňují význam, který to tlačítko má.</p><p>Některé webové &quot;aplikace&quot; si dokonce spouštím v Prismu. V něm to vypadá jako aplikace, chová se to jako aplikace, tlačítko ZPĚT mi nezpůsobuje křeče, není tam browserový balast... Je to takový, v současné době asi nejlepší, kompromis mezi současným trendem vývoje webových aplikací a rozumným trendem vývoje webových aplikací.</p><p>V nejbližších letech to nevypadá, že by se uživatelská rozhraní webových aplikací dělala v nástrojích, vhodných pro vytváření uživatelských rozhraní, naopak trend patlání v HTML, ohýbání pomocí CSS a rozhýbávání JavaScriptem bude pravděpodobně pokračovat a sílit. A u toho vážně nechci být, natož abych to profesně dělat MUSEL. Já si počkám pár let, až se prosadí idea, že na prohlížení hypertextu je prohlížeč a na spouštění aplikací &quot;aplikátor&quot;. Věřím, že nakonec vyhraje tento přístup, že kromě prohlížeče budeme mít nějaký &quot;extra&quot; program, určený na online aplikace. Představuji si ho jako prázdné okno s jedním políčkem na &quot;URL aplikace&quot;. Zadám URL, jako první se stáhne popis UI (v něčem jako XUL) a pak vlastní logika aplikačního rozhraní, která to UI rozpohybuje a patřičné akce bude řešit se serverem. Celé se to tedy bude tvářit a chovat jako skutečná desktopová aplikace, se vším komfortem, jaké desktopové aplikace poskytují: bude to rychlé, stavové, vizuálně shodné se zbytkem OS... Prism je pěkný krok tímto směrem, a kdo jste viděl v Prismu běžet RSS čtečku postavenou nad ExtJS, dáte mi za pravdu, že TUDY NĚKUDY by JEDNOU... (<em>Dodatek jednoznačnosti: Že by to takhle nějak mohlo vypadat&nbsp;&ndash; samosebou poháněné něčím jiným než HTML+JS</em>.)</p><p>Ale vážně: <em>Jinudy cesta vést nemůže</em>. A pokud přesto vývoj aplikací půjde touto cestou, přes bastly typu AJAX a Google Gears dál, a místo koncepce se bude <em>tweakovat</em>, tak je něco špatně a pro mne nemá osobně smysl u vývoje něčeho takového zůstávat.</p></p>
+
+<div style="text-align:center">
+<script type="text/javascript"><!--
+google_ad_client = "pub-3772893178572611";
+/* 468x60, vytvořeno 15.7.08 */
+google_ad_slot = "3559028762";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="">
+</script>
+</div>
+
+
+
+
+
+<p class="more">
+<span class="date">Dne 3.12.2008</span>
+
+</p>
+
+
+
+
+
+<p><a href="http://jdem.cz/tw?text=Zaj%c3%admav%c3%bd+%c4%8dl%c3%a1nek+na+Z%c3%a1pisn%c3%adku%3a+http%3A%2F%2Fwww.misantrop.info%2F747251-webove-aplikace-a-ty-dalsi.html&amp;redir=1">Twittni</a></p>
+
+<p>Přidej do: 
+ <a href="http://vybrali.sme.sk/submit.php?url=http%3A%2F%2Fwww.misantrop.info%2F747251-webove-aplikace-a-ty-dalsi.html"><img src="http://blog.sme.sk/blog/3/61630/tlacitko.gif" style="border:0" title="asdf.sk" alt="asdf.sk" /></a>
+
+<a href="http://www.stumbleupon.com/submit?url=http%3A%2F%2Fwww.misantrop.info%2F747251-webove-aplikace-a-ty-dalsi.html&amp;title=Webov%E9+aplikace+%28a+ty+dal%B9%ED%29"> <img border=0 src="http://www.bloguje.cz/icon_su.gif" alt="StumbleUpon Toolbar"> Stumble It!</a>
+
+<script type="text/javascript" src="http://w.sharethis.com/widget/?tabs=web%2Cemail&amp;charset=utf-8&amp;style=rotate&amp;publisher=99a6f76f-7727-4c7b-a906-b91f57f8a706"></script></p>
+
+<script type="text/javascript" src="http://feedjit.com/coFilter/?bc=FFFFFF&amp;tc=008000&amp;brd1=336699&amp;lnk=008000&amp;hc=336699&amp;ww=500"></script>
+
+
+<h2 id="n_koments">Komentáře</h2>
+
+
+
+<p class="comment">
+<strong><a name="cmt_1">[1]</a> </strong> (deep - <a href="mailto:deepblue@post.sk">Mail</a> - <a href="http://deep.bloguje.sk">WWW</a>) 03.12.2008, 16:37:10&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1829695">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1829695">D</a>]<br />
+
+Toto je stále častejšie počuť od programátorov. Otázkou zostáva kto presvedčí užívateľov že majú problém a že pozná riešenie. Aby to nakoniec nedopadlo tak, jak to často dopadne vo firemných riešeniach. Nejde to? Treba zaplatiť preprogramovanie? Tak potom nám to netreba.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_2">[2]</a> </strong> (karf [<a href="http://karf.myopenid.com/" title="Ověřený uživatel http://karf.myopenid.com/">openID</a>] - <a href="mailto:karel.fucik@atlas.cz">Mail</a> - <a href="http://karf.myopenid.com">WWW</a>) 03.12.2008, 16:43:27&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1829704">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1829704">D</a>]<br />
+
+V některých věcech mám stejný názor, ale v některých trošku jiný.
+<br />
+<br />HTML jako nevhodný (hypertextový) jazyk pro tvorbu GUI: ono to není zas tak diametrálně odlišné od těch ostatních technologií - v zásadě se všechny cesty setkávají v deklarativním popisu GUI pomocí XML syntaxe,  stylováním vzhledu a skriptováním událostí. Např. XUL vs. HTML - je v tom drobný nebo zásadní rozdíl?
+<br />
+<br />Ad tlačítko zpět: některé desktopové aplikace naopak přejímají tento koncept pro rychlé procházení pohledu na aplikaci (namátkou Průzkumník Windows, Eclipse, Thunderbird). Rozdíl Zpět vs. Undo je podle mě většinou celkem zřetelný - tlačítko zpět by nemělo nikdy způsobit změnu dat, pouze pohled. Naopak Undo by mělo vracet změnu dat. Mám např. plně AJAXový redakční systém, kde mám výpis článků, editaci článku atd. Tlačítkem zpět se obnovuje stav-pohled aplikace, nikdy se neodesílají formuláře ani jiné destruktivní operace - tyto se neukládají do historie. Zásadní je ukládat do historie pouze smyslplné stavy a být schopen celou aplikaci do těchto stavů obnovit (z identifikátoru v URL => bookmarkovatelnost). Pak je to celkem užitečné (ačkoliv jsem měl na to dřív podobně odmítavý postoj).
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_3">[3]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 03.12.2008, 17:20:40&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1829731">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1829731">D</a>]<br />
+
+<a href="#cmt_2">[2]</a> Ano, V ZÁSADĚ se všechny cesty setkávají u popisu GUI nějakým deklarativním způsobem. Akorát že některé způsoby jsou určené pro návrh GUI (MXML třeba... nebo XAML... nebo ten XUL) a jiné (HTML) musí člověk ohýbat, aby to "jako" vypadalo, protože ten jazyk má spoustu věcí, co v UI nepotřebuješ (od Hx přes STRONG až po DIV), na druhou stranu mu spousta věcí chybí (atributy pro ukotvení k určitému okraji třeba) a ty je musíš nějak "hackovat", a něco ani nenahackuješ.
+<br />
+<br />Ad "zpět": Průzkumník Windows? Ano, tam má určitý smysl. Má smysl třeba i při tisku, když si člověk otevře náhled, ale obecně v aplikaci jednoznačný smysl nemá. V Thunderbirdu "přejde k předchozí prohlížené zprávě" - ale co třeba udělá v ICQ? Co udělá / co by mělo udělat v TotalCommanderu? Co udělá v textovém editoru? V Notepadu? Zkrátka jsou určité aplikace, kde má ZPĚT jakýsi předpokládatelný smysl, pak je tedy pochopitelné, že tam je. Ale jaký logický smysl má, řekněme, tlačítko ZPĚT v aplikaci typu Meebo?
+<br />
+<br />Ten AJAXový RS mě zajímá. Představuju si, že kliknu na tlačítko "Změnit nastavení stránky". Objeví se mi formulář, tam přepíšu políčko "Titulek stránky" a kliknu v browseru na ZPĚT. Co se stane? ;)
+<br />
+<br />A abych ukázal ten rozdíl: V Průzkumníku kliknu na složku. V ní smažu soubor a pak kliknu na ZPĚT. Co se stane? Spustím si Eclipse, otevřu si nějaké soubory, v nějakém něco napíšu a kliknu na ZPĚT. Co je konzistentní chování aplikace? Kliknu v Eclipse na "vlastnosti dokumentu" a otevře se mi formulář. Co se stane, když teď kliknu na ZPĚT? Pravděpodobně nic, podobná okna jsou modální. Co se stane v podobné situaci ve webové aplikaci? A ještě jinak: Co uživatel očekává, že se stane?
+<br />
+<br />O "bookmarku stavu aplikace" platí totéž.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_4">[4]</a> </strong> (Rene - <a href="mailto:rene@renestein.net">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fblog.renestein.net">WWW</a>) 03.12.2008, 17:59:34&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1829778">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1829778">D</a>]<br />
+
+Amen. A já si myslel, že kdysi v nějaké diskuzi na La Trině jsem jediný, komu trend "HTML (a dnes +AJAX everywhere)" vadí.
+<br />Když jsem naposled viděl, jak si autoři MS AJAX Toolkitu  rochní nad tím, že pro POJO (sic!) objekty a JS pole konečně máme podporu událostí (<a href="http://jdem.cz/aitk0" rel="nofollow">http://jdem.cz/aitk0</a>) a na pozadí běží jakási podivná variace na vzor Observer (speciání evoluce pro web 2.0?), ne poprvé jsem si pomyslel, že vývoj webových aplikací se vydal strastipnou a steny vývojářů ozvučenou stezkou k ďáblově řiti. K ďáblovi přitom vždy dle teologie vedla snadná a příjemný cesta, divný svět. :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_5">[5]</a> </strong> (karf [<a href="http://karf.myopenid.com/" title="Ověřený uživatel http://karf.myopenid.com/">openID</a>] - <a href="mailto:karel.fucik@atlas.cz">Mail</a> - <a href="http://karf.myopenid.com">WWW</a>) 03.12.2008, 18:21:05&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1829796">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1829796">D</a>]<br />
+
+<a href="#cmt_3">[3]</a> Jo, jistě že HTML není to pravé ořechové. Jen že by ty způsoby mohly docela dobře konvergovat, resp. se doplňovat - např. se mi líbí možnost mixování XUL + HTML + SVG.
+<br />
+<br />Ad Zpět: obhájit tlačítko Zpět univerzálně v jakékoliv aplikaci neumím a ani bych se o to nesnažil. Ale je to podobné jako ostatní prvky GUI - třeba menu nebo clipboard taky někde nemá smysl. Takže ano, Prism jako oholené okno na aplikaci je sice logický krok, ale pak už to není taková ta echt webová aplikace a je už tedy jedno, jestli to poběží ve Flashi, Silverlightu nebo jako nativní aplikace OS. Nejsem příznivec přístupu cpát za každou cenu do prohlížeče aplikaci typu Photoshop. Na druhou stranu existuje stále velké množství aplikací, které lze postavit na jednoduchém formulářovém konceptu (třeba ten RS) a ty mi provozovat uvnitř prohlížeče smysl dává. Je fakt, že funkce tlačítka Zpět je často spíš intuitivní než přesně definovaná, v tom souhlasím.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_6">[6]</a> </strong> (Jakub Nešetřil [<a href="http://openid.nesetril.cz/jakub" title="Ověřený uživatel http://openid.nesetril.cz/jakub">openID</a>] - <a href="mailto:jakub.nesetril@gmail.com">Mail</a> - <a href="http://openid.nesetril.cz/jakub">WWW</a>) 03.12.2008, 19:22:11&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1829851">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1829851">D</a>]<br />
+
+Nerozumím tomule článku. Myslím, že autor stárne a odmítá se smířit s tím, že už to není jak za mlada. :)
+<br />
+<br />Nejdříve k nářkům nad technologií:
+<br />
+<br />"kdo jste viděl v Prismu běžet RSS čtečku postavenou nad ExtJS, dáte mi za pravdu, že TUDY NĚKUDY by JEDNOU..."
+<br />vs.
+<br />"A pokud přesto vývoj půjde dál přes bastly typu AJAX a Google Gears"
+<br />
+<br />A není ta RSS čtečka nad ExtJS v Prism právě ten "bastl typu AJAX a Google Gears"??? Pokud je jednou v rámci Prism uváděna jako příklad jak "snad jednou někdy nějak..." a podruhé v rámci generického browseru ta samá technologie uváděna jako "bastl" a důvod se webovým aplikacím vyhnout?
+<br />
+<br />Jestli je celá tato filipika pouze o "prohlížeč" vs. "aplikátor", tj. o skinu či chrome či prostředí, ve kterém se WebView komponenta instaciuje, tak potom jdou ale zcela mimo nářky nad "patlání v HTML, ohýbání pomocí CSS a rozhýbávání JavaScriptem".
+<br />
+<br />
+<br />A k tomu, jak věřím, že se bude další vývoj ubírat:
+<br />
+<br />* Firefox integruje Prism, Safari 4 má "Save as Web Application", o pár let později to udělá i Explorer.
+<br />* "aplikátor" bude stále nástroj který zobrazuje generické HTML technologie, bude mít dva módy, ten aplikační s nějakou eskalací privilegií - pokud uložím jako "web app" tak tato má přístup k lokálním souborům, kameře, desktopu, drag-n-drop atp. Tedy jako když uložím Air aplikaci.
+<br />* aplikace se stále budou psát v HTML/CSS/JS a pomalu, postupně, se do těchto technologií začnou vkrádat podpory pro aplikační sémantiku (vs. hypertextovou).
+<br />* nad touto vrstvou vznikne nová generace frameworků a IDE, které dosáhnou komfortu "na jaký je člověk zvyklý u desktopové aplikace"
+<br />
+<br />Tedy posun z:
+<br />* kernel programátor -> web browser programátor (Mozilla)
+<br />* OS programátor -> web framework/IDE programátor (jQuery/Cappuccino)
+<br />* aplikační programátor -> programátor ve frameworku / IDE
+<br />
+<br />V tomto světě je výhoda, že OS-level API (tedy jQuery) je bootstrapováno ze sítě a klientský počítač obsahuje jen kernel (tedy web browser). Tedy obloukem návrat k tenkým klientům.
+<br />
+<br />Ad. "patlání v HTML, ohýbání pomocí CSS a rozhýbávání JavaScriptem" - je toho mnoho pozitivního, co jsme získali od "separation of concerns". To, že všechny tyhle standardy jsou převážne z roku '98 a snaží se podporovat IT svět o deset let poté je bohužel problém, nicméně věřím, že napravitelný.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_7">[7]</a> </strong> (Ondrej Kupka  ) 03.12.2008, 19:46:24&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1829865">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1829865">D</a>]<br />
+
+Zdravim,
+<br />osobne do webovych technologii zas tolik nevidim, ale zajimalo by me, jestli je nejaka z Vasich variant nejakym zpusobem univerzalne pouzitelna na vice platformach... Treba Silverlight? To asi neee, doted je to pouzitelne jen na Windows; pokud vim, tak linuxova verze je uz dokonce beta...
+<br />Proste nejsem si jist, jestli je nejaky takovy prechod obecne mozny. Pokud by to mela byt nejaka "globalni" zmena, tak urcite nemuze fungovat jen na jedne platforme...
+<br />Jinak vubec se Vam nedivim, ja bych s webem taky pracovat moc nechtel :D
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_8">[8]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 03.12.2008, 19:48:04&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1829868">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1829868">D</a>]<br />
+
+<a href="#cmt_6">[6]</a> Nerad to opakuju, ale asi musím:
+<br />
+<br />1. Když nerozumím článku, tak nekomentuju.
+<br />2. Když i přesto komentuju, tak se snažím používat kompatibilní jazyk.
+<br />3. Když v článku, který jsem nepochopil, kritizuju nějaké tvrzení, tak se zamyslím: "A nemyslel to autor jinak?" (viz ten slavně odhalený "rozpor" s RSS čtečkou v ExtJS - v kontextu článku je myslím pochopitelné, co je míněno tou cestou)
+<br />
+<br />Jinak zbytek je moc pěkný, ale naprosto se míjí s tím, co píšu v článku (což je pochopitelné, viz bod 1), ale přesto jedna myšlenka tam k něčemu je: Pokud půjde vývoj téhle oblasti opravdu tím směrem, který naznačujete, tak je to pro mne pouhé potvrzení poslední věty mého článku.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_9">[9]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 03.12.2008, 19:51:55&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1829870">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1829870">D</a>]<br />
+
+<a href="#cmt_7">[7]</a> Asi nejdál co do platformní nezávislosti je Flex, ten běží všude, kde je Flash, a jeho AIR "runtime" běží na Win i Mac, podpora Lin bude prý "co nevidět". "Přechod" obecně možný je, ale bude to delší proces - asi jako při "sjednocování" HTML.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_10">[10]</a> </strong> (Cayman [<a href="http://caymanislander.blogspot.com/" title="Ověřený uživatel http://caymanislander.blogspot.com/">openID</a>] - <a href="mailto:cayman.islander@gmail.com">Mail</a> - <a href="http://caymanislander.blogspot.com">WWW</a>) 03.12.2008, 21:47:09&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1830021">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1830021">D</a>]<br />
+
+Arthure, plně souhlasím! Ty webovské "patlanice", které se snaží zahleděnci do Web technologie prosadit jako standard pro budoucí aplikace pro uživatele, jsou naprostá katastrofa a mně je líto, že tolik schopných mozků ztrácí čas takovými patvary, které vidíme všude kolem.
+<br />
+<br />Je to ale tím, že vývoj takových Web aplikací dělají nyní nezkušení technokrati, vývoj probíhá někde v ideálním prostředí intranetu, kde vše je rychlé, 1-2 uživatelé nezatěžují ani server ani trafic na síti a vše vypadá ideálně, neboť se netestuje funkčnost v normálním prostředí.
+<br />
+<br />Jeden jednoduchý příklad pro všechny obhájce Web "aplikací":
+<br />
+<br />Máme firemní kalendář, kde evidujeme schůzky, projekty, práce na projektu atd. Základem je databáze někde v US a jako rozhraní se nejprve vytvořila Web2.0 aplikace dle současného trendu, která umožňuje skoro všechno. "Někoho" ale napadlo, po všech možných provozních problémech, že udělá jako alternativu i lokálního a plnohodnotného klienta, který se jen rozbalí na disku, kdy používá stejná data ze vzdálené dB, jen má mnohem více funkcí, rychleji reaguje na požadavky uživatelů, Drag/Drop a všechny pokročilé desktop funkce jsou také k dispozici. Existují tedy dva způsoby, jak pracovat s touhle klíčovou aplikací.
+<br />
+<br />Jaká je po čase statistika používání těch dvou klientů, tj. omezená Web aplikace vs. tlustý klient na lokálním disku?
+<br />
+<br />Snad je asi každému jasné, že na 99% vyhrává plnohodnotný lokální klient, což je podobné, jako u všech dalších profi aplikací, které máme všichni na disku ;-)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_11">[11]</a> </strong> (Cayman [<a href="http://caymanislander.blogspot.com/" title="Ověřený uživatel http://caymanislander.blogspot.com/">openID</a>] - <a href="mailto:cayman.islander@gmail.com">Mail</a> - <a href="http://caymanislander.blogspot.com">WWW</a>) 03.12.2008, 21:57:07&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1830033">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1830033">D</a>]<br />
+
+Ještě jeden příklad od největšího propagátora Web aplikací na světě:
+<br />
+<br />Proč jsou Google Picasa nebo Google Earth distribuovány jako plnohodnotná lokální aplikace?
+<br />
+<br />Proč Google nyní tak propaguje lokálního "klienta" Google Chrome, aby vůbec byly použitelné ty další slavné Web "aplikace", které budou samozřejmě využívat všechny ty lokálně nainstalované knihovny funkcí v Chrome browseru?
+<br />
+<br />Myslím, že je to každému zkušenému jasné i bez dalšího vysvětlování ;-)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_12">[12]</a> </strong> (Marek Prokop - <a href="mailto:marek@sovavsiti.cz">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.sovavsiti.cz%2F">WWW</a>) 03.12.2008, 23:14:29&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1830133">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1830133">D</a>]<br />
+
+Článek inspiruje. To mu nelze upřít. Během čtení mne skoro za každou větou napadalo plno myšlenek, a když jsem ho dočetl, měl jem už v hlavě komentář delší než článek sám. Pak jsem se pustil do komentářů a narazil na číslo <a href="#cmt_6">[6]</a>, které mi udělalo čáru přes rozpočet. Obsahuje totiž většinu toho, co jsem chtěl napsat, a možná i něco navíc.
+<br />
+<br />Jak jsem ale vzápětí seznal z komentáře <a href="#cmt_8">[8]</a>, autor komentáře <a href="#cmt_6">[6]</a> Jakub Nešetřil je vlastně hňup, který ničemu nerozumí a nic nepochopil. Ouha. Ještě že jsem se to dozvěděl včas. Nebýt Jakuba, skoro jistě bych byl za hňupa označen já a po zbytek života bych musel žít s vědomím, že se nesnažím používat kompatibilní jazyk.
+<br />
+<br />Ale což, aspoň jednu poznámku taky napíšu. Za to riziko (nebo naději? třeba nejsem hňup) mi to stojí.
+<br />
+<br />> "...vytváření uživatelských rozhraní, s komfortem, na jaký je člověk zvyklý u desktopové aplikace..."
+<br />
+<br />Tahle pasáž IMHO ukazuje, jak je, Martine, tvůj pohled subjektivní. Dovedu si představit dost lidí (uživatelů, nikoli programátorů), kteří by to řekli tak nějak opačně:
+<br />
+<br />"...vytváření uživatelských rozhraní, s komfortem, na jaký je člověk zvyklý z webových stránek..."
+<br />
+<br />Dokonce si troufám odhadnout, že počet lidí zvyklých na komfort hypertextu bude narůstat, zatímco počet lidí shledávajících komfort v GUI desktopových aplikací bude klesat.
+<br />
+<br />Odbočka: Někdy je samozřejmě desktopové GUI vhodnější, ale co si budeme povídat, objektivní vhodnost a preference uživatelů jsou dvě různé věci. Jsou aplikace, třeba hromadné pořizování dat do účetního systému, pro které je jakékoli GUI nevhodné, a přesto ho většina uživatelů preferuje. Za cenu horší efektivity používání jim totiž nabízí snazší učení.
+<br />
+<br />Uzavřu svůj komentář jednou z myšlenek, ke kterým mne tvůj článek inspiroval. Dříve programátoři tahali za ten delší konec provazu. Byli to oni, kdo věděli, co jde, a tudíž i diktovali uživatelům, jak se budou aplikace psát a jak budou vypadat. V tomto kontextu je zcela správné, když si programátor Martin Malý dupne a řekne: "Ja takhle aplikace psát nebudu, je to prasárna."
+<br />
+<br />Jenže doba se mění, uživatelé jsou nakažení webem (tj. právě tím hypertextem, který se pro aplikace nehodí) a najednou se jim těžko vysvětluje, že tomu nerozumějí a že se aplikace takhle nedělají. Oni je vidí (i plain text file vystavený na internet se přeci *programuje*, ergo je to aplikace). Diktátorští programátoři ztrácejí půdu pod nohama a pak z toho vznikají takovéto články. Inu, to je život ;-)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_13">[13]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 03.12.2008, 23:38:00&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1830157">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1830157">D</a>]<br />
+
+<a href="#cmt_12">[12]</a> Marku, dovol jen stručné: Ano, tento článek je subjektivní. Je to v něm několikrát napsáno, je v něm několikrát zmíněno, že jde o můj postoj, a jeho myšlenka je prostá: "Mně se tenhle směr nelíbí a nechci se na tom podílet". Celá ta omáčka okolo je vysvětlení, proč se mi to nelíbí. Subjektivita jak prase. A to je to, co Jakub Nešetřil nepochopil a co mi ty předhazuješ. Kdybych to napsal na Lupu, tak se nedivím, ale - tu jsme na OSOBNÍM zápisníku.
+<br />
+<br />Ten zbytek, řeči o programátorech tahajících za kratší konec a lidech navyklých na "komfort hypertextu", jsou, Marku, akademické debaty, které jsou dobré coby argumentační cvičení na dýchánky teoretiků, ale na mém subjektivním pohledu nic nemění. :)
+<br />
+<br />PS: Přeci umíš číst, že? Jakub Nešetřil napsal hned v úvodu "Nerozumím tomuhle článku". Takže připsat to s "hňupem, který nepochopil" mně není tak docela košer, že? Mně je opravdu jedno, jaké máte argumenty pro to, že je tahle cesta <em>správná</em>. Já po ní jít nechci. A to je celé, Marku, netřeba sahat k hňupům ani k diktátorským programátorům. Ale jak říkám: Ať si to "po vašimu" dělá kdo chce, já budu šťastný u svých jednočipů a řídicích aplikací v C#. :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_14">[14]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 03.12.2008, 23:58:06&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1830172">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1830172">D</a>]<br />
+
+<a href="#cmt_12">[12]</a> A ještě jedno PS, tentokrát ad rem: Já budu velmi rád, pokud přijde doba a technologie pro opravdové webové (spíš internetové) aplikace. Já nijak nepolemizuju s tvými představami o budoucím vývoji, směřujícím k net aplikacím, určitě se na spoustě věcí shodneme. Já jen říkám následující: HTML není v tuhle chvíli vhodné pro návrh uživatelského rozhraní. Že nad ním nějaké UI vytvořit lze je spíš ukázkou vítězství vůle nad technologií, než nějakým "potvrzením vhodnosti pro daný účel". Na jeho straně je (bohužel) fakt, že je jednoduché, rozšířené a obecně přijímané.
+<br />
+<br />Mimochodem, "komfort" - od roku 1996 používám na maily desktopového mailklienta. Přitom všechny mailservery, které jsem kdy používal, měly webové rozhraní. Pro mne je specializovaný desktop klient komfortnější. Totéž třeba u RSS čtečky. Jistě nebudeš tvrdit, že to je proto, že jsem "nepochopil" "výhody" webové aplikace, a přiznáš mi právo na vlastní preference. A po pravdě řečeno, setkávám se také se spoustou uživatelů, kteří nechápou, proč by kvůli mailu měli lézt "do internetu" (=modré éčko), protože "maily mají tady v téhle obálce a internet v modrém éčku". :) O tom, že komfort desktopových aplikací asi bude vyšší svědčí ostatně i to, že např. webové textové editory se snaží vypadat podobně jako Word. Proč?
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_15">[15]</a> </strong> (Lokutus  - <a href="http://lokutus.bloguje.cz">WWW</a>) 04.12.2008, 00:24:14&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1830188">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1830188">D</a>]<br />
+
+Moje řeč. Lidově řečeno, trend napodobování desktopových aplikací pomocí primitivního značkovacího jazyka, neohebného grafického rozhraní a naprosto příšerného skriptového jazyka, na platformě, určené původně k jinému účelu s prachmizernou podporou v zobrazování... mi přijde jako drbat se pravou nohou za levým uchem.
+<br />
+<br />Nechápu, který imbecil tenhle zázrak objevil a jak je možné, že přes desetiletí bez výraznějších úspěchů je tento trend posilován, místo aby už dávno hnil někde ve stoce, zapomenut. Desetiletí v oboru informačních technologií je celý jeden život. Co se za tu dobu neprosadí, nemá nárok na živobytí.
+<br />
+<br />Můj názor je, že to splaskne jako další internetová bublina. Další můj názor je, že tehnologie jako AJAX jsou jen nekoncepční bastl. Je to pomalé, blbě se to vyvíjí (jenom odladit podporu prohlížečů je děs) a tam, kde mají desktopové aplikace hranice jen v paměti a počtu procesorů, jsou webové aplikace beznadějně pozadu.
+<br />
+<br />Online aplikace jako takové - resp. myšlenka tenkého klienta - nejsou samy o sobě špatné. Špatný je současný koncept. Asi jako původní koncept ponorek. Ty byly zpočátku zamýšleny jako hadinové plavidlo, které se může schovat pod vodu. A tak se dlouho stavěly ponorky se zbytečným kýlem, vnější výzbrojí a dalšími zbytečnostmi, dle původního konceptu, než někoho napadlo, že vzhledem hydrodynamice a užitečnosti by bylo lepší, aby ponorka operovala výhradně pod hladinou.
+<br />Tak snad jednou i online, resp. webové aplikace zahodí veškerý balast, který je zpomaluje a najedou na nový koncept.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_16">[16]</a> </strong> (Hermit  ) 04.12.2008, 00:25:14&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1830190">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1830190">D</a>]<br />
+
+v podstate souhlasim s clanek, v dnesni dobe delat GUI slozitejsich frontend aplikaci, to by se z toho pomalu jeden vopichal.
+<br />
+<br />Ale zase na druhou stranu nic neni neresitelne, a uzivatel je ten kdo rozhoduje, bohuzel.
+<br />
+<br />Kazdopadne jsem optimista a ocekavam nejaky takovyto vyvoj stejne tak jako mnoho jinych, kteri to oznacuji vybornym buzzword "web 3.0" ;) 
+<br />
+<br />Takze budoucnost vidim ruzove:
+<br />- spojeni aplikaci offline a online sveta
+<br />- male aplikace v PC, mobilech, porpipade zachodovem prkenku pokud bude umet ty internety :)
+<br />- na vzdalenych serverech je pouze obsah (DB)
+<br />- zpracovani probiha na lokalnich zarizeni
+<br />- online obsah (rozumnej pres prohlizec) je pouze alternativou k rychlemu hledani informaci
+<br />- mini aplikace jako jsou ted moderni socialni site, popripade administrace (CMS, DMS, ...) atp, bude efektivnejsi tahat do specializovaneho SW s moznosti rozsireni (pluginy) uzivatelske nastaveni bude nastavene na localnim prostredi
+<br />
+<br />Na podobnem principu tenky/tlusty klient jiz funguje pomerne dost aplikaci takovou "pomerne znamou" je na napr. analyticky soft Clicktracks
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_17">[17]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 04.12.2008, 00:29:51&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1830193">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1830193">D</a>]<br />
+
+<a href="#cmt_16">[16]</a> a další: Tak jsem to trošku doplnil - <a href="http://www.misantrop.info/747413-souhlasim-s-markem-prokopem.html" rel="nofollow">http://www.misantrop.info...pem.php</a> :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_18">[18]</a> </strong> (Marek Prokop - <a href="mailto:marek@sovavsiti.cz">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.sovavsiti.cz%2F">WWW</a>) 04.12.2008, 00:33:43&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1830195">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1830195">D</a>]<br />
+
+<a href="#cmt_13">[13]</a> Ale kdepak, já ti, Martine, nepředhazuji, že je článek subjektivní. Já proti subjektivním článkům vůbec nic nemám.
+<br />
+<br />Ano, vím, že jsi nešetřil Jakuba Nešetřila proto, že začal svůj komentář slovy "Nerozumím tomuhle článku". Já jsem ten svůj chtěl původně začít úplně stejně, protože zásadě "Když nerozumím článku, tak nekomentuju." nerozumím ;-)
+<br />
+<br /><a href="#cmt_14">[14]</a> Nechci ti brát desktopového poštovního klienta. Je mi jasné, že je pro tebe komfortnější. Pro mne byl přes deset let také. Teď už není, takže znám oba stavy mysli a mohu srovnávat. Nemyslím srovnání *co* je lepší, ale srovnání *proč* se někomu zdá lepší to a jinému ono.
+<br />
+<br />Myslel jsem, že by tě to mohlo zajímat. Pokud nezajímá, nic se neděje.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_19">[19]</a> </strong> (Hermit  ) 04.12.2008, 00:35:57&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1830197">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1830197">D</a>]<br />
+
+jeste doplnim, casto opakuje " prohlizecove tlacitko zpet"
+<br />
+<br />to muzes v podstate ve vsem krome opery odstrelit treba takto (nezkousel jsem to jestli to odesle formular, realne jsem to nevyuzil, je to hrozna past na uzivatele ;)
+<br />
+<br />
+<br />
+<br />
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_20">[20]</a> </strong> (Hermit  ) 04.12.2008, 00:38:20&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1830200">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1830200">D</a>]<br />
+
+nezere to ukazky, tak druhy pokus
+<br />[script language="JavaScript"]
+<br />  javascript:window.history.forward(1);
+<br />[/script]
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_21">[21]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 04.12.2008, 00:40:53&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1830203">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1830203">D</a>]<br />
+
+<a href="#cmt_18">[18]</a> Když nerozumím, tak se zeptám, ale nepolemizuju. Už je to lepší zásada? ;)
+<br />
+<br />Myslím, že odpověď na otázku "proč?" je nabíledni: Závisí na potřebách. (A potřeby závisí na stylu práce, na tom, co od těch věcí člověk očekává, co člověk chce řešit, co řešit musí, a ostatně i na tom, co mu subjektivně přijde vhodnější.) A opět: Já věřím, že spoustě lidí připadá vhodnější hypertextové paradigma (to je to slovo!), ale na druhou stranu se nedomnívám, že je univerzálním všeřešícím všelékem, a nepovažuju za vhodné ho roubovat na věci, kam se nehodí (o tom, že se nehodí, svědčí odpor, jaký klade). ;) Tak trošku mi to připomíná snahu vysvětlovat vše "učením o vyšší nervové činnosti I. P. Pavlova". :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_22">[22]</a> </strong> (Marek Prokop - <a href="mailto:marek@sovavsiti.cz">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.sovavsiti.cz%2F">WWW</a>) 04.12.2008, 00:52:23&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1830209">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1830209">D</a>]<br />
+
+<a href="#cmt_21">[21]</a> Ano, téhle zásadě už rozumím.
+<br />
+<br />Na tom, že se hypertext nehodí na všechno se shodneme.
+<br />
+<br />Více (možná) napíšu k druhému článku.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_23">[23]</a> </strong> (dond.myopenid.com [<a href="http://dond.myopenid.com/" title="Ověřený uživatel http://dond.myopenid.com/">openID</a>]  ) 04.12.2008, 01:04:15&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1830216">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1830216">D</a>]<br />
+
+Arthure, kéž by se něco změnilo. :-) Ale nevěřím tomu. Budeme bastlit dál, dokud někdo neprosadí něco pořádného. Flex, Silverlight, JFX - vypadá to dobře, tudy cesta povede.
+<br />
+<br /><a href="#cmt_12">[12]</a> V podstatě asi nejdůležitější postřeh z článku i komentářů mám: fakt, že něco nějak řešit jde, ještě není argument pro to, že se to tak řešit má. Ale o tom se jistě přít nebudeme. Nakonec vždycky rozhodnou peníze.
+<br />
+<br />Pravověrný mainframista by nejspíš prohlásil, že programátoři definitivně prohráli na začátku 70. let nástupem UNIXů. ;-)
+<br />
+<br /><a href="#cmt_15">[15]</a> Knihovny pro JS dneska leccos řeší, ladění je o dost jednodušší. Taky máme Firebug, taky máme debugger pro IE v novém VS. Ve srovnání se stavem před pěti lety se máme krásně. :-)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_24">[24]</a> </strong> (Gimli2 [<a href="http://openid.cz/gimli2" title="Ověřený uživatel http://openid.cz/gimli2">openID</a>]  - <a href="http://gimli2.gipix.net">WWW</a>) 04.12.2008, 02:53:23&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1830244">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1830244">D</a>]<br />
+
+Tak me vrta hlavou, proc se neprosadil, ale navic ani v soucasnosti nijak nenabyva na popularite koncept java-webstart.
+<br />To je proto, ze java porad vypada jinak nez zbytek OS?
+<br />Nebo je v tom neco dalsiho?
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_25">[25]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 04.12.2008, 03:01:26&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1830245">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1830245">D</a>]<br />
+
+<a href="#cmt_24">[24]</a> Ano, podobná otázka mi v hlavě zněla taky: "Kde jsou, sakra, applety, když to před deseti lety měla bejt budoucnost interfernetu?"
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_26">[26]</a> </strong> (VfB  ) 04.12.2008, 07:12:40&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1830285">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1830285">D</a>]<br />
+
+<a href="#cmt_7">[7]</a> - Silverlight není zatím použitelný ani na windows, jeho instalace je sázka do loterie (strefit se do té správné kombinace windows, servispacku a verze prohlížeče) a zastoupení mezi uživateli (mimo Radka H minimální)
+<br />
+<br /><a href="#cmt_2">[2]</a> - průzkumník windows (mimochodem originální název je explorer) je tak trochu "oholený" MSIE bez možnosti otvírat více "stránek" a s jinými funkcemi na pravém myšítku, taková Mozilla Prism od Microsoftu xD
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_27">[27]</a> </strong> (rony [<a href="http://rony.myopenid.com/" title="Ověřený uživatel http://rony.myopenid.com/">openID</a>] - <a href="mailto:rony@mailinator.com">Mail</a> - <a href="http://rony.myopenid.com">WWW</a>) 04.12.2008, 08:16:05&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1830311">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1830311">D</a>]<br />
+
+"dělají za pomocí páček, kladek a ozubených kol (JS) něco, co se bude chovat jako bankomat."
+<br />
+<br />hm, ono bankomaty mavaju uzivatelske rozhranie riesene obvykle ako HTML stranka a ide o IE v kiosk mode :-) sam som jedno taketo rozhranie pred dlhsim casom maloval :-)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_28">[28]</a> </strong> (ceskaskola  - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.ceskaskola.cz">WWW</a>) 04.12.2008, 09:00:39&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1830338">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1830338">D</a>]<br />
+
+Šedivá je teorie, zelený strom života... Podobné stesky tu jsou už 25 let v textu Opravdoví programátoři nepoužívají Pascal.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_29">[29]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 04.12.2008, 10:21:07&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1830409">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1830409">D</a>]<br />
+
+<a href="#cmt_28">[28]</a> Stesky? Ale kdepak, já si nestýskám. Jen rozepisuju důvody, proč to dělat nechci.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_30">[30]</a> </strong> (David Grudl [<a href="http://grudl.myopenid.com" title="Ověřený uživatel http://grudl.myopenid.com">openID</a>]  - <a href="http://www.latrine.cz">WWW</a>) 04.12.2008, 11:02:25&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1830436">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1830436">D</a>]<br />
+
+> ...Na jedné straně Flex, Silverlight či JavaFX (ech!), na druhé straně třeba XUL. Všechny tyhle věci jsou vhodné (nebo i přímo určené) pro vytváření uživatelských rozhraní, s komfortem, na jaký je člověk zvyklý u desktopové aplikace.
+<br />
+<br />Tady je kámen úrazu. Oni vytvářejí rozhraní se svým osobitým komfortem a svým vlastním chováním, nikoliv s komfortem a chováním, na jaký, jak píšeš, člověk zvyklý u desktopové aplikace. Vnášejí další složitost. 
+<br />
+<br />Jinými slovy, jejich GUI není nativní OS. Narozdíl od HTML.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_31">[31]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 04.12.2008, 11:05:20&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1830439">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1830439">D</a>]<br />
+
+<a href="#cmt_30">[30]</a> Ano, GUI Flexu není nativní OS. Jak je to u Silverlightu se nebudu dohadovat, natolik jsem ho ještrě neprozkoumal, ale řekni mi: Co XUL? Ten ti nepřipadá dostatečně nativně-osový? ;)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_32">[32]</a> </strong> (Pavel  ) 04.12.2008, 12:16:40&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1830505">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1830505">D</a>]<br />
+
+Ve zkratce:
+<br />"co by mělo udělat (tlačítko zpět) v TotalCommanderu?"
+<br />
+<br />vrací do předchozího navštíveného adresáře (právě vyzkoušeno :-))
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_33">[33]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 04.12.2008, 12:19:58&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1830512">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1830512">D</a>]<br />
+
+<a href="#cmt_32">[32]</a> Nikoli. Tam je dvojice tlačítek s názvy "Předchozí složka" a "následující složka". Tam není "ZPĚT".
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_34">[34]</a> </strong> (Keff  ) 04.12.2008, 12:38:23&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1830525">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1830525">D</a>]<br />
+
+Ještě ke tlačítku zpět - filipika proti němu se mi moc líbí, a to jak si jsou komentující jisti že vždy má svůj (jen nikdy nedefinovaný a nedefinovatelný) význam. 
+<br />
+<br />Co když udělám správce disku, když uživatel zformátuje disk, pak si to rozmyslí a zmáčkne zpět? 
+<br />
+<br />A co když na facebooku řekne Marušce že byla odjakživa pěkná kráva a pak se s ní chce vyspat? Mělo by tlačítko zpět přivolat bojovou jednotku pro výmaz paměti (z Organizace pro Smysl Tlačítka Zpět)?
+<br />
+<br />A vážně má běžný uživatel potřebu si zabookmarkovat stav aplikace kdy v posledním obskurním menu sestavil z okýnek kosočtverec a levou rukou se škrábe v pozadí? Aby si ho mohl kdekoliv obnovit anebo poslat kamarádovi a ten se mohl výtvorem pokochat? A když mu ho pošle, čí ruku by měl do čího pozadí chudák browser obnovit? A vůbec, uměla tohle někdy nějaká desktopová aplikace, že je to taková nutnost implementovat na internetu? A nebudou lidi nadávat když si zabookmarkuju stav elektronického bankovnictví kdy jsem si právě poslal milion a pošlu ten link na twitter?
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_35">[35]</a> </strong> (David Grudl [<a href="http://grudl.myopenid.com" title="Ověřený uživatel http://grudl.myopenid.com">openID</a>]  - <a href="http://davidgrudl.com">WWW</a>) 04.12.2008, 12:57:08&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1830548">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1830548">D</a>]<br />
+
+<a href="#cmt_31">[31]</a> on i ten Silverlight je na platformě Windows "nativní" (aby nebyl a otázka jak jinde), ale reagoval jsem na technologii, která se na webu jako jediná skutečně používá a to včetně její dlouhé historie, byť pod jiným názvem.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_36">[36]</a> </strong> (David Grudl [<a href="http://grudl.myopenid.com" title="Ověřený uživatel http://grudl.myopenid.com">openID</a>]  - <a href="http://davidgrudl.com">WWW</a>) 04.12.2008, 13:04:25&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1830558">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1830558">D</a>]<br />
+
+<a href="#cmt_34">[34]</a> ještě před válkou jsem o tom mluvil s naším okresním ...ehm... Markem Prokopem :-)
+<br />
+<br />Kromě tlačítka zpět je tu zcela samostatný problém "odkazu zpět" na stránce (obzvlášť pokud se shodneme na tom, že by neměl být implementován jako windows.history.go(-1);
+<br />
+<br />A k bookmarkování: jak bookmarkovat stavy u aplikací, kde se obsah velmi rychle mění (např. nabídka Last Minute zájezdů, diskusní fóra apod.). Kam by měl bookmark vést?
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_37">[37]</a> </strong> (Dmagician.myopenid.com [<a href="http://dmagician.myopenid.com/" title="Ověřený uživatel http://dmagician.myopenid.com/">openID</a>] - <a href="mailto:creamd@c64.sk">Mail</a> - <a href="http://Dmagician.myopenid.com">WWW</a>) 04.12.2008, 14:05:49&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1830613">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1830613">D</a>]<br />
+
+<a href="#cmt_30">[30]</a><a href="#cmt_35">[35]</a> Flex (odhliadnuc o toho že action script 3.0 bude určite výkonnejší ako veci ktoré predtým boli v réžii macromedie) je postavený na Flashi. A ako si správne nazačil. U aplikácií v ňom vytváraných sa o nejakej kompatibilite s GUI windowsu sa nedá absolútne hovoriť. U silverlightu sa toto pravdepodobne porieši, keďže ide o produkt MS. 
+<br />
+<br />Nemyslím že využívanie formulárových prvkov html v kombinácii s html, css a js je nejakým bastlením a cestou do pekla. Webové aplikácie sú hlavne o komunikácii medzi serverom a browserom pomocou prehliadača a nevidím dôvod aby kvôli rôznym zameraniam webov (shopy, blogy, portály, vyuhľadávače, agregátory, chaty) vznikali nejaké nové spôsoby interpetovania weobového obsahu pretože práve tá zväzujúca platforma zároveň zabezpečuje že vyplnenie formulára je na každom webe podobné a užívateľ je na ne zyvknutý. Iná vec je keď sa niekto pokúša v browseri napodobnovať desktopové aplikácie prostriedkami ktoré na to nie sú určené (css, js). Toto cesta do pekla je asi mi niečo uniklo, pretože viac či menej zložité webové stránky by som nenazýval aplikáciami. Nevidím budúcnosť internete v zmene zobrazovania stránok z html na nahrávanie "aplikácií" pretože web je hlavne o obsahu uloženom na serveri a určitom jednotnom spôsobe jeho interpretácie cez browser formou ~html a css. Všetky cimprlátka a fontánky okolo sú len na pluginy na iné datové formáty (swf, flw,video,audio,pdf a co ja viem co este). Ak teda príde k nejakému vylepšeniu a zjednoteniu GUI webstránok, bude to podľa mna skôr cestou rozšírenia markupu a nie pomocou súboja "pluginov".
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_38">[38]</a> </strong> (Dmagician.myopenid.com [<a href="http://dmagician.myopenid.com/" title="Ověřený uživatel http://dmagician.myopenid.com/">openID</a>] - <a href="mailto:creamd@c64.sk">Mail</a> - <a href="http://Dmagician.myopenid.com">WWW</a>) 04.12.2008, 14:08:09&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1830617">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1830617">D</a>]<br />
+
+jezis.. serverom a uzivatelom. som chcel povedat.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_39">[39]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 04.12.2008, 14:09:55&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1830619">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1830619">D</a>]<br />
+
+<a href="#cmt_37">[37]</a> Víceméně touché. Já ale nehovořím o webu jako takovém, ale o webových aplikacích, a ještě navíc o trendu "přenášet desktopové aplikace do prohlížeče" (a matlat to tam v HTML/CSS/JS).
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_40">[40]</a> </strong> (Dmagician.myopenid.com [<a href="http://dmagician.myopenid.com/" title="Ověřený uživatel http://dmagician.myopenid.com/">openID</a>] - <a href="mailto:creamd@c64.sk">Mail</a> - <a href="http://Dmagician.myopenid.com">WWW</a>) 04.12.2008, 14:29:15&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1830636">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1830636">D</a>]<br />
+
+<a href="#cmt_39">[39]</a> Prenášanie desktopových aplikáciá do prehliadača je samozrejme hlúposť, ale má to určítú logiku. Snaha aby ľudia na prácu s počítačom používali len prehliadač. Tam sa práve uplatní tvoja predstava, že by to mal riešit nejaký "aplikátor" . Možno to tak nakoniec aj bude. Zrejme to ale (na všeobecnú ľútosť jej vynálezcov) nebude Java (ktorá vlastne k niečomu takému vyslovene ponúka). Aspon nie pokiaľ bude kvôli nej nutné doinštalovávať do počítača ďaľšie hovado kódu.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_41">[41]</a> </strong> (Hellish - <a href="mailto:email@hellish.cz">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.hellish.cz">WWW</a>) 04.12.2008, 16:48:28&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1830748">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1830748">D</a>]<br />
+
+Překvapuje mě, že nikdo nezmínil zcela zásadní problém (alespoň z mého pohledu) flashe a jemu podobných technologií (Java applety atd.) Mám na mysli nutnost definovat na pixel přesně jeho rozměry ve stránce (hlavní problém je s výškou). To zcela znemožňuje nějak rozumně zakomponovat flashové části do html stránky. Jediné praktické využití je tedy "aplikace" kompletně ve flashi, kdy html stránka je jen zobrazovacím zařízením pro tuto aplikaci. Trochu mi pak ale uniká smysl takové aplikace. Jaká je výhoda, že běží v browseru? Proč to raději není "obyčejná" desktopová aplikace (i ty umí pracovat s daty na internetu).
+<br />
+<br />V zásadě souhlasím s tím co píšeš, Arture. Současné webové aplikace jsou bastl html, css a javascriptu. Taky se mi to nelíbí a doufám, že se brzy ukáže nějaká technologie, která tomu dá správný směr. Bohužel si myslím, že to ale nebude žádná ze současných technologií.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_42">[42]</a> </strong> (Pixy [<a href="http://pixy.myopenid.com/" title="Ověřený uživatel http://pixy.myopenid.com/">openID</a>] - <a href="mailto:pixy@pixy.cz">Mail</a> ) 05.12.2008, 00:08:13&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1831221">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1831221">D</a>]<br />
+
+<a href="#cmt_41">[41]</a> To není zdaleka jediný a už vůbec ne nejvážnější problém flashe a spol. Čert vem tlačítko Back a deset čertů nějakou "koncepčnost" - ale taková věc jako nemožnost označit &amp; zkopírovat text, nefunkčnost kolečka na myši nebo nemožnost zvětšit si podle potřeby písmo mi na věštině těchhle bastlů vadí neskutečně.
+<br />
+<br /><a href="#cmt_0">[0]</a> Přihodím ale ještě jeden argument, který tu zatím nepadl, a který je podle mě naprosto zásadní. Arthure, ty tu tak pěkně vymezuješ hypertext a aplikace a celou dobu děláš, jako by to pořád ještě byly dvě zcela disjunktní, samostatný kategorie. Jenže nejsme před deseti lety a tohle už dávno neplatí. Já občas to mezi ušima taky používám, a když potřebuju čistě hypertextový dokument, tak na to použiju čistý značkovací jazyk beze všech ajaxů a jiných fíčurek - a když chci standardní nativní aplikaci, tak zase naprogramuju standardní aplikaci.
+<br />
+<br />Jenže ony se ty hypertextové dokumenty pomaličku k těm aplikacím posouvají - tuhle používají jen malinko aplikačních prvků, tuhle zase hodně - a proti nim se zase sunou ty aplikace, driftují k webu, chtějí komunikovat, kolaborovat (ne ten špatný, myslím ten druhý význam), socializovat se - tady si jen tak trochu vymění pár bitů se serverem, jinde zase pracují nad množinou hypertextů a jsou už skoro víc web než aplikace v tom starém slova smyslu... Skoro mi to připadá, jako bys ani nepostřehl, že hranice mezi webovou stránkou a aplikací se už pár let smývá a prostor mezi těmi někdejšími protipóly se zvolna spojitě a jednolitě zaplňuje. Nikdo na světě (tím méně ty) už nedokáže udělat ostrý řez a říct "tohle je hypertext a tohle už je aplikace". A stejně jako už nelze striktně rozlišit účel, nelze ani striktně rozlišit vhodné/nevhodné prostředky.
+<br />
+<br />Druhý argument je pak škálovatelnost. Ty webové technologie totiž obvykle umožňují aspoň minimální funkčnost, pokud máš omezenější zařízení, nemáš nainstalované všechny technologie, máš pomalé připojení atd. To ty nativní aplikace (a tam řadím i všechny ty flashe, shockwavy a javy) zcela postrádají. Nemáš flash, nefunguje to. Nemáš Javu verze 1.2.3.4.5 (nebo Windows Vista SP2 + .NET 4.01, votevr), nefunguje to. Škálovatelnost typicky nulová.
+<br />
+<br />A do třetice ještě ten technicistní aspekt (protože ty prostě - se vší úctou! - jsi technicistní typ a k věcem tenhle přístup máš). Lidi se ve své většině nezajímají aktivně o nové technologie: používají, to, co dostanou v krabici. A tam je obvykle browser. Na počítačích je předinstalovaný a dokáží ho používat i důchodci. Koupí si mobil, dnes už tam je i ten prohlížeč. Koupí si herní konzoli, je tam prohlížeč. A všude jim - často aspoň nějak - ty weby, aplikace a poloaplikace fungujou. V konzoli flash nemusí být podporovaný. V mobilu java nemusí fungovat. A když je tam nakrásně výrobce v pátém updatu firmwaru přidá a fungovat by to mohlo, tak si ten důchodce koupí novou ledničku, který bude mít zase jen ten browser (s webovou aplikací na objednávky v místním supermarketu) a žádný flash ani javu.
+<br />
+<br />**Browser/HTML/JS/CSS je dnes největší společný jmenovatel pro maximum uživatelů**, a proto má smysl. Až bude stejná penetrace jiné technologie, klidně tohle může nahradit. Ale po nejbližších pár (řekněme pět) let to bude podle mě pořád ten web.
+<br />
+<br />A finální poznámka na téma poloprázdné sklenice. Může tě štvát, jak se webové technologie určené k něčemu úplně jinému zneužívají k bastlení aplikací, na které ale sakra existují vhodnější nástroje. Anebo tě může těšit, jak se možnosti webových technologií nezadržitelně přibližují k možnostem, které dnes mají jen nativní aplikace (a dost možná jednou splynou). Ty to vidíš tak, já zase onak.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_43">[43]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 05.12.2008, 00:15:36&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1831229">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1831229">D</a>]<br />
+
+<a href="#cmt_42">[42]</a> A mění to co říkáš ty něco na tom, co říkám já, tedy že se mi to nelíbí a že u toho nechci být? Nemění. Děkuji za pozornost, konec vysílání. :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_44">[44]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 05.12.2008, 00:25:44&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1831238">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1831238">D</a>]<br />
+
+Tak to tak pročítám a dovolil bych si resumé: Kvituju, jak se zastánci tohoto směru vývoje hezky rozepsali a jak mi dokazují, že JÁ to špatně chápu. Připomíná mi to, jak mi dřív jiní dokazovali, že špatně chápu Pratchetta, protože kdybych ho chápal správně, tak ho budu MI-LO-VAT, a ještě dřív mi ještě jiní sáhodlouze vysvětlovali, že se mi Pink Floyd (Kabáti, Rammstein, Moloko) nemůžou NELÍBIT, protože TO je ta pravá muzika, a že stačí jen, abych to POCHOPIL. :)
+<br />
+<br />Ale jednou přijde den, kdy <em>pochopí</em>, že mezi CHÁPU TO a LÍBÍ SE MI TO je nebetyčný ... propastný! :)
+<br />
+<br />Takže přátelé: Můžete mít 315 argumentů o nezbytnosti tohoto směru vývoje (=simulace desktopových aplikací v AJAX/HTML/CSS), o mém zpátečnictví, technokratství, stárnutí apod., ale i když vám je nakrásně uznám, tak to na subjektivním NELÍBÍ nic nezmění. I když uznám, že Hendrix hraje jako kytarový pámbu, tak to nic nezmění na tom, že je mi jeho muzika protivná a nechci ji poslouchat. Je tahle analogie srozumitelná?
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_45">[45]</a> </strong> (Pixy [<a href="http://pixy.myopenid.com/" title="Ověřený uživatel http://pixy.myopenid.com/">openID</a>] - <a href="mailto:pixy@pixy.cz">Mail</a> ) 05.12.2008, 01:26:19&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1831272">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1831272">D</a>]<br />
+
+Chováš se jak malej ';) Kdybys prostě řekl, že se ti to nelíbí, klidně i že to chápeš, ale holt dáváš přednost něčemu jinýmu, tak fajn, nikdo by nemohl ani ceknout. Tak proč ale, u všech trollů, nahoře vidím článek plnej hejtů, "bastlů" a vysvětlování, "proč je to druhý řešení blbě"?
+<br />
+<br />Sorry, ty napíšeš zcela zřetelně "A je blbě protože to a tamto a já mám rád B a podle mě je správně jedině B", a pak chceš, aby to lidi četli "existuje A i B, já dávám přednost B a o A si myslete, co chcete"? A pak se divíš?
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_46">[46]</a> </strong> (Hellish - <a href="mailto:email@hellish.cz">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.nakoncert.cz">WWW</a>) 05.12.2008, 09:51:31&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1831443">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1831443">D</a>]<br />
+
+<a href="#cmt_42">[42]</a> Problémy s flashem, které popisuješ jsou určitě zásadní, ale čistě teoreticky (a to zdůrazňuju) by je vývojáři z Adobe mohly doprogramovat. Ale to, že se flash vkládá do stránky jako objekt s fixní velikostí, je zakořeněno hluboko v konceptu této technologie (a všech jí podobných) a s tím už nikdo nic neudělá. A to je podle mě ten největší problém.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_47">[47]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 05.12.2008, 13:13:02&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1831636">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1831636">D</a>]<br />
+
+<a href="#cmt_45">[45]</a> Ale notak... Tak sis to blbě přečet, zaměnil jsi "vytváření uživatelského rozhraní webových aplikací v bastlech typu AJAX" za "webové aplikace jsou bastl" a přišels s tím polemizovat a vyprávět mi, že to nechápu. To se stane a já bych se v tom nepatlal. ;)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_48">[48]</a> </strong> (Radek Hulán - <a href="mailto:admin@hulan.eu">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fhulan.cz%2F">WWW</a>) 05.12.2008, 21:34:40&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1832032">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1832032">D</a>]<br />
+
+Webové aplikace se dělají a cpou všude proto, že spousta nových "takyprogramátorů" zná jen to zprasené PHP. Oni neumějí (jako my) C, C++, Pascal, Delphi, Assembler, neznají WinAPI, a už vůbec ne moderní C# a .NET. Neumějí používat SQL jinak než na primitivní SELECT, DELETE, INSERT, neznají uložené procedury, triggery, ba často ani VIEWs.
+<br />
+<br />Všem je jasné, že webové "aplikace" jsou po všech stránkách krok zpět, jenže skutečné (desktopové či client-server) aplikace není tak snadné "bastlit"....
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_49">[49]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 05.12.2008, 22:46:10&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1832139">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1832139">D</a>]<br />
+
+<a href="#cmt_48">[48]</a> Nejde mi ani tak o "webové aplikace". Ostatně, každá může mít za sebou Opravdového Programátora, který to bandě kodérů napíše. Jde mi o trend vytváření desktop-like uživatelského rozhraní (nepsal jsem to už asi osmnáctkrát?) v HTML/CSS/JS. Je to tweak za hranice únosnosti, nejsou pro to žádné rozumně použitelné nástroje (ani pro návrh, ani pro ladění), miliony člověkohodin jsou vyplýtané na to, aby to vypadalo všude přibližně stejně (nebo aby to ASPOŇ fungovalo) - a jediné důvody PRO jsou, že HTML/JS je "všude", a konzervatismus lidí, co se HTML/CSS/JS naučili a teď to cpou i do oblastí, pro které se tyhle technologie nehodí. Stejná číčovina jako psát webový redakční systém v assembleru. :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_50">[50]</a> </strong> (Radek Hulán - <a href="mailto:admin@hulan.eu">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fhulan.cz%2F">WWW</a>) 06.12.2008, 11:58:49&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1832388">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1832388">D</a>]<br />
+
+<a href="#cmt_49">[49]</a> však přesně o tom píšu. Prasit UI v HTML/JS/CSS se dělá proto, že ty lidi nic jiného neumějí, oni **chápou**, že desktopová aplikace je lepší, ale nejsou schopni ji napsat...
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_51">[51]</a> </strong> (Pixy [<a href="http://pixy.myopenid.com/" title="Ověřený uživatel http://pixy.myopenid.com/">openID</a>] - <a href="mailto:pixy@pixy.cz">Mail</a> ) 09.12.2008, 21:21:25&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1835747">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1835747">D</a>]<br />
+
+<a href="#cmt_47">[47]</a> Hm, asi zásadní rozpor už kdesi v paradigmatu. Neshodnem se asi ani nemáme šanci se shodnout. Ale co už - proč taky, že.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_52">[52]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://www.misantrop.info">WWW</a>) 09.12.2008, 21:27:01&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1835755">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1835755">D</a>]<br />
+
+<a href="#cmt_51">[51]</a> Já v tom nevidím problém :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_53">[53]</a> </strong> (Daniel Steigerwald - <a href="mailto:daniel@steigerwald.cz">Mail</a> ) 12.12.2008, 15:14:46&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1838214">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1838214">D</a>]<br />
+
+Wow, René Stein to jako obvykle přesně vystihl. Jeho názor se zhoduje s mým, přesněji s jedním z mých názorů, bohužel nikdy nemám jeden :) 
+<br />
+<br />AJAX je děsnej krok zpět, to ano, připadám si jako kdybych programoval pro ZX spektrum. btw: <a href="http://ajaxian.com/archives/jsspeccy-a-zx-spectrum-emulator-in-javascript" rel="nofollow">http://ajaxian.com...-in-javascript</a>. :-)
+<br />
+<br />Ale zároveň AJAX miluju, ač přiznávám, že je to láska značně romantická (Skoro jako Utrpení mladého Werthera). Zkusím stručně vysvětlit proč:
+<br />
+<br />Právě díky tomu, že si člověk musí všechno napsat sám, UI prvky, implementace dědičnosti a design patterny.. Nestává se otrokem frameworku, codding stylu, jazyka. Díky JavaScriptu jsem se naučil a poznal hromadu nových technik, stylů, nápadů atd. Myslími, že programování aplikací v JavaScriptu člověka vyškolí tak jako málo co :)
+<br />Prostě díky AJAXu žijeme znova v době "Báječných můžu na létajících strojích".
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_54">[54]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://www.misantrop.info">WWW</a>) 12.12.2008, 15:23:24&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1838226">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1838226">D</a>]<br />
+
+<a href="#cmt_53">[53]</a> Ano, souhlasím... Je to fajn, pokud to má člověk jako koníčka, ale ŽIVIT se tím?! Proboha!
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_55">[55]</a> </strong> (WuShin - <a href="mailto:SeriousMailos@gmail.com">Mail</a> ) 18.12.2008, 14:28:34&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1842926">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1842926">D</a>]<br />
+
+Zdravím.
+<br />Sice mi dochází že tu jsem na developerské půdě, ale stejně mě překvapuje, že tu nikdo neuvedl tak zásadní faktor, který náš drží u bastlení na html. SEO...a s ním související neschopnost indexace aplikací.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_56">[56]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://www.misantrop.info">WWW</a>) 18.12.2008, 14:46:06&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1842937">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1842937">D</a>]<br />
+
+<a href="#cmt_55">[55]</a> Teď jsem ne zcela přesně pochopil... Jako že patlání aplikačního UI v HTML má tu výhodu, že ta aplikace je viditelná/indexovatelná pro vyhledávač? To tu nepadlo, a pokud by to tu mělo padnout, tak jako další důvod pro to, že "tento směr vývoje nezdá se mi být šťastným".
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_57">[57]</a> </strong> (WuShin - <a href="mailto:SeriousMailos@gmail.com">Mail</a> ) 18.12.2008, 16:06:27&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1843021">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1843021">D</a>]<br />
+
+Šťastný není, rsp. konzistentní není. Abych blíže vysvětlil co jsem myslel - balast patlaný na HTML je optimalizovatelný a o jeho optimalizaci se ví hodně, jsou tu pravidla a funguje na nich bussines. Indexaci flashe Google podporuje, ale zatím neumožňuje nějak vhodně optimalizovat. Proto pro plnohodnotné webové aplikace, co stojí na flashy, silverlightu aj. je nepoužitelná ekonomicky zatím nejvýhodnější část SEM - optimalizace. Google čeká v tomhle odvětví ještě dlouhý vývoj. Tudíž do doby, než začne být SEO řešeno i pro ucelené aplikace, bude na developery vytvářen tlak, co je bude nutit do téhle čuňačiny:-) Vyjímkou budou projekty co se bez SEOa obejdou...Mizivá menšina.
+<br />
+<br />Nejde o dementaci názorů co jsem tu četl, s těmi potažmo souhlasím, jen o doplnění marketingového faktoru, který situaci utváří.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_58">[58]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://www.misantrop.info">WWW</a>) 19.12.2008, 13:51:52&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1843736">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1843736">D</a>]<br />
+
+<a href="#cmt_57">[57]</a> SEO pro UI? SEO pro, například, "webové rozhraní redakčního systému"? Ano, opravdu: Chci jít jinam a jinudy!
+
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+</div><!-- konec pole -->
+
+
+
+<div id="sidebar">
+
+<h2 id="n_rubriky">Rubriky</h2>
+<ul id="rubriky">
+<li><a href="tema-1-bavim-se-na-vas-ucet.html">Bavím se na váš účet</a></li><li><a href="tema-2-nemam-vas-rad.html">Nemám vás rád</a></li><li><a href="tema-3-pohrdani.html">Pohrdání</a></li><li><a href="tema-4-vase-bludy-na-moji-hlavu.html">Vaše bludy na moji hlavu</a></li><li><a href="tema-5-mym-analfabetum.html">Mým analfabetům...</a></li><li><a href="tema-6-co-me-bavi.html">Co mě baví?</a></li><li><a href="tema-7-to-je-nejaka-hudba-tohleto.html">To je nějaká hudba, tohleto?</a></li><li><a href="tema-8-kdo-umi.html">Kdo umí...</a></li><li><a href="tema-9-mene-kecu-vice-prace.html">Méně keců, více práce</a></li>
+</ul>
+
+<h2 class="bok">Jak se vám to čte?</h2>
+
+<p style="text-align:center">
+<a href="http://feeds.feedburner.com/misantrop"><img src="http://feeds.feedburner.com/~fc/misantrop?bg=99CCFF&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a></p>
+
+<p style="text-align:center">
+<a href="http://twittercounter.com/?username=adent" title="TwitterCounter for @adent"><img src="http://twittercounter.com/counter/?username=adent" width="88" height="26" style="border:none;" alt="TwitterCounter for @adent" /></a></p>
+
+<p style="text-align:center">
+<script type="text/javascript">
+var wsgApiKey = "481349a5-98b9-4d24-b32f-a5729d33840c";
+var wsgStyle = 2;
+var dummy =('<div id="wsgContainer" style="text-align:center"></div>');wsgScript=document.createElement('script');wsgScript.type="text/javascript";wsgScript.src="http://static.hubspot.com/websiteGraderBadge/badge.js?t="+Math.random();setTimeout("document.getElementById('wsgContainer').appendChild(wsgScript);",1);
+</script>
+</p>
+
+<script type="text/javascript" src="http://www.blogcatalog.com/w/services.php?id=150489&amp;width=165&amp;bgcolor=EEEEEE&amp;bcolor=356D79&amp;lcolor=333333&amp;hcolor=FFFFFF&amp;htext=Kde%20mne%20najdete&amp;name=0&amp;brand=0&amp;heading=1"></script>
+
+<h2 id="n_odkazy"><a href="#" class="iface" onclick="$('#odkazy').BlindToggleVertically(500, null, 'bounceout');return false;">Odkazy ...</a></h2>
+<ul id="odkazy" style="display:block">
+<li><a href="http://pixy.cz/pixynergia" rel="acquaintance met">Pixy</a></li><li><a href="http://blok.rozanek.cz" rel="acquaintance">Filip Rožánek</a></li><li><a href="http://www.whitedog.cz" rel="acquaintance met">White Dog</a></li><li><a href="http://kahi.cz/blog/" rel="met">Kahi</a></li><li><a href="http://lokutus.bloguje.cz" rel="met">Lokutus</a></li><li><a href="http://www.katchaba.com/" rel="acquaintance met">Katchaba</a></li><li><a href="http://machinegun.bloguje.cz" rel="acquaintance met">Johnny</a></li><li><a href="http://kokolia.bloguje.cz">Vladimír Kokolia</a></li><li><a href="http://viditelnymacek.cz">Miroslav Macek</a></li><li><a href="http://cina.bloguje.cz" rel="me">Dovolená v Číně</a></li><li><a href="http://bloguneni.bloguje.cz/">Blogu není...</a></li><li><a href="http://hekko.bloguje.cz" rel="acquaintance met">Adminka bloguje</a></li><li><a href="http://www.bloc.cz/default.aspx">Bloc Jiřího Hlavenky</a></li><li><a href="http://apimania.eu" rel="me">Apimania</a></li><li><a href="http://dev20.info" rel="me">Dev::Info</a></li><li><a href="http://dankaj.bloguje.cz/" rel="contact met">Zápisky z Islandu</a></li><li><a href="http://jdem.cz" rel="me">Zkratky pro odkazy</a></li><li><a href="http://davebarry.cz" rel="me">Dave Barry česky</a></li><li><a href="http://uelectronics.info" rel="me">Mikroelektronika</a></li><li><a href="http://www.php-suit.com" rel="me">PHP Suit</a></li><li><a href="http://www.sharp-suit.com" rel="me">Sharp Suit</a></li> 
+<li><a href="http://technorati.com/claim/xnpb5tzhw" rel="me">Technorati Profile</a></li>
+</ul>
+
+<h2 id="n_recommend">Doporučuji</h2>
+<ul id="support">
+<li><a href="http://hostmonster.jdem.cz/">Hosting HostMonster</a></li>
+<li><a href="http://www.jihocestitatkove.cz/">Jihočeští taťkové</a></li>
+<li><a href="http://www.csvts.cz/cns/">Česká nukleární společnost</a></li>
+<li><a href="http://www.prozakladnu.cz/">PRO základnu!</a></li>
+</ul>
+
+<!-- Buzzboot Ads -->
+<!-- / Buzzboot Ads -->
+
+
+<p>
+
+</p>
+
+<h2>Meta</h2>
+<script type="text/javascript" src="http://feedjit.com/popPages/?bc=FFFFFF&amp;tc=008000&amp;brd1=336699&amp;lnk=008000&amp;hc=336699&amp;ww=200"></script><noscript><a href="http://feedjit.com/">Feedjit Live Blog Stats</a></noscript>
+
+<h2 id="n_archiv"><a href="#" class="iface" onclick="$('#archiv').BlindToggleVertically(500, null, 'bounceout');return false;">Archiv ...</a></h2>
+<ul id="archiv" style="display:none">
+<li><a href="0812archiv.html">prosinec 2008</a></li><li><a href="0811archiv.html">listopad 2008</a></li><li><a href="0810archiv.html">říjen 2008</a></li><li><a href="0809archiv.html">září 2008</a></li><li><a href="0808archiv.html">srpen 2008</a></li><li><a href="0807archiv.html">červenec 2008</a></li><li><a href="0806archiv.html">červen 2008</a></li><li><a href="0805archiv.html">květen 2008</a></li><li><a href="0804archiv.html">duben 2008</a></li><li><a href="0803archiv.html">březen 2008</a></li><li><a href="0802archiv.html">únor 2008</a></li><li><a href="0801archiv.html">leden 2008</a></li><li><a href="0712archiv.html">prosinec 2007</a></li><li><a href="0711archiv.html">listopad 2007</a></li><li><a href="0710archiv.html">říjen 2007</a></li><li><a href="0709archiv.html">září 2007</a></li><li><a href="0708archiv.html">srpen 2007</a></li><li><a href="0707archiv.html">červenec 2007</a></li><li><a href="0706archiv.html">červen 2007</a></li><li><a href="0705archiv.html">květen 2007</a></li><li><a href="0704archiv.html">duben 2007</a></li><li><a href="0703archiv.html">březen 2007</a></li><li><a href="0702archiv.html">únor 2007</a></li><li><a href="0701archiv.html">leden 2007</a></li><li><a href="0612archiv.html">prosinec 2006</a></li><li><a href="0611archiv.html">listopad 2006</a></li><li><a href="0610archiv.html">říjen 2006</a></li><li><a href="0609archiv.html">září 2006</a></li><li><a href="0606archiv.html">červen 2006</a></li><li><a href="0604archiv.html">duben 2006</a></li><li><a href="0603archiv.html">březen 2006</a></li><li><a href="0512archiv.html">prosinec 2005</a></li><li><a href="0511archiv.html">listopad 2005</a></li>
+</ul>
+
+
+
+</div><!-- konec sidebar -->
+<div class="clear">&nbsp;</div><!-- cistic -->
+</div><!-- konec obsah -->
+
+
+
+
+
+
+
+<div id="foot">
+<p>&copy; <a href="http://www.maly.cz/o-mn/">Martin Malý</a> (aka Arthur Dent) | Design by &copy; 2007 <a href="http://ash721.cz">ASH721</a> | <a href="http://hostmonster.jdem.cz">HOSTING</a> 3000GB+unlimited domains za 6 dolarů</p>
+
+</div>
+
+</div>
+
+</body></html>

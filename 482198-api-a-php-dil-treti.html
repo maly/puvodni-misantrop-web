@@ -1,0 +1,642 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="cz">
+<head><link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.misantrop.info/rss.xml" /><link rel="alternate" type="application/rss+xml" title="RSS - Kdo umí..." href="http://www.misantrop.info/tema-8-kdo-umi.xml" /><link rel="alternate" type="application/rss+xml" title="Komentáře" href="http://www.misantrop.info/comments.xml" />
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/misantrop" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+ <title>API a PHP, díl třetí - Misantrop.info</title> 
+
+<link rel="stylesheet" href="css39236.css" type="text/css" title="Styl2" media="screen" />
+<link rel="alternate stylesheet" href="css34066.css" type="text/css" title="Styl1" media="screen" />
+
+<meta name="verify-v1" content="qHyecOmV/BTXodaXkGrOlj7QL+X93dTbTLojG9EU22c=" />
+<link rel="openid.server" href="http://www.myopenid.com/server" />
+<link rel="openid.delegate" href="http://adent.myopenid.com/" />
+<link rel="openid2.local_id" href="http://adent.myopenid.com" />
+<link rel="openid2.provider" href="http://www.myopenid.com/server" />
+<meta http-equiv="X-XRDS-Location" content="http://www.myopenid.com/xrds?username=adent.myopenid.com" />
+
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="keywords" content="Martin Malý, Arthur Dent, weblogy, programování, PHP, blogy, misantrop, Web2.0, technologie, elektronika" />
+
+<meta name="description" content="API a PHP, díl třetí - Misantrop.info" />
+<script type="text/javascript" src="/jdemcz.js"></script>
+<script type="text/javascript" src="http://www.boxmark.cz/tb/jquery.js"></script>
+<script type="text/javascript" src="http://www.boxmark.cz/tb/thickbox.js"></script>
+<script type="text/javascript" src="http://www.boxmark.cz/tb/interface.js"></script>
+<script type="text/javascript" src="http://track2.mybloglog.com/js/jsserv.php?mblID=2007052422462000"></script>
+<link rel="stylesheet" href="http://www.boxmark.cz/tb/thickbox.css" type="text/css" media="screen" />
+</head>
+<body>
+<div id="all">
+<!-- Anal Lizer-->
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-190512-8";
+urchinTracker();
+</script>
+<!--dolizat-->
+<div style="position: fixed; _position:absolute;right: 0; top: 0; width: 163px; height: 163px;"><a href="http://www.misantrop.info/"><img src="http://img.maly.cz/henryk.gif" alt="Neobsahuje názory Henryka Laholy" /></a></div> 
+
+<div id="adx" style="position:fixed;_position:absolute;top:5px;left:5px">
+<script type="text/javascript"><!--
+google_ad_client = "pub-3772893178572611";
+/* 120x600, vytvořeno 15.7.08 */
+google_ad_slot = "1720575805";
+google_ad_width = 120;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+
+<div id="head"><p id="logo"><a href="index.php"><img src="img/2zapisnik-logo.gif" alt="Misantrop.info - Web co vám doudí moudí..." /></a></p></div>
+
+<ul id="menu">
+<li><a href="index.php">Titulní stránka</a></li>
+<li><a href="http://rss.misantrop.info">Oblíbené zdroje</a></li>
+<li><a href="http://www.maly.cz/o-mn/?KeepThis=true&amp;TB_iframe=true&amp;height=500&amp;width=800" class="thickbox">O mně</a></li>
+<li><a href="http://www.bloguje.cz/vzkazy.php?send=47997">Napiš vzkaz</a></li>
+</ul>
+
+<div id="obsah">
+<div id="pole">
+<!-- Pocitadlo -->
+<p><img src="http://counter.cnw.cz/dungeon.cgi?blogmalycz&amp;6&amp;000000&amp;fff1d8&amp;on" alt=" " style="width:1px;height:1px;"/><script type="text/javascript">
+<!-- 
+document.write("<img src=\"http://counter.cnw.cz/trackit.cgi?blogmalycz&t2&" + escape(top.document.referrer) + "\" alt=\" \" border=\"0\" width=\"1\" height=\"1\">"); 
+// --></script>
+
+<script language="JavaScript" type="text/javascript">
+<!--
+document.write ('<a href="http://www.netagent.cz" target="_top"><img src="http://www.netagent.cz/agent.php?id=383&amp;ur='+escape(document.referrer)+'&amp;rw='+escape(window.screen.width)+'&amp;rh='+escape(window.screen.height)+'&amp;cd='+escape(window.screen.colorDepth)+'&amp;pt='+escape(document.title)+'&amp;lc='+escape(document.location)+'" width="1" height="1" border="0" alt="NetAgent" /></a>');
+//--></script>
+
+</p>
+<!-- Pocitadlo konec -->
+
+
+
+
+<h1>API a PHP, díl třetí</h1>
+
+
+
+
+
+
+
+<p>ve kterém udělám úkrok stranou a napíšu něco o ověřování uživatelů. </p>
+
+<p style="float:right; margin:0 0 1em 1em;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-3772893178572611";
+
+/* 120x240, vytvořeno 6.7.08 */
+google_ad_slot = "4855232301";
+google_ad_width = 120;
+google_ad_height = 240;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</p>
+
+<p><p>Každé API musí (nebo by mělo) ověřit, že klient, který chce nějak přistupovat ke službám, přistupovat může. Že nějaký Lojza nepoleze Pepovi do dat a obráceně.<br /><br />Jak jsme si už řekli, volání vzdáleného API bývá u webových aplikací realizováno (<em>pro někoho možná překvapivě</em>) via HTTP. Jaké jsou možnosti ověření u podobného volání?<br /><br />HTTP coby nestavový protokol nemá sám o sobě možnost, jak jednou ověřit identitu uživatele a dál s ním pracovat jako s důvěryhodným. Používají se proto různé způsoby.<br /><br />Jedna z možností je ta, kterou používá např. XML-RPC API u Blogger.com. Tedy že každé volání předává jako parametr uživatelské jméno a heslo. Což je docela zoufalé řešení a především&nbsp;&ndash; není bezpečné, protože se obojí posílá v každém požadavku, najednou a v otevřené podobě. <em>Samosebou&nbsp;&ndash; je možné použít SSL...</em><br /><br />O ždibíček lepší řešení je HTTP autorizace. To je ten postup, při kterém na vás prohlížeč vyběhne s žádostí o vložení jména a hesla. Vždyť si to <a href="http://www.maly.cz/misc/api3d1.php" target="_blank">zkuste</a>: </p><pre>if(!isset($PHP_AUTH_USER)) {<br />    Header(&#39;WWW-Authenticate: Basic realm=&quot;Chranena oblast&quot;&#39;);<br />    Header(&#39;HTTP/1.0 401 Unauthorized&#39;);<br />    echo &quot;Nezadal jste heslon&quot;;<br />    exit;<br />} else {<br />    echo &quot;Uzivatel: $PHP_AUTH_USER.&lt;br&gt;&quot;;<br />    echo &quot;Heslo: $PHP_AUTH_PW.&lt;br&gt;&quot;;<br />}</pre><br /><br />Je vidět, že PHP skript má v takovém případě k dispozici jméno a heslo v otevřené podobě. Jak ho dostal? A jak se na takovou stránku připojit skriptem? <br /><br /><pre>$fp = fsockopen(&quot;http://server.cz&quot;, 80, $errno, $errstr);<br />if (!$fp) {<br />   echo &quot;$errstr ($errno)&lt;br/&gt;n&quot;;<br />} else {<br />   fputs($fp, &quot;GET /cesta/soubor.html  HTTP/1.1\r\n&quot;);<br />   fputs($fp, &quot;Host: server.cz\r\n&quot;);<br />   fputs($fp, &quot;Authorization: Basic &quot;.<br />        base64_encode(&quot;jmeno:heslo&quot;).&quot;\r\n&quot;);<br />   fputs($fp, &quot;Connection: close\r\n\r\n&quot;);<br />   fwrite($fp, $out);<br />   while (!feof($fp)) {<br />       echo fgets($fp, 128);<br />   }<br />   fclose($fp);<br />}</pre><br /><br />Jméno a heslo se předává v hlavičce HTTP požadavku velmi jednoduchým způsobem&nbsp;&ndash; jako řetězec &quot;<em>jméno (dvojtečka) heslo</em>&quot;, zakódovaný Base64 algoritmem (nejde o žádnou šifru, pouze o způsob, jak převést obecná binární data na řetězec tisknutelných znaků). Zkusil jsem, čistě pro zajímavost, co se stane, když uživatelské jméno obsahuje dvojtečku. Výsledek byl předpokládatelný. :)<br /><br />Existuje možnost, při níž se heslo neposílá v otevřené podobě. Jde o autorizační metodu &quot;<em>Digest</em>&quot;, pro zvídavé <a href="http://www.peej.co.uk/articles/http-auth-with-html-forms.html" target="_blank">odkaz</a>.<br /><br />HTTP autorizace, ať už Basic nebo Digest, bývá používána spolu s REST požadavky.<br /><br /><strong>Jiná metoda</strong> ověřování uživatele je založena na jednorázovém ověření uživatele a vytvoření <em>něčeho jako session</em>&nbsp;&ndash; tedy simulace &quot;stavovosti&quot; u nestavového protokolu. Celá komunikace klienta začíná žádostí o vydání tzv. <strong>tiketu</strong> (<em>ticket</em>). Aplikace si vytvoří záznam o tom, že kdosi požaduje přístup, tento záznam si označí jednoznačným identifikátorem a identifikátor pošle klientovi zpět. Právě ten je oním tiketem, onou &quot;<em>vstupenkou do systému</em>&quot;, bez které jsou ostatní funkce API nedostupné.<br /><br />Pokud klient získá tiket, může ověřit svou totožnost. Lze to udělat metodou &quot;<em>challenge&nbsp;&ndash; response</em>&quot;, tedy takovým postupem, kdy klient dostane od serveru nějaký údaj, udělá s ním předem dohodnutou operaci a zašle jej zpět. Něco jako &quot;<em>autorizace bankovních operací pomocí kódové kalkulačky</em>&quot;. Zde můžeme jako &quot;<em>challenge</em>&quot;, tedy &quot;<em>výzvu</em>&quot;, vzít rovnou tiket. Postup je pak takový, že klient zavolá autorizační funkci API a předá uživatelské jméno (v otevřené podobě) a digest hesla&nbsp;&ndash; např. jako <font face="courier new,courier">md5(md5($heslo).$ticket)</font>&nbsp;&ndash; takto je heslo nezjistitelné, server přesto může ověřit jeho správnost (udělá si stejný digest) a navíc se digest při každém ověření mění. Jakmile je klient ověřen, je brán tiket jako &quot;<em>důvěryhodný</em>&quot; a požadavky s tímto tiketem jsou přijímány. Server si může pro zvýšení bezpečnosti zároveň jako jeden z parametrů tiketu uložit IP adresu a zároveň nastavit expiraci tiketu, např. na 60 sekund od poslední operace. <br /><br />Všechny tyto postupy předpokládají, že klient má k dispozici uživatelovo jméno a heslo, což vyžaduje, aby mu tyto údaje uživatel sdělil. To znamená, že jméno a heslo bude uloženo na potencionálně nedůvěryhodném místě. Proto některé webové služby používají vlastní ověření (můžete to v praxi vidět např. při placení PayPal-em na eBay). Postup je např. následující:<br /><p>&nbsp;</p><ol><li>Uživatel na stránce<strong> www.klient.cz</strong> vyvolá nějakou operaci, která vyžaduje přístup k API na <strong>www.sluzba.cz</strong></li><li>Server <strong>klient.cz</strong> požádá server <strong>sluzba.cz</strong> o tiket pro tohoto uživatele a dostane jej</li><li><strong>klient.cz</strong> přesměruje uživatele na přihlašovací stránku na <strong>sluzba.cz</strong> a předá zároveň obdržený tiket; např. na stránku <em>http://www.sluzba.cz/api/login.php?ticket=xyz123qwerty</em></li><li>Uživatel zadá na oné přihlašovací stránce na <strong>sluzba.cz</strong> svoje jméno a heslo a standardním způsobem se přihlásí</li><li>Login skript na <strong>sluzba.cz</strong> ověří uživatele, údaje si poznamená k danému tiketu a přesměruje uživatele zpět na stránky klienta</li><li><strong>klient.cz</strong> nyní může posílat požadavky na <strong>sluzba.cz</strong> s přiděleným tiketem</li></ol><p><br />Lze použít i jednodušší způsob, kdy je tiket vrácen až po úspěšném ověření na stránkách <em>sluzba.cz</em>. Postup je například následující:</p><ol><li>Uživatel na stránce <strong>www.klient.cz</strong> vyvolá nějakou operaci, která vyžaduje přístup k API na<strong> www.sluzba.cz</strong></li><li>klient.cz přesměruje uživatele na přihlašovací stránku na <strong>sluzba.cz</strong> a předá informaci o tom, kam se má uživatel po přihlášení vrátit, např. <em>http://www.sluzba.cz/api/login.php?callback=www.klient.cz%2Fprihlaseni.php</em></li><li>Uživatel zadá na oné přihlašovací stránce na <strong>sluzba.cz </strong>svoje jméno a heslo a standardním způsobem se přihlásí</li><li><strong>sluzba.cz</strong> vytvoří pro přihlášeného uživatele ticket</li><li>Login stránka na <strong>sluzba.cz</strong> přesměruje uživatele zpět na stránku, zadanou v parametru <em>callback</em> (&quot;zpětné volání&quot;), tedy na <em>http://www.klient.cz/prihlaseni.php</em> a předá ticket jako parametr (např. <em>?ticket=ab7c8d5a4f2cda</em>)</li></ol><p><br />Samozřejmě lze postupy různě kombinovat, fantazii se meze nekladou. </p><p>Příště se dostanu k praktickým ukázkám jednoduchého API a jednoduchého klienta.</p></p>
+
+<div style="text-align:center">
+<script type="text/javascript"><!--
+google_ad_client = "pub-3772893178572611";
+/* 468x60, vytvořeno 15.7.08 */
+google_ad_slot = "3559028762";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+
+
+
+
+
+<p class="more">
+<span class="date">Dne 10.02.2007</span>
+
+</p>
+
+
+
+
+
+<p><a href="http://jdem.cz/tw?text=Zaj%c3%admav%c3%bd+%c4%8dl%c3%a1nek+na+Z%c3%a1pisn%c3%adku%3a+http%3A%2F%2Fwww.misantrop.info%2F482198-api-a-php-dil-treti.html&amp;redir=1">Twittni</a></p>
+
+<p>Přidej do: 
+<a href="http://www.conota.cz/add.php" onclick="x=document;a=encodeURIComponent(x.location.href);t=encodeURIComponent(x.title);d=encodeURIComponent(window.getSelection());setTimeout('x99.focus()',1000);x99=window.open('http://www.conota.cz/add.php?popup=y&g_title='+t+'&g_url='+a+'&g_desc='+d,'Conota','modal=1,status=0,scrollbars=1,toolbar=0,resizable=1,height=550,width=785,left='+(screen.width-785)/2+',top='+(screen.height-550)/2);return false;"><img src="http://www.conota.cz/images/conote.gif" alt="Přidat na Conota"/><a>  <a href="http://linkuj.cz/?id=linkuj&amp;url=http%3A%2F%2Fwww.misantrop.info%2F482198-api-a-php-dil-treti.html&amp;title=API+a+PHP%2C+d%C3%ADl+t%C5%99et%C3%AD"><img src="http://linkuj.cz/img/badge.png" style="border:0" title="Linkuj si !" alt="Linkuj si !" /></a> <a href="http://vybrali.sme.sk/submit.php?url=http%3A%2F%2Fwww.misantrop.info%2F482198-api-a-php-dil-treti.html"><img src="http://blog.sme.sk/blog/3/61630/tlacitko.gif" style="border:0" title="asdf.sk" alt="asdf.sk" /></a>
+
+<a href="http://www.stumbleupon.com/submit?url=http%3A%2F%2Fwww.misantrop.info%2F482198-api-a-php-dil-treti.html&amp;title=API+a+PHP%2C+d%EDl+t%F8et%ED"> <img border=0 src="http://www.bloguje.cz/icon_su.gif" alt="StumbleUpon Toolbar"> Stumble It!</a>
+
+<script type="text/javascript" src="http://w.sharethis.com/widget/?tabs=web%2Cemail&amp;charset=utf-8&amp;style=rotate&amp;publisher=99a6f76f-7727-4c7b-a906-b91f57f8a706"></script></p>
+
+<script type="text/javascript" src="http://feedjit.com/coFilter/?bc=FFFFFF&amp;tc=008000&amp;brd1=336699&amp;lnk=008000&amp;hc=336699&amp;ww=500"></script>
+
+
+<h2 id="n_koments">Komentáře</h2>
+
+
+
+<p class="comment">
+<strong><a name="cmt_1">[1]</a> </strong> (Henry  ) 10.02.2007, 13:12:51&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1061810">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1061810">D</a>]<br />
+
+Proc tenhle serial neni na interval.cz/root.cz? :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_2">[2]</a> </strong> (Arthur Dent  ) 10.02.2007, 13:38:01&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1061858">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1061858">D</a>]<br />
+
+<a href="#cmt_1">[1]</a> Protože ho nechtěli? Ne, vlastně ne - já jim ho ani nenabídnul, tím to je! :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_3">[3]</a> </strong> (zirafka - <a href="mailto:zirafka@zirafka.cz">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fblog.zirafka.cz">WWW</a>) 10.02.2007, 16:20:20&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1062066">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1062066">D</a>]<br />
+
+Je jedna vec, ktera me na web2.0 (at uz tento znamena cokoliv) desi -- navrat do stredoveku v oblasti bezpecnosti komunikace. Takze diky za serial a obzvlast diky za tenhle clanek!
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_4">[4]</a> </strong> (zirafka  ) 10.02.2007, 16:21:29&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1062069">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1062069">D</a>]<br />
+
+"tento termin" jsem chtela napsat. Sorry.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_5">[5]</a> </strong> (rony  ) 10.02.2007, 17:21:49&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1062129">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1062129">D</a>]<br />
+
+<a href="#cmt_1">[1]</a> <a href="#cmt_2">[2]</a> - pretože tam by sa pýtali, prečo je ten seriál tam :-)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_6">[6]</a> </strong> (rony  ) 10.02.2007, 17:23:41&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1062131">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1062131">D</a>]<br />
+
+<a href="#cmt_3">[3]</a> a to po stredoveku je ako komunikacne bezpecne? skus to trosku rozpisat, asi som nerozumel tvojmu komentaru.
+<br />
+<br />popisovane praktiky su pouzivane aj bez nalepky Web 2.0 a existuju separatne od tohto pojmu. opravte ma ak som neporozumel zirafke
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_7">[7]</a> </strong> (zirafka - <a href="mailto:zirafka@zirafka.cz">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fblog.zirafka.cz">WWW</a>) 10.02.2007, 18:20:21&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1062202">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1062202">D</a>]<br />
+
+<a href="#cmt_6">[6]</a> Sorry, asi jsem se vyjadrila ponekud nepochopitelne. 
+<br />
+<br />Jen jsem tim chtela rict, ze mam pocit, ze plati neprima umera: cim vic jsme Web2.0, tim mene se dbame na bezpecnost.
+<br />
+<br />Problem vidim v tom, ze dnes se zabezpecenim posilanych informaci nezabyva daleko mene, nez drive. Duvod je zrejme v tom, ze drive byli aplikace sdilejici informace po internetu vrcholem programatorskeho umeni. Se slavnym webem2.0 je programovani webovych aplikaci pristupne i programatorum, kterym bezpecnost vymeny dat (tim myslim integrita, autenticita, nepopiratelnost a duvernost) zhola nic nerika. Takze panbuh zaplat za kazdy clanek, ktery problematiku bezpecnosti dnesnim "cool programatorum" priblizi. 
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_8">[8]</a> </strong> (Arthur Dent  ) 10.02.2007, 18:27:26&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1062216">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1062216">D</a>]<br />
+
+<a href="#cmt_7">[7]</a> Nechceš, doufám, aby došlo i na taková slova jako třeba "Diffie" nebo "Hellman", že ne? :)
+<br />
+<br />Já osobně bych byl vděčen i za méně bezpečné české webové služby, ale ony nejsou ani ty... Asi tu ani tihle kewl programátoři nejsou. Víš snad o nějaké české webové službě, která nabízí API (nechme stranou XML-RPC na Bloguje a na Notýsku a RESTlike API na JAGGu)?
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_9">[9]</a> </strong> (rony  ) 10.02.2007, 18:44:43&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1062242">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1062242">D</a>]<br />
+
+<a href="#cmt_7">[7]</a> a co sa da pokazit tym, pokial API vytvori programator z tej prvej skupiny? Alebo inak, ak je API z projektu "web2.0" pomocou tu popisovanych metod, ako sa bezpecnostne odlisuje od projektov, ktore su budovane podla tych istych metod (su aj nejake ine?).
+<br />
+<br />pokial je ale zmyslom "vymeny" dat u danej aplikacie, ze uz data nevklada obmedzena (doslova aj v prenesenom vyzname) skupina "nadautorov", potom dnes mas mozno k dispozicii aplikacie, ktore sice nebezia na "tvojom zeleze" ale mozes si do nich davat co uznas za vhodne a pouzivat ich na co ty potrebuje.
+<br />
+<br />z jedneho pohladu je naozaj tristne pozerat sa ako do youtube tecie kvantum bezcenneho materialu ale z pohladu cloveka, ktory tam ma konto a plne prava tam cosi vkladat je to neocenitelna vec, pretoze sa nemusel zaoberat vecami typu: kua, kam to vsetko narvem, ako to naprogramujem, ako to skonfigurujem, ako to zabezpecim.
+<br />
+<br />z dalsieho pohladu je pre mna ako uzivatela youtube bezpecnost danych dat dolezita len natolko nakolko si cenim data do neho vlozene. uz z logickych dovodov do youtube nebudem vkladat material, ktory by niekto mohol vidiet (je to proti zmyslu ukladania dat tam) a takisto ak ide o extra citlive data, ktore chcem spristupnit inym sposobom ako verejne, tak tam inu ako klasicku cestu nemas ale musis do bezpecnosti daleko viac investovat.
+<br />
+<br />osobne si myslim, ze sa neda jednoznacne oddelit, ze "dnesne web20 projekty" musia byt zakonite menej bezpecne atd. je to len zalezitost toho, do akej miery chces aby take boli.
+<br />
+<br />cize ak youtube nezalezi na identite pouzivatela, tak naco ju bude vyzadovat. ak gmailu nezalezi na tom, ci si mazes maily kvoli kapacite, tak proste da nezaplnitelnu schranku kazdemu. ak si digg mysli, ze naozaj kazdy tam moze umiestnit odkaz a postavi na tom zmysel celej aplikacie, tak budiz. preto im v principe nemusi zalezat, ci na to konto chodi Jozko Mrkvicka ako sa predstavil ale to, co tam vklada. diggu na dovernosti vkladanych dat nezalezi pretoze v principe mu nezalezi ani na identite tych, co mu plnia obsah :-)
+<br />
+<br />to je jediny rozdiel aky ja v tom vidim ale samozrejme to nie je vsetko.
+<br />
+<br />cize ak ty spajas "dnes su programeri tych komunitnych projektov bezpecnostni luzri" tak nemas pravdu. iste - bezpecnost je hlavne zalezitost skusenosti a projekty tinezerov bez nich su take ake su.
+<br />
+<br />pred 10 rokmi nebol prakticky nikto, kto by na web vkladal obsah, dnes sa to uz prelamuje a TEN kto chce ma moznost omnoho lahsie. je v tom bordel ale - bordel to bol vzdy :-)
+<br />
+<br />ked si spomeniem na rozne bezpecnostne incidenty vzdy je to len problem skusenosti a vidim jeden efekt dneska:
+<br />
+<br />- volakedy si chcel publikovat tak si znasilnila nejaky nukoidny balik a ako tak rozbehala, so vsetkymi chybami ake sa len dali spachat :-)
+<br />- dnes sa uz mozes na taketo veci vykaslat a proste si najdes webovy projekt, ktory ti tvoju potrebu uspokoji.
+<br />
+<br />Takze konecne sa ludkovia, ktori iba chcu web pouzit ako nastroj, nezaoberaju aj programovanim - cize ak chcem pisat weblog, nemusim naprogramovat ani riadok. este pred par rokmi to znamenalo nutnost aspon si cosi nainstalovat.
+<br />
+<br />bezpecnost sa neda chapat absolutne - len vzhladom na to v akom pomere je strata alebo kompromitacia dat bolestiva sa moze vybudovat uroven bezpecnosti aplikacie.
+<br />
+<br />napr. je nezmysel ukladat si jogurt pred sestrou do trezora, ak ho objavi a zje, tak jeho strata neboli, pretoze na svete je kopec jeho kopii :-)
+<br />
+<br />neviem, ci som to povedal jasne: nemozno ziadat od kazdej aplikacie bezpecnost na urovni ochrany prezidenta U.S. a fakt, ze existuju aplikacie, kde ani zakladna bezpecnost neexistuje, je proste jav, ktory nema nic spolocne s Web 2.0 ale skor s tym kto ich robi. A taki tu su neustale, pretoze dorastaju stale novi.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_10">[10]</a> </strong> (rony  ) 10.02.2007, 18:54:07&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1062254">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1062254">D</a>]<br />
+
+<a href="#cmt_8">[8]</a> Arthur, ja si myslim, ze vacsina projektov co sa patlaju tu je robena ako vonkajsi efekt - podoba sa to tym vzorom s vonku. Vidis to aj na komentari <a href="#cmt_3">[3]</a> z druheho dielu - on ani netusi, ze Youtube ma nejake API.
+<br />
+<br />proste vidia vonkajsi obal, prenesu do svojho projektu tu vonkajsiu interaktivnu cast a tym to podla nich skoncilo, pretoze naozaj je pravda, ze API vyuzije par jednotlivcov. Lenze prave nimi zacina uspech aplikacie - ak niekto spravi nejaku "srandicku" postavenu na ich aplikacii, ktora ju spropaguje. Ak napisem nejake "blbinky" sam, ktore si trebars ludia posielaju mejlami, vkladaju do diskusnych for, na svoje weby - to do znacnej miery vybuduje vztah ludi k aplikacii a uz sa jej neda tak lahko zbavit. To je priklad YouTube - akonahle si vlozim video do clanku uz som neoddelitelne zavisly na nom.
+<br />
+<br />Dnes si mi pripomenul box.net - je to ta ista schema - vidim, ze si mozem dat blbinku na stranku, ktora ma prakticky vyznam - usetrim miesto na vlastnom hostingu ale zaroven sa mozu tie data na nom ulozene tvarit akoze ich mam na svojom vlastnom webe. A uz som v pasci :-)
+<br />
+<br />To chyba cz/sk projektom - vacsinou sa snazia vybudovat si navstevnost takymi klasickymi prostriedkami - propagaciou v silnom mediu resp. nahananim (vhananim) navstevnosti. A ked to navstevuje kvantum ludi, tak je to vlastne uspesne :-)
+<br />
+<br />pritom znacna cast navstev youtube je podla mojho nazoru sposobena tym, ze tisicky webov maju video z youtube "u seba". A ked to vidim ja na inom webe, tak nebudem premyslat ci existuje ina moznost najma ak zistim, ze to iste urobit ma stoji Copy Paste - a ze ma v tom ten web posmeluje "Urob to!".
+<br />
+<br />Ak nieco vycitam nasim projektom tak je to to ostre ohranicenie, oplotenie sa typu "som akoze cool projekt" ale vy mi iba vkladajte data a chodievajte mi sem na moj web priamo - ziadne ine cesty nechcem. A mozno ani neviem, ze by mali byt uzitocne.
+<br />
+<br />Odhliadnuc od toho, ze implementovat API je mozno nad sily cloveka, ktory doma v detskej konecne pochopil sablonovy system nejakeho sw balika a premaloval v nom farby plus lokalizoval ho :-)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_11">[11]</a> </strong> (Arthur Dent  ) 10.02.2007, 19:03:30&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1062272">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1062272">D</a>]<br />
+
+Radši zasáhnu dřív, než předvedete ještě nějaké "jáovozetyokoze" číslo :)
+<br />
+<br />Rony, máš pravdu v tom, že problém bezpečnosti není otázka Web2.0, ale programátorů jako takových. A po pravdě - na věku nezáleží, spíš na zkušenostech a míře pokory. :) Čím snazší bude vývoj aplikací, tím větší lemry se do toho budou pouštět. Stejně jako čím jednodušší je práce s počítači, tím jednodušší lidé s nimi pracují :)
+<br />
+<br />Jenže zatímco před pěti lety lemry spáchaly tak maximálně osobní stránku, tak dnes se pustí do databázové aplikace (SQLinjection je moc pěkná věc), nazvou ji "XXXXr(beta)" - a voila! je tu další děravá tzvWeb2.0 aplikace.
+<br />
+<br />Řešení je, milá Žirafko, prosté: Nevěřit jim. Nechat je, ať se za své nezabezpečené Webdvanuly navzájem poplácávají a používat nějaké solidní aplikace, které svou invenčnost nevyčerpaly zrcadleným logem a hbězdičkou s nápisem BETA :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_12">[12]</a> </strong> (Arthur Dent  ) 10.02.2007, 19:13:22&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1062289">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1062289">D</a>]<br />
+
+<a href="#cmt_10">[10]</a> Ano, to je přesně ten problém: "To je MOJE! MOJE! MOJE! stránka". Jak jsem napsal už v prvním díle - každý si to patlá sám, na datech svých uživatelů sedí a jinak než přes web se k nim nesmí! A nejlépe ještě z titulní stránky! 
+<br />
+<br />A když už je někdo, kdo nabízí nějakou spolupráci, tak zase má podmínky jak stehno: Musí to být u klienta odkazované z titulní stránky bannerem min. 120x120px, v klientském systému musí být název té služby TAKOVEJMAHLE písmenama v horní třetině stránky a nesmí tam bejt jiná vložená služba a ... atd.
+<br />
+<br />Asi se fakticky našňupnu a příští tejden udělám webovou službu, kterou jsem si promýšlel na dovolené. Ať se to tu konečně hne, herdek. ;)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_13">[13]</a> </strong> (zirafka - <a href="mailto:zirafka@zirafka.cz">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fblog.zirafka.cz">WWW</a>) 10.02.2007, 19:32:54&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1062316">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1062316">D</a>]<br />
+
+<a href="#cmt_8">[8]</a> "Diffie" a "Hellman"? Maminka rikala, ze takova slova slusna divka nerika. Ale myslim, ze kdyby prislo na vec, tak bych nemela problem je pouzit (-;
+<br />
+<br />Ja osobne bych byla vdecna i za mene webove ceske bezpecne sluzby, ale ony nejsou ani ty... (-; 
+<br />Jestli ono nakonec nebude problem v tom "ceske". A nemyslim si ze by byl problem v tom, ze tu nejsou prgramatori, ale mozna spis tem malo, co tu jsou, stoji za zvazeni, jestli ma cenu delat neco jen pro nas maly cesky rybnicek.
+<br />
+<br />Me se cele slavne web2.0 nelibi prave kvuli bezpecnosti a dovolila bych si zde lehce zaprorokovat, ze prave na bezpecnost web2.0 jednou dojede: 
+<br />1, spatne zabezpeceny prenos dat (moznost odchytavat hesla atd..)
+<br />2, web2.0 znamena, ze uzivatel ma svoje data rozstrkana po vsech moznych sluzbach, z nichz zadna mu nezaruci, ze o ne neprijde, pripadne, ze se nedostanou do rukou nekomu nepovolanemu.
+<br />3, vyuzivani sluzeb web2.0 pres API znamena, ze nemam zadnou kontrolu nad tim, jestli externi sluzba, kterou vyuzivam, bude vzdy fungovat tak, jak to ocekavam. Tzn. ztrata kontroly nad obsahem a nekdy mozna i nad funkcnosti.
+<br />
+<br />Priklad: vyuzivam XML-RPC na texy.info (ze by dalsi ceska webova sluzba s API (-;) Ale pouzivam ho z nouze (pro aplikace v Pyhtonu). Nikdy totiz nevim, jestli treba dgx nerupne v bedne a nebude misto naformatovaneho textu posilat neco uplne jineho.
+<br />
+<br />(koukam se, ze nez ja napisu par radku textu, tak uz je tu nekolik novych sahodouhych komentaru. Diskuse pres komentare asi neni nic pro me. Zkusim o tom napsat clanek a kdyztak ho linknu.)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_14">[14]</a> Díky</strong> (David V.  ) 10.02.2007, 20:04:49&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1062359">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1062359">D</a>]<br />
+
+za pěkný seriál o WS - je to zajímavé čtení.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_15">[15]</a> </strong> (rony  ) 10.02.2007, 22:53:42&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1062570">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1062570">D</a>]<br />
+
+<a href="#cmt_13">[13]</a> mne len nejde dohlavy, ze si davas ekvivalenciu:
+<br />
+<br />web20 = nezabezpecene
+<br />xmlrpc = nezabezpecene
+<br />
+<br />priklad s tym, ze ti nejake API prestane davat odpovede... no v tom je to jadro pudla: ked ti ich prestane davat, a tvoja aplikacia s tym nepocita, tak kde je chyba? no v tom, ze si sa na tuto eventualitu nepripravila. a problem je nie v tom, ze poskytovatel cez API "zblbol" a odletel na Bahamy ale v tvojej nezabezpecenej aplikacii :-) lebo nemas plan B :-)
+<br />
+<br />ale chcem ta naozaj odviest od toho znacne zjednoduseneho nazoru, ze ak je to API ci WEB20 tak je to urcite zle zabezpecene.
+<br />
+<br />Ak by to bolo tak, potom by sme nemohli hovorit roky o vobec nejakej interoperabilite, middleware a cojaviem akych pojmoch. Koniec koncov vsetky standardy, formaty, dohody funguju presne na tom. Funguju, ked vsetky zucastnene strany maju zaujem na spolupraci. A to nie je hlavny znak web20 ale celeho vyvoja softwaru ako takeho!
+<br />
+<br />priklad: keby neprisla revolucia, tak este dlhe roky po 1987 sa zivim pomerne uspesne ako programator v strojovom kode pre PMD85. Moj posledny program pre ten stroj mal po skompilovani viac 15 kilobajtov (polovica operacnej RAM). Keby po revolucii sa sem nanasypali PCcka, tak sa este dlhsie uzivim ako programator aplikacii pre ZX Spectrum. Skoncil som aplikaciou, ktora bola distribuovana na 4!!! diskoch a nebola to obvykla "hra" alebo "textovka".
+<br />
+<br />Keby neprisli Windows, tak este dlho predavam moj program pre Autoskoly, ktory som v grafickom mode naprogramoval kompletne od zakladu all inclusive :-)
+<br />
+<br />Keby neprisiel internet, tak este dlhsie sa bavime softwarmi postavenymi nad technologiou Fido a ti poviem, ze to bola celkom zabava nad nou robit seriozne aplikacie pre prepojenie pobociek, vymenu dat...
+<br />
+<br />Vzdy v kazdom obdobi hrala rolu bezpecnost a podobne otazky. A kazdou jednou z nich som sa ucil na cudzich a svojich chybach. A cim dalej viac ked mam blby napad nieco "urobit" tak prave bezpecnost ma vrati na zem.
+<br />
+<br />Ale nedokazem tvrdit, ze "prave nejaky vagny pojem ako web20 alebo xmlrpc" su nebezpecnejsie ako nieco ine, trebars "klasicke uzavrete webaplikacie". Najcastejsie bezpecnostne incidenty? Nezalohovanie, sql injection, xss, slabe hesla, spristupnene casti projektu, ktore pristupne byt nemali, chyba operatora, MIM... to vsetko sa tyka rovnako vsetkych projektov. Meni sa len cena aku za kompromitaciu zaplatis a aku si ochotna este zniest.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_16">[16]</a> </strong> (zirafka - <a href="mailto:zirafka@zirafka.cz">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fblog.zirafka.cz">WWW</a>) 11.02.2007, 01:52:17&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1062721">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1062721">D</a>]<br />
+
+<a href="#cmt_18">[18]</a> "ale chcem ta naozaj odviest od toho znacne zjednoduseneho nazoru, ze ak
+<br />je to API ci WEB20 tak je to urcite zle zabezpecene."
+<br />
+<br />rony, jsem rada, ze priznas o co ti jde. I kdyz nevim, cim jsem si zaslouzila z Tve
+<br />strany takovou peci o moje nazory ((-;
+<br />
+<br />Prvne te musim zklamat: mezi web2.0, xmlrpc a sluvko "nebezpecne" v zadnem
+<br />pripade nakladu rovnitko. Jen vidim bezpecnost jako slabe misto masoveho
+<br />rozsireni techto vymozenosti. Bezpecnost bude pravdepodobne misto, kterym zacne
+<br />unikat vzduch ze zplaskavajici bubliny web2.0. Ale o tom si kdyztak povime casem.
+<br />(-;
+<br />
+<br />Dovedu dal priklad s API: Mira nakolik budu pripravena na "selhani" na druhe
+<br />strane odpovida mire toho, jak moc si vlastne budu muset napsat aplikaci znovu
+<br />sama. Vezmu zase ten priklad s Texy!: kdyz budu pocitat s tim, ze server muze
+<br />neodpovidat, pripravim si nejaky chybovy stav, odlozim zpracovani na pozdeji atd.
+<br />Neni problem. Ale co budu delat, kdyz dgx rupne v bedne, nebo mu nekdo hackne
+<br />server a zacne mi treba misto formatovaneho textu posilat url na pornoservery?
+<br />Mam mit plan B a pocitat s tim, ze se muze stat cokoliv? To by ale znamenalo
+<br />kontrolovat kazdou odpoved do te miry, ze uz se mi vic vyplati formatovani
+<br />delat na svem a ne vyuzivat webovou sluzbu. Analogicky priklad si
+<br />vymyslim na libovolnou jinou sluzbu.
+<br />
+<br />Proc si tedy myslim, ze "klasicke uzavrene webove aplikace", prestoze trpi
+<br />bezpecnostnimi chybami stejne jako ty "moderni otevrene", jsou bezpecnejsi?
+<br />Hlavne proto, ze za ne nekdo nese zodpovednost (placene sluzby), nebo existuje
+<br />povedomi o jejich nespolehlivosti (free sluzby). Zkratka bud existuje nekdo,
+<br />kdo je zodpovedny v pripade, ze dojde k nejakemu bezpecnostnimu incidentu, nebo
+<br />vim, ze na dotycnou sluzbu nemohu spolehat a ridim se podle toho.
+<br />U web2.0 sluzeb neni poradne definovana zodpovednost, takze chybi tlak, ktery
+<br />by nutil provozovatele techto sluzeb dbat na bezpecnost. Stejne tak neni tlak
+<br />na vyvojare, aby vyvijeli bezpecne aplikace. To je cele.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_17">[17]</a> </strong> (Arthur Dent  ) 11.02.2007, 06:34:15&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1062761">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1062761">D</a>]<br />
+
+<a href="#cmt_19">[19]</a> To je prosté. DGX nabízí službu, definoval API a je tu předpoklad, že za normálních podmínek (!) bude fungovat tak jak očekáváš. Pokud tomu nevěříš, tak to nepoužiješ, pokud tomu věříš, tak to použiješ, vždyť je to prosté. Za mezních podmínek (tvůrce zešílí, kdosi mu hackne server) není funkčnost zajištěna - ale to není nikde! Vzpomeň si na to, jak celý den měla česká mutace Google na tlačítku napsáno cosi o pánských přirozeních :) Ale to není BEZPEČNOSTNÍ problém, ale problém důvěry. Já taky věřím, že můj AV software kontroluje soubory. A co když jeho tvůrce zešílí a vydá záplatu, která mi přemaže disk???
+<br />
+<br />To co tu říkáš není nijak zásadní problém "W2.0", ať už je Web2.0 cokoli. :) Je to problém SW a SW služeb jako takových.
+<br />
+<br />"U web2.0 sluzeb neni poradne definovana zodpovednost"? Položím kontradotaz: Je to problém SW veřejných služeb obecně nebo až "web2.0" služeb, ať už je web2.0 cokoli? Pokud ano, tak proč? Kde vidíš ten zásadní rozdíl z hlediska zodpovědnosti mezi Web1 a Web2 službami? Já prošel v posledních týdnech mnoho Web2.0 služeb a na všech jsem se setkal s tím, že je provozuje VELMI KONKRÉTNÍ provozovatel. ;) Mimochodem, jak placené vs free služby souvisí s Web2.0? Chceš říct, že W2.0 služby jsou free, ale tají to, takže ty nemáš "povědomí o jejich nespolehlivosti"? ;)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_18">[18]</a> </strong> (zirafka  ) 11.02.2007, 17:05:00&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1063361">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1063361">D</a>]<br />
+
+<a href="#cmt_20">[20]</a> Podle me problem duvery JE zaroven problem bezpecnosti. V pripade, ze vyuzivam nejakou sluzbu, snazim se zajistit jeji bezpecnost tim, ze mam dohodu s jejim provozovatelem. Neco za neco. Typicky penize za zaruku, ze sluzba bude fungovat. Kdyz nebude fungovat, mam dohodou zajistene nejake odskodne. Pokud proste jde o neco duleziteho, chci mit jistotu (a moznost si za tuto jistotu zaplatit). Ne pouze duverovat.
+<br />
+<br />Je pravda, ze u klasickeho SW mnohdy taky nemam moznost zaplatit si za nejakou garanci (zreknuti se zodpovednosti je v oblasti SW bohuzel pravidlem), ale pokud jde o neco duleziteho, existuji u klasickeho SW postupy, kterymi mohu ziskat urcitou garanci. Platim si spravce site, ktery ma zodpovednost za to, ze se mi do pocitace nedostane AV program, ktery by mi naformatoval disk, platim si za spolehlivost hostingu, mailserveru...
+<br />
+<br />Web2.0-at-uz-je-to-cokoliv (dale jen web2.0) sluzby (aspon tak, jak existuji ted) mi moznost zaplatit si za garantovany pristup nedavaji. Jejich zabezpeceni, dostupnost atd. zavisi jen ctizadosti jejich provozovatele. A to je z meho pohledu spatne.
+<br />
+<br />Rozdil teda vidim v tomhle. Mozna, ze neni az tak markantni, ale stejne podle meho nazoru zpusobuje to, ze web2.0 je mozne vyuzivat jen na zabavu a ruzne blbustky, ale ne tam, kde potrebuju mit nejakou jistotu. Tohle si ale spousta lidi imho neuvedomuje. Staci se podivat jak lide nekriticky duveruji sluzbam Google. Takze podle me plati posledni veta, kterou jsi napsal -- at uz to zni jakkoliv absurdne.
+<br />
+<br />Jeste jedna vec me napada v souvislosti s web2.0 API: Na jedne strane by sis pral, aby co nejvice webovych sluzeb nabizelo verejne pristupne API a pristup k nemu nebyl pokud mozno nicim podminen. Na druhe strane urcite vis, kolik se najde debilnich programatoru, kteri budou toto API vyuzivat nespravne, pretezovat atd. (Staci se podivat na to, jak libovolne ctecky, webove i newebove, vice i mene web2.0 stahuji RSSka.) Jak myslis, ze se bude resit tohle? Budou se API zdokonalovat tak, aby byli odolne proti "debilnim pristupum",  nebo se provozovatele webu na vsechna API vykaslou, stahnou se zase k sobe na svuj pisecek a web2.0 budou realizovat zrcadlovymi efekty ve photoshopu?
+<br />
+<br />Rada bych verila, ze to prvni, ale obavam se, ze pravdou se stane spis to druhe.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_19">[19]</a> </strong> (Arthur Dent  ) 11.02.2007, 17:35:14&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1063398">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1063398">D</a>]<br />
+
+<a href="#cmt_18">[18]</a> K tomu poslednímu odstavci: Napíšu o tom v dalším díle. Řešením je "API Licence Key". :) Zatímco "stahování RSS" je dostupné kdekomu (a taky to podle toho vypadá), tak na využití nějakých služeb via API je dost často potřeba, aby se vývojář zaregistroval a požádal o licenci. A když dělá kraviny, tak je mu zablokován přístup. S tímto postupem vřele souhlasím a líbí se mi. Služba je tak veřejně dostupná, ale není "úplně zadarmo" a "anonymní".
+<br />
+<br />"moznost zaplatit si za garantovany pristup" je iluze. U placených služeb si neplatíš žádnou garanci jejich provozuschopnosti, maximálně tak zdání garance. Ve skutečnosti si platíš za to, že máš pocit, že se o to někdo stará líp než kdyby sis neplatila (pche!) a za to, že když se něco stane, tak máš k dispozici telefonní číslo, na kterém můžeš seřvat člověka, který za to nemůže. Skutečný význam placené služby je ten, že dovolí jejímu provozovateli naddimenzovat železo a omezí přístup pouze na ty uživatele, kteří tu službu opravdu potřebují. (Analogie např. s hostingem).
+<br />
+<br />Já tvé tvrzení otočím: Z technického hlediska není podstatný rozdíl mezi placenými a free službami. Jen u těch placených existuje (mylné) přesvědčení, že jsou "nějak" garantované, když jsou placené. ;)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_20">[20]</a> </strong> (zirafka - <a href="mailto:zirafka@zirafka.cz">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fblog.zirafka.cz">WWW</a>) 11.02.2007, 19:03:34&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1063552">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1063552">D</a>]<br />
+
+<a href="#cmt_19">[19]</a> Temi placenymi sluzbami myslim sluzby, kde mam skutecne ve smlouve zenesene jake povinnosti provozovatel ma. Ne takove sluzby, kde je poplatek jen urcity "prispevek na hardware a vyvoj". Ale uznavam, ze takovych sluzeb moc neni...
+<br />
+<br />No kazdopadne se velmi tesim na dalsi dil serialu (-:
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_21">[21]</a> </strong> (Arthur Dent  ) 11.02.2007, 19:40:06&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1063599">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1063599">D</a>]<br />
+
+<a href="#cmt_20">[20]</a> Můžeš mi říct, jakou webovou (!) placenou službu máš na mysli? Každopádně abychom se zase vrátili do původní linie vyprávění: 
+<br />
+<br />1. "zdarma" neznamená "nezabezpečené" a "placené" neznamená "zabezpečené" (a už vůbec ne bezpečné). Viděl jsem zvnitřku dost "placených" služeb na to, abych tomuhle věřil, a to i v záchvatu optimismu.
+<br />
+<br />2. Samosebou si i za webové služby, i za ty dvanula, můžeš zaplatit. Otázka je, zda se tím stanou "jistějšími".
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_22">[22]</a> </strong> (zirafka - <a href="mailto:zirafka@zirafka.cz">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fblog.zirafka.cz">WWW</a>) 11.02.2007, 23:35:27&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1063944">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1063944">D</a>]<br />
+
+<a href="#cmt_21">[21]</a> placene webove sluzby, ktere mam na mysli... hmmm... no nejake komercni IS, sluzby medialnich agentur... Ale fakt je, ze jsem mela na mysli hlavne ten hosting, ktery neni zrovna dvakrat webova sluzba. 
+<br />Jenomze prave hosting je pro web1 klicovy.
+<br />
+<br />Udelam maly ukrok stranou a zkusim jeste jednou vysvetlit, kde vidim ten rozdil mezi zabezpecenosti/zodpovednosti/garantovanosti web1 a web2.0 sluzeb: 
+<br />web1 podle me funguje takhle: kdyz chci mit garantovany a zabezpeceny webmail, forum, eshop... sezenu si garantovany hosting (verim v jejich existenci) a sezenu si admina, ktery bude zodpovedny za to, ze to pojede. 
+<br />web2.0: nepotrebuju hosting, svuj software a admina, ktery se mi o nej stara. Jen vyuzivam sluzeb nekoho jineho. Ty sluzby jsou daleko vymakanejsi, nez ty, ktere mam moznost si udelat u sebe na hostingu, mam je temer, nebo uplne zadarmo, ale na druhou stranu proste namam zadnou garanci, ze zitra budou fungovat stejne jako dnes.
+<br />
+<br />Co se tyka faktu, ze zabezpecenost a bezpecnost sluzeb "zdarma" a "placenych" se nejak vyrazne nelisi a to nezavisle na tom, jestli jsou 2.0 nebo ne, tak to s tebou. souhlasim. Jak jsem psala driv -- placenymi sluzbami jsem myslela vyhradne ty, kde mas i nejakou smlouvu, ktera provozovatele zavazuje. A takoveto web2.0 alternativy k sluzbam, ktere si sam budes provozovat na svem hostingu (alespon zatim) neexistuji.
+<br />
+<br />
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_23">[23]</a> </strong> (Arthur Dent  ) 12.02.2007, 05:56:11&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1064053">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1064053">D</a>]<br />
+
+<a href="#cmt_22">[22]</a> Už si rozumíme :)
+<br />
+<br />Po pravdě řečeno jsem přesvědčen, že i u toho hostingu se ti může nakrásně stát, že se jednoho dne ráno probudíš a zjistíš, že weby nejsou, hostingová firma neexistuje a majitel nezvedá telefon. Smlouva nesmlouva. A představ si, že jsi v situaci, že ty weby provozuješ pro někoho třetího a s ním jsi taky uzavřela smlouvu. Pak pán Bú s tebou!
+<br />
+<br />Ale prozradím ti jeden špinavý trik2.0: Služby se snaží mít co nejvíc uživatelů. Proto nabízejí své funkce bezplatně. V takové situaci je příliš rizik na to, aby si provozovatel lajsnul cokoli zaručit. Pokud je ale cti dbalý, chová se jako by zaručil. Co tím chci říct? Inu to, že ztráta dat v důsledku zešílení admina je stejně pravděpodobná jak u placené, tak u neplacené služby, a že spoléhat se na to, že "když si platím, tak jsou data v bezpečí a je zaručeno nějaké chování" je naivita hraničící s indolencí. Chceš-li mít v bezpečí svá důležitá data, ulož si je na několik médií s různým typem záznamu, udělej si z nich balíček a odnes ho do trezoru banky. Když si uděláš takových balíčků víc a rozmístíš je do různých bank, budou data opravdu skoro naprosto v bezpečí. ;)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_24">[24]</a> </strong> (dgx  - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.dgx.cz%2Ftrine">WWW</a>) 12.02.2007, 08:06:14&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1064097">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1064097">D</a>]<br />
+
+> zirafka:
+<br />
+<br />Jak tak čtu o zárukách ze strany provozovatele nebo hostéra, Žirafko, pokud byste chtěli jakožto budoucí hostéři něco podobného také nabízet, pak ani sekundu neváhej mezi fyzickou osobou a společností s ručením omezeným. Jinak si zaděláš na nepředstavitelné životní průs..blémy.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_25">[25]</a> </strong> (zirafka  ) 12.02.2007, 20:08:21&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1065243">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1065243">D</a>]<br />
+
+<a href="#cmt_23">[23]</a> To jsem rada (-: 
+<br />
+<br />Ano. To, co popisujes se muze stat. Jiste nakonec neni nic. I ten balicek s daty v nekolika bankach mi bude na nic, kdyz se tu treba zacne stavet intergalakticka dalnice. Ale i tak si porad myslim, ze to, co popisujes je mene pravdepodobne, nez ze napriklad dgx zesili (-; 
+<br />
+<br />Sice nevim, co znamena slovo indolentni, ale nemyslim si, ze bych tvrdila neco jineho nez ty. Zpoplatneni webovych2.0 sluzeb funguje vetsinou tim stylem, ze admin ma pocit, ze by si za praci kterou dela, neco zaslouzil, uvedomely uzivatel zase ma pocit, ze by mohl neco prispet, nejak vyjadrit vdecnost za to, ze sluzba existuje. Tim mu vznika zaruka asi takova, jako zaruka trvaleho zdravi, kdyz vykonam pout do Lurd.
+<br />
+<br /><a href="#cmt_24">[24]</a> 2dgx: Achjo. Tak to jsem zase neco prosvihla. Dnes jsem si byla zaridit zivnostak. S temi zarukami na hostingu opravdu pocitam a mozna jsem naivni (nebo mozna i ta vec s tou indulonou), ale za spolehlivost jsem fakt ochotna rucit zivotem. Akorat, ze s tim zivnostakem to tak asi bude skoro doslova, ze?! No uvidime. Do roka a do dne bude srocka. Pokud se toho dozijeme ((-:
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_26">[26]</a> </strong> (dgx  - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.dgx.cz%2Ftrine">WWW</a>) 13.02.2007, 07:19:15&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1065670">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1065670">D</a>]<br />
+
+<a href="#cmt_24">[24]</a> sorry za OT, zkusím stručně: všichni známí nebo rodinní příslušníci, kteří začali před lety podnikat na živ. list, skončili s exekucemi na veškerý majetek a dodnes se hrabou na dně. Bez výjimky! Vážně to přehodnoť, hlavně si uvědom, že nepodnikáš v normálním demokratickém a právním státě, ale v absurdistánu.
+<br />
+<br />
+
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+</div><!-- konec pole -->
+
+
+
+<div id="sidebar">
+
+<h2 id="n_rubriky">Rubriky</h2>
+<ul id="rubriky">
+<li><a href="tema-1-bavim-se-na-vas-ucet.html">Bavím se na váš účet</a></li><li><a href="tema-2-nemam-vas-rad.html">Nemám vás rád</a></li><li><a href="tema-3-pohrdani.html">Pohrdání</a></li><li><a href="tema-4-vase-bludy-na-moji-hlavu.html">Vaše bludy na moji hlavu</a></li><li><a href="tema-5-mym-analfabetum.html">Mým analfabetům...</a></li><li><a href="tema-6-co-me-bavi.html">Co mě baví?</a></li><li><a href="tema-7-to-je-nejaka-hudba-tohleto.html">To je nějaká hudba, tohleto?</a></li><li><a href="tema-8-kdo-umi.html">Kdo umí...</a></li><li><a href="tema-9-mene-kecu-vice-prace.html">Méně keců, více práce</a></li>
+</ul>
+
+<h2 class="bok">Jak se vám to čte?</h2>
+
+<p style="text-align:center">
+<a href="http://feeds.feedburner.com/misantrop"><img src="http://feeds.feedburner.com/~fc/misantrop?bg=99CCFF&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a></p>
+
+<p style="text-align:center">
+<a href="http://twittercounter.com/?username=adent" title="TwitterCounter for @adent"><img src="http://twittercounter.com/counter/?username=adent" width="88" height="26" style="border:none;" alt="TwitterCounter for @adent" /></a></p>
+
+<p style="text-align:center">
+<script type="text/javascript">
+var wsgApiKey = "481349a5-98b9-4d24-b32f-a5729d33840c";
+var wsgStyle = 2;
+document.write('<div id="wsgContainer" style="text-align:center"></div>');wsgScript=document.createElement('script');wsgScript.type="text/javascript";wsgScript.src="http://static.hubspot.com/websiteGraderBadge/badge.js?t="+Math.random();setTimeout("document.getElementById('wsgContainer').appendChild(wsgScript);",1);
+</script>
+</p>
+
+<script type="text/javascript" src="http://www.blogcatalog.com/w/services.php?id=150489&amp;width=165&amp;bgcolor=EEEEEE&amp;bcolor=356D79&amp;lcolor=333333&amp;hcolor=FFFFFF&amp;htext=Kde%20mne%20najdete&amp;name=0&amp;brand=0&amp;heading=1"></script>
+
+<h2 id="n_odkazy"><a href="#" class="iface" onclick="$('#odkazy').BlindToggleVertically(500, null, 'bounceout');return false;">Odkazy ...</a></h2>
+<ul id="odkazy" style="display:block">
+<li><a href="http://pixy.cz/pixynergia" rel="acquaintance met">Pixy</a></li><li><a href="http://blok.rozanek.cz" rel="acquaintance">Filip Rožánek</a></li><li><a href="http://www.whitedog.cz" rel="acquaintance met">White Dog</a></li><li><a href="http://kahi.cz/blog/" rel="met">Kahi</a></li><li><a href="http://lokutus.bloguje.cz" rel="met">Lokutus</a></li><li><a href="http://www.katchaba.com/" rel="acquaintance met">Katchaba</a></li><li><a href="http://machinegun.bloguje.cz" rel="acquaintance met">Johnny</a></li><li><a href="http://kokolia.bloguje.cz">Vladimír Kokolia</a></li><li><a href="http://viditelnymacek.cz">Miroslav Macek</a></li><li><a href="http://cina.bloguje.cz" rel="me">Dovolená v Číně</a></li><li><a href="http://bloguneni.bloguje.cz/">Blogu není...</a></li><li><a href="http://hekko.bloguje.cz" rel="acquaintance met">Adminka bloguje</a></li><li><a href="http://www.bloc.cz/default.aspx">Bloc Jiřího Hlavenky</a></li><li><a href="http://apimania.eu" rel="me">Apimania</a></li><li><a href="http://dev20.info" rel="me">Dev::Info</a></li><li><a href="http://dankaj.bloguje.cz/" rel="contact met">Zápisky z Islandu</a></li><li><a href="http://jdem.cz" rel="me">Zkratky pro odkazy</a></li><li><a href="http://davebarry.cz" rel="me">Dave Barry česky</a></li><li><a href="http://uelectronics.info" rel="me">Mikroelektronika</a></li><li><a href="http://www.php-suit.com" rel="me">PHP Suit</a></li><li><a href="http://www.sharp-suit.com" rel="me">Sharp Suit</a></li> 
+<li><a href="http://technorati.com/claim/xnpb5tzhw" rel="me">Technorati Profile</a></li>
+</ul>
+
+<h2 id="n_recommend">Doporučuji</h2>
+<ul id="support">
+<li><a href="http://hostmonster.jdem.cz/">Hosting HostMonster</a></li>
+<li><a href="http://www.jihocestitatkove.cz/">Jihočeští taťkové</a></li>
+<li><a href="http://www.csvts.cz/cns/">Česká nukleární společnost</a></li>
+<li><a href="http://www.prozakladnu.cz/">PRO základnu!</a></li>
+</ul>
+
+<!-- Buzzboot Ads -->
+<p><a href="http://buzzboot.com/a/www/delivery/ck.php?n=fbe3418"><img alt="Buzzboot reklama" src="http://buzzboot.com/a/www/delivery/avw.php?zoneid=8&amp;n=fbe3418"/></a></p><!-- / Buzzboot Ads -->
+
+
+<p>
+<script src="http://pub.mybloglog.com/comm3.php?mblID=2007052422462000&amp;r=widget&amp;is=small&amp;o=l&amp;ro=4&amp;cs=brown&amp;ww=200&amp;wc=multiple" type="text/javascript"></script>
+</p>
+
+<h2>Meta</h2>
+<script type="text/javascript" src="http://feedjit.com/popPages/?bc=FFFFFF&amp;tc=008000&amp;brd1=336699&amp;lnk=008000&amp;hc=336699&amp;ww=200"></script><noscript><a href="http://feedjit.com/">Feedjit Live Blog Stats</a></noscript>
+
+<h2 id="n_archiv"><a href="#" class="iface" onclick="$('#archiv').BlindToggleVertically(500, null, 'bounceout');return false;">Archiv ...</a></h2>
+<ul id="archiv" style="display:none">
+<li><a href="0812archiv.html">prosinec 2008</a></li><li><a href="0811archiv.html">listopad 2008</a></li><li><a href="0810archiv.html">říjen 2008</a></li><li><a href="0809archiv.html">září 2008</a></li><li><a href="0808archiv.html">srpen 2008</a></li><li><a href="0807archiv.html">červenec 2008</a></li><li><a href="0806archiv.html">červen 2008</a></li><li><a href="0805archiv.html">květen 2008</a></li><li><a href="0804archiv.html">duben 2008</a></li><li><a href="0803archiv.html">březen 2008</a></li><li><a href="0802archiv.html">únor 2008</a></li><li><a href="0801archiv.html">leden 2008</a></li><li><a href="0712archiv.html">prosinec 2007</a></li><li><a href="0711archiv.html">listopad 2007</a></li><li><a href="0710archiv.html">říjen 2007</a></li><li><a href="0709archiv.html">září 2007</a></li><li><a href="0708archiv.html">srpen 2007</a></li><li><a href="0707archiv.html">červenec 2007</a></li><li><a href="0706archiv.html">červen 2007</a></li><li><a href="0705archiv.html">květen 2007</a></li><li><a href="0704archiv.html">duben 2007</a></li><li><a href="0703archiv.html">březen 2007</a></li><li><a href="0702archiv.html">únor 2007</a></li><li><a href="0701archiv.html">leden 2007</a></li><li><a href="0612archiv.html">prosinec 2006</a></li><li><a href="0611archiv.html">listopad 2006</a></li><li><a href="0610archiv.html">říjen 2006</a></li><li><a href="0609archiv.html">září 2006</a></li><li><a href="0606archiv.html">červen 2006</a></li><li><a href="0604archiv.html">duben 2006</a></li><li><a href="0603archiv.html">březen 2006</a></li><li><a href="0512archiv.html">prosinec 2005</a></li><li><a href="0511archiv.html">listopad 2005</a></li>
+</ul>
+
+
+
+</div><!-- konec sidebar -->
+<div class="clear">&nbsp;</div><!-- cistic -->
+</div><!-- konec obsah -->
+
+
+
+
+
+
+
+<div id="foot">
+<p>&copy; <a href="http://www.maly.cz/o-mn/">Martin Malý</a> (aka Arthur Dent) | Design by &copy; 2007 <a href="http://ash721.cz">ASH721</a> | <a href="http://hostmonster.jdem.cz">HOSTING</a> 3000GB+unlimited domains za 6 dolarů</p>
+<img src="http://www.laar.cz/support/counter/cnt.php?b=34425" alt="Counter" />
+</div>
+
+</div>
+
+</body></html>

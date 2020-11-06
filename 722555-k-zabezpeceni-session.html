@@ -1,0 +1,603 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="cz">
+<head><link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.misantrop.info/rss.xml" /><link rel="alternate" type="application/rss+xml" title="RSS - Kdo umí..." href="http://www.misantrop.info/tema-8-kdo-umi.xml" /><link rel="alternate" type="application/rss+xml" title="Komentáře" href="http://www.misantrop.info/comments.xml" />
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/misantrop" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+ <title>K zabezpečení session - Misantrop.info</title> 
+
+<link rel="stylesheet" href="css39236.css" type="text/css" title="Styl2" media="screen" />
+<link rel="alternate stylesheet" href="css34066.css" type="text/css" title="Styl1" media="screen" />
+
+<meta name="verify-v1" content="qHyecOmV/BTXodaXkGrOlj7QL+X93dTbTLojG9EU22c=" />
+<link rel="openid.server" href="http://www.myopenid.com/server" />
+<link rel="openid.delegate" href="http://adent.myopenid.com/" />
+<link rel="openid2.local_id" href="http://adent.myopenid.com" />
+<link rel="openid2.provider" href="http://www.myopenid.com/server" />
+<meta http-equiv="X-XRDS-Location" content="http://www.myopenid.com/xrds?username=adent.myopenid.com" />
+
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="keywords" content="Martin Malý, Arthur Dent, weblogy, programování, PHP, blogy, misantrop, Web2.0, technologie, elektronika" />
+
+<meta name="description" content="K zabezpečení session - Misantrop.info" />
+</head>
+<body>
+<div id="all">
+<!-- Anal Lizer-->
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-190512-8";
+urchinTracker();
+</script>
+<!--dolizat-->
+ 
+
+<div id="adx" style="position:fixed;_position:absolute;top:5px;left:5px">
+<script type="text/javascript"><!--
+google_ad_client = "pub-3772893178572611";
+/* 120x600, vytvořeno 15.7.08 */
+google_ad_slot = "1720575805";
+google_ad_width = 120;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript"
+src="">
+</script>
+</div>
+
+<div id="head"><p id="logo"><a href="index.php"><img src="img/2zapisnik-logo.gif" alt="Misantrop.info - Web co vám doudí moudí..." /></a></p></div>
+
+<ul id="menu">
+<li><a href="index.php">Titulní stránka</a></li>
+<li><a href="http://rss.misantrop.info">Oblíbené zdroje</a></li>
+<li><a href="http://www.maly.cz/o-mn/?KeepThis=true&amp;TB_iframe=true&amp;height=500&amp;width=800" class="thickbox">O mně</a></li>
+<li><a href="http://www.bloguje.cz/vzkazy.php?send=47997">Napiš vzkaz</a></li>
+</ul>
+
+<div id="obsah">
+<div id="pole">
+<!-- Pocitadlo -->
+<p><img src="http://counter.cnw.cz/dungeon.cgi?blogmalycz&amp;6&amp;000000&amp;fff1d8&amp;on" alt=" " style="width:1px;height:1px;"/><script type="text/javascript">
+<!-- 
+var dummy =("<img src=\"http://counter.cnw.cz/trackit.cgi?blogmalycz&t2&" + escape(top.document.referrer) + "\" alt=\" \" border=\"0\" width=\"1\" height=\"1\">"); 
+// --></script>
+
+<script language="JavaScript" type="text/javascript">
+<!--
+var dummy = ('<a href="http://www.netagent.cz" target="_top"><img src="http://www.netagent.cz/agent.php?id=383&amp;ur='+escape(document.referrer)+'&amp;rw='+escape(window.screen.width)+'&amp;rh='+escape(window.screen.height)+'&amp;cd='+escape(window.screen.colorDepth)+'&amp;pt='+escape(document.title)+'&amp;lc='+escape(document.location)+'" width="1" height="1" border="0" alt="NetAgent" /></a>');
+//--></script>
+
+</p>
+<!-- Pocitadlo konec -->
+
+
+
+
+<h1>K zabezpečení session</h1>
+
+
+
+
+
+
+
+<p>Poznámka k doporučovanému způsobu zabezpečení session proti stealingu u webových aplikací. </p>
+
+<p style="float:right; margin:0 0 1em 1em;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-3772893178572611";
+
+/* 120x240, vytvořeno 6.7.08 */
+google_ad_slot = "4855232301";
+google_ad_width = 120;
+google_ad_height = 240;
+//-->
+</script>
+<script type="text/javascript"
+src="">
+</script>
+</p>
+
+<p><p>Tu a onde čtu doporučené metody zabezpečení před session stealingem a jako mantra se v nich objevuje stále dokola rada &quot;uložte si IP adresu klienta do session a kontrolujte&quot;. Doporučuju: <strong>Nedělejte to!</strong></p><p>Já před pár lety nasadil na Bloguje podobnou ochranu session před &quot;ukradením&quot;. Fungovala skvěle a byla opravdu účinná&nbsp;&ndash; až do doby, kdy se přihlásil uživatel, u něhož se zkombinovaly následující faktory:</p>1. Byl z USA<br />2. Byl připojen přes AOL<br />3. Byl dlouho přihlášený<p>&nbsp;</p><p>A protože to byl člověk, který mne podezříval z Temných Machinací (jak neobvyklé), tak samosebou psal provozovateli, jak je možné, že mu systém pořád píše, že <em>detekoval pokus o zneužití</em>, když přitom nic špatného nedělá, a jestli by se tomuhle Dentovi nemělo sebrat adminské oprávnění či tak něco.</p><p>Naštěstí jsme se nakonec domluvili jako lidi a já zjistil fascinující (alespoň pro mne v té době) věc: <em>AOL mění průběžně IP adresy</em>. Nakonec&nbsp;&ndash; je to logické, při tom neskutečném počtu uživatelů je pochopitelné, že dělají nějaký &quot;network balancing&quot; (či kýho čerta), zkrátka že se IP adresa uživatelů mění, aniž by se odpojili a připojili. IP adresa se změnila třeba během tří minut.</p><p>Myslete na to, až budete implementovat ochranu proti session stealingu a budete koketovat s myšlenkou &quot;vrznu tam (hash) IP&quot;... Dokud se budete placatit po ČR a okolí, tak se pravděpodobně s žádnými potížemi nesetkáte, ale jakmile se otevřete světu, tak se může objevit uživatel, kterému se mění IP, aniž by se o to přičinil. Je dobré s tím počítat.</p><p>Tolik jsem jen chtěl říct. </p></p>
+
+<div style="text-align:center">
+<script type="text/javascript"><!--
+google_ad_client = "pub-3772893178572611";
+/* 468x60, vytvořeno 15.7.08 */
+google_ad_slot = "3559028762";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="">
+</script>
+</div>
+
+
+
+
+
+<p class="more">
+<span class="date">Dne 14.09.2008</span>
+
+</p>
+
+
+
+
+
+<p><a href="http://jdem.cz/tw?text=Zaj%c3%admav%c3%bd+%c4%8dl%c3%a1nek+na+Z%c3%a1pisn%c3%adku%3a+http%3A%2F%2Fwww.misantrop.info%2F722555-k-zabezpeceni-session.html&amp;redir=1">Twittni</a></p>
+
+<p>Přidej do: 
+ <a href="http://vybrali.sme.sk/submit.php?url=http%3A%2F%2Fwww.misantrop.info%2F722555-k-zabezpeceni-session.html"><img src="http://blog.sme.sk/blog/3/61630/tlacitko.gif" style="border:0" title="asdf.sk" alt="asdf.sk" /></a>
+
+<a href="http://www.stumbleupon.com/submit?url=http%3A%2F%2Fwww.misantrop.info%2F722555-k-zabezpeceni-session.html&amp;title=K+zabezpe%E8en%ED+session"> <img border=0 src="http://www.bloguje.cz/icon_su.gif" alt="StumbleUpon Toolbar"> Stumble It!</a>
+
+<script type="text/javascript" src="http://w.sharethis.com/widget/?tabs=web%2Cemail&amp;charset=utf-8&amp;style=rotate&amp;publisher=99a6f76f-7727-4c7b-a906-b91f57f8a706"></script></p>
+
+<script type="text/javascript" src="http://feedjit.com/coFilter/?bc=FFFFFF&amp;tc=008000&amp;brd1=336699&amp;lnk=008000&amp;hc=336699&amp;ww=500"></script>
+
+
+<h2 id="n_koments">Komentáře</h2>
+
+
+
+<p class="comment">
+<strong><a name="cmt_1">[1]</a> </strong> (Tom  ) 14.09.2008, 22:35:55&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1753855">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1753855">D</a>]<br />
+
+Uzivatel ktery se spolcil s AOL je privrzencem Satanase a uziva jeho nastroj, detekce jako narusitele tedy funguje v poradku.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_2">[2]</a> </strong> (David  ) 14.09.2008, 22:46:34&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1753869">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1753869">D</a>]<br />
+
+A co tedy použít k identifikaci uživatele? Napadá mě leda tak user-agent, ale s tím to asi taky nebude žádná sláva...
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_3">[3]</a> </strong> (paranoiq  ) 14.09.2008, 23:24:52&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1753893">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1753893">D</a>]<br />
+
+<a href="#cmt_0">[0]</a>,<a href="#cmt_1">[1]</a> podobnou věc provádějí i někteří čeští ISP. už si nevzpomenu o koho šlo, ale jedenkrát už jsem se s proměnlivou ip adresou setkal i u nás.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_4">[4]</a> </strong> (matejcik [<a href="http://matejcik.myopenid.com/" title="Ověřený uživatel http://matejcik.myopenid.com/">openID</a>]  - <a href="http://matejcik.bloguje.cz/">WWW</a>) 14.09.2008, 23:46:21&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1753902">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1753902">D</a>]<br />
+
+třeba na mobilech se ip adresa mění celkem běžně.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_5">[5]</a> </strong> (Kozo - <a href="mailto:kozo@pobox.sk">Mail</a> - <a href="http://kozo.bloguje.sk/">WWW</a>) 14.09.2008, 23:48:21&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1753904">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1753904">D</a>]<br />
+
+Narazit sa na to da aj v nasich koncinach. Koniec koncov narazili sme na to aj v ere stareho dobreho POBOXu pred cca 5-7 rokmi. Uplne ten isty problem..... Akurat vela ludi kym si neskusia, tak neveria.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_6">[6]</a> </strong> (#13  - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fmmister.com">WWW</a>) 14.09.2008, 23:48:21&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1753905">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1753905">D</a>]<br />
+
+Arthure, konečně přiznej, že provádíš Temné Machinace nejen s počítadlem! :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_7">[7]</a> </strong> (Pixy [<a href="http://pixy.myopenid.com/" title="Ověřený uživatel http://pixy.myopenid.com/">openID</a>] - <a href="mailto:pixy@pixy.cz">Mail</a> ) 14.09.2008, 23:50:07&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1753907">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1753907">D</a>]<br />
+
+Proboha, existuje u AOL aspoň něco, co dělaj normálně?
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_8">[8]</a> </strong> (Ondra Knezour - <a href="mailto:knezour@weboutsourcing.cz">Mail</a> ) 15.09.2008, 00:03:29&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1753916">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1753916">D</a>]<br />
+
+Člověk ani nemusí být připojený přes AOL, aby mu to znepříjemnilo život. V práci vstanu, zavřu notebook, přesunu se o 1500 metrů domů, sednu si, otevřu notebook, pošta poští, předpověď počasí předpovídá, síť síťuje, jenom "zabezpečená" stránka remcá něco o krádeži identity.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_9">[9]</a> </strong> (David Grudl  - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fdavidgrudl.com">WWW</a>) 15.09.2008, 01:56:31&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1753935">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1753935">D</a>]<br />
+
+Každý request s jinou IP adresou obstaral blahé paměti Google Web Accelerator.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_10">[10]</a> </strong> (David Grudl  - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fdavidgrudl.com">WWW</a>) 15.09.2008, 01:56:47&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1753936">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1753936">D</a>]<br />
+
+Každý request s jinou IP adresou obstaral blahé paměti Google Web Accelerator.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_11">[11]</a> </strong> (Filip Jirsák  - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fjirsak.org">WWW</a>) 15.09.2008, 09:30:18&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1754030">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1754030">D</a>]<br />
+
+Úplně přesně vzato to není tak, že by AOL měnil IP adresu klienta (to klidně může taky, ale nesouvisí to s tím), ale klienti se dostanou na web přes proxy server. Ve skutečnosti je těch proxy serverů několik s různými IP adresami, takže pokud klienta jednou obslouží jeden proxy server a příště jiný, na webovém serveru to vypadá, jako by klient střídal IP adresy.
+<br />
+<br />Stejně, jako se programátorům doporučuje (tedy asi až v druhém levelu) nespoléhat na to, že klientovi se během sezení nezmění IP adresa, doporučuje se správcům webových proxy serverů konfigurovat je tak, aby požadavky od jednoho klienta v rámci jednoho &#8222;sezení&#8220; (což je na proxy ještě vágnější pojem, než na serveru) měly stejnou IP adresu. Ale v obou táborech (jak programátoři, tak administrátoři) se najde dost těch, kteří takové doporučení nerespektují.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_12">[12]</a> </strong> (Jiří Bureš  - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.jiribures.cz%2F">WWW</a>) 15.09.2008, 10:19:05&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1754070">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1754070">D</a>]<br />
+
+Se stejnou věcí jsem se potkal, když jsem zkoušel komentářový antispam. Testoval jsem IP adresu v době mezi začátkem psaní a odesláním komentáře. Fungovalo to hezky do doby, než mi napsal nazlobený člověk, co byl přihlášený via mobil (tuším od O2).
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_13">[13]</a> </strong> (  - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.heureka.cz">WWW</a>) 15.09.2008, 10:59:02&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1754111">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1754111">D</a>]<br />
+
+IMHO je tech uzivatelu malo. Hlavni je nezobrazovat pitomy hlasky o tom, ze uzivatel je hacker ;)
+<br />
+<br />IP adresa je asi tak nejspolehlivejsi, co muzete pouzit. Drtivou vetsinu uzivatelu to neovlivni. Kolik z vas optimalizuje pro Konqueror?
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_14">[14]</a> </strong> (Jakub Vrána [<a href="http://openid.cz/vrana" title="Ověřený uživatel http://openid.cz/vrana">openID</a>]  - <a href="http://php.vrana.cz">WWW</a>) 15.09.2008, 11:05:08&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1754117">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1754117">D</a>]<br />
+
+Internet Info na svých serverech tuším kontroluje céčkový rozsah adresy a pokud vím, tak to vážné komplikace nepřináší. Samozřejmě se pohybujeme převážně v českém rybníku a neřeší to ani případ <a href="#cmt_8">[8]</a>.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_15">[15]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 15.09.2008, 15:56:05&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1754430">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1754430">D</a>]<br />
+
+<a href="#cmt_14">[14]</a> Ano, k podobnému řešení jsem přikročil nakonec i já.
+<br />
+<br /><a href="#cmt_13">[13]</a> Nesouhlasím. S rozvojem mobilního internetu a podobných ošklivin se podobné problémy začnou objevovat čím dál častěji a IP adresa přestane být spolehlivá. A to jsem chtěl říct.
+<br />
+<br />O hlášku nejde, důležité je, jak se zachovat, když zjistím, že ke stejné session přistupuje najednou někdo s diametrálně odlišnou IP adresou. Z pochopitelných důvodů je potřeba session zneplatnit a operaci nepovolit. A pak je jasné, že je třeba uživateli říct, proč byl odhlášen a proč se operace neprovedla.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_16">[16]</a> </strong> (Filip Jirsák  - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fjirsak.org">WWW</a>) 15.09.2008, 16:50:19&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1754512">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1754512">D</a>]<br />
+
+<a href="#cmt_15">[15]</a> Které jsou ty pochopitelné důvody? Mne napadá jediný &#8211; únik identifikátoru sezení do nepovolaných rukou. Ovšem slušná aplikace sama ten identifikátor nikam nepředává (ohlídá si, aby referrery šly bez tohoto identifikátoru). Předpokládám samozřejmě takový identifikátor, který se nedá snadno uhodnout. Takže zbývají varianty, že identifikátor unikl z počítače uživatele, nebo že jej odposlechl někdo na cestě. Ale pokud někdo dokáže identifikátor session získat z počítače uživatele nebo dokáže monitorovat jeho síťový provoz, dokáže posílat i požadavky s jeho IP adresou &#8211; a pokus o zneužití identifikátoru sezení z jiné IP adresy by byla hloupá chyba. 
+<br />
+<br />Takže před čím vlastně tahle kontrola IP adresy uživatele chrání?
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_17">[17]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 15.09.2008, 17:05:35&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1754528">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1754528">D</a>]<br />
+
+<a href="#cmt_16">[16]</a> Pochopitelný důvod je ten, že objeví-li se mi přístup k session z IP adresy, která je diametrálně odlišná od té, co mám uloženou, tak je to přinejmenším podezřelé a ZAKÁZAT takovou operaci je míň rizikové než takovou operaci POVOLIT. To je ten důvod. 
+<br />
+<br />Je jedno jak se k session útočník dostal a co udělá, o tomhle řeč nejde. Pouze jsem podotknul, že <em>jedním z mnoha doporučovaných způsobů obrany proti XSS, CSRF a podobným</em> je kontrola IP, ale že má své úskalí. Účelem tohoto článku nebylo diskutovat možné způsoby útoku, ale podotknout jeden detail k jedné z doporučovaných technik. Viz perex: <em>Poznámka k doporučovanému způsobu...</em> Otázky JAK či CO nechme stranou. Šlo mi jen o to říct: Pokud kontrolujete IP, tak BACHA!
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_18">[18]</a> </strong> (ehmo  - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fblog.synopsi.com">WWW</a>) 15.09.2008, 20:42:38&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1754787">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1754787">D</a>]<br />
+
+Njn, ip adresa je uz dnes dost velky zadrhel. Problematicky je uplna kazdy ISP ktory pouziva proxy pre komunikaciu vonku a ma ich hned niekolko, ale aj rozne anonymizery, etc. Problem vsak nastane, ak nejak nedokazes priradit presny identifikator danej osobe. Ono sa to najlepsie skutocne robi tak, ze si vezmes len zaklad IP adresy, k tomu prilozis hash user agenta a budes dufat, ze utocnik nie je prilis inteligentny. V sekunde ako mas na webe XSS, tak je to uz jedno. Proti CSRF to ochrana zarucene nie je, ale moze pomoct, ale skor nie. Fajn pomoc pri ochrane session v php je httpOnline Cookie.
+<br />
+<br />Nechcem tu opisovat dalsie veci, Martin by sa hneval :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_19">[19]</a> </strong> (David Grudl  - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fdavidgrudl.com">WWW</a>) 15.09.2008, 21:30:18&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1754851">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1754851">D</a>]<br />
+
+Zkoušel jsem i ověřovat hlavičky Accept-charset, Accept-encoding, Accept-language, User-agent, jejich změna by mohla svědčit o nekalém úmyslu. Ale je otázka, jak se to projeví v praxi, co s nimi mohou udělat proxy servery atd. Nepříjemné je, že o chybě se člověk jen těžko dozví. Takový rozhněvaný email od poškozeného uživatele má pak cenu zlata.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_20">[20]</a> </strong> (ehmo  - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fblog.synopsi.com">WWW</a>) 15.09.2008, 22:33:30&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1754958">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1754958">D</a>]<br />
+
+<a href="#cmt_19">[19]</a> No hlavne je mozne detekovat ci sa nejedna o proxy, kedze AOL a podobne ISP posielaju v hlavicke ako napriklad X_FORWARDED_FOR, alebo ine. Tak je mozne upravovat spravanie aplikacie, aj ked to je uz asi prilis zlozite. No itak je to cesta
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_21">[21]</a> </strong> (Peter  ) 16.09.2008, 01:24:00&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1755071">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1755071">D</a>]<br />
+
+<a href="#cmt_18">[18]</a> Ja by som Ti bol za ne vdacny. Verim, ze to u Martina prejde.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_22">[22]</a> </strong> (ehmo  - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fblog.synopsi.com">WWW</a>) 16.09.2008, 02:23:01&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1755075">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1755075">D</a>]<br />
+
+<a href="#cmt_21">[21]</a> Martin by vdacny nebol, jasne to vyjadril v komentari <a href="#cmt_17">[17]</a>. Ak mas chut sa dozvediet viac, kludne sa ozvi, mozem dat nieco dokopy pre svoj blog. Toto je velmi zlozita a osemetna tema, veci ktore je potrebne osetrit je mnoho a existuje aj mnoho kombinacii moznosti pre zvysenie bezpecnosti.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_23">[23]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://www.misantrop.info">WWW</a>) 16.09.2008, 08:09:19&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1755126">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1755126">D</a>]<br />
+
+<a href="#cmt_22">[22]</a> Zkus naťuknout httpOnline cookie, hněvat se nebudu. :) Jen mi přišlo zbytečně daleko offtopic probírat "k čemu že je taková ochrana" (<a href="#cmt_16">[16]</a>), protože to jsou elementární věci. X-FORWARDED-FOR jsem u AOL nezkoušel, ale jinak ho na Bloguje mám na zlobivé komentátory s proxy.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_24">[24]</a> </strong> (David Grudl  - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fdavidgrudl.com">WWW</a>) 16.09.2008, 08:56:40&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1755155">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1755155">D</a>]<br />
+
+<a href="#cmt_20">[20]</a> jenže pozor na jednu věc. Být v případě přítomnosti hlavičky X-FORWARDED-FOR tolerantnější znamená řezat si větev sám pod sebou. Totiž pokud ukradnu někomu session, tak mi vlastně dovolíš ji použít s patřičně nastavenou X-XXX hlavičkou.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_25">[25]</a> </strong> (David Grudl  - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fdavidgrudl.com">WWW</a>) 16.09.2008, 09:03:58&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1755160">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1755160">D</a>]<br />
+
+<a href="#cmt_23">[23]</a> httpOnly cookie je rozšířená informace pro prohlížeč, která říká, že cookie bude neviditelná pro JavaScript. Od verze 5.2.0 to podporuje i PHP, v předchozích šlo flag nastavovat fintou.
+<br />
+<br />Je to docela chytrý způsob, jak zabránit jednomu typu útoků, ale stojí to a padá na podpoře prohlížečů. Protože jde tuším o vynález Microsoftu <a href="http://msdn.microsoft.com/en-us/library/ms533046.aspx" rel="nofollow">http://msdn.microsoft.com...46.aspx</a>, tak IE 6 to podporuje (což je to hlavní, že). Firefox 3 to prý už umí taky.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_26">[26]</a> </strong> (Filip Jirsák  - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fjirsak.org">WWW</a>) 16.09.2008, 11:33:23&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1755270">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1755270">D</a>]<br />
+
+<a href="#cmt_18">[18]</a> &#8222;budes dufat, ze utocnik nie je prilis inteligentny&#8220;
+<br />
+<br />Myslím, že to je celý problém téhle techniky ochrany sezení. Předpokládá, že útočník je natolik schopný, že dokáže identifikátor sezení získat a to v době jeho platnosti, ale pak už je natolik neschopný, že ho rovnou zkusí zneužít ze svého domácího počítače. A když mu to nevyjde, svoje pokusy vzdá.
+<br />
+<br />Proto mi stále připadá jako nejlepší způsob, jak předejít problémům se změnou IP adresy, tu IP adresu jednoduše nekontrolovat, nijak, ignorovat ji. Předejde se tím všem problémům s kontrolou spojeným, a na bezpečnosti se to negativně neprojeví nijak. Ostatně, větu &#8222;nedělejte to&#8220; v původním příspěvku jsem chápal přesně takhle. Teprve až z komentáře <a href="#cmt_15">[15]</a> jsem usoudil, že to &#8222;nedělejte to&#8220; Arthur asi nemyslel doslova.
+<br />
+<br />Ovšem pokud je tématem &#8222;co dělat s IP adresou, aby to bylo dostatečně efektní a uživatele to otravovalo jenom občas&#8220;, pak je tento komentář mimo téma, za což se omlouvám.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_27">[27]</a> </strong> (ehmo  - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fblog.synopsi.com">WWW</a>) 16.09.2008, 16:26:10&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1755544">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1755544">D</a>]<br />
+
+<a href="#cmt_23">[23]</a> Bohuzial nestiham, akurat robim POC pre Jima Kukrala, ktoreho script pouzivas aj ty tu (scratchback). Mozno inokedy.
+<br />
+<br /><a href="#cmt_24">[24]</a> To ze som tolerantnejsi k urcitej hlavicke ty nezistis. Skor tam slo o nastavenie inaksich pravidiel, napr ze sa nepojde podla IP ale len casti plus zaroven sa urobi hash dalsich informacii ziskanych od uzivatelskeho browseru.
+<br />
+<br /><a href="#cmt_25">[25]</a> Dnes to uz je podporovane mnohymi prehliadacmi aj ked ako si spravne podotkol, tam kde to nefunguje, je to dost naprt. Ostatne je to napisane aj tu Mitigating Cross-site Scripting With HTTP-only Cookies.
+<br />
+<br /><a href="#cmt_26">[26]</a> Ono je to malinko zlozitejsie. Session Hijacking je dost zavazna chyba, najcastejsie na bankovych aplikaciach. Ak dokazes najst koliziu aktivnej session a ta nie je nijak chranena, dokazes tak prevziat prava daneho uzivatela. Ako sam uznas, u bank je to velmi kruty problem. Samozrejme, banky pouzivaju mnoho inych ochrannych prvkov, ale to na veci nic nemeni. Je preto potrebne uzivatelov malinko otravovat a donutit ich, aby raz za cas prekusli nejake to prihlasenie naviac, ako keby mali prist o konto. Tazko povedat, ci je tato cesta lepsia ako taka, kedy programator musi mysliet na uplne vsetky dalsie moznosti zneuzitia aplikacie, ako napriklad ze nesmie zabudnut implementovat pri zasadnych zmenach v uzivatelskom konte overovanie stareho hesla, mozno aj kontrolneho retazca? Tazko povedat
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_28">[28]</a> </strong> (Filip Jirsák  - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fjirsak.org">WWW</a>) 16.09.2008, 17:08:16&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1755580">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1755580">D</a>]<br />
+
+<a href="#cmt_27">[27]</a> I ta nejhloupější bankovní aplikace funguje přes HTTPS a pro identifikátor sezení používá nějaký dostatečně dlouhý náhodný klíč. Takže náhodou &#8222;trefit&#8220; nějaký identifikátor je velice nepravděpodobné (podaří se to zhruba tak v příštím vesmíru), a ukrást jej můžete buď v bankovní aplikaci, nebo u uživatele &#8211; mezi tím jde šifrovaným kanálem. Navíc bankovní aplikace nemůže být chráněna jenom proti crackerovi&#8211;nemehlu, ale musí být chráněna i proti schopnějším útokům. &#8222;Ochrana&#8220; kontrolou IP adresy znamená, že může sezení unést kdokoli za stejným NATem (tedy třeba kterýkoli kolega v práci, kterýkoli spolužák), kdokoli za stejným proxy serverem (AOL je zmíněn hned v článku), při benevolentnější ochraně kdokoli ve stejné třeba C síti &#8211; to už může být dost klientů mého ISP v okolí.
+<br />
+<br />&#8222;Tazko povedat, ci je tato cesta lepsia ako taka, kedy programator musi mysliet na uplne vsetky dalsie moznosti zneuzitia aplikacie, ako napriklad ze nesmie zabudnut implementovat pri zasadnych zmenach v uzivatelskom konte overovanie stareho hesla, mozno aj kontrolneho retazca?&#8220;
+<br />
+<br />Kontrola IP adresy nechrání před ničím. Takže to ostatní zabezpečení programátor stejně musí udělat, a tu kontrolu IP adresy si může ušetřit (přijde tím o pár hlášek vhodných k naštvání uživatele, o nic jiného). Pokud si programátor myslí, že kontroluje IP adresy a únos sezení ho tedy nemusí zajímat, je na dobré cestě spáchat v systému pořádnou bezpečnostní díru. Takže jediná rada pro kontrolu IP adresy sezení zní &#8211; nedělejte to!
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_29">[29]</a> </strong> (Roman - <a href="mailto:creamd@c64.sk">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.c64.sk">WWW</a>) 16.09.2008, 21:57:40&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1755858">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1755858">D</a>]<br />
+
+...je ešte toľko krásnych slovíčok ako zasadnutie, schôdza, jednanie, relácia, porada, rokovanie ktoré ktoré sa nehodia na preloženie slovíčka session... nechápem prečo mal autor toho útrpného prekladu "sezení" utkvelú predstavu že nemôže použiť niečo čo nie je doslovným prekladom... napríklad "spojení"...  apropo, čo na ty na to Pixy? Netrhá ti to "sezení" uši?
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_30">[30]</a> </strong> (Roman - <a href="mailto:creamd@c64.sk">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.c64.sk">WWW</a>) 16.09.2008, 21:59:54&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1755862">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1755862">D</a>]<br />
+
+<a href="#cmt_27">[27]</a> ...ako napriklad ze nesmie zabudnut implementovat pri zasadnych zmenach v uzivatelskom konte overovanie stareho hesla,...  
+<br />
+<br />Veru, veru, múdro hovoríš, až mi je to divnô. :-)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_31">[31]</a> </strong> (Roman - <a href="mailto:creamd@c64.sk">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.c64.sk">WWW</a>) 16.09.2008, 22:01:17&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1755864">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1755864">D</a>]<br />
+
+<a href="#cmt_29">[29]</a> ...hm, este sa zbavit koktania a bude to fajn.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_32">[32]</a> </strong> (http://openid.cz/richard.bukovansky - <a href="mailto:richard.bukovansky@atlas.cz">Mail</a> ) 16.09.2008, 22:30:21&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1755894">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1755894">D</a>]<br />
+
+Jak to tak posloucham, uz aby bylo efektivne zavedeno IPv6...
+<br />Problem se ukradnutim session se velmi spatne resi, nezbyva nic jineho nez pouzit HTTPS, protoze proc krast session, kdyz jde ukradnout plaintextove heslo. Resit napadeni u non-HTTPs aplikace je trochu na povazenou...
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_33">[33]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://www.misantrop.info">WWW</a>) 16.09.2008, 23:28:59&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1755952">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1755952">D</a>]<br />
+
+<a href="#cmt_32">[32]</a> Ne každá non-HTTPS aplikace musí posílat plaintext heslo, že. Jistě jsi slyšel třeba o Digest autentifikaci. ;) Pro ty, co neslyšeli, dodám: <a href="http://en.wikipedia.org/wiki/Digest_access_authentication" rel="nofollow">http://en.wikipedia.org...ntication</a> (Upozornění pro blbé: POUZE polemizuju s nevysloveným předpokladem, že neHTTPS aplikace rovná se automaticky plaintext heslo!)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_34">[34]</a> </strong> (ehmo  - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fblog.synopsi.com">WWW</a>) 17.09.2008, 22:56:16&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1756944">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1756944">D</a>]<br />
+
+<a href="#cmt_28">[28]</a> je vidiet ze si v zivote videl vela IB. ja uz som sa s par stretol co sa tyka bezpecnosti a viem na ake zranitelnosti krasne trpia. uhadnut sessid nie je vzdy az take zlozite ako by si si myslel, ale rozoberat to zbytocne nebudem. bankova aplikacia by mala byt vrcholom bezpecnosti, neplati to vsak snad u ziadnej (cest vynimkam, zatial som ziadnu nevidel (aj ked MBank nema daleko)).
+<br />
+<br /><a href="#cmt_32">[32]</a> Martin ti uz na to dal odpoved. nie kazda aplikacia (okrem rapidshare.com) posiela plain/text hesla. Existuju aj riesenia pre JS a mnoho inych, ktore vedia pomoct.
+<br />
+<br />Kazdopadne ak session nie je chranena pre IP, hlavicka moc nepomoze. Ano, ked je clovek za jednym NATom tak je to jedno, ale ked uz moj spoluziak alebo kolega sa ma rozhodne okradnut, tak existuju aj lepsie riesenia ako kradnut session.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_35">[35]</a> </strong> (Franta - <a href="mailto:nbusr123@mazafaka.ru">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Ffrantovo.cz%2Fblog">WWW</a>) 21.09.2008, 17:05:58&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1759652">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1759652">D</a>]<br />
+
+Svět by se neměl přizpůsobovat lidem, kteří mají "postižený" Internet. Naopak oni by měli apelovat na své poskytovatele, aby jim nabídli plnohodnotné připojení. 
+<br />
+<br />Ještě přijatelným kompromisem je dát uživatelům na vybranou - jako to mají např. na <a href="http://mail.volny.cz/" rel="nofollow">http://mail.volny.cz/</a> - "Kontrola IP adresy pro vyšší bezpečnost?". 
+<br />
+<br />Ale degradovat všem uživatelům bezpečnost kvůli tomu, že nějaký trouba nemá solidní připojení, je hloupost.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_36">[36]</a> </strong> (Franta - <a href="mailto:nbusr123@mazafaka.ru">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Ffrantovo.cz%2Fblog">WWW</a>) 21.09.2008, 17:20:30&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1759662">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1759662">D</a>]<br />
+
+<a href="#cmt_33">[33]</a> viz třeba praktická ukázka na <a href="http://frantovo.cz/blog/index.php?q=overovani-uzivatelu-na-webu" rel="nofollow">http://frantovo.cz...vatelu-na-webu</a>
+<br />
+<br />Někdy se HTTPS použije jen pro přenos jména/hesla a pak už sezení pokračuje nešifrovaně (kvůli zátěži serveru) - pak se kontrola IP adresy hodí. Uživatelům, které to kvůli jiné IP odhlašuje, pak doporučujeme používat variantu, která jede celou dobu po HTTPS, tam se IP kontrolovat nemusí.
+
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+</div><!-- konec pole -->
+
+
+
+<div id="sidebar">
+
+<h2 id="n_rubriky">Rubriky</h2>
+<ul id="rubriky">
+<li><a href="tema-1-bavim-se-na-vas-ucet.html">Bavím se na váš účet</a></li><li><a href="tema-2-nemam-vas-rad.html">Nemám vás rád</a></li><li><a href="tema-3-pohrdani.html">Pohrdání</a></li><li><a href="tema-4-vase-bludy-na-moji-hlavu.html">Vaše bludy na moji hlavu</a></li><li><a href="tema-5-mym-analfabetum.html">Mým analfabetům...</a></li><li><a href="tema-6-co-me-bavi.html">Co mě baví?</a></li><li><a href="tema-7-to-je-nejaka-hudba-tohleto.html">To je nějaká hudba, tohleto?</a></li><li><a href="tema-8-kdo-umi.html">Kdo umí...</a></li><li><a href="tema-9-mene-kecu-vice-prace.html">Méně keců, více práce</a></li>
+</ul>
+
+<h2 class="bok">Jak se vám to čte?</h2>
+
+<p style="text-align:center">
+<a href="http://feeds.feedburner.com/misantrop"><img src="http://feeds.feedburner.com/~fc/misantrop?bg=99CCFF&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a></p>
+
+<p style="text-align:center">
+<a href="http://twittercounter.com/?username=adent" title="TwitterCounter for @adent"><img src="http://twittercounter.com/counter/?username=adent" width="88" height="26" style="border:none;" alt="TwitterCounter for @adent" /></a></p>
+
+<p style="text-align:center">
+<script type="text/javascript">
+var wsgApiKey = "481349a5-98b9-4d24-b32f-a5729d33840c";
+var wsgStyle = 2;
+var dummy =('<div id="wsgContainer" style="text-align:center"></div>');wsgScript=document.createElement('script');wsgScript.type="text/javascript";wsgScript.src="http://static.hubspot.com/websiteGraderBadge/badge.js?t="+Math.random();setTimeout("document.getElementById('wsgContainer').appendChild(wsgScript);",1);
+</script>
+</p>
+
+<script type="text/javascript" src="http://www.blogcatalog.com/w/services.php?id=150489&amp;width=165&amp;bgcolor=EEEEEE&amp;bcolor=356D79&amp;lcolor=333333&amp;hcolor=FFFFFF&amp;htext=Kde%20mne%20najdete&amp;name=0&amp;brand=0&amp;heading=1"></script>
+
+<h2 id="n_odkazy"><a href="#" class="iface" onclick="$('#odkazy').BlindToggleVertically(500, null, 'bounceout');return false;">Odkazy ...</a></h2>
+<ul id="odkazy" style="display:block">
+<li><a href="http://pixy.cz/pixynergia" rel="acquaintance met">Pixy</a></li><li><a href="http://blok.rozanek.cz" rel="acquaintance">Filip Rožánek</a></li><li><a href="http://www.whitedog.cz" rel="acquaintance met">White Dog</a></li><li><a href="http://kahi.cz/blog/" rel="met">Kahi</a></li><li><a href="http://lokutus.bloguje.cz" rel="met">Lokutus</a></li><li><a href="http://www.katchaba.com/" rel="acquaintance met">Katchaba</a></li><li><a href="http://machinegun.bloguje.cz" rel="acquaintance met">Johnny</a></li><li><a href="http://kokolia.bloguje.cz">Vladimír Kokolia</a></li><li><a href="http://viditelnymacek.cz">Miroslav Macek</a></li><li><a href="http://cina.bloguje.cz" rel="me">Dovolená v Číně</a></li><li><a href="http://bloguneni.bloguje.cz/">Blogu není...</a></li><li><a href="http://hekko.bloguje.cz" rel="acquaintance met">Adminka bloguje</a></li><li><a href="http://www.bloc.cz/default.aspx">Bloc Jiřího Hlavenky</a></li><li><a href="http://apimania.eu" rel="me">Apimania</a></li><li><a href="http://dev20.info" rel="me">Dev::Info</a></li><li><a href="http://dankaj.bloguje.cz/" rel="contact met">Zápisky z Islandu</a></li><li><a href="http://jdem.cz" rel="me">Zkratky pro odkazy</a></li><li><a href="http://davebarry.cz" rel="me">Dave Barry česky</a></li><li><a href="http://uelectronics.info" rel="me">Mikroelektronika</a></li><li><a href="http://www.php-suit.com" rel="me">PHP Suit</a></li><li><a href="http://www.sharp-suit.com" rel="me">Sharp Suit</a></li> 
+<li><a href="http://technorati.com/claim/xnpb5tzhw" rel="me">Technorati Profile</a></li>
+</ul>
+
+<h2 id="n_recommend">Doporučuji</h2>
+<ul id="support">
+<li><a href="http://hostmonster.jdem.cz/">Hosting HostMonster</a></li>
+<li><a href="http://www.jihocestitatkove.cz/">Jihočeští taťkové</a></li>
+<li><a href="http://www.csvts.cz/cns/">Česká nukleární společnost</a></li>
+<li><a href="http://www.prozakladnu.cz/">PRO základnu!</a></li>
+</ul>
+
+<!-- Buzzboot Ads -->
+<!-- / Buzzboot Ads -->
+
+
+<p>
+
+</p>
+
+<h2>Meta</h2>
+<script type="text/javascript" src="http://feedjit.com/popPages/?bc=FFFFFF&amp;tc=008000&amp;brd1=336699&amp;lnk=008000&amp;hc=336699&amp;ww=200"></script><noscript><a href="http://feedjit.com/">Feedjit Live Blog Stats</a></noscript>
+
+<h2 id="n_archiv"><a href="#" class="iface" onclick="$('#archiv').BlindToggleVertically(500, null, 'bounceout');return false;">Archiv ...</a></h2>
+<ul id="archiv" style="display:none">
+<li><a href="0812archiv.html">prosinec 2008</a></li><li><a href="0811archiv.html">listopad 2008</a></li><li><a href="0810archiv.html">říjen 2008</a></li><li><a href="0809archiv.html">září 2008</a></li><li><a href="0808archiv.html">srpen 2008</a></li><li><a href="0807archiv.html">červenec 2008</a></li><li><a href="0806archiv.html">červen 2008</a></li><li><a href="0805archiv.html">květen 2008</a></li><li><a href="0804archiv.html">duben 2008</a></li><li><a href="0803archiv.html">březen 2008</a></li><li><a href="0802archiv.html">únor 2008</a></li><li><a href="0801archiv.html">leden 2008</a></li><li><a href="0712archiv.html">prosinec 2007</a></li><li><a href="0711archiv.html">listopad 2007</a></li><li><a href="0710archiv.html">říjen 2007</a></li><li><a href="0709archiv.html">září 2007</a></li><li><a href="0708archiv.html">srpen 2007</a></li><li><a href="0707archiv.html">červenec 2007</a></li><li><a href="0706archiv.html">červen 2007</a></li><li><a href="0705archiv.html">květen 2007</a></li><li><a href="0704archiv.html">duben 2007</a></li><li><a href="0703archiv.html">březen 2007</a></li><li><a href="0702archiv.html">únor 2007</a></li><li><a href="0701archiv.html">leden 2007</a></li><li><a href="0612archiv.html">prosinec 2006</a></li><li><a href="0611archiv.html">listopad 2006</a></li><li><a href="0610archiv.html">říjen 2006</a></li><li><a href="0609archiv.html">září 2006</a></li><li><a href="0606archiv.html">červen 2006</a></li><li><a href="0604archiv.html">duben 2006</a></li><li><a href="0603archiv.html">březen 2006</a></li><li><a href="0512archiv.html">prosinec 2005</a></li><li><a href="0511archiv.html">listopad 2005</a></li>
+</ul>
+
+
+
+</div><!-- konec sidebar -->
+<div class="clear">&nbsp;</div><!-- cistic -->
+</div><!-- konec obsah -->
+
+
+
+
+
+
+
+<div id="foot">
+<p>&copy; <a href="http://www.maly.cz/o-mn/">Martin Malý</a> (aka Arthur Dent) | Design by &copy; 2007 <a href="http://ash721.cz">ASH721</a> | <a href="http://hostmonster.jdem.cz">HOSTING</a> 3000GB+unlimited domains za 6 dolarů</p>
+
+</div>
+
+</div>
+
+</body></html>

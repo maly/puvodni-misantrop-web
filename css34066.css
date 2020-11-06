@@ -1,0 +1,151 @@
+* {margin: 0; padding: 0 }
+
+/* Body - Cele telo dokumentu */
+body,html { background: #fff;  font-family: "Verdana CE", "Arial CE", "Lucida Grande CE", "Helvetica CE", Verdana, Arial, lucida, sans-serif; color: #023540; margin: 0; text-align: left; } 
+body {font-size:80%;}
+/* tohle vidi jen opera */
+@media all and (min-width:0px) {body {font-size: 85%;}
+}
+div#all { background: #034B5A; width: 100%; text-align: center; }
+p.more, h2, h1 {background-color:#fff}
+
+/* Hlavicka webu */
+div#head { width: 769px; height: 150px; position: relative; margin: 0 auto; text-align: left; text-align: left; } 
+div#head p#logo { font-size: 160%; padding: 20px 0 0 0; } 
+div#head p#logo a:link, div#head p#logo a:visited { color: #000; } 
+div#head p#logo a:active, div#head p#logo a:hover { color: #eee; } 
+div#head p#logo img { width: 255px; height: 52px; margin: 0 16px 0 0; }
+ul, p.more, #sidebar h2, form, .comment, h2, h3, table { font-family: "Trebuchet MS", sans-serif, "Verdana CE", "Arial CE", "Lucida Grande CE"; }
+
+/* Hlavni navigace */
+ul#menu { width: 769px; height: 73px; position: relative; bottom: 73px; left: 0; margin: 0 auto; background:url("img/2bg-menu.gif") 100% 100% repeat-x; } 
+/* Hlavni navigace - blokovy odkaz */
+ul#menu li { margin : 0 0 0 0; display: block; width: 192px; height: 37px; float: left; position: relative; left: 0px; }
+ul#menu li a { font-weight: bold; display: block; width: 192px; height: 35px; line-height: 37px; text-align: center; position: relative; }
+ul#menu li a:link, ul#menu li a:visited  { color: #D0DFE6; text-decoration: none;  background:url("img/2menuitem.gif") 0% 0% no-repeat #245D69;  font-weight: bold;  font-size: 100%; } 
+ul#menu li a:active, ul#menu li a:hover  { color: #fff; text-decoration: none; background:url("img/2menuitem.gif") 0% -57px no-repeat #FFA825; font-weight: bold;  font-size: 100%; }
+ul#menu li a#selected:link, ul#menu li a#selected:visited, ul#menu li a#selected:active, ul#menu li a#selected:hover  { height: 38px; color: #000; text-decoration: none; background:url("img/2menuitem.gif") 0% -57px no-repeat #FF7A00; font-weight: bold;  font-size: 100%; }
+
+hr { position: absolute; top: -12721px; width: 50px; }
+A:link { color: #326772; text-decoration: underline; } 
+A:visited { color: #864895; text-decoration: underline; } 
+A:active, A:hover { color: #000; text-decoration: underline; } 
+a img { border: 0px solid #000; }
+a:hover img { border: 0px solid #000; }
+code, .code { background: #FFFFE1; font-size: 90%; font-family: Courier, "Courier New", monospace; padding:0.5em 0.2em 0.5em 1em; border-left:0.3em solid #2D7382; overflow:scroll; margin:0.3em 0; }
+
+h1 { margin: 0 10px 15px 0; padding: 0; color: #2D7382; font-size: 169%; font-weight: normal; } 
+h2 { padding: 2px 2px 2px 0; margin: 20px 0 5px 0; font-size: 130%; font-weight: normal; color: #000; } 
+/* tohle vidi jen opera */
+@media all and (min-width:0px) {h2 {font-weight: bold;}
+
+}
+h2 a:link { text-decoration: underline; font-weight: normal;  }
+h2 a:visited, h2 a { color: #9931BB; text-decoration: underline; font-weight: normal;}
+h2 a:active, h2 a:hover { color: #000; text-decoration: underline; font-weight: normal;}
+h3 { padding: 5px 5px 10px 0; margin: 20px 0 0 0; font-size: 110%; font-weight: bold; color: #000;  } 
+h3#n_pridejkoment { height: 40px; line-height: 44px; text-indent: 46px; border: 1px dotted #bbbbbb; border-width: 1px 0 0 0; background:url("img/2icon-pridejkoment.gif") 0% 50% no-repeat #fff; color: #047A93; padding: 5px 5px 5px 0; margin: 15px 0 15px 0;  }
+h2#n_koments { height: 40px; line-height: 44px; text-indent: 46px; border: 1px dotted #BBBBBB; border-width: 1px 0 0 0; background:url("img/2icon-komentare.gif") 0% 50% no-repeat #fff; color: #047A93; padding: 5px 5px 5px 0; margin: 5px 0 20px 0; font-size: 110%; font-weight: bold;   }
+
+h4 { font-size: 100%; margin: 4px 0 -10px 0; padding: 5px 0 0 0; width: auto; color: #4B6870; }
+ul { padding: 0 0 0 0; margin: 0 0 0 0; }
+ul li { list-style-type: none; } 
+
+/* Hlavni Obsah - cela sirka vcetne sidebaru */
+#obsah { width: 769px; position: relative; bottom: 76px; margin: 0 auto -76px auto; padding: 10px 0; text-align: left; background: #fff; } 
+/* Pole pro text */ 
+#pole { width: 506px; float: left; position: relative; left: 19px; padding: 15px 0 0 0; overflow: hidden; background-color: #fff;}
+#pole p { padding: 0 0 10px 0; }
+#pole ul { padding: 0 10px; margin: 5px 15px; }
+#pole ul li { list-style-image: url("img/2kulicka.gif"); color: #000; list-style-position: 0% 50%; }
+#pole table { width: 494px; border: 1px solid #000; border-collapse: collapse; margin: 1px; }
+#pole table tr th { border: 1px solid #000; background: #FFE895; padding: 2px 5px;  }
+#pole table tr td { padding: 2px 5px;  border: 1px solid #000; background: #FFFFE1; }
+#pole p pre {margin: 5px 0;}
+/* XXXXXXXX LISTA POD PEREXEM XXXXXXXX */
+p.more { background: #fff; height: 30px; font-size: 100%; margin: 10px 0 10px 0; padding: 0 0 0 0 !important; border: 1px dotted #BBBBBB; border-width: 0 0 1px 0;  }
+
+/* Datum prispevku */
+p.more span.date { display: block; width: 180px; height: 24px; line-height: 24px; float: left; font-weight: normal; color: #8C919F; margin: 3px 0 0 0; }
+
+/* Odkazy pod perexem - na komentare a do detailu */
+p.more a { text-decoration: none; font-weight: bold; display: block; padding: 0 9px; margin: 3px 0 0 4px; float: right; height: 24px; line-height: 24px; }
+
+/* Odkaz na komentare clanku */
+A.comm:link, A.comm:visited { color: #8C919F; text-decoration: underline; font-weight: normal; }
+A.comm:active, A.comm:hover { color: #000; background: #FFFFE1; text-decoration: none; font-weight: normal;  }
+
+/* Staly odkaz do detailu */
+A.perm:link, A.perm:visited { color: #8C919F; text-decoration: underline; font-weight: normal; }
+A.perm:active, A.perm:hover { color: #000; background: #FFFFE1; text-decoration: none; font-weight: normal; }
+
+
+p#pridejdo { padding: 5px 0 10px 0; }
+p.comment { margin: 0 0 10px 0; padding: 10px 10px 10px 10px !important; background: #FFF9E1; font-size: 100%; color: #281700; }
+
+
+
+#sidebar { width: 200px; position: relative; right: 20px; float: right; background: #fff; } 
+
+#sidebar h2 { width: auto; height: 26px; line-height: 26px;  font-size: 100%; color: #fff; background: #FF7600; margin: 0 0 0 0; padding: 0 0 0 10px; font-weight: bold; border: 1px solid #fff; border-width: 10px 0 0 0; position: relative; }
+#sidebar h2 a { display: block; width: 200px; height: 26px; line-height: 26px; position: absolute; left: 0; top: 0; padding: 0 0 0 0; text-indent: 10px; }
+#sidebar h2 a:link, #sidebar h2 a:visited { background: #67ADBC; color: #DCECEF;  }
+#sidebar h2 a:active, #sidebar h2 a:hover { background: #356D79; color: #fff;  }
+
+#sidebar ul { width: auto; height: auto; margin: 0; padding: 10px 0 20px 0; } 
+#sidebar ul li { width: auto; height: auto; margin: 0; padding: 0 10px 0 10px; list-style-type: none; text-align: left; font-weight: bold; color: #000; }
+#sidebar ul li a:link { text-decoration: underline; color: #326772; font-weight: normal; }
+#sidebar ul li a:visited { text-decoration: underline; color: #9931BB; font-weight: normal; }
+#sidebar ul li a:active, #sidebar ul li a:hover { text-decoration: none; color: #000; font-weight: normal; }
+/* Rubriky */
+#sidebar h2#n_rubriky { height: 36px; line-height: 36px; background:url("img/2posts-edit.gif") 0% 50% no-repeat #fff; color: #000; padding: 0 0 0 32px; }
+#sidebar ul#rubriky { width: auto; height: auto; margin: 0; padding: 0 0 0 0; } 
+#sidebar ul#rubriky li { list-style-type: none; width: 200px; height: 26px; text-align: left; font-weight: bold; color: #000; padding: 0 0 0 0; }
+#sidebar ul#rubriky li a { display: block; width: 200px; height: 26px; line-height: 26px; text-indent: 5px; }
+#sidebar ul#rubriky li a:link, #sidebar ul#rubriky li a:visited { text-decoration: underline; color: #2D7382; font-weight: bold; background: #fff;  }
+#sidebar ul#rubriky li a:active, #sidebar ul#rubriky li a:hover { text-decoration: none; color: #fff; font-weight: bold; background: #67ADBC;  }
+/* Odkazy */
+#sidebar h2#n_odkazy { border-width: 25px 0 0 0; background: #356D79; color: #DCECEF; }
+#sidebar ul#odkazy { background: #EDF5F8; }
+#sidebar h2.bok { background: #356D79; color: #DCECEF; }
+#sidebar h2#n_zaujalo { background: #356D79; color: #DCECEF; }
+#sidebar ul#zaujalo{ background: #EDF5F8; }
+#sidebar ul#zaujalo li { padding: 0 10px 5px 10px; }
+#sidebar h2#n_recommend { background: #356D79; color: #DCECEF; }
+#sidebar ul#n_recommend{ background: #EDF5F8; }
+#sidebar ul#n_recommend li { padding: 0 10px 5px 10px; }
+#sidebar h2#n_support { background: #356D79; color: #DCECEF; }
+#sidebar ul#support{ background: #EDF5F8; }
+#sidebar ul#support li { padding: 0 10px 5px 10px; }
+#sidebar h2#n_archiv { background: #356D79; color: #DCECEF; }
+#sidebar ul#archiv{ background: #EDF5F8; }
+#sidebar h2 a {text-decoration:none;font-weight:bold;}
+#sidebar p {margin-top:1em;}
+/* XXXXXXXX SIDEBAR KONEC XXXXXXXX */
+
+/* Komentarovy formular */
+form  { padding: 20px 0 0 0; background: #fff;color:#000000;}
+form p { height: 24px; line-height: 24px; }
+form p label { display: block; float: left; width: 200px; height: 24px; line-height: 24px; font-weight: bold; text-align: right; padding: 0 5px 0 0; }
+form div label { font-weight: bold; } 
+textarea { width: 504px; background: #F9FCFF; border: 1px solid #B3C8DF; color:#000;margin: 0 0 10px 0; }
+input.txt, input.openid-input { width: 200px; background: #F9FCFF; border: 1px solid #B3C8DF; color:#000;}
+p.odesli { text-align: right; color:#000;}
+input.tlacitko { width: 120px; cursor: pointer; cursor: hand; }
+
+/* Paticka */
+div#foot { width: 769px; height: 100px; position: relative; background: #02333E; margin: 0 auto; padding: 15px 0 0 0; text-align: center; border: 10px solid #FF7C00; border-width: 10px 0 0 0;}
+div#foot p { width: 700px; position: absolute; top: 9px; left: 20px; margin: 5px auto; text-align: left; color: #86BCC8; }
+div#foot p a:link, div#foot p a:visited { color: #FF8400; }
+div#foot p a:active, div#foot p a:hover { color: #fff; }
+.clear { clear: both; width: 400px; height: 1px; font-size: 1px; margin: 0; padding: 0; }
+
+/*Giveaway*/
+	#ga_block { width: 200px; background-color: #ffffff} 
+	#ga_block img { display: block; border: none; } 
+	#ga_block #ga_title { font: normal 12px Verdana, sans-serif; border: none; margin: 4px 0 0 0; } 
+	#ga_block #ga_title a { text-decoration: none; color: #1389B7; } 
+	#ga_block #ga_text { font: normal 11px Arial, sans-serif; border: none; margin: 4px 0 0 0; } 
+	#ga_block #ga_text a { text-decoration: none; color: #000000 } 
+	#ga_block #ga_text p { margin: 4px 0; } 
+	#ga_block #ga_text img { display: block; position: relative; float: left; border: none; margin: 0 1em 1em 0; }

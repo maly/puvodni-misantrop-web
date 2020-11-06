@@ -1,0 +1,435 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="cz">
+<head><link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.misantrop.info/rss.xml" /><link rel="alternate" type="application/rss+xml" title="RSS - Kdo umí..." href="http://www.misantrop.info/tema-8-kdo-umi.xml" /><link rel="alternate" type="application/rss+xml" title="Komentáře" href="http://www.misantrop.info/comments.xml" />
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/misantrop" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+ <title>API a PHP, díl čtvrtý - Misantrop.info</title> 
+
+<link rel="stylesheet" href="css39236.css" type="text/css" title="Styl2" media="screen" />
+<link rel="alternate stylesheet" href="css34066.css" type="text/css" title="Styl1" media="screen" />
+
+<meta name="verify-v1" content="qHyecOmV/BTXodaXkGrOlj7QL+X93dTbTLojG9EU22c=" />
+<link rel="openid.server" href="http://www.myopenid.com/server" />
+<link rel="openid.delegate" href="http://adent.myopenid.com/" />
+<link rel="openid2.local_id" href="http://adent.myopenid.com" />
+<link rel="openid2.provider" href="http://www.myopenid.com/server" />
+<meta http-equiv="X-XRDS-Location" content="http://www.myopenid.com/xrds?username=adent.myopenid.com" />
+
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="keywords" content="Martin Malý, Arthur Dent, weblogy, programování, PHP, blogy, misantrop, Web2.0, technologie, elektronika" />
+
+<meta name="description" content="API a PHP, díl čtvrtý - Misantrop.info" />
+</head>
+<body>
+<div id="all">
+<!-- Anal Lizer-->
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-190512-8";
+urchinTracker();
+</script>
+<!--dolizat-->
+ 
+
+<div id="adx" style="position:fixed;_position:absolute;top:5px;left:5px">
+<script type="text/javascript"><!--
+google_ad_client = "pub-3772893178572611";
+/* 120x600, vytvořeno 15.7.08 */
+google_ad_slot = "1720575805";
+google_ad_width = 120;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript"
+src="">
+</script>
+</div>
+
+<div id="head"><p id="logo"><a href="index.php"><img src="img/2zapisnik-logo.gif" alt="Misantrop.info - Web co vám doudí moudí..." /></a></p></div>
+
+<ul id="menu">
+<li><a href="index.php">Titulní stránka</a></li>
+<li><a href="http://rss.misantrop.info">Oblíbené zdroje</a></li>
+<li><a href="http://www.maly.cz/o-mn/?KeepThis=true&amp;TB_iframe=true&amp;height=500&amp;width=800" class="thickbox">O mně</a></li>
+<li><a href="http://www.bloguje.cz/vzkazy.php?send=47997">Napiš vzkaz</a></li>
+</ul>
+
+<div id="obsah">
+<div id="pole">
+<!-- Pocitadlo -->
+<p><img src="http://counter.cnw.cz/dungeon.cgi?blogmalycz&amp;6&amp;000000&amp;fff1d8&amp;on" alt=" " style="width:1px;height:1px;"/><script type="text/javascript">
+<!-- 
+var dummy =("<img src=\"http://counter.cnw.cz/trackit.cgi?blogmalycz&t2&" + escape(top.document.referrer) + "\" alt=\" \" border=\"0\" width=\"1\" height=\"1\">"); 
+// --></script>
+
+<script language="JavaScript" type="text/javascript">
+<!--
+var dummy = ('<a href="http://www.netagent.cz" target="_top"><img src="http://www.netagent.cz/agent.php?id=383&amp;ur='+escape(document.referrer)+'&amp;rw='+escape(window.screen.width)+'&amp;rh='+escape(window.screen.height)+'&amp;cd='+escape(window.screen.colorDepth)+'&amp;pt='+escape(document.title)+'&amp;lc='+escape(document.location)+'" width="1" height="1" border="0" alt="NetAgent" /></a>');
+//--></script>
+
+</p>
+<!-- Pocitadlo konec -->
+
+
+
+
+<h1>API a PHP, díl čtvrtý</h1>
+
+
+
+
+
+
+
+<p>a poslední. </p>
+
+<p style="float:right; margin:0 0 1em 1em;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-3772893178572611";
+
+/* 120x240, vytvořeno 6.7.08 */
+google_ad_slot = "4855232301";
+google_ad_width = 120;
+google_ad_height = 240;
+//-->
+</script>
+<script type="text/javascript"
+src="">
+</script>
+</p>
+
+<p><p>Vzhledem k minimálnímu zájmu jsem se rozhodl, že tento díl bude poslední, a proto jej pojmu stručně až heslovitě.<br /><br /><strong>API Licence Key</strong><br /><br />Pokud chcete mít kontrolu nad tím kdo a jak vaše API využívá, použijte tuto techniku. Každý, kdo bude chtít na API vaší aplikace přistupovat, od vás po registraci získá API Licence Key. Pokud je klient webovou aplikací, můžete svázat konkrétní licenční klíč s IP adresou serveru, na kterém aplikace poběží. Při žádosti klienta o přístup k API (nebo při žádosti o ticket) zkontrolujte licenční klíč a ověřte, zda má klient právo přistupovat a zda má právo přistupovat z té adresy ze které přistupuje.<br /><br /><strong>&quot;Hezká URL&quot; bez šachování s .htaccess</strong><br /><br />Pro přístup pomocí &quot;hezkých URL&quot; (např. v REST) typu &quot;<em>http://server.cz/api/post/create</em>&quot; se nejčastěji používá mod_rewrite modul pro Apache a nastavení, která vnitřně přesměrují podobné přístupy na nějakou &quot;nehezkou&quot; adresu, třeba &quot;<em>http://server.cz/api/api.php?object=post&amp;action=create</em>&quot;.<br /><br />Existují i dvě méně čistá řešení, bez mod_rewrite:<br /><br />Máte-li možnost spouštět skript na obsluhu chyby 404 (dejme tomu 404.php), pak můžete nechat adresář /api/ prázdný a veškeré volání odchytávat ve skriptu na zpracování chyby. Podstatné prvky pak jsou:<br /><br /><font face="courier new,courier">$path=explode(&#39;/&#39;,$_SERVER[&#39;REQUEST_URI&#39;]);</font><br />//rozseká řetězec s požadovanou cestou do pole path<br /><font face="courier new,courier">array_shift($path);</font><br />//protože REQUEST_URI začíná lomítkem, je $path[0] prázdný řetězec. Zahodím ho. <br /><font face="courier new,courier">$first=array_shift($path);</font><br />//v proměnné first mám teď první prvek požadované cesty. Je-li roven &quot;api&quot;, mohu pokračovat a zjistit, co vlastně uživatel chce.<br />i<font face="courier new,courier">f ($first==&#39;api&#39;) {</font><br />//v tuto chvíli mám v $path[0] první prvek cesty za API, např. ono &quot;post&quot;, v $path[1] mám prvek druhý (&quot;create&quot;).<br />//je to ideální např. pro implementaci takového API, které v URL předává dvojice &quot;předmět / akce&quot;, tedy např. <em>/picture/delete</em>.  <br /><font face="courier new,courier">....<br />}</font><br /><br />Pokud bylo volání rozpoznáno jako správné, nesmím zapomenout na <br /><br /><font face="courier new,courier">header(&#39;HTTP/1.1 200 OK&#39;);</font><br /><br />čímž zajistím, aby skript 404.php nevracel chybový kód, ale aby tvrdil, že vše bylo OK.<br /><br />Podobnou techniku lze použít i pro REST přístup k objektům, tedy pro přístup typu &quot;<em>http://server.cz/api/prispevky/42</em>&quot;.<br /><br />Takto pracuje např. moje homepage na www.maly.cz&nbsp;&ndash; celá je obsluhována skriptem 404.php, žádné adresáře /el, /knihy, /zapisky apod. neexistují, i když se tak URL tváří. Stejně je obsluhován i redirekt domén na Bloguje.<br /><br />Druhé řešení je podobné tomu prvnímu a lze ho použít ve chvíli, kdy z nějakého důvodu nelze využít skript 404. V kořenovém adresáři (lze i jinde) si vytvořím soubor <strong>api.php</strong>, který bude volán trošku &quot;podivným&quot; URL ve tvaru &quot;<em>http://server.cz/api.php/user/login</em>&quot;. Bude to fungovat jen na kombinaci PHP/Apache a dost možná je nějaké nastavení, které takové chování ruší, ale zatím všude, kde jsem to zkoušel, to fungovalo. Princip je ten, že Apache  takový požadavek předá skriptu &quot;<em>api.php</em>&quot; a to, co je za tím (&quot;<em>/user/login</em>&quot;) předá onomu skriptu v <font face="courier new,courier">$_SERVER[&#39;PATH_INFO&#39;]</font>. (Takto je obsluhován <a href="http://www.bloguje.cz/help/" target="_blank">referenční seznam značek</a>  na Bloguje.)<br /><br />Vůbec pro jakékoli zajímavější tvoření skriptů je globální pole <font face="courier new,courier">$_SERVER</font> neocenitelný zdroj radosti a poučení a doporučuju si s ním trošku pohrát.<br /><br /><strong>JSON</strong><br /><br /><em>JavaScript Object Notation.</em> Na rozdíl od univerzálního XML, které je tak mocné, až je otravné, je JSON &quot;odlehčený&quot; formát předávání dat. Výhoda je především v jeho jednoduchosti a rychlosti zpracování. Ideální je pro různé AJAX aplikace. Proč? Protože data předaná ve formátu JSON vypadají nějak takto:<br /><br /><font face="courier new,courier">{<br />    &quot;jmeno&quot;: &quot;Pepa Zdepa&quot;,<br />    &quot;mail&quot;: &quot;trhni@si.cz&quot;,<br />    &quot;adresa&quot;: {<br />        &quot;mesto&quot;: &quot;Brno&quot;,<br />        &quot;psc&quot;: 60200,<br />        &quot;ulice&quot;: &quot;Novákova&quot;<br />    },<br />    &quot;url&quot;: [<br />        &quot;http://pepa.cz&quot;,<br />        &quot;http://www.zdepa.cz&quot;<br />    ]<br />}</font><br /><br /><br />&quot;Parsování&quot; takových dat pak probíhá v JavaScriptu prostým příkazem <br /><br /><font face="courier new,courier">var clovek = eval(&quot;(&quot; + JSON_data + &quot;)&quot;);</font><br /><br />Existují JSON knihovny pro různé jazyky&nbsp;&ndash; viz <a href="http://www.json.org/index.html" target="_blank">http://www.json.org/index.html</a>. Výhody pro webové aplikace jsou zřejmé a JSON ocení každý, kdo považuje parsování XML či procházení DOM stromu XML dokumentu kvůli předání několika hodnot za čirý masochismus.</p><p>--- </p><p>Tímto končím svůj (mini)seriál na téma &quot;úvod do problematiky API webových aplikací&quot;, děkuji za pozornost a všem přeji &quot;happy coding&quot;.</p></p>
+
+<div style="text-align:center">
+<script type="text/javascript"><!--
+google_ad_client = "pub-3772893178572611";
+/* 468x60, vytvořeno 15.7.08 */
+google_ad_slot = "3559028762";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="">
+</script>
+</div>
+
+
+
+
+
+<p class="more">
+<span class="date">Dne 15.02.2007</span>
+
+</p>
+
+
+
+
+
+<p><a href="http://jdem.cz/tw?text=Zaj%c3%admav%c3%bd+%c4%8dl%c3%a1nek+na+Z%c3%a1pisn%c3%adku%3a+http%3A%2F%2Fwww.misantrop.info%2F485607-api-a-php-dil-ctvrty.html&amp;redir=1">Twittni</a></p>
+
+<p>Přidej do: 
+ <a href="http://vybrali.sme.sk/submit.php?url=http%3A%2F%2Fwww.misantrop.info%2F485607-api-a-php-dil-ctvrty.html"><img src="http://blog.sme.sk/blog/3/61630/tlacitko.gif" style="border:0" title="asdf.sk" alt="asdf.sk" /></a>
+
+<a href="http://www.stumbleupon.com/submit?url=http%3A%2F%2Fwww.misantrop.info%2F485607-api-a-php-dil-ctvrty.html&amp;title=API+a+PHP%2C+d%EDl+%E8tvrt%FD"> <img border=0 src="http://www.bloguje.cz/icon_su.gif" alt="StumbleUpon Toolbar"> Stumble It!</a>
+
+<script type="text/javascript" src="http://w.sharethis.com/widget/?tabs=web%2Cemail&amp;charset=utf-8&amp;style=rotate&amp;publisher=99a6f76f-7727-4c7b-a906-b91f57f8a706"></script></p>
+
+<script type="text/javascript" src="http://feedjit.com/coFilter/?bc=FFFFFF&amp;tc=008000&amp;brd1=336699&amp;lnk=008000&amp;hc=336699&amp;ww=500"></script>
+
+
+<h2 id="n_koments">Komentáře</h2>
+
+
+
+<p class="comment">
+<strong><a name="cmt_1">[1]</a> Minimalni zajem</strong> (Almad  - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Falmad.nejsem.in">WWW</a>) 15.02.2007, 13:48:51&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1070080">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1070080">D</a>]<br />
+
+Rek bych, ze kdo se o web trochu zajima tak api zvlada a "script kiddies" zas uz nezajima tohle ;)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_2">[2]</a> </strong> (Gringo - <a href="mailto:biggringo@gmail.com">Mail</a> ) 15.02.2007, 13:50:40&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1070088">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1070088">D</a>]<br />
+
+Minimální zájem? Vždyť já skoro nespím, jak se těším na další díl... Nevěřím.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_3">[3]</a> </strong> (Arthur Dent  ) 15.02.2007, 13:53:08&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1070092">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1070092">D</a>]<br />
+
+<a href="#cmt_1">[1]</a> Stručně řečeno: Nesouhlasím. Pokud bych souhlasil, tak připustím, že v ČR jsou všichni autoři webových aplikací script kiddies.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_4">[4]</a> PATH_INFO</strong> (Martiner  ) 15.02.2007, 14:37:27&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1070184">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1070184">D</a>]<br />
+
+PATH_INFO funguje nejen v PHP, ale i v CGI, Java Servletech,...
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_5">[5]</a> </strong> (zirafka - <a href="mailto:zirafka@zirafka.cz">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fblog.zirafka.cz">WWW</a>) 15.02.2007, 15:37:16&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1070293">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1070293">D</a>]<br />
+
+mrzi me, ze se serial nesetkal s nejakym vetsim zajmem. otazka je, cim je to zpusobene. nevim, jestli ma Arthur zajem o hledani odpovedi na tuto otazku, ale zkusim napsat svuj nazor (snad me kdyztak omlouva to, ze jsem z brna (-;)
+<br />
+<br />1, jak se pozna, ze je ci neni o clanek zajem? podle mnozstvi komentaru? nebo treba podle toho, ze casem opravdu vzroste pocet 2.0 API u nas? To ale neni hned.  (Viz RFC 1925 §2) (-;
+<br />
+<br />2, ke clanku se nedostali lidi, ktere by to zajimalo. tzn. na tomto blogu je to prvni ciste odborna serie clanku o programovani, takze mozna zustala zatim neobjevena presto, ze AD je jiste hodne cteny autor
+<br />
+<br />2a, na serial je malo odkazovano tam, kde by nekdo mohl hledat odborne clanky. Mrzi me, ze se clanky nedostali na Weblogy.cz (rikala jsem klukum, ale zustala jsem s protlacovanim taky jen na pul cesty, takze taky moje chyba...)
+<br />
+<br />2b, Skutecne netusim, co si ctou PHP programatori v Cechach.  Mozna jen Vranu. Mozna Interval a Roota... Fakt netusim. Ale nikde nebyl tenhle AFAIK
+<br />odkazovanej...
+<br />
+<br />4, (se pustim na hodne tenky led) Tipla bych si, ze dost lidi, se boji u Tvych clanku komentovat... Prece jen, snazit se bavit s misantropam neni pro kazdeho... ja jsem to zkusila jednou a celkem me to vycerpalo... (-:
+<br />
+<br />Abys mel aspon jeden opravdu zivej dukaz zajmu: Me ty clanky nadchli. Kdyz jsem si ty clanky precetla a premyslela o tom, napadlo me nekolik zajimavych projektu, ktere bych chtela realizovat a byli by pristupne jen pres API. Chtela jsem ti puvodne napsat, jestli bych mohla s Tebou treba o tech napadech i pokecat, ale pak jsem to z duvodu 4. radsi odlozila na neurcito.
+<br />
+<br />Takze podle me tyhle clanky sice treba neprinesli neco uplne noveho, ale aspon me otevreli novy pohled na vec. Novy pohled na to, jak se k te silene veci zvane web2.0 postavit kreativne. Jenomze tohle ti asi nikdo nerekne, protoze pro uplne nezkuseny programatory to fakt neni a ti zkusenejsi se treba taky inspiruji, ale stydi se, ze na to neprisli sami. (-:
+<br />
+<br />Nebo je to mozna uplne jinak... kazdopadne... ja mam o pokracovani serialu velkej zajem. kolik se teda musi prodat listku, aby se promitalo? (-;
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_6">[6]</a> </strong> (Yxen  ) 15.02.2007, 15:41:09&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1070301">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1070301">D</a>]<br />
+
+Podle čeho soudíš na minimální zájem? Malý počet komentářů přeci pouze nezvratně ukazuje, že ke tvému jedinečnému textu již není co dodat!
+<br />
+<br />Ne každý se o to, co je pod kapotou webu natolik aktivně zajímá, aby věděl tyhle detaily. Jo, někde si to zdarma u kafe přečíst, to je ale jiná. Takže jen piš, barde!
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_7">[7]</a> </strong> (Lokutus  - <a href="http://lokutus.bloguje.cz">WWW</a>) 15.02.2007, 15:52:31&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1070326">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1070326">D</a>]<br />
+
+<a href="#cmt_5">[5]</a> Anebo právě nikdo aktuálně neřeší API, ale až k tomu jednou dojde, bude každý vědět, kde ty články najde. :-)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_8">[8]</a> </strong> (pixy  ) 15.02.2007, 15:58:32&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1070340">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1070340">D</a>]<br />
+
+ad minimální zájem: pozorně sleduji, s velkým zájmem čtu, leč nekomentuji, nemámť, co bych dodal. Aby sis nemyslel.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_9">[9]</a> </strong> (pixy  ) 15.02.2007, 16:18:37&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1070369">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1070369">D</a>]<br />
+
+<a href="#cmt_5">[5]</a> BTW, já jsem rovněž nadšen, jenže jsem taky z Brna, takže to se nejspíš nepočítá.
+<br />
+<br />Ad JSON - tohle řešení je dobré, pokud chceš předat jen nějaká "malá" data, třeba jeden singulární objekt. Má-li toho být ale víc, začnou za chvilku definice těch objektových hodnot tvořit většinu datového objemu. XML je ještě ukecanější a komu se chce parsovat (nemluvě o tom, že parsování XML může být výkonově a paměťově docela problém, zvlášť v IE). Já to třeba řeším předáváním pole dohodnuté struktury, které se jednoduše rekurzivní funkcí rozparsuje a ty názvy se přiřadí až na klientu. Uvedený příklad by pak vypadal např. nějak takhle:
+<br />
+<br />// tohle je definice dat napevno v aplikaci:
+<br />var Data_def['API_data'] = [ "jmeno", "mail", ["adresa","ADDR_data"], ["urls","Array"] ];
+<br />
+<br />// tohle pak předává server klientu:
+<br />D = ["Pepa Zdepa", "trhni@si.cz", ["Brno",60200,"Novákova"], ["<a href="http://pepa.cz" rel="nofollow">http://pepa.cz</a>", "<a href="http://www.zdepa.cz" rel="nofollow">http://www.zdepa.cz</a>"] ]
+<br />
+<br />// a tohle se na to zavolá (pochopitelně lze sloučit rovnou s předchozím krokem):
+<br />parseData( D, "API_data" );
+<br />
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_10">[10]</a> </strong> (Čelo  ) 15.02.2007, 16:29:01&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1070388">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1070388">D</a>]<br />
+
+Čtu, články chválím a nemám potřeby komentovat (kromě tohoto).
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_11">[11]</a> Re: Zajem. Zn. Minimalni</strong> (Solvina - <a href="mailto:solvina@gmail.com">Mail</a> ) 15.02.2007, 16:32:41&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1070398">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1070398">D</a>]<br />
+
+Skoda, me se ten serial libil. Po dlouhy dobe si patlam zase neco v PHP a tohle se mi bude hodit. Protoze to chci udelat superluxusne :-). No, aspon mam vychozi bod, kde za minimum penez dostanu neco muziky ;-).
+<br />
+<br />PS. Vis, Arture, ono je tezky te chvalit. Taky bysme se mohli dockat clanku "Jsem tak znuden vasima pochvalama (sic) asi prestanu blogovat". A to by sme (sic), neřádi, byli neradi.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_12">[12]</a> </strong> (dgx - <a href="mailto:dave@dgx.cz">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.dgx.cz%2Ftrine">WWW</a>) 15.02.2007, 16:43:49&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1070426">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1070426">D</a>]<br />
+
+> Bude to fungovat jen na kombinaci PHP/Apache a dost možná je nějaké nastavení...
+<br />
+<br />Ano, to nastavení se jmenuje AcceptPathInfo - <a href="http://httpd.apache.org/docs/2.0/mod/core.html#acceptpathinfo" rel="nofollow">http://httpd.apache.org/docs/2.0/mod/core.html#acceptpathinfo</a>
+<br />
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_13">[13]</a> </strong> (Arthur Dent  ) 15.02.2007, 16:45:17&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1070431">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1070431">D</a>]<br />
+
+<a href="#cmt_11">[11]</a> Netřeba chválit, to se zase, když na to přijde, pochválím sám. Ocením spíš komentáře jako je ten <a href="#cmt_9">[9]</a> Pixyho, ktere neco pridavaji, rozvadeji myslenku ci polemizuji (viz diskuse se Zirafkou).
+<br />
+<br /><a href="#cmt_9">[9]</a> Ano, samosebou je to tvoje rychlejsi, ja, kdyz na to prijde, to ani do tech zavorek neuzaviram a posilam to "co polozka to radek". O JSON jsem se zminil hlavne proto, ze zacina byt docela hojne pouzivane a ze je "skoro idealni" pro parsovani v JS (je to zapis objektu v JS, co uz by bylo jednodussi?)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_14">[14]</a> </strong> (Arthur Dent  ) 15.02.2007, 16:46:02&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1070434">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1070434">D</a>]<br />
+
+<a href="#cmt_12">[12]</a> Ano, to je to nastaveni! Nemohl jsem si vzpomenout, diky, doplnim do clanku
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_15">[15]</a> </strong> (rybicka  ) 15.02.2007, 22:24:51&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1071014">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1071014">D</a>]<br />
+
+urcite pokracovat, nikdo nevi vsechno, takze i ti znalejsi se dozvi neco noveho:).
+<br />mne treba potesila zminka o JSON - neznam, normalne pouzivam taky styl "co polozka to radek", ale tohle si primo rika o pouziti spolu s AJAXem:)
+<br />
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_16">[16]</a> JSON</strong> (ah01  - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Femp.wz.cz">WWW</a>) 16.02.2007, 00:27:22&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1071184">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1071184">D</a>]<br />
+
+<a href="#cmt_15">[15]</a> JSON se ve spojení s AJAXem běžně používá (ale jestli by se pak nemělo mluvit spíše o AJAJ :-). Problém nastává, když se chceme připojit pomocí XmlHttpRequset k jiné doméně, což u použití cizích API potřebujeme. Proto jsem chtěl zmínit jednu metodu, kterou některá API nabízejí (aspoň je to vidět u Googlu, Yahoo, Del.icio.us a mnoho dalších)
+<br />
+<br />Je to předání JSON dat jako parametr &#8222;callback&#8220; funkce. Takže výsledek volání API je takovýto výstup:
+<br />
+<br />zpracuj_data({ &#8230; nějaká JSON data &#8230; });
+<br />
+<br />Takovéto API (myslím tím REST adresu) se pak dynamicky vloží do stránky jako klasický JS . V okamžiku, kdy dojde k jeho načtení, se skript začne vykonávat a dojde k zavolání fce. &#8222;zpracuj_data&#8220;, přičemž jako parametr dostane právě JSON data. Google tento postup nazývá json-in-script, viz <a href="http://code.google.com/apis/gdata/json.html" rel="nofollow">http://code.google.com/apis/gdata/json.html</a> . Obdobný postup používá hodně různých JS doplňku do stránek (např. Googole Reader). Myslím, že pokud API podporuje JSON, měla by taky umožnit použít i callback funkci. Vzhledem k tomu, kolik služeb tuto možnost nabízí, mohlo by se již jednat o jakýsi standard.
+<br />
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_17">[17]</a> zájem a záujem</strong> (tiso - <a href="mailto:tsovis@centrum.sk">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Ftiso.wz.cz">WWW</a>) 17.02.2007, 19:43:08&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1073780">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1073780">D</a>]<br />
+
+Sorry, že sa pridám medzi tých čo rozoberajú toto, iste to nebolo cieľom tej vety v úvode, ale nebude problém v tom že málo ľudí o tomto vôbec niečo vie? A tak väčšina iba číta, snaží s pochopiť o čom API je a len  málo z tých čo o tom niečo vedia má faktické pripomienky?
+<br />Čo sa týka článku, tak dík za tretí spôsob spracovania adresy pre hezký url, niekedy to určite využijem...
+
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+</div><!-- konec pole -->
+
+
+
+<div id="sidebar">
+
+<h2 id="n_rubriky">Rubriky</h2>
+<ul id="rubriky">
+<li><a href="tema-1-bavim-se-na-vas-ucet.html">Bavím se na váš účet</a></li><li><a href="tema-2-nemam-vas-rad.html">Nemám vás rád</a></li><li><a href="tema-3-pohrdani.html">Pohrdání</a></li><li><a href="tema-4-vase-bludy-na-moji-hlavu.html">Vaše bludy na moji hlavu</a></li><li><a href="tema-5-mym-analfabetum.html">Mým analfabetům...</a></li><li><a href="tema-6-co-me-bavi.html">Co mě baví?</a></li><li><a href="tema-7-to-je-nejaka-hudba-tohleto.html">To je nějaká hudba, tohleto?</a></li><li><a href="tema-8-kdo-umi.html">Kdo umí...</a></li><li><a href="tema-9-mene-kecu-vice-prace.html">Méně keců, více práce</a></li>
+</ul>
+
+<h2 class="bok">Jak se vám to čte?</h2>
+
+<p style="text-align:center">
+<a href="http://feeds.feedburner.com/misantrop"><img src="http://feeds.feedburner.com/~fc/misantrop?bg=99CCFF&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a></p>
+
+<p style="text-align:center">
+<a href="http://twittercounter.com/?username=adent" title="TwitterCounter for @adent"><img src="http://twittercounter.com/counter/?username=adent" width="88" height="26" style="border:none;" alt="TwitterCounter for @adent" /></a></p>
+
+<p style="text-align:center">
+<script type="text/javascript">
+var wsgApiKey = "481349a5-98b9-4d24-b32f-a5729d33840c";
+var wsgStyle = 2;
+var dummy =('<div id="wsgContainer" style="text-align:center"></div>');wsgScript=document.createElement('script');wsgScript.type="text/javascript";wsgScript.src="http://static.hubspot.com/websiteGraderBadge/badge.js?t="+Math.random();setTimeout("document.getElementById('wsgContainer').appendChild(wsgScript);",1);
+</script>
+</p>
+
+<script type="text/javascript" src="http://www.blogcatalog.com/w/services.php?id=150489&amp;width=165&amp;bgcolor=EEEEEE&amp;bcolor=356D79&amp;lcolor=333333&amp;hcolor=FFFFFF&amp;htext=Kde%20mne%20najdete&amp;name=0&amp;brand=0&amp;heading=1"></script>
+
+<h2 id="n_odkazy"><a href="#" class="iface" onclick="$('#odkazy').BlindToggleVertically(500, null, 'bounceout');return false;">Odkazy ...</a></h2>
+<ul id="odkazy" style="display:block">
+<li><a href="http://pixy.cz/pixynergia" rel="acquaintance met">Pixy</a></li><li><a href="http://blok.rozanek.cz" rel="acquaintance">Filip Rožánek</a></li><li><a href="http://www.whitedog.cz" rel="acquaintance met">White Dog</a></li><li><a href="http://kahi.cz/blog/" rel="met">Kahi</a></li><li><a href="http://lokutus.bloguje.cz" rel="met">Lokutus</a></li><li><a href="http://www.katchaba.com/" rel="acquaintance met">Katchaba</a></li><li><a href="http://machinegun.bloguje.cz" rel="acquaintance met">Johnny</a></li><li><a href="http://kokolia.bloguje.cz">Vladimír Kokolia</a></li><li><a href="http://viditelnymacek.cz">Miroslav Macek</a></li><li><a href="http://cina.bloguje.cz" rel="me">Dovolená v Číně</a></li><li><a href="http://bloguneni.bloguje.cz/">Blogu není...</a></li><li><a href="http://hekko.bloguje.cz" rel="acquaintance met">Adminka bloguje</a></li><li><a href="http://www.bloc.cz/default.aspx">Bloc Jiřího Hlavenky</a></li><li><a href="http://apimania.eu" rel="me">Apimania</a></li><li><a href="http://dev20.info" rel="me">Dev::Info</a></li><li><a href="http://dankaj.bloguje.cz/" rel="contact met">Zápisky z Islandu</a></li><li><a href="http://jdem.cz" rel="me">Zkratky pro odkazy</a></li><li><a href="http://davebarry.cz" rel="me">Dave Barry česky</a></li><li><a href="http://uelectronics.info" rel="me">Mikroelektronika</a></li><li><a href="http://www.php-suit.com" rel="me">PHP Suit</a></li><li><a href="http://www.sharp-suit.com" rel="me">Sharp Suit</a></li> 
+<li><a href="http://technorati.com/claim/xnpb5tzhw" rel="me">Technorati Profile</a></li>
+</ul>
+
+<h2 id="n_recommend">Doporučuji</h2>
+<ul id="support">
+<li><a href="http://hostmonster.jdem.cz/">Hosting HostMonster</a></li>
+<li><a href="http://www.jihocestitatkove.cz/">Jihočeští taťkové</a></li>
+<li><a href="http://www.csvts.cz/cns/">Česká nukleární společnost</a></li>
+<li><a href="http://www.prozakladnu.cz/">PRO základnu!</a></li>
+</ul>
+
+<!-- Buzzboot Ads -->
+<!-- / Buzzboot Ads -->
+
+
+<p>
+
+</p>
+
+<h2>Meta</h2>
+<script type="text/javascript" src="http://feedjit.com/popPages/?bc=FFFFFF&amp;tc=008000&amp;brd1=336699&amp;lnk=008000&amp;hc=336699&amp;ww=200"></script><noscript><a href="http://feedjit.com/">Feedjit Live Blog Stats</a></noscript>
+
+<h2 id="n_archiv"><a href="#" class="iface" onclick="$('#archiv').BlindToggleVertically(500, null, 'bounceout');return false;">Archiv ...</a></h2>
+<ul id="archiv" style="display:none">
+<li><a href="0812archiv.html">prosinec 2008</a></li><li><a href="0811archiv.html">listopad 2008</a></li><li><a href="0810archiv.html">říjen 2008</a></li><li><a href="0809archiv.html">září 2008</a></li><li><a href="0808archiv.html">srpen 2008</a></li><li><a href="0807archiv.html">červenec 2008</a></li><li><a href="0806archiv.html">červen 2008</a></li><li><a href="0805archiv.html">květen 2008</a></li><li><a href="0804archiv.html">duben 2008</a></li><li><a href="0803archiv.html">březen 2008</a></li><li><a href="0802archiv.html">únor 2008</a></li><li><a href="0801archiv.html">leden 2008</a></li><li><a href="0712archiv.html">prosinec 2007</a></li><li><a href="0711archiv.html">listopad 2007</a></li><li><a href="0710archiv.html">říjen 2007</a></li><li><a href="0709archiv.html">září 2007</a></li><li><a href="0708archiv.html">srpen 2007</a></li><li><a href="0707archiv.html">červenec 2007</a></li><li><a href="0706archiv.html">červen 2007</a></li><li><a href="0705archiv.html">květen 2007</a></li><li><a href="0704archiv.html">duben 2007</a></li><li><a href="0703archiv.html">březen 2007</a></li><li><a href="0702archiv.html">únor 2007</a></li><li><a href="0701archiv.html">leden 2007</a></li><li><a href="0612archiv.html">prosinec 2006</a></li><li><a href="0611archiv.html">listopad 2006</a></li><li><a href="0610archiv.html">říjen 2006</a></li><li><a href="0609archiv.html">září 2006</a></li><li><a href="0606archiv.html">červen 2006</a></li><li><a href="0604archiv.html">duben 2006</a></li><li><a href="0603archiv.html">březen 2006</a></li><li><a href="0512archiv.html">prosinec 2005</a></li><li><a href="0511archiv.html">listopad 2005</a></li>
+</ul>
+
+
+
+</div><!-- konec sidebar -->
+<div class="clear">&nbsp;</div><!-- cistic -->
+</div><!-- konec obsah -->
+
+
+
+
+
+
+
+<div id="foot">
+<p>&copy; <a href="http://www.maly.cz/o-mn/">Martin Malý</a> (aka Arthur Dent) | Design by &copy; 2007 <a href="http://ash721.cz">ASH721</a> | <a href="http://hostmonster.jdem.cz">HOSTING</a> 3000GB+unlimited domains za 6 dolarů</p>
+
+</div>
+
+</div>
+
+</body></html>

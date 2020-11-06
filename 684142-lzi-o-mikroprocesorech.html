@@ -1,0 +1,406 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="cz">
+<head><link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.misantrop.info/rss.xml" /><link rel="alternate" type="application/rss+xml" title="RSS - Vaše bludy na moji hlavu" href="http://www.misantrop.info/tema-4-vase-bludy-na-moji-hlavu.xml" /><link rel="alternate" type="application/rss+xml" title="Komentáře" href="http://www.misantrop.info/comments.xml" />
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/misantrop" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+ <title>Lži o mikroprocesorech - Misantrop.info</title> 
+
+<link rel="stylesheet" href="css39236.css" type="text/css" title="Styl2" media="screen" />
+<link rel="alternate stylesheet" href="css34066.css" type="text/css" title="Styl1" media="screen" />
+
+<meta name="verify-v1" content="qHyecOmV/BTXodaXkGrOlj7QL+X93dTbTLojG9EU22c=" />
+<link rel="openid.server" href="http://www.myopenid.com/server" />
+<link rel="openid.delegate" href="http://adent.myopenid.com/" />
+<link rel="openid2.local_id" href="http://adent.myopenid.com" />
+<link rel="openid2.provider" href="http://www.myopenid.com/server" />
+<meta http-equiv="X-XRDS-Location" content="http://www.myopenid.com/xrds?username=adent.myopenid.com" />
+
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="keywords" content="Martin Malý, Arthur Dent, weblogy, programování, PHP, blogy, misantrop, Web2.0, technologie, elektronika" />
+
+<meta name="description" content="Lži o mikroprocesorech - Misantrop.info" />
+</head>
+<body>
+<div id="all">
+<!-- Anal Lizer-->
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-190512-8";
+urchinTracker();
+</script>
+<!--dolizat-->
+ 
+
+<div id="adx" style="position:fixed;_position:absolute;top:5px;left:5px">
+<script type="text/javascript"><!--
+google_ad_client = "pub-3772893178572611";
+/* 120x600, vytvořeno 15.7.08 */
+google_ad_slot = "1720575805";
+google_ad_width = 120;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript"
+src="">
+</script>
+</div>
+
+<div id="head"><p id="logo"><a href="index.php"><img src="img/2zapisnik-logo.gif" alt="Misantrop.info - Web co vám doudí moudí..." /></a></p></div>
+
+<ul id="menu">
+<li><a href="index.php">Titulní stránka</a></li>
+<li><a href="http://rss.misantrop.info">Oblíbené zdroje</a></li>
+<li><a href="http://www.maly.cz/o-mn/?KeepThis=true&amp;TB_iframe=true&amp;height=500&amp;width=800" class="thickbox">O mně</a></li>
+<li><a href="http://www.bloguje.cz/vzkazy.php?send=47997">Napiš vzkaz</a></li>
+</ul>
+
+<div id="obsah">
+<div id="pole">
+<!-- Pocitadlo -->
+<p><img src="http://counter.cnw.cz/dungeon.cgi?blogmalycz&amp;6&amp;000000&amp;fff1d8&amp;on" alt=" " style="width:1px;height:1px;"/><script type="text/javascript">
+<!-- 
+var dummy =("<img src=\"http://counter.cnw.cz/trackit.cgi?blogmalycz&t2&" + escape(top.document.referrer) + "\" alt=\" \" border=\"0\" width=\"1\" height=\"1\">"); 
+// --></script>
+
+<script language="JavaScript" type="text/javascript">
+<!--
+var dummy = ('<a href="http://www.netagent.cz" target="_top"><img src="http://www.netagent.cz/agent.php?id=383&amp;ur='+escape(document.referrer)+'&amp;rw='+escape(window.screen.width)+'&amp;rh='+escape(window.screen.height)+'&amp;cd='+escape(window.screen.colorDepth)+'&amp;pt='+escape(document.title)+'&amp;lc='+escape(document.location)+'" width="1" height="1" border="0" alt="NetAgent" /></a>');
+//--></script>
+
+</p>
+<!-- Pocitadlo konec -->
+
+
+
+
+<h1>Lži o mikroprocesorech</h1>
+
+
+
+
+
+
+
+<p>Pozor, trošku techničtější článek, který neobsahuje jednoduché pravdy o AMD a Intelu. </p>
+
+<p style="float:right; margin:0 0 1em 1em;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-3772893178572611";
+
+/* 120x240, vytvořeno 6.7.08 */
+google_ad_slot = "4855232301";
+google_ad_width = 120;
+google_ad_height = 240;
+//-->
+</script>
+<script type="text/javascript"
+src="">
+</script>
+</p>
+
+<p><p>Při svém bloumání po elektrostránkách jsem narazil na hezký článek <a href="http://www.embedded.com/story/OEG20030610S0041">Ten lies about microprocessors</a> od Jima Turleyho. Dovolím si jej trochu přiblížit pro ty, co neumí / nechtějí / nemohou číst originál.</p><p>Na úvod ještě zdůrazním, že &quot;mikroprocesor&quot; je mnohem širší pojem než jen &quot;to co máte ve svém PC/Macu&quot;. <em>On to autor zmiňuje, ale až ve druhém bodu, a dle mých zkušeností tak daleko žádný horlivý diskutér nečte.</em></p><p>Žádné obvody nevyvolávají tolik vášní jako mikroprocesory. <em>Nikdo se nedohaduje o parametrech DRAM nebo o parametrech dekodérů</em>, píše Jim. Zato o procesorech koluje spousta legend a mýtů.</p><p>První mýtus je ten o <em>malém výběru</em>. Tipněte si, z kolika různých dvaatřicetibitových mikroprocesorů si můžete vybrat, když navrhujete elektronické zařízení? Deset? Dvacet? Ve skutečnosti je v současnosti na trhu více než sto různých 32bitových mikroprocesorů, nepočítaje v to odlišné varianty pouzder nebo různé modely dle rychlosti. Tucty firem vyrábějí 32bitové mikroprocesory, patřící do více než patnácti různých architektur. Přidejte několik set šestnáctibitových procesorů a několik set osmibitových...</p><p><em>Druhý mýtus: Intel vládne světu procesorů.</em> Jak Jim podotýká, když řeknete <em>procesor</em>, lidé si představí <em>Pentium</em>. Noviny se neskutečně blamují, když píší o tom, že Intel má 95% podíl na trhu mikroprocesorů. Intel dominuje trhu mikroprocesorů pro osobní počítače, ale PC jsou jen malým kouskem trhu s mikroprocesory, zhruba 2%. Zbývajících 98% tvoří embedded procesory (zabudované v nějakém zařízení: MP3 přehrávače, navigace, mobilní telefony, ledničky, pračky, mikrovlnky, auta, ...) Ve skutečnosti Intel nepatří ani do Top Five výrobců mikroprocesorů. Dokonce i když omezíme srovnávání pouze na 32bitové mikroprocesory, bude Intel až někde dole. Jen výrobci ARM procesorů prodají třikrát víc procesorů než Intel Pentií.</p><p><em>Třetí mýtus: Na instrukční sadě nezáleží.</em> Idea mnoha aplikačních programátorů. Ve skutečnosti na instrukční sadě záleží, a to podstatně. Od instrukční sady se odvíjí to, jak efektivní bude překladač vyššího jazyka. Autor navíc jako zajímavost uvádí <em>nepředvídatelnost násobení</em>&nbsp;&ndash; každý procesor totiž násobí jinak a maximální a minimální doba násobení se může (u jednoho procesoru) rapidně lišit, např. u ARM7 trvá násobení, podle grafu v článku, od 1 do 16 cyklů, v závislosti na tom JAKÉ číslo se násobí JAKÝM. Někdy pouhé prohození operandů, píše Jim, může zkrátit dobu násobení na polovinu. Ale nic z toho není ve vyšších jazycích vidět a jen málo překladačů takové věci respektuje.</p><p><em>Čtvrtý mýtus: RISC je lepší než CISC</em>. Pamatuju se, že se o RISC procesorech hovoří od 80. let a vedou se vášnivé spory a diskuse. CISC nabízejí &quot;hustší&quot; kód a mají lepší vývojářské nástroje, RISC mohou pracovat s vysokými frekvencemi a mají lepší marketing. Vyberte si. :)</p><p><em>Pátý mýtus: Přicházejí mikroprocesory implementující Javu.</em> Ano, stejně jako Vánoce. Ve skutečnosti Vánoce jsou o něco blíž, protože budou ještě letos. Java procesory jsou spíš podobné Ježíškovi než Vánocům: Hezká pohádka pro mladé inženýry, kteří ještě nejsou dost staří na to, aby tomu rozuměli. </p><p>Na Javě je spousta věcí zaznamenáníhodných, a většina z nich má co do činění s marketingem. Ovšem na Javě je pozornosti hodné i to, jak tvrdošíjně se vzpírá hardwarové implementaci. Řada společností se pokoušela vytvořit Java mikroprocesor, a všechny pokusy v nějakém stadiu selhaly. Tento trend stále pokračuje. A není celá pointa Javy v tom, že je <em>na hardware nezávislá</em>? (<em>Tady jsem si neodpustil víceméně přesný překlad, protože se mi velmi líbil ironický tón původního článku&nbsp;&ndash; pozn.aut.</em>) </p><p>Java nebyla navrhována k tomu, aby běžela na reálném hardware, a je to na ní vidět. Na garbage collector, vlákna, zásobníkovou orientaci a objektovou správu potřebuje JVM zhruba megabajt kódu k tomu, aby to dokázal přeložit do něčeho, čemu se nebudou současné nejvýkonnější procesory bránit. Desetiletí vývoje počítačů a výzkumu ve firmách a na univerzitách po celém světě nedokázaly vyprodukovat nic, co by vypadalo jako Java Machine. To není náhoda.</p><p>Existují HW akcelerátory Javy, které provádějí 30-60% bytekódu přímo na HW úrovni. Podle &quot;pravidla 80/20&quot; tyto čipy dokáží zrychlit průměrný běh programů v Javě, ale to stále není &quot;Java Machine&quot;.</p><p>Po letech neustálého vývoje a zdokonalování jsou Java-based procesory na úrovni &quot;60% bytekódu v HW, zbytek SW&quot;. Sám Sun zrušil vývoj procesoru pro Javu. Implementace zbývajících bytekódů hardwarem by nepřineslo rozumný zisk.</p><p><em>Šestý mýtus: Dhrystone MIPS je užitečný benchmark. </em>MIPS podle autora článku znamená spíš &quot;Nesmyslný Ukazatel Výkonu Pro Obchodníky&quot; (Meaningless Indicator of Performance for Salesmen).  Různé procesory mají různé instrukce, takže jejich počítání a porovnávání nemá smysl. MIPS je většinou odvozen od čehosi, co se nazývá Dhrystone. Dhrystone benchmark byl napsán před cirka 30 lety v jazyce PL/I a sloužil ke srovnávání VAX 11/780 s jinými sálovými počítači. Zabíral asi 4kB kódu, který se hravě vejde do cache a nedělá nic užitečného. Protože je maličký (a přesto pro některé lidi velmi důležitý), stal se předmětem, řekněme, <em>kreativní optimalizace. </em>Existují překladače C, které mají volbu <em>-dhrystone</em>. Stačí ji použít, a rapidně vzroste výkon v tomto benchmarku. Dnešní &quot;MIPS&quot; hodnocení se počítá z Dhrystone tak, že je výsledek vydělen 1757, což je výsledek prvního VAXu v 70. letech. Takže měříme &quot;VAX-ekvivalent&quot; čtyřkilovým kouskem kódu, napsaným v PL/I a přepsaným do C, který byl speciálně upraven, aby běžel co nejrychleji, což ve výsledku dá číslo, které marketing napíše do propagačních materiálů a &quot;omylem&quot; za něj flákne ještě nulu. Tak k čemu to je?</p><p><em>Mýtus sedmý: Cena souvisí s výkonem</em>. Ani náhodou. <br />  </p><p><em>Mýtus osmý: ARM mají nejnižší spotřebu</em>. Málokterý procesor má v něčem velmi silnou reputaci, ale ARMu se to podařilo. Spousta lidí věří, že ARM procesory mají minimální spotřebu, že dokáží běžet na sluneční pohon nebo na energii z liščího ohonu a ebonitové tyče. Vypadá to, jako by stačil ARM procesor, dva citróny a kus měděného drátu k tomu, aby vzniklo PDA. Stejně jako spousta mýtů má i tento dávné kořeny v realitě, ale realita se změnila a mýtus nabobtnal. Na počátku 90. let byly ARM procesory jedny z prvních, které byly použity v embedded aplikacích. V porovnání s tehdejšími procesory 68030, 29000 a 486DX měly ARM6 výrazně nižší spotřebu a &quot;míň topily&quot;. Důvod byl prostý: ARM neměly FPU, neměly cache, žádné výrazné budiče, žádnou externí sběrnici a minimální instrukční sadu. Dnes je spousta 32bitových procesorů pro embedded, spousta z nich je menší než ARM, spousta z nich má menší spotřebu než ARM, ale pověst stále vydržela, i když ve skutečnosti jsou dnešní ARM procesory zhruba uprostřed žebříčku.</p><p><em>Devátý mýtus: Druhý výrobce stejného čipu</em>. Hardwaroví návrháři často nesmějí použít součástku, která není dostupná od dvou či více výrobců. Což je dobré třeba u odporů, ale u procesorů je to nemožné. Třeba procesory MIPS vyrábí spousta výrobců: NEC, PMC-Sierra, IDT, Intrinsity a další, ale jejich modely nejsou vzájemně zaměnitelné. Mají stejnou instrukční sadu, ale jejich sběrnice, vývody, periferie, rychlosti a pouzdra se liší. Programátorům to moc nevadí, ti mohou většinu kódu použít, ale HW návrhář musí udělat víceméně nový systém.</p><p>Byly doby, kdy Motorola a Hitachi vyráběli stejné 68k procesory, DMA řadiče a další čipy. Intel a AMD procesory se daly zaměnit. Spousta low-end procesorů a součástek, např. z rodiny 8051 nebo 6805, byla také vyráběna dvěma či více výrobci. Konkurenční boj s podobnými věcmi zametl. Dnes je každý procesor unikátní, ale instrukční sada ne.</p><p><em>Desátý mýtus: Velký procesorový otřes</em>. Sto různých 32bitových procesorů, to je z hlediska trhu neefektivní. Musí přijít otřes, někdo vyhraje a ostatní budou poraženi. Tak schválně, kdo půjde první ke zdi, až propukne Procesorová revoluce?</p><p>Pravděpodobně nikdo. Počet procesorů se stále zvyšuje, místo toho aby klesal. Ty stovky &quot;okrajových&quot; čipů mají své věrné zákazníky, kteří nic jiného používat nechtějí. Tyhle čipy mají své opodstatnění a přěžívají z nějakého důvodu. A počet důvodů stoupá. Vznikají stále nové MP3 přehrávače, videokamery, automobily, hračky a další věci&nbsp;&ndash; a každá z nich chce nový a trošku jiný procesor. A dokud budou vývojáři vymýšlet nová zařízení, budou vznikat i nové procesory.</p></p>
+
+<div style="text-align:center">
+<script type="text/javascript"><!--
+google_ad_client = "pub-3772893178572611";
+/* 468x60, vytvořeno 15.7.08 */
+google_ad_slot = "3559028762";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="">
+</script>
+</div>
+
+
+
+
+
+<p class="more">
+<span class="date">Dne 2.05.2008</span>
+
+</p>
+
+
+
+
+
+<p><a href="http://jdem.cz/tw?text=Zaj%c3%admav%c3%bd+%c4%8dl%c3%a1nek+na+Z%c3%a1pisn%c3%adku%3a+http%3A%2F%2Fwww.misantrop.info%2F684142-lzi-o-mikroprocesorech.html&amp;redir=1">Twittni</a></p>
+
+<p>Přidej do: 
+ <a href="http://vybrali.sme.sk/submit.php?url=http%3A%2F%2Fwww.misantrop.info%2F684142-lzi-o-mikroprocesorech.html"><img src="http://blog.sme.sk/blog/3/61630/tlacitko.gif" style="border:0" title="asdf.sk" alt="asdf.sk" /></a>
+
+<a href="http://www.stumbleupon.com/submit?url=http%3A%2F%2Fwww.misantrop.info%2F684142-lzi-o-mikroprocesorech.html&amp;title=L%BEi+o+mikroprocesorech"> <img border=0 src="http://www.bloguje.cz/icon_su.gif" alt="StumbleUpon Toolbar"> Stumble It!</a>
+
+<script type="text/javascript" src="http://w.sharethis.com/widget/?tabs=web%2Cemail&amp;charset=utf-8&amp;style=rotate&amp;publisher=99a6f76f-7727-4c7b-a906-b91f57f8a706"></script></p>
+
+<script type="text/javascript" src="http://feedjit.com/coFilter/?bc=FFFFFF&amp;tc=008000&amp;brd1=336699&amp;lnk=008000&amp;hc=336699&amp;ww=500"></script>
+
+
+<h2 id="n_koments">Komentáře</h2>
+
+
+
+<p class="comment">
+<strong><a name="cmt_1">[1]</a> </strong> (Tonda - <a href="mailto:danek@antonindanek.cz">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fblog.antonindanek.cz%2F">WWW</a>) 02.05.2008, 17:02:24&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1633824">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1633824">D</a>]<br />
+
+Druhý mýtus je velká pravda. Psal jsem o tom v maturitní slohovce. :) Nicméně Intel taky přece nedělá jenom x86 procesory. Jejich brouci se dají najít na mnohých jiných obvodových deskách.
+<br />
+<br />Šestý mýtus mě zničil. :D (Přesto že Dhrystone MIPS vůbe neznám.)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_2">[2]</a> </strong> (brum brum  ) 02.05.2008, 17:56:52&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1633872">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1633872">D</a>]<br />
+
+ňuch ňuch, rád jsem si počet. přestože jsem jen analogový konstruktér a v digi světě jsem zamrznul někde u karnaughových map.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_3">[3]</a> </strong> (Radek Hulán - <a href="mailto:radek@hulan.cz">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fhulan.cz%2F">WWW</a>) 02.05.2008, 18:42:04&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1633918">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1633918">D</a>]<br />
+
+<a href="#cmt_1">[1]</a> počet na kusy nikoho nezajímá, podstatný je obrat. 10 ARM procesorů po padesáti centech, versus 1 Intel po  a kdo je king?
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_4">[4]</a> </strong> (Radek Hulán - <a href="mailto:radek@hulan.cz">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fhulan.cz%2F">WWW</a>) 02.05.2008, 18:43:02&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1633920">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1633920">D</a>]<br />
+
+hm, vypadá to, že systém žere  USD 50 "50 dolarů".. anebo jsem to na tom pitomém notebooku nenapsal?
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_5">[5]</a> </strong> (Radek Hulán - <a href="mailto:radek@hulan.cz">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fhulan.cz%2F">WWW</a>) 02.05.2008, 18:43:25&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1633921">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1633921">D</a>]<br />
+
+tak to fakt žere :-) Já jsem ok!
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_6">[6]</a> </strong> (Tonda - <a href="mailto:danek@antonindanek.cz">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fblog.antonindanek.cz%2F">WWW</a>) 02.05.2008, 19:22:32&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1633965">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1633965">D</a>]<br />
+
+<a href="#cmt_5">[5]</a> Radku, nepochybuj o sobě proboha !
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_7">[7]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 02.05.2008, 20:09:03&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1634000">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1634000">D</a>]<br />
+
+<a href="#cmt_3">[3]</a> Radku, netušil jsem, že ARM920T procesor Samsung v tvém HTC stojí 50 centů... Nepleteš si trochu pojmy s dojmy a ARM procesor s osmibitovým jednočipem? ;) 
+<br />
+<br />Když zůstaneme u těch ARM920T procesorů, které jsou víceméně standardem pro přenosná zařízení založená na Windows Mobile, tak jejich cena se pohybuje např. u Cirrus Logic od 21 do 45 dolarů... Konkrétně ceník Samsungu jsem nenašel, ale bude to plusmínus podobné. 
+<br />
+<br />Mimochodem, řekl bych že počet na kusy zajímá spoustu lidí. Minimálně ty týpky, co rozhodují o tom, pro jakou platformu udělají překladače a systémy. ;) 
+<br />
+<br />PS: <a href="http://www.embedded.com/story/OEG20021217S0039" rel="nofollow">http://www.embedded.com...1217S0039</a>
+<br />
+<br />Zooming in on that little 2% sliver, the balance gets even more lopsided. As Figure 3 shows, 8-bit chips are the best-selling type of processor, by far. Those little ol' 8051s and 6805s are flying off the shelves at the rate of more than 3 billion new chips per year. But they're not very expensive, so even though they're more than half of the units, they're less than 15% of the fiscal tonnage. 
+<br />
+<br />At the opposite end of the scale are-big surprise-32-bit microprocessors. This category includes PC processors like Pentium 4 and Athlon, of course, but also dozens of embedded processors such as PowerPC, 68k, MIPS, and ARM chips. In fact, most (98% or so) 32-bit processors are used in embedded systems, not PCs. Embedded 32-bit chips have outsold PC processors every year by a wide margin. ARM-based chips alone do about triple the volume that Intel and AMD peddle to PC makers. 
+<br />
+<br />Na druhou stranu: 
+<br />
+<br />Processors are only 2% of all semiconductors, and PC processors are only 2% of all processors. But processor chips generate about 30% of all the money, and PC processors are 50% of that. So 0.04% of the parts haul in 15% of the cash! That's two orders of magnitude and a factor of four difference. That's some serious leverage. It's as if Lotus (the car company) made more money than Toyota. 
+<br />
+<br />Stated another way, Pentium rakes in 15% of all the money made from every type of semiconductor from every company everywhere in the world. 
+<br />
+<br /><a href="#cmt_4">[4]</a><a href="#cmt_5">[5]</a> Žere znak dolaru? Divný... Proč? Přepošlu Hekko bugreport, díky. :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_8">[8]</a> </strong> (Radek Hulán - <a href="mailto:radek@hulan.cz">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fhulan.cz%2F">WWW</a>) 02.05.2008, 22:47:48&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1634138">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1634138">D</a>]<br />
+
+<a href="#cmt_7">[7]</a> no vidíš, jen jsi potvrdil moje slova :-)
+<br />
+<br />"Procesory jsou jen 2% z polovodičů, a PC procesory jsou jen 2% ze všech CPU, ale přesto CPU jako takové generují 30% všech tržeb, a z toho procesory pro PC polovinu"
+<br />
+<br />0.04% kusů dělá 15% tržeb = (především) Intel a AMD
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_9">[9]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 03.05.2008, 00:10:56&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1634188">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1634188">D</a>]<br />
+
+<a href="#cmt_8">[8]</a> Nikoli, jsem dalek toho, abych potvrzoval tvá slova, když jsou mimo probíranou věc... ;) Ty tvrdíš, že "obrat rozhoduje", což je sice hezký, ale coby argument naprosto mimo, protože o obratu nepadlo ani slovo, řeč byla o "podílu na trhu" a bylo explicitně řečeno, že jde o počet prodaných kusů. I kdybys nakrásně stokrát tvrdil, že v penězích je to jinak... Člověk s tvým IQ přeci pochopí, že když je řeč o počtu kusů, tak je řeč o počtu kusů, a je nesmysl pokřikovat "Intel rocks, protože vydělává nejvíc!" Je to tak nesmyslné jako křičet "Já mám Linux a jsem v pohodě", když je řeč o rozšířenosti operačních systémů.
+<br />
+<br />I kdyby byla řeč o nejčastější barvě procesorových pouzder, tak je to z 98% "černá" - a je jedno, že ty s kovovým lesklým pouzdrem jsou dražší, protože cena tu není <em>diskutovaný ukazatel</em>. 
+<br />
+<br />Nebo jsi tím myslel, že potvrzuji tvá slova o padesáti centech za ARM? Nebo to, že Intel je king? Blázníš? To jsou akorát fanouškovské výkřiky, to není jakéhokoli potvrzování vůbec hodné. ;)
+<br />
+<br />Jediné co "potvrzuji" je to, že Intel má největší podíl na obratu v tomhle segmentu. To ti rád potvrdím, i když o obrat nešlo ani autorovi, ani mně, ani komentátorovi ad <a href="#cmt_1">[1]</a>, jediný kdo o něm diskutoval jsi byl ty. ;)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_10">[10]</a> </strong> (Radek Hulán - <a href="mailto:radek@hulan.cz">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fhulan.cz%2F">WWW</a>) 03.05.2008, 01:45:08&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1634212">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1634212">D</a>]<br />
+
+*Druhý mýtus: Intel vládne světu procesorů. *
+<br />
+<br />Na toto jsem reagoval. Ten "mýtus" je totiž pravdivý. Fakt, že 0.04% kusů udělá 15% obratu znamená, že opravdu vládne (nehledě na to, že nedělá jen PC procesory, ale třeba i ony ARM procesory, speciální procesory do RAID řadičů, Atom low-power procesory, procesory do síťových karet, atd.).
+<br />
+<br />Ukaž mi jiného výrobce *polovodičů* s tržní kapitalizací skoro 140 miliard USD:
+<br /><a href="http://finance.yahoo.com/q?s=INTC" rel="nofollow">http://finance.yahoo.com...q?s=INTC</a>
+<br />
+<br />Třeba Motorola dělá i hromadu jiných věcí než polovodiče, a její tržní kapitalizace je jen 20 miliard USD:
+<br /><a href="http://finance.yahoo.com/q?s=MOT" rel="nofollow">http://finance.yahoo.com/q?s=MOT</a>
+<br />
+<br />
+<br />IDT má tržní kapitalizaci 0.3 miliard USD..
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_11">[11]</a> </strong> (Richard - <a href="mailto:richard.bukovansky@atlas.cz">Mail</a> ) 03.05.2008, 05:54:17&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1634226">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1634226">D</a>]<br />
+
+Intel svou divizi vyrabejici XScale aplikacni procesory (ARM-based CPU) loni (predloni?) prodal Marvellu za 600 megadolacu. To jenom tak mezi nami... ;-)
+<br />
+<br />Ad RISC vs. CISC: Tady vyhrava kombinace - RISC interne, navenek CISC. Frekvence nelze neustale zvysovovat a dnesni CPUcka uz zvladaji i CISC instrukce zpracovat za stejnou dobu jako RISC. Viz vsechny ty SSEx apod.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_12">[12]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 03.05.2008, 11:13:57&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1634310">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1634310">D</a>]<br />
+
+<a href="#cmt_10">[10]</a> "Vládnout" a "vydělávat" je trošku rozdíl. Na trhu s oblečením vydělávají nejvíc luxusní značky, ale vládnou mu čínské výrobky. Jako tady: Jakmile zvedneš hlavu od PC, tak budeš Intel těžko hledat.
+<br />
+<br />Vem si svůj telefon, tiskárnu, HW router, monitor, mikrovlnku, MP3 přehrávač, fotoaparát a videokameru, rozdělej je a kolukni se, jaký je v nich procesor, to všechno je "procesorový trh". Kolik výrobců dělá tyhle věci? A kolik z nich volí Intel procesory? Kdyby 51%, tak uznám, že Intel dominuje procesorovému trhu. Ale ono to bude tak okolo 10%, a to jen díky Intel 8051 osmibitům. ;) Ve spotřební elektronice, což je trh stoprocentně několikanásobně větší než PC, se Intelské procesory nijak výrazně neprosadily. Ne, Intel NEVLÁDNE trhu procesorů - z deseti výrobků s procesorem najdeš jejich procesor tak v jednom, tomu opravdu neříkám "dominance". ;)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_13">[13]</a> </strong> (mike  ) 05.05.2008, 22:19:37&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1636804">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1636804">D</a>]<br />
+
+<a href="#cmt_12">[12]</a> I v tom PC bude mit mozna Intel min procesoru, nez ostatni :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_14">[14]</a> </strong> (Meloun  - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fmeloun.esportuj.cz">WWW</a>) 28.05.2008, 17:26:21&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1658701">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1658701">D</a>]<br />
+
+k tomu zastoupeni procesoru na trhu sem vystrachal jeden docela zajimavy obrazek..
+<br /><a href="http://meloun.esportuj.cz/index.php?text=6-obecne-oblibene-omyly-o-mikroprocesorech" rel="nofollow">http://meloun.esportuj.cz...esorech</a>
+
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+</div><!-- konec pole -->
+
+
+
+<div id="sidebar">
+
+<h2 id="n_rubriky">Rubriky</h2>
+<ul id="rubriky">
+<li><a href="tema-1-bavim-se-na-vas-ucet.html">Bavím se na váš účet</a></li><li><a href="tema-2-nemam-vas-rad.html">Nemám vás rád</a></li><li><a href="tema-3-pohrdani.html">Pohrdání</a></li><li><a href="tema-4-vase-bludy-na-moji-hlavu.html">Vaše bludy na moji hlavu</a></li><li><a href="tema-5-mym-analfabetum.html">Mým analfabetům...</a></li><li><a href="tema-6-co-me-bavi.html">Co mě baví?</a></li><li><a href="tema-7-to-je-nejaka-hudba-tohleto.html">To je nějaká hudba, tohleto?</a></li><li><a href="tema-8-kdo-umi.html">Kdo umí...</a></li><li><a href="tema-9-mene-kecu-vice-prace.html">Méně keců, více práce</a></li>
+</ul>
+
+<h2 class="bok">Jak se vám to čte?</h2>
+
+<p style="text-align:center">
+<a href="http://feeds.feedburner.com/misantrop"><img src="http://feeds.feedburner.com/~fc/misantrop?bg=99CCFF&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a></p>
+
+<p style="text-align:center">
+<a href="http://twittercounter.com/?username=adent" title="TwitterCounter for @adent"><img src="http://twittercounter.com/counter/?username=adent" width="88" height="26" style="border:none;" alt="TwitterCounter for @adent" /></a></p>
+
+<p style="text-align:center">
+<script type="text/javascript">
+var wsgApiKey = "481349a5-98b9-4d24-b32f-a5729d33840c";
+var wsgStyle = 2;
+var dummy =('<div id="wsgContainer" style="text-align:center"></div>');wsgScript=document.createElement('script');wsgScript.type="text/javascript";wsgScript.src="http://static.hubspot.com/websiteGraderBadge/badge.js?t="+Math.random();setTimeout("document.getElementById('wsgContainer').appendChild(wsgScript);",1);
+</script>
+</p>
+
+<script type="text/javascript" src="http://www.blogcatalog.com/w/services.php?id=150489&amp;width=165&amp;bgcolor=EEEEEE&amp;bcolor=356D79&amp;lcolor=333333&amp;hcolor=FFFFFF&amp;htext=Kde%20mne%20najdete&amp;name=0&amp;brand=0&amp;heading=1"></script>
+
+<h2 id="n_odkazy"><a href="#" class="iface" onclick="$('#odkazy').BlindToggleVertically(500, null, 'bounceout');return false;">Odkazy ...</a></h2>
+<ul id="odkazy" style="display:block">
+<li><a href="http://pixy.cz/pixynergia" rel="acquaintance met">Pixy</a></li><li><a href="http://blok.rozanek.cz" rel="acquaintance">Filip Rožánek</a></li><li><a href="http://www.whitedog.cz" rel="acquaintance met">White Dog</a></li><li><a href="http://kahi.cz/blog/" rel="met">Kahi</a></li><li><a href="http://lokutus.bloguje.cz" rel="met">Lokutus</a></li><li><a href="http://www.katchaba.com/" rel="acquaintance met">Katchaba</a></li><li><a href="http://machinegun.bloguje.cz" rel="acquaintance met">Johnny</a></li><li><a href="http://kokolia.bloguje.cz">Vladimír Kokolia</a></li><li><a href="http://viditelnymacek.cz">Miroslav Macek</a></li><li><a href="http://cina.bloguje.cz" rel="me">Dovolená v Číně</a></li><li><a href="http://bloguneni.bloguje.cz/">Blogu není...</a></li><li><a href="http://hekko.bloguje.cz" rel="acquaintance met">Adminka bloguje</a></li><li><a href="http://www.bloc.cz/default.aspx">Bloc Jiřího Hlavenky</a></li><li><a href="http://apimania.eu" rel="me">Apimania</a></li><li><a href="http://dev20.info" rel="me">Dev::Info</a></li><li><a href="http://dankaj.bloguje.cz/" rel="contact met">Zápisky z Islandu</a></li><li><a href="http://jdem.cz" rel="me">Zkratky pro odkazy</a></li><li><a href="http://davebarry.cz" rel="me">Dave Barry česky</a></li><li><a href="http://uelectronics.info" rel="me">Mikroelektronika</a></li><li><a href="http://www.php-suit.com" rel="me">PHP Suit</a></li><li><a href="http://www.sharp-suit.com" rel="me">Sharp Suit</a></li> 
+<li><a href="http://technorati.com/claim/xnpb5tzhw" rel="me">Technorati Profile</a></li>
+</ul>
+
+<h2 id="n_recommend">Doporučuji</h2>
+<ul id="support">
+<li><a href="http://hostmonster.jdem.cz/">Hosting HostMonster</a></li>
+<li><a href="http://www.jihocestitatkove.cz/">Jihočeští taťkové</a></li>
+<li><a href="http://www.csvts.cz/cns/">Česká nukleární společnost</a></li>
+<li><a href="http://www.prozakladnu.cz/">PRO základnu!</a></li>
+</ul>
+
+<!-- Buzzboot Ads -->
+<!-- / Buzzboot Ads -->
+
+
+<p>
+
+</p>
+
+<h2>Meta</h2>
+<script type="text/javascript" src="http://feedjit.com/popPages/?bc=FFFFFF&amp;tc=008000&amp;brd1=336699&amp;lnk=008000&amp;hc=336699&amp;ww=200"></script><noscript><a href="http://feedjit.com/">Feedjit Live Blog Stats</a></noscript>
+
+<h2 id="n_archiv"><a href="#" class="iface" onclick="$('#archiv').BlindToggleVertically(500, null, 'bounceout');return false;">Archiv ...</a></h2>
+<ul id="archiv" style="display:none">
+<li><a href="0812archiv.html">prosinec 2008</a></li><li><a href="0811archiv.html">listopad 2008</a></li><li><a href="0810archiv.html">říjen 2008</a></li><li><a href="0809archiv.html">září 2008</a></li><li><a href="0808archiv.html">srpen 2008</a></li><li><a href="0807archiv.html">červenec 2008</a></li><li><a href="0806archiv.html">červen 2008</a></li><li><a href="0805archiv.html">květen 2008</a></li><li><a href="0804archiv.html">duben 2008</a></li><li><a href="0803archiv.html">březen 2008</a></li><li><a href="0802archiv.html">únor 2008</a></li><li><a href="0801archiv.html">leden 2008</a></li><li><a href="0712archiv.html">prosinec 2007</a></li><li><a href="0711archiv.html">listopad 2007</a></li><li><a href="0710archiv.html">říjen 2007</a></li><li><a href="0709archiv.html">září 2007</a></li><li><a href="0708archiv.html">srpen 2007</a></li><li><a href="0707archiv.html">červenec 2007</a></li><li><a href="0706archiv.html">červen 2007</a></li><li><a href="0705archiv.html">květen 2007</a></li><li><a href="0704archiv.html">duben 2007</a></li><li><a href="0703archiv.html">březen 2007</a></li><li><a href="0702archiv.html">únor 2007</a></li><li><a href="0701archiv.html">leden 2007</a></li><li><a href="0612archiv.html">prosinec 2006</a></li><li><a href="0611archiv.html">listopad 2006</a></li><li><a href="0610archiv.html">říjen 2006</a></li><li><a href="0609archiv.html">září 2006</a></li><li><a href="0606archiv.html">červen 2006</a></li><li><a href="0604archiv.html">duben 2006</a></li><li><a href="0603archiv.html">březen 2006</a></li><li><a href="0512archiv.html">prosinec 2005</a></li><li><a href="0511archiv.html">listopad 2005</a></li>
+</ul>
+
+
+
+</div><!-- konec sidebar -->
+<div class="clear">&nbsp;</div><!-- cistic -->
+</div><!-- konec obsah -->
+
+
+
+
+
+
+
+<div id="foot">
+<p>&copy; <a href="http://www.maly.cz/o-mn/">Martin Malý</a> (aka Arthur Dent) | Design by &copy; 2007 <a href="http://ash721.cz">ASH721</a> | <a href="http://hostmonster.jdem.cz">HOSTING</a> 3000GB+unlimited domains za 6 dolarů</p>
+
+</div>
+
+</div>
+
+</body></html>

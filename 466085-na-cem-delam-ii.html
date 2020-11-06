@@ -1,0 +1,476 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="cz">
+<head><link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.misantrop.info/rss.xml" /><link rel="alternate" type="application/rss+xml" title="RSS - Kdo umí..." href="http://www.misantrop.info/tema-8-kdo-umi.xml" /><link rel="alternate" type="application/rss+xml" title="Komentáře" href="http://www.misantrop.info/comments.xml" />
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/misantrop" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+ <title>Na čem dělám? II. - Misantrop.info</title> 
+
+<link rel="stylesheet" href="css39236.css" type="text/css" title="Styl2" media="screen" />
+<link rel="alternate stylesheet" href="css34066.css" type="text/css" title="Styl1" media="screen" />
+
+<meta name="verify-v1" content="qHyecOmV/BTXodaXkGrOlj7QL+X93dTbTLojG9EU22c=" />
+<link rel="openid.server" href="http://www.myopenid.com/server" />
+<link rel="openid.delegate" href="http://adent.myopenid.com/" />
+<link rel="openid2.local_id" href="http://adent.myopenid.com" />
+<link rel="openid2.provider" href="http://www.myopenid.com/server" />
+<meta http-equiv="X-XRDS-Location" content="http://www.myopenid.com/xrds?username=adent.myopenid.com" />
+
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="keywords" content="Martin Malý, Arthur Dent, weblogy, programování, PHP, blogy, misantrop, Web2.0, technologie, elektronika" />
+
+<meta name="description" content="Na čem dělám? II. - Misantrop.info" />
+</head>
+<body>
+<div id="all">
+<!-- Anal Lizer-->
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-190512-8";
+urchinTracker();
+</script>
+<!--dolizat-->
+ 
+
+<div id="adx" style="position:fixed;_position:absolute;top:5px;left:5px">
+<script type="text/javascript"><!--
+google_ad_client = "pub-3772893178572611";
+/* 120x600, vytvořeno 15.7.08 */
+google_ad_slot = "1720575805";
+google_ad_width = 120;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript"
+src="">
+</script>
+</div>
+
+<div id="head"><p id="logo"><a href="index.php"><img src="img/2zapisnik-logo.gif" alt="Misantrop.info - Web co vám doudí moudí..." /></a></p></div>
+
+<ul id="menu">
+<li><a href="index.php">Titulní stránka</a></li>
+<li><a href="http://rss.misantrop.info">Oblíbené zdroje</a></li>
+<li><a href="http://www.maly.cz/o-mn/?KeepThis=true&amp;TB_iframe=true&amp;height=500&amp;width=800" class="thickbox">O mně</a></li>
+<li><a href="http://www.bloguje.cz/vzkazy.php?send=47997">Napiš vzkaz</a></li>
+</ul>
+
+<div id="obsah">
+<div id="pole">
+<!-- Pocitadlo -->
+<p><img src="http://counter.cnw.cz/dungeon.cgi?blogmalycz&amp;6&amp;000000&amp;fff1d8&amp;on" alt=" " style="width:1px;height:1px;"/><script type="text/javascript">
+<!-- 
+var dummy =("<img src=\"http://counter.cnw.cz/trackit.cgi?blogmalycz&t2&" + escape(top.document.referrer) + "\" alt=\" \" border=\"0\" width=\"1\" height=\"1\">"); 
+// --></script>
+
+<script language="JavaScript" type="text/javascript">
+<!--
+var dummy = ('<a href="http://www.netagent.cz" target="_top"><img src="http://www.netagent.cz/agent.php?id=383&amp;ur='+escape(document.referrer)+'&amp;rw='+escape(window.screen.width)+'&amp;rh='+escape(window.screen.height)+'&amp;cd='+escape(window.screen.colorDepth)+'&amp;pt='+escape(document.title)+'&amp;lc='+escape(document.location)+'" width="1" height="1" border="0" alt="NetAgent" /></a>');
+//--></script>
+
+</p>
+<!-- Pocitadlo konec -->
+
+
+
+
+<h1>Na čem dělám? II.</h1>
+
+
+
+
+
+
+
+<p>Dnes preview pro (právem) zoufalé uživatele Bloguje, co se mě už rok ptají, kdy že bude to nové rozhraní... </p>
+
+<p style="float:right; margin:0 0 1em 1em;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-3772893178572611";
+
+/* 120x240, vytvořeno 6.7.08 */
+google_ad_slot = "4855232301";
+google_ad_width = 120;
+google_ad_height = 240;
+//-->
+</script>
+<script type="text/javascript"
+src="">
+</script>
+</p>
+
+<p><p>Nové rozhraní se <em>mílovými krokamima</em> blíží, přátelé! Poté co jsem napsal první verzi zobrazovacího engine, tak jsem ji zahodil. Pak jsem rozepsal druhou, tu jsem zahodil rozepsanou a napsal jsem třetí. Ta je součástí onoho frameworku, o kterém jsem psal minule.<br /><br />Na třetí verzi zobrazovacího engine je postaveno nové rozhraní pro Bloguje (a další servery). Mohu vám tedy dnes představit pár screenshotů (z jiného serveru), abyste si mohli udělat představu o tom, jak by mohlo nové rozhraní vypadat. Předpokládám, že se ještě budou měnit grafické prvky, ale princip rozhraní zůstane stejný.<br /><br />Takže tedy&nbsp;&ndash; <strong>tramtadá, milí uživatelé, tady máte ochutnávku</strong>... (Samosebou, budete moci používat pořád to staré, já vím že se vám tohle nelíbí!) :)</p><p><br /><br />Obrázek 1&nbsp;&ndash; Editování příspěvku. Žádné velké vymyšlenosti. Editační pole je větší než to stávající a přibylo pár funkcí, třeba ten tolik žádaný náhled</p><p><img src="http://zapisnik.maly.cz/img/sc1a.jpg" alt="sc1" title="sc1" width="800" height="517" /></p><p>&nbsp;</p><p>Obrázek 2&nbsp;&ndash; Seznam vydaných příspěvků. Stránkování už je trošku inteligentnější než to dnešní, i když to tu vidět není :)</p><p><img src="http://zapisnik.maly.cz/img/sc2a.jpg" alt="sc2" title="sc2" width="800" height="518" /></p><p>&nbsp;</p><p>Obrázek 3&nbsp;&ndash; Seznam příspěvků. Právě přetahuju jeden z nich na Náhled. Kdo si myslí, že tím spustím funkci &quot;Náhled&quot;, má bod. Kdo si myslí, že je i jiný způsob, má další bod.</p><p><img src="http://zapisnik.maly.cz/img/sc3a.jpg" alt="sc3" title="sc3" width="800" height="518" /></p><p>&nbsp;</p><p>Obrázek 4&nbsp;&ndash; Seznam rubrik. Právě tažením myší měním pořadí rubrik</p><p><img src="http://zapisnik.maly.cz/img/sc4a.jpg" alt="sc4" title="sc4" width="800" height="521" /></p><p>Obrázek 5&nbsp;&ndash; Seznam rubrik. Rubriky je možno měnit přímo &quot;na místě&quot;. Podobně třeba seznam odkazů.</p><p><img src="http://zapisnik.maly.cz/img/sc5a.jpg" alt="sc5" title="sc5" width="800" height="519" /></p><p>&nbsp;</p><p>Obrázek 6&nbsp;&ndash; Upload souborů. Konec klikání &quot;jeden-po-druhém&quot;. Včetně takového toho teploměru, co ukazuje, kolik se toho ještě bude nahrávat.</p><p><img src="http://zapisnik.maly.cz/img/sc6a.jpg" alt="sc6" title="sc6" width="800" height="519" /></p><p>&nbsp;</p><p>Obrázek 7&nbsp;&ndash; Galerie obrázků.</p><p><img src="http://zapisnik.maly.cz/img/sc7a.jpg" alt="sc7" title="sc7" width="800" height="519" /></p><p>&nbsp;</p><p>Obrázek 8&nbsp;&ndash; Galerie obrázků. Jasně že můžete ty obrázky přetahovat...</p><p><img src="http://zapisnik.maly.cz/img/sc8a.jpg" alt="sc8" title="sc8" width="800" height="521" /></p><p>&nbsp;</p><p>Obrázek 9&nbsp;&ndash; Editace obrázků. Můžete si s obrázkem udělat pár základních operací, tedy oříznout, změnit velikost, změnit jas a kontrast...</p><p><img src="http://zapisnik.maly.cz/img/sc9a.jpg" alt="sc9" title="sc9" /></p><p>&nbsp;</p><p>Obrázek 10&nbsp;&ndash; Nastavení. Okýnko, záložky, formuláře, on-line kontrola správnosti vkládaných dat, více viz <a href="http://www.dgx.cz/trine/item/dokonale-stylovani-formularu" target="_blank">diskuse</a>  o &quot;sémantickém formuláři&quot; u DGX</p><p><img src="http://zapisnik.maly.cz/img/sc10a.jpg" alt="sc10" title="sc10" width="800" height="517" /></p><p>&nbsp;</p><p>Obrázek 11&nbsp;&ndash; Změna vzhledu. Na obrazovce je najednou HTML, CSS i náhled, takže vidíte, jak se každá změna projevila. </p><p><img src="http://zapisnik.maly.cz/img/sc11a.jpg" alt="sc11" title="sc11" width="800" height="520" /></p><p>&nbsp;</p><p>Obrázek 12&nbsp;&ndash; Změna vzhledu. Máme tam takovou drobnou nápovědu pro lidi, co si nejsou jisti hodnotama CSS. Totéž máme i pro tagy v HTML, včetně speciálních &quot;Bloguje tagů&quot;</p><p><img src="http://zapisnik.maly.cz/img/sc12a.jpg" alt="sc12" title="sc12" width="800" height="522" /> </p><p>&nbsp;</p><p>&nbsp;</p><p>Obrázek 13&nbsp;&ndash; Změna vzhledu. Jasně že si můžete ty okýnka popřehazovat.</p><p><img src="http://zapisnik.maly.cz/img/sc13a.jpg" alt="sc13" title="sc13" width="800" height="518" /></p><p>Obrázek 14&nbsp;&ndash; Změna vzhledu. Můžete si zavřít to co nepotřebujete a koukat jen na to co ladíte...</p><p><img src="http://zapisnik.maly.cz/img/sc14a.jpg" alt="sc14" title="sc14" width="800" height="519" /></p><p>Jestli se budete těšit nebo děsit je teď, milí blogující, jen na vás! :) </p></p>
+
+<div style="text-align:center">
+<script type="text/javascript"><!--
+google_ad_client = "pub-3772893178572611";
+/* 468x60, vytvořeno 15.7.08 */
+google_ad_slot = "3559028762";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="">
+</script>
+</div>
+
+
+
+
+
+<p class="more">
+<span class="date">Dne 16.01.2007</span>
+
+</p>
+
+
+
+
+
+<p><a href="http://jdem.cz/tw?text=Zaj%c3%admav%c3%bd+%c4%8dl%c3%a1nek+na+Z%c3%a1pisn%c3%adku%3a+http%3A%2F%2Fwww.misantrop.info%2F466085-na-cem-delam-ii.html&amp;redir=1">Twittni</a></p>
+
+<p>Přidej do: 
+ <a href="http://vybrali.sme.sk/submit.php?url=http%3A%2F%2Fwww.misantrop.info%2F466085-na-cem-delam-ii.html"><img src="http://blog.sme.sk/blog/3/61630/tlacitko.gif" style="border:0" title="asdf.sk" alt="asdf.sk" /></a>
+
+<a href="http://www.stumbleupon.com/submit?url=http%3A%2F%2Fwww.misantrop.info%2F466085-na-cem-delam-ii.html&amp;title=Na+%E8em+d%ECl%E1m%3F+II."> <img border=0 src="http://www.bloguje.cz/icon_su.gif" alt="StumbleUpon Toolbar"> Stumble It!</a>
+
+<script type="text/javascript" src="http://w.sharethis.com/widget/?tabs=web%2Cemail&amp;charset=utf-8&amp;style=rotate&amp;publisher=99a6f76f-7727-4c7b-a906-b91f57f8a706"></script></p>
+
+<script type="text/javascript" src="http://feedjit.com/coFilter/?bc=FFFFFF&amp;tc=008000&amp;brd1=336699&amp;lnk=008000&amp;hc=336699&amp;ww=500"></script>
+
+
+<h2 id="n_koments">Komentáře</h2>
+
+
+
+<p class="comment">
+<strong><a name="cmt_1">[1]</a> </strong> (Jamesek  ) 16.01.2007, 13:31:23&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1020279">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1020279">D</a>]<br />
+
+zdá se že si budu muset založit blog na bloguje .. ;)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_2">[2]</a> skvele</strong> (rony  - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fspravodaj.madaj.net%2F">WWW</a>) 16.01.2007, 15:25:27&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1020464">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1020464">D</a>]<br />
+
+Ako som už niekoľkokrát povedal, rozhranie je skvelé a vidno v ňom tú blbú a zdĺhavú prácu na frameworku, ktorý spomínaš.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_3">[3]</a> </strong> (Lokutus  ) 16.01.2007, 17:29:26&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1020677">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1020677">D</a>]<br />
+
+Hm, hm, hm. Začínám zase dostávat chuť blogggggovat. Jen škoda, že mám zablokovaný účet.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_4">[4]</a> Počet</strong> (Piki - <a href="mailto:pikinia@gmail.com">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.piki.zh4a.sk%2F">WWW</a>) 16.01.2007, 18:52:53&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1020813">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1020813">D</a>]<br />
+
+Koľko ľudí to programovalo?
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_5">[5]</a> </strong> (Arthur Dent  ) 16.01.2007, 19:02:50&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1020829">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1020829">D</a>]<br />
+
+<a href="#cmt_4">[4]</a> Težko říct... Nevím kolik lidí vyvíjelo ty tři JavaScriptové knihovny, co jsem použil.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_6">[6]</a> </strong> (řetězka - <a href="mailto:retezka@gmail.com">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.retezka.net">WWW</a>) 16.01.2007, 19:44:48&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1020918">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1020918">D</a>]<br />
+
+já se tak těším!!! a su ščasné že su věrné už takových roků a teď se dočkám! huj! :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_7">[7]</a> mňam</strong> (kryska  ) 16.01.2007, 21:46:42&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1021173">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1021173">D</a>]<br />
+
+Ty ale umíš dělat chutě :o))))
+<br />
+<br />A jako třešnička na dortu to jemně růžové pozadí... ;op
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_8">[8]</a> </strong> (Arthur Dent  ) 16.01.2007, 21:50:43&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1021186">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1021186">D</a>]<br />
+
+Růžové??? Co máš prosímtě za monitor? :) A kdy sis naposledy seřizovala barvy? :) Když už, tak... "broskvová" :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_9">[9]</a> </strong> (kryska  ) 16.01.2007, 22:11:20&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1021241">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1021241">D</a>]<br />
+
+No jo no, Ježíšek někde potratil kalibrační sondu, buď rád, že Tvé pozadí vidím v pleťových odstínech :D
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_10">[10]</a> </strong> (kryska  ) 16.01.2007, 22:28:17&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1021287">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1021287">D</a>]<br />
+
+po vyfocení monitoru fotoaparátem a vykomunikování za účelem zjištění faktického stavu prokazatelnosti se detekovalo EED8D3, což jak ví i malé dítě, je růžová. A pokud to nechápeš, tak nevím, jak se můžete prohlašovat za webdsigneeera, pane Arthure Staníčku!
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_11">[11]</a> </strong> (Arthur Dent  ) 16.01.2007, 22:45:26&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1021333">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1021333">D</a>]<br />
+
+<a href="#cmt_10">[10]</a> Netahej do toho Staníčka, nebo ti něco peprného odpoví... on s tím nemá nic společného. A tvá kalibrační sonda kecá: #FED
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_12">[12]</a> </strong> (kryska  ) 16.01.2007, 22:57:14&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1021354">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1021354">D</a>]<br />
+
+sdělila jsem Tvé mrzké stanovisko své kalibrační sondě a navrhla jí, že jí přeleštím čočky sidólem. Mrmlá cosi o domácím násilí. Abych z ní neudělala nezaměstnanou...
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_13">[13]</a> </strong> (rony  - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fspravodaj.madaj.net%2F">WWW</a>) 16.01.2007, 23:37:35&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1021431">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1021431">D</a>]<br />
+
+<a href="#cmt_12">[12]</a> ako vidíš, rozhranie je prispôsobené obom pohlaviam. Muži ho majú vo farbách FED a ženy v ružovom.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_14">[14]</a> </strong> (dgx  ) 17.01.2007, 01:34:13&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1021561">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1021561">D</a>]<br />
+
+Je za tím vidět hromada práce. Jen bacha na licence ikonek.
+<br />
+<br /><a href="#cmt_10">[10]</a> občas stačí se na monitor podívat z trošku jiného úhlu. U levných LCD je ze spodu vidět dokonce krásná kovově modrá :-)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_15">[15]</a> </strong> (Arthur Dent  ) 17.01.2007, 01:50:16&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1021574">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1021574">D</a>]<br />
+
+<a href="#cmt_14">[14]</a> Licence ikonek je ošetřená (jsou volně k použití, podmíněné odkazem na autora, což dodržuji - stejně jako je tam odkaz na autory použitých JS knihoven), i když počítám s tím, že si necháme časem udělat u firemní grafičky vlastní sadu...
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_16">[16]</a> No vyzjerá to dobre...</strong> (Stopárka  - <a href="http://42.bloguje.sk/">WWW</a>) 17.01.2007, 09:26:50&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1021807">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1021807">D</a>]<br />
+
+...aj keď broskvová sa mi nepáči. Ale nejako to prekonám. Premôžem sa. Prekonám ten odpor. Alebo sa budem tváriť ako muž. :)
+<br />
+<br />Len ešte jednu pripomienočku. Patrím k ľuďom, čo sa upísali diablovi na 2 roky. Takže mám a ešte rok aj voľačo budem mať pomalý internet. Hlave ten editor (alebo aj úplne všetko) by mohol byť dostupný aj v textovej podobe.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_17">[17]</a> </strong> (ergo  - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fergo.tasselhof.com%2Frss.xml">WWW</a>) 17.01.2007, 11:07:21&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1021985">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1021985">D</a>]<br />
+
+Bude tu možnost používat i starý design? :/
+<br />Tohle mi přijde maličko přeplácané, když potřebuji obvykle jen rychle něco napsat (tzn. napsat, ne čekat, až se mi všechno načte).
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_18">[18]</a> </strong> (Arthur Dent  ) 17.01.2007, 15:25:06&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1022524">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1022524">D</a>]<br />
+
+<a href="#cmt_16">[16]</a> Nebudu v roce 2007 spouštět web pro modemisty. Ale možná udělám nějaký barevný varianty :)
+<br />
+<br /><a href="#cmt_17">[17]</a> Tebe se to, Ergo, netýká... Ty máš blog u Tasselhofa přes FTP, a tyhle blogy nebudou mít na výběr. Zůstaň v klidu, ty z toho na svém monitoru neuvidíš ani čárku :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_19">[19]</a> WYSIWYG</strong> (Tokugawa  - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fblog.zbroj.info">WWW</a>) 17.01.2007, 15:46:10&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1022570">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1022570">D</a>]<br />
+
+Kdysi jsem měl v editaci Pixelmanie.cz stejný WYSIWYG editor. Také 2x, u anotace a textu. vydrželo to týden, protože mě to děsně zdržovalo, než se to načetlo. To je jediné, čeho se děsím. Jinak se těším :o)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_20">[20]</a> </strong> (Arthur Dent  ) 17.01.2007, 15:59:46&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1022598">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1022598">D</a>]<br />
+
+<a href="#cmt_19">[19]</a> Uživatelé s Windows95 nebo s modemem budou samosebou používat to staré rozhraní.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_21">[21]</a> </strong> (Tokugawa  - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fblog.zbroj.info">WWW</a>) 17.01.2007, 16:04:24&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1022615">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1022615">D</a>]<br />
+
+No nemyslím, že tu v práci cokoliv z toho mám. Ale třeba to bylo jenom blbě implementované.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_22">[22]</a> </strong> (Arthur Dent  ) 17.01.2007, 16:09:53&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1022631">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1022631">D</a>]<br />
+
+<a href="#cmt_21">[21]</a> Tím ti server dává nenápadně najevo, že v práci máš pracovat! :)) Budu se snažit nastavit na maximum cachování a podobné vymyšlenosti.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_23">[23]</a> Ále...</strong> (Stopárka  - <a href="http://42.bloguje.sk/">WWW</a>) 18.01.2007, 07:26:20&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1023649">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1023649">D</a>]<br />
+
+...modemisty, modemisty! Až modemisty! Onoho času som paktovala s Wordpressom a tam bol tiež nejaký editor so všeliakými serepetičkami, ktoré kým sa mi načítali, tak som zabudla, čo som vlastne chcela napísať. Ale bola tam veľmi pohodlná možnosť si tútok hovadinu vypnúť. A potom sa mi tie serepetičky zobrazovali ako text. Čo jednak lepšie vyzeralo a druhak sa rýchlo načítalo.
+<br />
+<br />A aj súčasné bloguje.cz túto službyčku ponúka, tak bych o ňu nerada prišla.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_24">[24]</a> </strong> (Arthur Dent  ) 18.01.2007, 11:56:30&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1023996">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1023996">D</a>]<br />
+
+<a href="#cmt_23">[23]</a> Jasně že je ta možnost. :)
+<br />
+<br />Vzkaz pro Mekele: První část tvého komentáře je v pořádku, druhá z toho udělala kandidáta na výmaz. Ale abys nedržkoval a aby v jedný lajně s tebou nekušnili kdejaký šašci o tom, že nechávám jen pochvalu, tak tady tu první část zopakuju:
+<br />
+<br />Mekele: "Na rovinu: Vypada to udesne."
+<br />
+<br />Fajn, to je věc vzhledu. Udělal jsi lepší? Až ho uděláš, tak ti ho zaplatím a bude tam... Do té doby kušuj a neber si do huby programátory.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_25">[25]</a> Nové rozhraní</strong> (Jarda  ) 20.01.2007, 20:00:15&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1027586">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1027586">D</a>]<br />
+
+Vypadá to dobře. Už je známé nějaké datum spuštění nového rozhraní ?
+
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+</div><!-- konec pole -->
+
+
+
+<div id="sidebar">
+
+<h2 id="n_rubriky">Rubriky</h2>
+<ul id="rubriky">
+<li><a href="tema-1-bavim-se-na-vas-ucet.html">Bavím se na váš účet</a></li><li><a href="tema-2-nemam-vas-rad.html">Nemám vás rád</a></li><li><a href="tema-3-pohrdani.html">Pohrdání</a></li><li><a href="tema-4-vase-bludy-na-moji-hlavu.html">Vaše bludy na moji hlavu</a></li><li><a href="tema-5-mym-analfabetum.html">Mým analfabetům...</a></li><li><a href="tema-6-co-me-bavi.html">Co mě baví?</a></li><li><a href="tema-7-to-je-nejaka-hudba-tohleto.html">To je nějaká hudba, tohleto?</a></li><li><a href="tema-8-kdo-umi.html">Kdo umí...</a></li><li><a href="tema-9-mene-kecu-vice-prace.html">Méně keců, více práce</a></li>
+</ul>
+
+<h2 class="bok">Jak se vám to čte?</h2>
+
+<p style="text-align:center">
+<a href="http://feeds.feedburner.com/misantrop"><img src="http://feeds.feedburner.com/~fc/misantrop?bg=99CCFF&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a></p>
+
+<p style="text-align:center">
+<a href="http://twittercounter.com/?username=adent" title="TwitterCounter for @adent"><img src="http://twittercounter.com/counter/?username=adent" width="88" height="26" style="border:none;" alt="TwitterCounter for @adent" /></a></p>
+
+<p style="text-align:center">
+<script type="text/javascript">
+var wsgApiKey = "481349a5-98b9-4d24-b32f-a5729d33840c";
+var wsgStyle = 2;
+var dummy =('<div id="wsgContainer" style="text-align:center"></div>');wsgScript=document.createElement('script');wsgScript.type="text/javascript";wsgScript.src="http://static.hubspot.com/websiteGraderBadge/badge.js?t="+Math.random();setTimeout("document.getElementById('wsgContainer').appendChild(wsgScript);",1);
+</script>
+</p>
+
+<script type="text/javascript" src="http://www.blogcatalog.com/w/services.php?id=150489&amp;width=165&amp;bgcolor=EEEEEE&amp;bcolor=356D79&amp;lcolor=333333&amp;hcolor=FFFFFF&amp;htext=Kde%20mne%20najdete&amp;name=0&amp;brand=0&amp;heading=1"></script>
+
+<h2 id="n_odkazy"><a href="#" class="iface" onclick="$('#odkazy').BlindToggleVertically(500, null, 'bounceout');return false;">Odkazy ...</a></h2>
+<ul id="odkazy" style="display:block">
+<li><a href="http://pixy.cz/pixynergia" rel="acquaintance met">Pixy</a></li><li><a href="http://blok.rozanek.cz" rel="acquaintance">Filip Rožánek</a></li><li><a href="http://www.whitedog.cz" rel="acquaintance met">White Dog</a></li><li><a href="http://kahi.cz/blog/" rel="met">Kahi</a></li><li><a href="http://lokutus.bloguje.cz" rel="met">Lokutus</a></li><li><a href="http://www.katchaba.com/" rel="acquaintance met">Katchaba</a></li><li><a href="http://machinegun.bloguje.cz" rel="acquaintance met">Johnny</a></li><li><a href="http://kokolia.bloguje.cz">Vladimír Kokolia</a></li><li><a href="http://viditelnymacek.cz">Miroslav Macek</a></li><li><a href="http://cina.bloguje.cz" rel="me">Dovolená v Číně</a></li><li><a href="http://bloguneni.bloguje.cz/">Blogu není...</a></li><li><a href="http://hekko.bloguje.cz" rel="acquaintance met">Adminka bloguje</a></li><li><a href="http://www.bloc.cz/default.aspx">Bloc Jiřího Hlavenky</a></li><li><a href="http://apimania.eu" rel="me">Apimania</a></li><li><a href="http://dev20.info" rel="me">Dev::Info</a></li><li><a href="http://dankaj.bloguje.cz/" rel="contact met">Zápisky z Islandu</a></li><li><a href="http://jdem.cz" rel="me">Zkratky pro odkazy</a></li><li><a href="http://davebarry.cz" rel="me">Dave Barry česky</a></li><li><a href="http://uelectronics.info" rel="me">Mikroelektronika</a></li><li><a href="http://www.php-suit.com" rel="me">PHP Suit</a></li><li><a href="http://www.sharp-suit.com" rel="me">Sharp Suit</a></li> 
+<li><a href="http://technorati.com/claim/xnpb5tzhw" rel="me">Technorati Profile</a></li>
+</ul>
+
+<h2 id="n_recommend">Doporučuji</h2>
+<ul id="support">
+<li><a href="http://hostmonster.jdem.cz/">Hosting HostMonster</a></li>
+<li><a href="http://www.jihocestitatkove.cz/">Jihočeští taťkové</a></li>
+<li><a href="http://www.csvts.cz/cns/">Česká nukleární společnost</a></li>
+<li><a href="http://www.prozakladnu.cz/">PRO základnu!</a></li>
+</ul>
+
+<!-- Buzzboot Ads -->
+<!-- / Buzzboot Ads -->
+
+
+<p>
+
+</p>
+
+<h2>Meta</h2>
+<script type="text/javascript" src="http://feedjit.com/popPages/?bc=FFFFFF&amp;tc=008000&amp;brd1=336699&amp;lnk=008000&amp;hc=336699&amp;ww=200"></script><noscript><a href="http://feedjit.com/">Feedjit Live Blog Stats</a></noscript>
+
+<h2 id="n_archiv"><a href="#" class="iface" onclick="$('#archiv').BlindToggleVertically(500, null, 'bounceout');return false;">Archiv ...</a></h2>
+<ul id="archiv" style="display:none">
+<li><a href="0812archiv.html">prosinec 2008</a></li><li><a href="0811archiv.html">listopad 2008</a></li><li><a href="0810archiv.html">říjen 2008</a></li><li><a href="0809archiv.html">září 2008</a></li><li><a href="0808archiv.html">srpen 2008</a></li><li><a href="0807archiv.html">červenec 2008</a></li><li><a href="0806archiv.html">červen 2008</a></li><li><a href="0805archiv.html">květen 2008</a></li><li><a href="0804archiv.html">duben 2008</a></li><li><a href="0803archiv.html">březen 2008</a></li><li><a href="0802archiv.html">únor 2008</a></li><li><a href="0801archiv.html">leden 2008</a></li><li><a href="0712archiv.html">prosinec 2007</a></li><li><a href="0711archiv.html">listopad 2007</a></li><li><a href="0710archiv.html">říjen 2007</a></li><li><a href="0709archiv.html">září 2007</a></li><li><a href="0708archiv.html">srpen 2007</a></li><li><a href="0707archiv.html">červenec 2007</a></li><li><a href="0706archiv.html">červen 2007</a></li><li><a href="0705archiv.html">květen 2007</a></li><li><a href="0704archiv.html">duben 2007</a></li><li><a href="0703archiv.html">březen 2007</a></li><li><a href="0702archiv.html">únor 2007</a></li><li><a href="0701archiv.html">leden 2007</a></li><li><a href="0612archiv.html">prosinec 2006</a></li><li><a href="0611archiv.html">listopad 2006</a></li><li><a href="0610archiv.html">říjen 2006</a></li><li><a href="0609archiv.html">září 2006</a></li><li><a href="0606archiv.html">červen 2006</a></li><li><a href="0604archiv.html">duben 2006</a></li><li><a href="0603archiv.html">březen 2006</a></li><li><a href="0512archiv.html">prosinec 2005</a></li><li><a href="0511archiv.html">listopad 2005</a></li>
+</ul>
+
+
+
+</div><!-- konec sidebar -->
+<div class="clear">&nbsp;</div><!-- cistic -->
+</div><!-- konec obsah -->
+
+
+
+
+
+
+
+<div id="foot">
+<p>&copy; <a href="http://www.maly.cz/o-mn/">Martin Malý</a> (aka Arthur Dent) | Design by &copy; 2007 <a href="http://ash721.cz">ASH721</a> | <a href="http://hostmonster.jdem.cz">HOSTING</a> 3000GB+unlimited domains za 6 dolarů</p>
+
+</div>
+
+</div>
+
+</body></html>

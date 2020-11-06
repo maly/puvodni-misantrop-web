@@ -1,0 +1,538 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="cz">
+<head><link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.misantrop.info/rss.xml" /><link rel="alternate" type="application/rss+xml" title="RSS - Kdo umí..." href="http://www.misantrop.info/tema-8-kdo-umi.xml" /><link rel="alternate" type="application/rss+xml" title="Komentáře" href="http://www.misantrop.info/comments.xml" />
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/misantrop" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+ <title>Šablonový systém nebo přímo PHP? - Misantrop.info</title> 
+
+<link rel="stylesheet" href="css39236.css" type="text/css" title="Styl2" media="screen" />
+<link rel="alternate stylesheet" href="css34066.css" type="text/css" title="Styl1" media="screen" />
+
+<meta name="verify-v1" content="qHyecOmV/BTXodaXkGrOlj7QL+X93dTbTLojG9EU22c=" />
+<link rel="openid.server" href="http://www.myopenid.com/server" />
+<link rel="openid.delegate" href="http://adent.myopenid.com/" />
+<link rel="openid2.local_id" href="http://adent.myopenid.com" />
+<link rel="openid2.provider" href="http://www.myopenid.com/server" />
+<meta http-equiv="X-XRDS-Location" content="http://www.myopenid.com/xrds?username=adent.myopenid.com" />
+
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="keywords" content="Martin Malý, Arthur Dent, weblogy, programování, PHP, blogy, misantrop, Web2.0, technologie, elektronika" />
+
+<meta name="description" content="Šablonový systém nebo přímo PHP? - Misantrop.info" />
+<script type="text/javascript" src="/jdemcz.js"></script>
+<script type="text/javascript" src="http://www.boxmark.cz/tb/jquery.js"></script>
+<script type="text/javascript" src="http://www.boxmark.cz/tb/thickbox.js"></script>
+<script type="text/javascript" src="http://www.boxmark.cz/tb/interface.js"></script>
+<script type="text/javascript" src="http://track2.mybloglog.com/js/jsserv.php?mblID=2007052422462000"></script>
+<link rel="stylesheet" href="http://www.boxmark.cz/tb/thickbox.css" type="text/css" media="screen" />
+</head>
+<body>
+<div id="all">
+<!-- Anal Lizer-->
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-190512-8";
+urchinTracker();
+</script>
+<!--dolizat-->
+<div style="position: fixed; _position:absolute;right: 0; top: 0; width: 163px; height: 163px;"><a href="http://www.misantrop.info/"><img src="http://img.maly.cz/henryk.gif" alt="Neobsahuje názory Henryka Laholy" /></a></div> 
+
+<div id="adx" style="position:fixed;_position:absolute;top:5px;left:5px">
+<script type="text/javascript"><!--
+google_ad_client = "pub-3772893178572611";
+/* 120x600, vytvořeno 15.7.08 */
+google_ad_slot = "1720575805";
+google_ad_width = 120;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+
+<div id="head"><p id="logo"><a href="index.php"><img src="img/2zapisnik-logo.gif" alt="Misantrop.info - Web co vám doudí moudí..." /></a></p></div>
+
+<ul id="menu">
+<li><a href="index.php">Titulní stránka</a></li>
+<li><a href="http://rss.misantrop.info">Oblíbené zdroje</a></li>
+<li><a href="http://www.maly.cz/o-mn/?KeepThis=true&amp;TB_iframe=true&amp;height=500&amp;width=800" class="thickbox">O mně</a></li>
+<li><a href="http://www.bloguje.cz/vzkazy.php?send=47997">Napiš vzkaz</a></li>
+</ul>
+
+<div id="obsah">
+<div id="pole">
+<!-- Pocitadlo -->
+<p><img src="http://counter.cnw.cz/dungeon.cgi?blogmalycz&amp;6&amp;000000&amp;fff1d8&amp;on" alt=" " style="width:1px;height:1px;"/><script type="text/javascript">
+<!-- 
+document.write("<img src=\"http://counter.cnw.cz/trackit.cgi?blogmalycz&t2&" + escape(top.document.referrer) + "\" alt=\" \" border=\"0\" width=\"1\" height=\"1\">"); 
+// --></script>
+
+<script language="JavaScript" type="text/javascript">
+<!--
+document.write ('<a href="http://www.netagent.cz" target="_top"><img src="http://www.netagent.cz/agent.php?id=383&amp;ur='+escape(document.referrer)+'&amp;rw='+escape(window.screen.width)+'&amp;rh='+escape(window.screen.height)+'&amp;cd='+escape(window.screen.colorDepth)+'&amp;pt='+escape(document.title)+'&amp;lc='+escape(document.location)+'" width="1" height="1" border="0" alt="NetAgent" /></a>');
+//--></script>
+
+</p>
+<!-- Pocitadlo konec -->
+
+
+
+
+<h1>Šablonový systém nebo přímo PHP?</h1>
+
+
+
+
+
+
+
+<p>Je šablonový systém v PHP dobrý nápad nebo naprosto zbytečná mezivrstva? Používat tedy šablonové systémy? A kdy? </p>
+
+<p style="float:right; margin:0 0 1em 1em;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-3772893178572611";
+
+/* 120x240, vytvořeno 6.7.08 */
+google_ad_slot = "4855232301";
+google_ad_width = 120;
+google_ad_height = 240;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</p>
+
+<p>Je smutnou realitou, že téměř na každou otázku v IT lze odpovědět &quot;jak kdy&quot;. Ještě smutnější realitou jsou houfy zastánců Jediné Univerzální Pravdy Pro Každodenní použití, ale to je jiný příběh. Každopádně mírný oportunismus je v těchto věcech na místě (někdy i větší, to záleží na příležitosti).<p>Ale to jsem se zas zakecal. Šablonové systémy: Asi nejznámější PHP šablonový systém je Smarty, který je propracovaný, silný, známý, dostatečně rychlý, jednoduše použitelný (říkají jedni), nakynutý, zbytečně složitý, se zbytečným množstvím funkcí a nedostatečně rychlý (říkají druzí). Další šablonové systémy kombinují tyto atributy v různém poměru nakynutosti, možností, síly, schopností, ...</p><p>S rozmachem frameworků (každý schopnější PHP programátor si už alespoň čtyři napsal, že?) se objevil názor, že používat šablonový systém ve frameworku je nesmysl, protože, a teď cituji názor některých lidí, <em>PHP samotné je vlastně velmi silný šablonový systém</em>. To mají pravdu, otázka je, jestli je rozumné / vhodné / bezpečné v obecném frameworku rezignovat na nějakou mezivrstvu mezi PHP a HTML a říct: Použijte PHP, je to šablonový systém.</p><p>Osobně se domnívám, že do obecného PHP frameworku šablonový systém <strong>patří</strong>. Proč?</p><p>1. Šablonový systém vynucuje oddělení logiky od vzhledu. To je vlastnost v převážné většině případů pozitivní. Pro one-man-show projekty není takové oddělení naprosto nezbytné a programátoři rádi často podlehnou dojmu, že dokáží udržet v hlavě celý projekt a povědomí o tom, co si kde nadefinovali a odkud co kde volají. Na druhou stranu čas, ušetřený přístupem &quot;fláknu to tam kde to zrovna potřebuju&quot; je krvavě zaplacen při změnách kódu, nemluvě o případu, když k vašemu kódu přijde někdo po čase (někdy i vy sami). U projektů, na nichž dělají dva či více lidí a kde je &quot;HTML kodér&quot; jiný člověk než &quot;PHP programátor&quot; vyplyne oddělení logiky a vzhledu dřív nebo později přímo ze stylu práce. PHP framework pro všeobecné použití by měl podporovat tento způsob práce, pokud má být vhodný pro nasazení v solidnějších projektech. </p><p>2. HTML kodér by neměl mít možnost nějaké vlastní přehnané kreativity v PHP a v logice. Teoreticky mu musí stačit foreach, echo a html_special_chars. Pokud zvládne takto sám sebe omezit, tak není problém. Samosebou to časem zase svádí k tomu, že programátor hrábne do &quot;HTML části&quot; a něco tam přímo na místě &quot;zazáplatuje&quot; a štábní kultura jde do dža. Podle mého je lépe mu nejen takový přístup zakázat interními pravidly, ale pokud možno ani nepovolit.</p><p>3. Naprosto nezbytný je šablonový systém v případech, kdy je projekt navržen tak, že umožňuje uživatelům zvnějšku měnit vzhled (blogovacími systémy počínaje a <em>komunitošmejdo</em> servery konče). V takovém případě je přístup &quot;PHP je vlastně šablonový systém&quot; smrtící. <em>Ale pokud chcete, prosím. Jen nezapomeňte odfiltrovat kromě všech fopen, readfile, ... funkcí i eval(). Já bych za takový systém ale ruku do ohně nedal a svoje data bych mu nesvěřil.</em></p><p>PHP je sice taky hen ten šablonový systém, ale pokud plánujete udělat cokoli jiného než jednouživatelský jednomužný projekt, tak je alespoň minimální šablonová mezivrstva rozhodně dobrá volba. To je můj názor.</p></p>
+
+<div style="text-align:center">
+<script type="text/javascript"><!--
+google_ad_client = "pub-3772893178572611";
+/* 468x60, vytvořeno 15.7.08 */
+google_ad_slot = "3559028762";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+
+
+
+
+
+<p class="more">
+<span class="date">Dne 10.06.2008</span>
+
+</p>
+
+
+
+
+
+<p><a href="http://jdem.cz/tw?text=Zaj%c3%admav%c3%bd+%c4%8dl%c3%a1nek+na+Z%c3%a1pisn%c3%adku%3a+http%3A%2F%2Fwww.misantrop.info%2F696427-sablonovy-system-nebo-primo-php.html&amp;redir=1">Twittni</a></p>
+
+<p>Přidej do: 
+<a href="http://www.conota.cz/add.php" onclick="x=document;a=encodeURIComponent(x.location.href);t=encodeURIComponent(x.title);d=encodeURIComponent(window.getSelection());setTimeout('x99.focus()',1000);x99=window.open('http://www.conota.cz/add.php?popup=y&g_title='+t+'&g_url='+a+'&g_desc='+d,'Conota','modal=1,status=0,scrollbars=1,toolbar=0,resizable=1,height=550,width=785,left='+(screen.width-785)/2+',top='+(screen.height-550)/2);return false;"><img src="http://www.conota.cz/images/conote.gif" alt="Přidat na Conota"/><a>  <a href="http://linkuj.cz/?id=linkuj&amp;url=http%3A%2F%2Fwww.misantrop.info%2F696427-sablonovy-system-nebo-primo-php.html&amp;title=%C5%A0ablonov%C3%BD+syst%C3%A9m+nebo+p%C5%99%C3%ADmo+PHP%3F"><img src="http://linkuj.cz/img/badge.png" style="border:0" title="Linkuj si !" alt="Linkuj si !" /></a> <a href="http://vybrali.sme.sk/submit.php?url=http%3A%2F%2Fwww.misantrop.info%2F696427-sablonovy-system-nebo-primo-php.html"><img src="http://blog.sme.sk/blog/3/61630/tlacitko.gif" style="border:0" title="asdf.sk" alt="asdf.sk" /></a>
+
+<a href="http://www.stumbleupon.com/submit?url=http%3A%2F%2Fwww.misantrop.info%2F696427-sablonovy-system-nebo-primo-php.html&amp;title=%A9ablonov%FD+syst%E9m+nebo+p%F8%EDmo+PHP%3F"> <img border=0 src="http://www.bloguje.cz/icon_su.gif" alt="StumbleUpon Toolbar"> Stumble It!</a>
+
+<script type="text/javascript" src="http://w.sharethis.com/widget/?tabs=web%2Cemail&amp;charset=utf-8&amp;style=rotate&amp;publisher=99a6f76f-7727-4c7b-a906-b91f57f8a706"></script></p>
+
+<script type="text/javascript" src="http://feedjit.com/coFilter/?bc=FFFFFF&amp;tc=008000&amp;brd1=336699&amp;lnk=008000&amp;hc=336699&amp;ww=500"></script>
+
+
+<h2 id="n_koments">Komentáře</h2>
+
+
+
+<p class="comment">
+<strong><a name="cmt_1">[1]</a> </strong> (duf [<a href="http://duf.myopenid.com/" title="Ověřený uživatel http://duf.myopenid.com/">openID</a>] - <a href="mailto:david@smehlik.com">Mail</a> ) 10.06.2008, 14:38:47&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1671476">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1671476">D</a>]<br />
+
+na to se neda rict snad nic jineho nez "amen"! ve firme jsme si mnohokrat vyzkouseli, ze dokud kazdy dela to sve, tak se to jakz takz da, ale jakmile maji lide moznost hrabat si do veci navzajem, je to opravdu prusvih.
+<br />
+<br />takze z meho pohladu, sablony jednoznacne ano!
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_2">[2]</a> </strong> (Jens - <a href="mailto:jens@jens.cz">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.jens.cz">WWW</a>) 10.06.2008, 17:02:19&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1671629">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1671629">D</a>]<br />
+
+Mám zkušenosti z několika projektů, které rozhodně nejsou jednomužné ani jednouživatelské a myslím že například v Zendu, konkrétně komponenta Zend_View obstarává za použití PHP funkci šablonovacího systému zcela regulérně. Programátor se navíc nemusí učit žádný další "pseudo jazyk" a vše je navíc o krapet rychlejší. Proto se závěrem autora v obecné rovině nesouhlasím.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_3">[3]</a> </strong> (Hds  ) 10.06.2008, 18:12:26&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1671695">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1671695">D</a>]<br />
+
+No já nevím. Zkoušel jsem asi bilión různých šablonovacích systémů, pár jsem si jich i sám naprogramil, ale nakonec, po tom všem... jsem skončil u PHP. Teda nemíchám PHP+HTML, do prezentační vrstvy jdou pouze data, která mají, a v šabloně samotné se pracuje pouze s nimi, žádná business logika. Osobně nevidím, jaký je rozdíl např. mezi:
+<br />
+<br />{{ foreach x as y }}
+<br />
+<br />a
+<br />
+<br />
+<br />
+<br />Že je to první čitelnější? čistější? víc in? víc cool? Nevěřím... Navíc, při použití PHP šablon odpadá nutnost šablony kompilovat do PHP kódu (ve kterém už jaksi jsou), caching (ten se děje jinde než v šablonách) atd... Prostě nevidím žádný PODSTATNÝ důvod, proč do toho všeho tahat ještě další pseudo-jazyk.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_4">[4]</a> </strong> (Hds  ) 10.06.2008, 18:13:04&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1671696">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1671696">D</a>]<br />
+
+Sakra, to mě taky mohlo napadnout že PHP kód mi to nepustí :-)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_5">[5]</a> </strong> (http://openid.cz/villlem - <a href="mailto:villlem@gmail.com">Mail</a> ) 10.06.2008, 19:47:11&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1671779">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1671779">D</a>]<br />
+
+<a href="#cmt_3">[3]</a> Jo to vše v případě, že se můžeš spolehnout na své spolupracovníky, že aktuální problém jaksi "nezalepí" v prezentační vrstvě (nebo pokud máš možnost to jednoduše kontrolovat). Takové řešení používám tehdy, když něco dělám sám, nebo se spolehlivými lidmi.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_6">[6]</a> </strong> (danaketh - <a href="mailto:danaketh@gmail.com">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.danaketh.com">WWW</a>) 10.06.2008, 19:49:03&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1671780">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1671780">D</a>]<br />
+
+Jsem pro šablony. Nicméně jsem si musel napsat vlastní systém, protože jsem se vždycky někde zasekl na problému, kdy systém neuměl co jsem chtěl nebo to dělal jinak než jsem chtěl. Teď mám vlastní, velice primitivní šablonový systém (tzn umí to přesně co zrovna já potřebuju) a jsem spokojen :)
+<br />
+<br /><a href="#cmt_3">[3]</a> Takhle řeknu kodérovi ať mi udělá šablonu v HTML podle daných pravidel a mám klid. Jediné kde může být chyba je samotné HTML (resp XHTML) a to neohrožuje funkčnost webu nijak zásadně a snadno se to hledá. Kdyby měl kodér šablony (sice si většinou stejně všechno píšu sám ale občas není čas nebo chuť) dělat ještě něco s PHP, tak bych asi v noci nespal :) Hlavní výhody to ale přináší asi právě jen v případě, že šablony má dělat někdo jiný.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_7">[7]</a> </strong> (petiar  - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fpetiar.sk">WWW</a>) 10.06.2008, 19:59:33&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1671790">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1671790">D</a>]<br />
+
+Súc zamilovaný do Smarty súhlasím s autorom článku.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_8">[8]</a> </strong> (karf [<a href="http://karf.myopenid.com/" title="Ověřený uživatel http://karf.myopenid.com/">openID</a>] - <a href="mailto:karel.fucik@atlas.cz">Mail</a> - <a href="http://karf.myopenid.com">WWW</a>) 10.06.2008, 20:06:25&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1671798">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1671798">D</a>]<br />
+
+Stará známá písnička :) Vidím jediný pevný argument pro nePHP šablony, a tím je zmíněná potřeba omezit možnosti implementátora šablon. Pokud existuje možnost, že se k šablonám dostane diletant-sabotér-amatér, pak je legitimní požadavek na nějakou bezpečnou šablonovou vrstvu. Nejsem si už jistý, zda takovou vrstvou je např. Smarty. Jinak si myslím, že typicky stejně šablony implementuje programátor a ne HTML kodér (alespoň dle mých zkušeností - pokud jsou tyto role odděleny), a pak je použití PHP šablon přirozenější.
+<br />
+<br /><a href="#cmt_1">[1]</a> nevidím souvislost mezi "hrabáním si do věcí navzájem" a šablonovacími systémy vs. PHP
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_9">[9]</a> </strong> (Tom  ) 10.06.2008, 21:02:29&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1671851">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1671851">D</a>]<br />
+
+Kdyz kdysi jeste nebyly tak rozsirene frameworky, pouzival jsem Smarty a nemohl si ho vynachvalit. Hlavnim duvodem bylo oddeleni prezentace dat od logiky. Naopak jsem se nikdy nedostal do situace, kdyby v tymu bylo treba nekoho omezovat v pristupu ke kodu stylem, jaky se u Smarty naznacuje.
+<br />
+<br />Ovsem s prichodem frameworku MVC stylu tato potreba oddeleni zmizela - jsou oddelene jiz automaticky. A prestoze smarty zastupujici vrstu pohledu, sve sablony kompiluje do php, prijde mi to jiz jako nepotrebny krok.
+<br />
+<br />Muj nazor tedy jest, ze sablony maji sve misto pouze tam, kde jde o tak malou zalezitost, ze se nevyplati nainstalovat framework. A vzhledem k frameworkum typu kohana,... pochybuji, ze instalace sablonovaciho systemu bude o mnoho rychlejsi (instalaci myslim cely proces zprovozneni).
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_10">[10]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 10.06.2008, 22:22:21&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1671956">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1671956">D</a>]<br />
+
+Aha, vše stále stejné. Dovolím si demonstrovat na komentáři <a href="#cmt_2">[2]</a>:
+<br />
+<br /><em>Programátor se navíc nemusí učit žádný další "pseudo jazyk"</em> - správně. On se ho totiž ani učit nemá, protože HTML NENÍ starost programátora, ale kodéra. Jeho starostí je, aby předal dohodnutým způsobem data, jaká předat má. Tam jeho práce končí, dál je to na kodérovi. A pro kodéra je víceméně šumák, jestli se má učit pár PHP funkcí nebo nějaký pseudojazyk.
+<br />
+<br /><a href="#cmt_3">[3]</a> Ano, tím je to hezky pojmenované: <em>nemíchám PHP+HTML</em> - A co ostatní členové týmu? Dokud budu na vše ostřížím zrakem dohlížet, tak fajn... Ale hovořím o VĚTŠÍCH projektech, kde platí to co jsem napsal výše: Kodér si píše HTML a na místa dat dává výplň v podobě nějakých speciálních řetězců (netřeba se učit "pseudojazyk", stačí vědět, že tam, kde má být, řečkněme, titulek stránky kodér napíše <em>{titulek}</em> - a není co řešit. Kodér může dál vesele kódovat a ví, že se mu dynamická data objeví tam kde mají, programátor se nemusí starat o nic jiného, než aby jeho skript připravil to co připravit má.
+<br />
+<br /><a href="#cmt_8">[8]</a> <em>Jinak si myslím, že typicky stejně šablony implementuje programátor a ne HTML kodér</em> - a já si myslím, že to je špatně. To by mohl programátor navrhovat třeba i uživatelské rozhraní, že? Že to leckdy dělají? No, je to taky vidět!
+<br />
+<br /><a href="#cmt_9">[9]</a> Ano, Kohana je přesně příklad toho, o čem píšu. Koukněme se na <a href="http://kohanaphp.com/tutorials/xss.html" rel="nofollow">http://kohanaphp.com...als/xss.html</a> - čí je to práce? Kodérova? Programátorova? Kdo se má o tyhle věci starat? A není jednodušší, když se o ně postará template systém?
+<br />
+<br />Rád bych připomněl, že v článku nehovořím o jedno-, dvoumužných projektech, kdy "šablony implementuje programátor" a "kodér píše PHP"... Držme se prosím případů, kdy programátor programuje, kodér píše HTML, grafik dělá grafiku a UI navrhuje designér.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_11">[11]</a> </strong> (tiso - <a href="mailto:tsovis@centrum.sk">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Ftiso.wz.cz%2F">WWW</a>) 10.06.2008, 22:31:45&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1671968">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1671968">D</a>]<br />
+
+Mne osobne sa najviac páči tento KISS prístup:
+<br /><a href="http://www.massassi.com/php/articles/template_engines/" rel="nofollow">http://www.massassi.com..._engines/</a>
+<br />Len nepoužívam short_opet_tags, v každej šablóne píšem zoznam a význam premenných, ošetrujem neoprávnené volanie šablóny, neexistenciu premennej (tam kde to je potrebné) a podobne. Zatiaľ mi stačili echo, if, else, isset, count a foreach. Ale chápem že na niektorý projekt to nemusí byť dostatočné riešenie.
+<br />K bodu 3: kontrola šablón cez token_get_all to istí...
+<br />Mám jednu otázku: html_special_chars má ísť do šablóny, nie do funkcie ktorá pripravuje dáta pre šablónu? Tam mi pasuje viac...
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_12">[12]</a> </strong> (Roman - <a href="mailto:creamd@c64.sk">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.c64.sk">WWW</a>) 10.06.2008, 22:35:31&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1671973">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1671973">D</a>]<br />
+
+mne staci uplne precitat si toto:
+<br />
+<br />"Powered by Kohana v2.1. Rendered in 0.1093 seconds, using 2.00MB of memory"...  o taky framework by som ani bicykel neoprel...
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_13">[13]</a> </strong> (Hds  ) 10.06.2008, 23:07:59&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1672002">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1672002">D</a>]<br />
+
+<a href="#cmt_10">[10]</a> Pokud je to řečeno takhle, tak souhlasím. Při více lidech v týmu, kdy je striktně oddělena úloha programátorů a kóderů, je to jasné. 
+<br />
+<br />Ale přece jenom - já jsem měl napsaný takový jednoduchý systém, který mi umožňoval do šablony napsat třeba:
+<br />
+<br />
+<br />Hloubka vnoření: {_level}, obsah: {_value}
+<br />
+<br />
+<br />a skript na to místo vyplivl stromovou strukturu tvořenou vnořenými seznamy, automaticky vytvářel různá pomocná data (třeba tu hloubku zanoření, identifikátor konkrétní položky seznamu apod.). Mojí motivací bylo prostě si ulehčit práci s psaním stejného kódu pořád dokola, a místo toho tam prásknout prostě tag a hotovo. Umělo to i kompilaci do PHP kódu, takže s rychlostí ve finále taky problém nebyl, jenže... Já prostě nevím, jestli tohle je "správné" :-) Člověk se na různých (důvěryhodných) místech dozví naprosto protichůdné názory na problematiku a čert aby se v tom vyznal. Takže já teď jdu zpět ke kořenům a uvidíme co bude za měsíc :-)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_14">[14]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 10.06.2008, 23:08:57&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1672005">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1672005">D</a>]<br />
+
+11 Nějak mi nesecvaklo to s token_get_all, čím že to přesně "jistí". Jako že tu šablonu rozebere, vyhodí vše mimo definované tokeny a zase složí "vyčištěné" PHP? Jáááj, do boha, to by mě mohli do ucha milovat! ;)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_15">[15]</a> </strong> (Hds  ) 10.06.2008, 23:10:08&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1672006">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1672006">D</a>]<br />
+
+<a href="#cmt_13">[13]</a> Sakra to je podruhý dnes :) Prostě tam má být
+<br />
+<br />{tree items}
+<br />Hloubka vnoření: {_level}, text položky: {_value}
+<br />{/tree}
+<br />
+<br />akorát místo složených hranaté závorky.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_16">[16]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 10.06.2008, 23:14:56&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1672010">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1672010">D</a>]<br />
+
+<a href="#cmt_13">[13]</a> Proč ne? Ostatně lidi od IT jsou proslulí svou leností a tím, že jsou schopni napsat dvacet tisíc řádků kódu jen proto, aby si v budoucnu ulehčili práci. :) Proto si vymysleli podprogramy (ehm, pardon, funkce) a preprocesory a makra... a komponenty... Řekl bych, že "jeden tag na celou stromovou strukturu" má nejblíž "komponentám". Pokud jsou dobře a robustně navržené a dobře odladěné, tak v jejich použití nevidím zásadní problém. Ostatně, na tomhle přístupu funguje celé IT coby obor. ;)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_17">[17]</a> </strong> (tiso - <a href="mailto:tsovis@centrum.sk">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Ftiso.wz.cz%2F">WWW</a>) 10.06.2008, 23:36:37&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1672038">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1672038">D</a>]<br />
+
+<a href="#cmt_14">[14]</a> inak som to myslel - ak šablóna bude obsahovať nepovolené funkcie, tak ju systém nedovolí používať.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_18">[18]</a> </strong> (David Grudl  - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fdavidgrudl.com">WWW</a>) 11.06.2008, 03:53:01&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1672131">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1672131">D</a>]<br />
+
+O tomhle jsem už poměrně dávno mluvil s naším okresním hejtmanem a shodli jsme se na tom.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_19">[19]</a> </strong> (karf [<a href="http://karf.myopenid.com/" title="Ověřený uživatel http://karf.myopenid.com/">openID</a>] - <a href="mailto:karel.fucik@atlas.cz">Mail</a> - <a href="http://karf.myopenid.com">WWW</a>) 11.06.2008, 09:00:16&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1672236">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1672236">D</a>]<br />
+
+<a href="#cmt_10">[10]</a> Dovolím si ještě reagovat pouze na toto: "Držme se prosím případů, kdy programátor programuje, kodér píše HTML, grafik dělá grafiku a UI navrhuje designér."
+<br />
+<br />Vytváření prezentační logiky v šablonách má ale mnohem blíže k programování než k vytváření HTML. Právě u vícemužných projektů je to markantnější - ten, kdo implementuje šablony musí znát chování onoho systému, jaké všechny stavy mohou nastat, jaké hodnoty se můžou či nemůžou na výstupu objevit atd. Toto ví přece spíš programátor, který vytvářel aplikační logiku, než kodér, který k vytvoření HTML o tom nemusí vědět nic. Čili zde se asi neshodneme v tom, kdo vytváří prezentační logiku v šablonách. Mé zkušenosti (ano, z vícemužných projektů, ale ne z projektů typu Bloguje) jsou s tímto postupem pozitivní. Jinak UI programátor nenavrhuje, to zde přece nikdo netvrdil.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_20">[20]</a> </strong> (Radim Hasalík - <a href="mailto:radim@hasalik.cz">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.hasalik.cz">WWW</a>) 11.06.2008, 11:12:50&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1672400">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1672400">D</a>]<br />
+
+Nejsem sice programátor, ale z mého pohledu se mi zatím použití šablonovacího systému více než osvědčilo. Z Brouzdej.cz mám postřeh, že není vhodné řešit HTML v PHP. Máme tam sice šablonovací systém, jenže některé věci jsou pomocí HTML napsány přímo v PHP. To bohužel vnáší nepřehlednost do dalších úprav, takže také doporučuji striktně oddělovat oba jazyky.
+<br />
+<br />Na Zacinej.cz jsem použil Template Power. Smarty mi přišel příliš složitý. Funguje to. Pomalu se ale začínám klonit ke generování statických HTML stránek. 
+<br />
+<br />Jeden z mých zákazníků má přístup do testovacího rozhraní, ve kterém si spravuje vlastní stránky. Když úpravu odešle, uloží se do MySQL. Pomocí CRONu je volán zvláštní skript s upraveným Template Powerem. Skript si načte hlavní šablonu, doplní z MySQL požadovanou část a vygeneruje statickou HTML stránku. Tu potom pošle pomocí FTP příkazů na server klienta.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_21">[21]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 11.06.2008, 11:21:58&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1672406">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1672406">D</a>]<br />
+
+<a href="#cmt_19">[19]</a> <em>ten, kdo implementuje šablony musí znát chování onoho systému, jaké všechny stavy mohou nastat, jaké hodnoty se můžou či nemůžou na výstupu objevit atd.</em> - a to je argument pro co? Pro to, že by kodéři měli mít přístup k PHP nebo pro to, že by kód měli psát programátoři? Já osobně to čtu jako argument pro to, že by kodér s programátorem měli umět dobře spolupracovat a navzájem si rozumět. ;) 
+<br />
+<br />Mám s tím velmi dobré zkušenosti... Kdyby nic jiného, tak programátor si při snaze vysvětlit někomu jinému to na čem dělá projde znovu svůj vlastní návrh a najde v něm případné díry. ;)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_22">[22]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 11.06.2008, 11:40:49&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1672422">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1672422">D</a>]<br />
+
+<a href="#cmt_20">[20]</a> Ano, to co popisuješ na konci je výborná věc. Autoopravna nepotřebuje mít stránky poháněné PHPčkem a databází...
+<br />
+<br />BTW, tak jsem ti zjistil, že sedím v jedné kanceláři s programátorem Brouzdej... ;)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_23">[23]</a> </strong> (Tonda - <a href="mailto:danek@antonindanek.cz">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fblog.antonindanek.cz%2F">WWW</a>) 11.06.2008, 13:17:46&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1672508">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1672508">D</a>]<br />
+
+Já jsem jednoznačně pro šablonovací systémy. Smarty používám i u sebe na blogu, i když tam by se to zrovna asi dalo považovat za zbytečné.
+<br />
+<br />Tenkrát jsem ho tam dal spíš proto, abych se s ním naučil pracovat (ostatně celý můj blog = aplikace nově naučených věcí), ale jelikož mě čeká re-design, tak jsem moc rád, že ho tam mám.
+<br />
+<br /><a href="http://blog.antonindanek.cz/clanek/smarty-php-sablonovaci-system-pro-narocne/" rel="nofollow">http://blog.antonindanek.cz...ocne/</a>
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_24">[24]</a> </strong> (karf [<a href="http://karf.myopenid.com/" title="Ověřený uživatel http://karf.myopenid.com/">openID</a>] - <a href="mailto:karel.fucik@atlas.cz">Mail</a> - <a href="http://karf.myopenid.com">WWW</a>) 11.06.2008, 14:57:36&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1672601">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1672601">D</a>]<br />
+
+<a href="#cmt_21">[21]</a> To byl argument pro to, aby prezentační logiku řešil programátor. Ale nemám potřebu se o to nějak zuřivě přít.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_25">[25]</a> </strong> (Radim Hasalík - <a href="mailto:radim@hasalik.cz">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.hasalik.cz">WWW</a>) 12.06.2008, 08:01:14&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1673299">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1673299">D</a>]<br />
+
+<a href="#cmt_22">[22]</a> Nejlepší potom je, že díky této neznalosti (autoopravna má web s PHP a MySQL; opravdu veselá představa :-)) přichází podnikatelé o další peníze. Platí totiž zbytečně drahý hosting, jejich web může být nedostupný v případě výpadků atd.
+<br />
+<br />Ad BTW) Já vím. Svět je malý. Brácha mi to nadšeně volal. Tak jsem mu říkal, že se od tebe může hodně věcí naučit. Tvoje výhoda jako programátora je totiž v určitém odstupu, brácha je ve svém věku pořád ještě nadšencem.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_26">[26]</a> </strong> (Ján Varhol - <a href="mailto:varhol@insitestudio.sk">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Finsitestudio.sk%2F">WWW</a>) 12.06.2008, 20:17:47&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1673971">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1673971">D</a>]<br />
+
+Úplný súhlas. V predošlej práci som robil html kódera a miestami som sa musel hrať na php programátora kvôli spomínanému prístupu php=šablónovací systém. Bohužiaľ.
+
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+</div><!-- konec pole -->
+
+
+
+<div id="sidebar">
+
+<h2 id="n_rubriky">Rubriky</h2>
+<ul id="rubriky">
+<li><a href="tema-1-bavim-se-na-vas-ucet.html">Bavím se na váš účet</a></li><li><a href="tema-2-nemam-vas-rad.html">Nemám vás rád</a></li><li><a href="tema-3-pohrdani.html">Pohrdání</a></li><li><a href="tema-4-vase-bludy-na-moji-hlavu.html">Vaše bludy na moji hlavu</a></li><li><a href="tema-5-mym-analfabetum.html">Mým analfabetům...</a></li><li><a href="tema-6-co-me-bavi.html">Co mě baví?</a></li><li><a href="tema-7-to-je-nejaka-hudba-tohleto.html">To je nějaká hudba, tohleto?</a></li><li><a href="tema-8-kdo-umi.html">Kdo umí...</a></li><li><a href="tema-9-mene-kecu-vice-prace.html">Méně keců, více práce</a></li>
+</ul>
+
+<h2 class="bok">Jak se vám to čte?</h2>
+
+<p style="text-align:center">
+<a href="http://feeds.feedburner.com/misantrop"><img src="http://feeds.feedburner.com/~fc/misantrop?bg=99CCFF&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a></p>
+
+<p style="text-align:center">
+<a href="http://twittercounter.com/?username=adent" title="TwitterCounter for @adent"><img src="http://twittercounter.com/counter/?username=adent" width="88" height="26" style="border:none;" alt="TwitterCounter for @adent" /></a></p>
+
+<p style="text-align:center">
+<script type="text/javascript">
+var wsgApiKey = "481349a5-98b9-4d24-b32f-a5729d33840c";
+var wsgStyle = 2;
+document.write('<div id="wsgContainer" style="text-align:center"></div>');wsgScript=document.createElement('script');wsgScript.type="text/javascript";wsgScript.src="http://static.hubspot.com/websiteGraderBadge/badge.js?t="+Math.random();setTimeout("document.getElementById('wsgContainer').appendChild(wsgScript);",1);
+</script>
+</p>
+
+<script type="text/javascript" src="http://www.blogcatalog.com/w/services.php?id=150489&amp;width=165&amp;bgcolor=EEEEEE&amp;bcolor=356D79&amp;lcolor=333333&amp;hcolor=FFFFFF&amp;htext=Kde%20mne%20najdete&amp;name=0&amp;brand=0&amp;heading=1"></script>
+
+<h2 id="n_odkazy"><a href="#" class="iface" onclick="$('#odkazy').BlindToggleVertically(500, null, 'bounceout');return false;">Odkazy ...</a></h2>
+<ul id="odkazy" style="display:block">
+<li><a href="http://pixy.cz/pixynergia" rel="acquaintance met">Pixy</a></li><li><a href="http://blok.rozanek.cz" rel="acquaintance">Filip Rožánek</a></li><li><a href="http://www.whitedog.cz" rel="acquaintance met">White Dog</a></li><li><a href="http://kahi.cz/blog/" rel="met">Kahi</a></li><li><a href="http://lokutus.bloguje.cz" rel="met">Lokutus</a></li><li><a href="http://www.katchaba.com/" rel="acquaintance met">Katchaba</a></li><li><a href="http://machinegun.bloguje.cz" rel="acquaintance met">Johnny</a></li><li><a href="http://kokolia.bloguje.cz">Vladimír Kokolia</a></li><li><a href="http://viditelnymacek.cz">Miroslav Macek</a></li><li><a href="http://cina.bloguje.cz" rel="me">Dovolená v Číně</a></li><li><a href="http://bloguneni.bloguje.cz/">Blogu není...</a></li><li><a href="http://hekko.bloguje.cz" rel="acquaintance met">Adminka bloguje</a></li><li><a href="http://www.bloc.cz/default.aspx">Bloc Jiřího Hlavenky</a></li><li><a href="http://apimania.eu" rel="me">Apimania</a></li><li><a href="http://dev20.info" rel="me">Dev::Info</a></li><li><a href="http://dankaj.bloguje.cz/" rel="contact met">Zápisky z Islandu</a></li><li><a href="http://jdem.cz" rel="me">Zkratky pro odkazy</a></li><li><a href="http://davebarry.cz" rel="me">Dave Barry česky</a></li><li><a href="http://uelectronics.info" rel="me">Mikroelektronika</a></li><li><a href="http://www.php-suit.com" rel="me">PHP Suit</a></li><li><a href="http://www.sharp-suit.com" rel="me">Sharp Suit</a></li> 
+<li><a href="http://technorati.com/claim/xnpb5tzhw" rel="me">Technorati Profile</a></li>
+</ul>
+
+<h2 id="n_recommend">Doporučuji</h2>
+<ul id="support">
+<li><a href="http://hostmonster.jdem.cz/">Hosting HostMonster</a></li>
+<li><a href="http://www.jihocestitatkove.cz/">Jihočeští taťkové</a></li>
+<li><a href="http://www.csvts.cz/cns/">Česká nukleární společnost</a></li>
+<li><a href="http://www.prozakladnu.cz/">PRO základnu!</a></li>
+</ul>
+
+<!-- Buzzboot Ads -->
+<p><a href="http://buzzboot.com/a/www/delivery/ck.php?n=fbe3418"><img alt="Buzzboot reklama" src="http://buzzboot.com/a/www/delivery/avw.php?zoneid=8&amp;n=fbe3418"/></a></p><!-- / Buzzboot Ads -->
+
+
+<p>
+<script src="http://pub.mybloglog.com/comm3.php?mblID=2007052422462000&amp;r=widget&amp;is=small&amp;o=l&amp;ro=4&amp;cs=brown&amp;ww=200&amp;wc=multiple" type="text/javascript"></script>
+</p>
+
+<h2>Meta</h2>
+<script type="text/javascript" src="http://feedjit.com/popPages/?bc=FFFFFF&amp;tc=008000&amp;brd1=336699&amp;lnk=008000&amp;hc=336699&amp;ww=200"></script><noscript><a href="http://feedjit.com/">Feedjit Live Blog Stats</a></noscript>
+
+<h2 id="n_archiv"><a href="#" class="iface" onclick="$('#archiv').BlindToggleVertically(500, null, 'bounceout');return false;">Archiv ...</a></h2>
+<ul id="archiv" style="display:none">
+<li><a href="0812archiv.html">prosinec 2008</a></li><li><a href="0811archiv.html">listopad 2008</a></li><li><a href="0810archiv.html">říjen 2008</a></li><li><a href="0809archiv.html">září 2008</a></li><li><a href="0808archiv.html">srpen 2008</a></li><li><a href="0807archiv.html">červenec 2008</a></li><li><a href="0806archiv.html">červen 2008</a></li><li><a href="0805archiv.html">květen 2008</a></li><li><a href="0804archiv.html">duben 2008</a></li><li><a href="0803archiv.html">březen 2008</a></li><li><a href="0802archiv.html">únor 2008</a></li><li><a href="0801archiv.html">leden 2008</a></li><li><a href="0712archiv.html">prosinec 2007</a></li><li><a href="0711archiv.html">listopad 2007</a></li><li><a href="0710archiv.html">říjen 2007</a></li><li><a href="0709archiv.html">září 2007</a></li><li><a href="0708archiv.html">srpen 2007</a></li><li><a href="0707archiv.html">červenec 2007</a></li><li><a href="0706archiv.html">červen 2007</a></li><li><a href="0705archiv.html">květen 2007</a></li><li><a href="0704archiv.html">duben 2007</a></li><li><a href="0703archiv.html">březen 2007</a></li><li><a href="0702archiv.html">únor 2007</a></li><li><a href="0701archiv.html">leden 2007</a></li><li><a href="0612archiv.html">prosinec 2006</a></li><li><a href="0611archiv.html">listopad 2006</a></li><li><a href="0610archiv.html">říjen 2006</a></li><li><a href="0609archiv.html">září 2006</a></li><li><a href="0606archiv.html">červen 2006</a></li><li><a href="0604archiv.html">duben 2006</a></li><li><a href="0603archiv.html">březen 2006</a></li><li><a href="0512archiv.html">prosinec 2005</a></li><li><a href="0511archiv.html">listopad 2005</a></li>
+</ul>
+
+
+
+</div><!-- konec sidebar -->
+<div class="clear">&nbsp;</div><!-- cistic -->
+</div><!-- konec obsah -->
+
+
+
+
+
+
+
+<div id="foot">
+<p>&copy; <a href="http://www.maly.cz/o-mn/">Martin Malý</a> (aka Arthur Dent) | Design by &copy; 2007 <a href="http://ash721.cz">ASH721</a> | <a href="http://hostmonster.jdem.cz">HOSTING</a> 3000GB+unlimited domains za 6 dolarů</p>
+<img src="http://www.laar.cz/support/counter/cnt.php?b=34425" alt="Counter" />
+</div>
+
+</div>
+
+</body></html>

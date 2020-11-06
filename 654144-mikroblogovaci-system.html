@@ -1,0 +1,533 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="cz">
+<head><link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.misantrop.info/rss.xml" /><link rel="alternate" type="application/rss+xml" title="RSS - Kdo umí..." href="http://www.misantrop.info/tema-8-kdo-umi.xml" /><link rel="alternate" type="application/rss+xml" title="Komentáře" href="http://www.misantrop.info/comments.xml" />
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/misantrop" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+ <title>Mikroblogovací systém - Misantrop.info</title> 
+
+<link rel="stylesheet" href="css39236.css" type="text/css" title="Styl2" media="screen" />
+<link rel="alternate stylesheet" href="css34066.css" type="text/css" title="Styl1" media="screen" />
+
+<meta name="verify-v1" content="qHyecOmV/BTXodaXkGrOlj7QL+X93dTbTLojG9EU22c=" />
+<link rel="openid.server" href="http://www.myopenid.com/server" />
+<link rel="openid.delegate" href="http://adent.myopenid.com/" />
+<link rel="openid2.local_id" href="http://adent.myopenid.com" />
+<link rel="openid2.provider" href="http://www.myopenid.com/server" />
+<meta http-equiv="X-XRDS-Location" content="http://www.myopenid.com/xrds?username=adent.myopenid.com" />
+
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="keywords" content="Martin Malý, Arthur Dent, weblogy, programování, PHP, blogy, misantrop, Web2.0, technologie, elektronika" />
+
+<meta name="description" content="Mikroblogovací systém - Misantrop.info" />
+</head>
+<body>
+<div id="all">
+<!-- Anal Lizer-->
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-190512-8";
+urchinTracker();
+</script>
+<!--dolizat-->
+ 
+
+<div id="adx" style="position:fixed;_position:absolute;top:5px;left:5px">
+<script type="text/javascript"><!--
+google_ad_client = "pub-3772893178572611";
+/* 120x600, vytvořeno 15.7.08 */
+google_ad_slot = "1720575805";
+google_ad_width = 120;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript"
+src="">
+</script>
+</div>
+
+<div id="head"><p id="logo"><a href="index.php"><img src="img/2zapisnik-logo.gif" alt="Misantrop.info - Web co vám doudí moudí..." /></a></p></div>
+
+<ul id="menu">
+<li><a href="index.php">Titulní stránka</a></li>
+<li><a href="http://rss.misantrop.info">Oblíbené zdroje</a></li>
+<li><a href="http://www.maly.cz/o-mn/?KeepThis=true&amp;TB_iframe=true&amp;height=500&amp;width=800" class="thickbox">O mně</a></li>
+<li><a href="http://www.bloguje.cz/vzkazy.php?send=47997">Napiš vzkaz</a></li>
+</ul>
+
+<div id="obsah">
+<div id="pole">
+<!-- Pocitadlo -->
+<p><img src="http://counter.cnw.cz/dungeon.cgi?blogmalycz&amp;6&amp;000000&amp;fff1d8&amp;on" alt=" " style="width:1px;height:1px;"/><script type="text/javascript">
+<!-- 
+var dummy =("<img src=\"http://counter.cnw.cz/trackit.cgi?blogmalycz&t2&" + escape(top.document.referrer) + "\" alt=\" \" border=\"0\" width=\"1\" height=\"1\">"); 
+// --></script>
+
+<script language="JavaScript" type="text/javascript">
+<!--
+var dummy = ('<a href="http://www.netagent.cz" target="_top"><img src="http://www.netagent.cz/agent.php?id=383&amp;ur='+escape(document.referrer)+'&amp;rw='+escape(window.screen.width)+'&amp;rh='+escape(window.screen.height)+'&amp;cd='+escape(window.screen.colorDepth)+'&amp;pt='+escape(document.title)+'&amp;lc='+escape(document.location)+'" width="1" height="1" border="0" alt="NetAgent" /></a>');
+//--></script>
+
+</p>
+<!-- Pocitadlo konec -->
+
+
+
+
+<h1>Mikroblogovací systém</h1>
+
+
+
+
+
+
+
+<p>Ano, fakt... To bylo <a href="http://www.misantrop.info/646037-hotovo.html">to co jsem od listopadu psal</a>... </p>
+
+<p style="float:right; margin:0 0 1em 1em;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-3772893178572611";
+
+/* 120x240, vytvořeno 6.7.08 */
+google_ad_slot = "4855232301";
+google_ad_width = 120;
+google_ad_height = 240;
+//-->
+</script>
+<script type="text/javascript"
+src="">
+</script>
+</p>
+
+<p><p>I když tedy <a href="http://www.marigold.cz/item/mikroblogovani-po-cesku-drbz-a-teidu#comment-154126">u Marigolda kdosi píše</a>, že <em>mikroblogovací systém mu připadá na úrovni &quot;Create your first wiki in Ruby on Rails in 20 minutes&quot;</em>, tak mně to trvalo tři měsíce&nbsp;&ndash; tedy přesněji měsíc analýza a přípravy, měsíc programování, měsíc testů. No, asi holt nejsem tak výkonný... ;) </p><p>Jmenuje se to <a href="http://www.teidu.cz">Teidu</a> a dneska, 8.2.2008 v 8 hodin a 2 minuty, to bylo otevřeno pro veřejnost, můžete se <a href="http://www.teidu.cz/register?aff=q(hNysVWyGBMysI-hGOdysXPum1Mul69hcUdqc0Mt-TMhsWNysIXy055">registrovat</a>.</p><p>Pár zajímavostí o Teidu nabízím... chcete?</p><p>Vzpomněl jsem si na <a href="http://neskodny.own.cz/index.php?item=264">obdobnou událost před téměř pěti lety</a>. Ale zatímco tehdy bylo Bloguje <em>moje dítě</em>, tak k Teidu takový vztah nemám, beru ho jako práci, jako zakázku, ne jako <em>životní projekt</em>&nbsp;&ndash; brr, bože chraň... Naprogramoval jsem ho pro LAAR a LAAR jej bude provozovat, propagovat a vůbec mu činit dobře. Má role dál nesahá, po zkušenostech z Bloguje se jakékoli personifikaci či spojování s mou osobou intenzivně bráním a bránit budu... Horko těžko jsem se zbavil role &quot;pana Bloguje&quot;, tak stejnou chybu nechci udělat znovu. </p><p>Teidu má vlastní <a href="http://teidu.bloguje.cz/">blog</a>, najdete v něm i <a href="http://teidu.bloguje.cz/653731-tiskova-zprava-o-spusteni-teidu.php">tiskovou zprávu ke spuštění</a>.</p><p>Některé věci se opakují&nbsp;&ndash; hned pár hodin po spuštění se objevil uživatel, co se rozhodl být první v žebříčku, takže zaspamoval titulní stránku a myslel, že když pošle 500 stejných příspěvků, že bude King Největší. No, nevyšlo mu to.</p><p>Widget pro vložení na stránky jsem udělal &quot;nad plán&quot;&nbsp;&ndash; jeho zprovoznění mi trvalo přesně 32 minut. Sklízím plody důkladné počáteční analýzy... :)</p><p>Pár nápadů na to, co by se dalo s Teidu dělat a co by šlo přidat mám, teď vše záleží na tom, jak se podaří marketingovému týmu Teidu propagovat a prosadit. Technologicky je systém připraven na bouřlivý rozvoj&nbsp;&ndash; na rozdíl od Bloguje jsem ho napsal hodně &quot;otevřeně&quot; a hodně &quot;modulárně&quot;&nbsp;&ndash; tak mu přeju, aby bylo proč ho rozvíjet!</p><p><strong>No a teď dovolte pár soukromých poznámek...</strong></p><p>Ne že bych si myslel, že mikroblogovací systém je to, co českému  internetu chybí. Původně jsem měl v úmyslu napsat trošku jinou aplikaci, ovšem během toho téměř roku, co úmysl čekal na realizaci, se z toho zkrátka mikroblog vyvinul. <em>Co už naděláš, dětma nezatopíš...</em> Vzal jsem to jako příležitost vyzkoušet si nové věci a nové postupy a vyzkoušet si organizaci práce v týmu. Výsledek je&nbsp;&ndash; alespoň pro mne z programátorského hlediska&nbsp;&ndash; uspokojivý. Systém funguje tak jak má a vypadá tak jak má&nbsp;&ndash; alespoň vzhledem k zamýšlené cílové skupině. <em>Tam ani já, ani většina vás, mých čtenářů, nepatříme... :)</em></p><p>Ne že bych si myslel, že svět čeká na zápisky nezajímavých lidí o nezajímavých věcech, co se odehrávají v jejich nezajímavých životech a o kterých nezajímavými slovy píšou... Ne že bych snad podlehl dojmu, že bez mikroblogování nebude pokroku&nbsp;&ndash; ti kdo mne znají to jistě chápou. V průběhu vývoje jsme si ve vývojářském týmu stanovili ironické motto pro naši práci: <strong>Nemusíte nám děkovat, děláme to pro slávu a pro peníze!</strong> <em>Původně jsme chtěli tohle motto propašovat i na stránky, ale Honza nás naštěstí usměrnil... ;)</em></p><p>Po pravdě řečeno&nbsp;&ndash; nejsem <em>cílová skupina</em> svého webu. Zatímco Bloguje jsem psal a zároveň byl <em>ten, kdo blogoval</em>, tak u Teidu je to jinak&nbsp;&ndash; nejsem &quot;mikroblogger&quot; a ani po třech měsících mě nenapadá, proč bych se jím měl stát.</p><p>Ale vím, že je spousta lidí, kteří nějaký důvod najdou. <strong>Tak ať se jim Teidu líbí. </strong></p><p>PS: Jo a ještě vzkaz pro všechny komentátory, co mi (proč mně? Proč ne provozovateli a vlastníkovi?) budou předhazovat, že &quot;je to jen totéž co už v cizině existuje&quot;: <strong>Up yours!</strong></p></p>
+
+<div style="text-align:center">
+<script type="text/javascript"><!--
+google_ad_client = "pub-3772893178572611";
+/* 468x60, vytvořeno 15.7.08 */
+google_ad_slot = "3559028762";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="">
+</script>
+</div>
+
+
+
+
+
+<p class="more">
+<span class="date">Dne 8.02.2008</span>
+
+</p>
+
+
+
+
+
+<p><a href="http://jdem.cz/tw?text=Zaj%c3%admav%c3%bd+%c4%8dl%c3%a1nek+na+Z%c3%a1pisn%c3%adku%3a+http%3A%2F%2Fwww.misantrop.info%2F654144-mikroblogovaci-system.html&amp;redir=1">Twittni</a></p>
+
+<p>Přidej do: 
+ <a href="http://vybrali.sme.sk/submit.php?url=http%3A%2F%2Fwww.misantrop.info%2F654144-mikroblogovaci-system.html"><img src="http://blog.sme.sk/blog/3/61630/tlacitko.gif" style="border:0" title="asdf.sk" alt="asdf.sk" /></a>
+
+<a href="http://www.stumbleupon.com/submit?url=http%3A%2F%2Fwww.misantrop.info%2F654144-mikroblogovaci-system.html&amp;title=Mikroblogovac%ED+syst%E9m"> <img border=0 src="http://www.bloguje.cz/icon_su.gif" alt="StumbleUpon Toolbar"> Stumble It!</a>
+
+<script type="text/javascript" src="http://w.sharethis.com/widget/?tabs=web%2Cemail&amp;charset=utf-8&amp;style=rotate&amp;publisher=99a6f76f-7727-4c7b-a906-b91f57f8a706"></script></p>
+
+<script type="text/javascript" src="http://feedjit.com/coFilter/?bc=FFFFFF&amp;tc=008000&amp;brd1=336699&amp;lnk=008000&amp;hc=336699&amp;ww=500"></script>
+
+
+<h2 id="n_koments">Komentáře</h2>
+
+
+
+<p class="comment">
+<strong><a name="cmt_1">[1]</a> </strong> (buteo  - <a href="http://www.buteo.bloguje.cz">WWW</a>) 09.02.2008, 01:05:56&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1533460">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1533460">D</a>]<br />
+
+Přes svůj pokročilý věk, jsem pro novinky. Nahlídl jsem do už rozjetého a přiznám, že mě to nějak neoslovilo. Jako důchodce nemám na svém pracovním stole /dokonce dvou/ už žádné pracovní lejstra, ale spoustu papírků s myšlenkami. Hodit je někam, to mi nepřipadá až tak pro mě vzrušující. Před dvěma lety jste mě zbláznil do bloguje.cz, mě se to líbí a přiznám, že při tvorbě příspěvku /o kvalitě nemluvím/ si to užívám a ozva mě až tak netankuje.. A tak dobrý den
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_2">[2]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://www.misantrop.info">WWW</a>) 09.02.2008, 01:44:31&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1533470">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1533470">D</a>]<br />
+
+<a href="#cmt_1">[1]</a> Rozumím. Naprosto. Cílová skupina je "12-22 let, student, průměr". :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_3">[3]</a> </strong> (Pavel - <a href="mailto:pavelm@pavelm.net">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fpavelm.net">WWW</a>) 09.02.2008, 01:53:53&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1533475">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1533475">D</a>]<br />
+
+takže jsem to s tím číslem uhodl - nechtěl jsem být konkrétní, abych neprozradil něco tajného... :) Gratuluji ke spuštění! Provozovateli zbývá snad jen popřát co nejvíce tejdů.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_4">[4]</a> </strong> (Gimli2  - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fgimli2.gipix.net">WWW</a>) 09.02.2008, 02:59:23&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1533486">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1533486">D</a>]<br />
+
+Tak u te cilove skupiny me rozesmalo to "prumer", ale chapu a soucasne se desim.
+<br />
+<br />Rozhodne to neni sluzba pro me. Nenapada me k cemu by mi byla. Studentem jsem, je mi lehce nad horni hranici. ;-) Spis mam takovy napad, nebo by me zajimal vysledek:
+<br />
+<br />Neslo by udelat nad systemem nejakou "mapu". Co tim myslim? V systemu se brzo nahromadi kvantum kratkych textu. Co napriklad vzit avatary lidi a vykreslit je na "platno" podle blizkosti obsahu zprav. Podobnejsi zpravy blizko k sobe, obsahem vzdalene by byly vzdalene i ve skutecnosti. Pak jeste napriklad upravit "jas/gammu" avataru podle casu publikace. V noci tmave, ve dne svetle. 
+<br />Predpokladam, ze by mohly vzniknout ruzne shluky a zajimave obrazce. Urcite b bylo zajimave jaka tematika je castejsi vecer jake rano.
+<br />
+<br />Tusim, ze nekdo uz podobny experiment realizoval ne nejakem diskuznim foru a vznikla takova hexagonova mapa ve stupnich odstinech sede a ukazovala nazorovou vzdalenost jednotlivych prispevatelu. (Jen ted nemuzu najit link na vysledek...)
+<br />Tak neco podobneho mam na mysli.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_5">[5]</a> </strong> (zlosyn  ) 09.02.2008, 04:17:03&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1533492">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1533492">D</a>]<br />
+
+Design se mi moc nelíbí...i ke krajně nevkusným pestrobarevným blogýskům(cílovka) to má daleko, maximální vyplňování adsensem mi taky nepřijde zrovna štastné - obzvlášť hned po spuštění. Nevím asi jsem příliš profesionálně deformován, ale konkurence ač nevím o jejích funkcích zhola nic mi přijde na první pohled přívětivější.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_6">[6]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://www.misantrop.info">WWW</a>) 09.02.2008, 10:47:33&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1533627">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1533627">D</a>]<br />
+
+<a href="#cmt_4">[4]</a> Něco podobného zvažuji... Můžeš prosím dohledat?
+<br />
+<br /><a href="#cmt_5">[5]</a> Nelíbí se mi moc vaše přezdívka, třeba Gimli2 mi přijde o hodně hezčí.
+<br />
+<br />(Proč mně? Proč ne majiteli/provozovateli? Ten se tím zabývá. Co mně je do vašeho názoru na design, který jsem nedělal?)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_7">[7]</a> </strong> (Gimli2  - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fgimli2.gipix.net">WWW</a>) 09.02.2008, 11:23:43&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1533666">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1533666">D</a>]<br />
+
+Aaa, tak se zadarilo, byl to Johno:
+<br />teorie:
+<br /><a href="http://johno.jsmf.net/archiv/spravanie-uzivatelov-a-dolovanie-v-datach.html" rel="nofollow">http://johno.jsmf.net...datach.html</a>
+<br /><a href="http://johno.jsmf.net/archiv/komunity-a-kohonenove-samoorgranizacne-mapy.html" rel="nofollow">http://johno.jsmf.net...e-mapy.html</a>
+<br />
+<br />vysledek:
+<br /><a href="http://johno.jsmf.net/bordel/animacia-relationships.jpg" rel="nofollow">http://johno.jsmf.net...onships.jpg</a>
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_8">[8]</a> </strong> (Gomba  - <a href="http://gomba.bloguje.cz">WWW</a>) 09.02.2008, 13:42:14&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1533824">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1533824">D</a>]<br />
+
+Já rozhodně (profesí ani věkem = 48) nejsem cílová skupina.
+<br />Ale ten nápad se mi zdá zajímavý a ještě asi pár příspěvků "tejdnu". Snad to nebude vadit, když pokazím věkový průměr ,-)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_9">[9]</a> </strong> (Pavel - <a href="mailto:pavelm@pavelm.net">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fpavelm.net">WWW</a>) 09.02.2008, 13:55:07&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1533834">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1533834">D</a>]<br />
+
+Nejsou to přímo mapy (ale z obsahu twittů generovaný seznam tagů). Umožňuje to dohledat nejzmiňovanější řetězce v rámci určitého časového období. Z hlediska implementace by to myslím bylo jednodužší než mapy. (Na ty tagy by to ale chtělo nějaký filtr, aby se v seznamu neobjevovaly třeba předložky a spojky) Zde tedy odkaz pro inspiraci:
+<br /><a href="http://www.twitterverse.com/" rel="nofollow">http://www.twitterverse.com/</a>
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_10">[10]</a> </strong> (zlosyn  ) 09.02.2008, 14:01:49&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1533845">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1533845">D</a>]<br />
+
+<a href="#cmt_6">[6]</a> To nebylo myšleno útočně, jistěže design je čistě subjektivní záležitost. Spíš jsem tím chtěl říct, že si někdo tak úděsným zaplněním reklamou zbytečně ubírá uživatele, je opravdu nutné jí tam dávat i při samotné registraci ? Měl jsem za to, že jsi duchovním otcem teidu a jeho budoucnost je alespoň částečně ve tvých rukou...tak jestli jsem to špatně pochopil rád si nasypu popel na hlavu :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_11">[11]</a> </strong> (Roman - <a href="mailto:creamd@c64.sk">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.c64.sk">WWW</a>) 09.02.2008, 20:05:13&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1533949">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1533949">D</a>]<br />
+
+Toto som necakal, kazdopadne, nie je to uplne blby napad. Napadlo ma ze by sa to dalo spravit aj tak ze by to bolo nejak skupinove, trebars spoluziaci z vysky by boli zgrupnuti do skupinky a stranka pre ich skupinu by mala ich mikroblogy. To by si potom posielali co robia atd. Hlavne ak funguju tak ako trebars nas kruzok, jeden v kanade, dalsi rozlezeni po celom slovensku a cechach.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_12">[12]</a> </strong> (Roman - <a href="mailto:creamd@c64.sk">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.c64.sk">WWW</a>) 09.02.2008, 22:50:59&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1534166">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1534166">D</a>]<br />
+
+Ok este jedna fakticka: v podmienkach nie je nic o tom ze 
+<br />"uzivatel nesmi sluzeb vyuzivat na propagovani svych nebo cizich komercnych aktivit formou skryte reklamy nebo zverejnovanim odkazu."
+<br />
+<br />Teda. Jedine ze by defaultne bolo zakazane uverejnovat aktivne odkazy, potom je v podstate z 50% po probleme.
+<br />
+<br />To ma napadlo v suvislosti s tym ze ma hned ako prve napadlo ze by bolo celkom uzitocne ziskat par preklikov z titulky zverejnenim odkazu na projekty ktore niekto robi. (trebars <a href="http://www.123u.sk" rel="nofollow">http://www.123u.sk</a> najrychlejsi vyhladavac ubytovania na slovensku v style web2.0 ;-)
+<br />
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_13">[13]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://www.misantrop.info">WWW</a>) 10.02.2008, 00:00:15&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1534228">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1534228">D</a>]<br />
+
+<a href="#cmt_10">[10]</a> OK, beru. Duchovně jsem to porodil a celé jsem to naprogramoval. Budoucnost je v mých rukou jen částečně - tedy co do technické realizace. Reklama v takovémto množství je proto, "aby si lidi zvykli, že tam reklama je a bude", její množství a konkrétní realizace bude samosebou přizpůsobena požadavkům, které se v tomto směru objeví. 
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_14">[14]</a> </strong> (Aleko  - <a href="http://aleko.bloguje.cz">WWW</a>) 10.02.2008, 16:19:39&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1534921">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1534921">D</a>]<br />
+
+Když jsem se dozvěděl (z adminu Bloguje) o Teidu, hned jsem to šel vyzkoušet a i když ani já se nevejdu do cílovky, docela jsem si na to zvyknul. Sice bych (jak jsem psal ve FAQ) uvítal tejdy pomocí ICQ (realizovatelné to je), ale věřím že to je jenom otázka času. A oranžová grafika se mi naopak líbí celkem dost, rozhodně víc než chladné Jaiku.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_15">[15]</a> </strong> (Misha [<a href="http://misha.openid.pl" title="Ověřený uživatel http://misha.openid.pl">openID</a>]  - <a href="http://www.czechidea.com">WWW</a>) 10.02.2008, 23:32:33&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1535660">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1535660">D</a>]<br />
+
+Přiznám se, že mám velký problém se slovem "tejdovat". My tady z východu jsme obecně na všechny tejdny, vejlety a mlejny dost alergičtí a i když tady je to jen zvuková podoba, tak to slovo je z mého pohledu dost hnusné na to, aby ho někdo z používal dobrovolně :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_16">[16]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://www.misantrop.info">WWW</a>) 11.02.2008, 00:42:48&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1535707">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1535707">D</a>]<br />
+
+<a href="#cmt_15">[15]</a> Vy na Východě vyslovujte třeba [týdovat]... Jen FYI: Našemu textaři z Brna tahle zvuková podoba nevadila. ;)
+<br />
+<br />PS: Zajímalo by mě, jestli máte i podobné trable se slovy jako vejce, kejda, hej nebo počkej (výce, kýda, hý, počký?)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_17">[17]</a> </strong> (pixy - <a href="mailto:pixy@pixy.cz">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.pixy.cz">WWW</a>) 11.02.2008, 08:56:32&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1535828">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1535828">D</a>]<br />
+
+Vejkal není lýno, Misho... Bez rýnoků, plýtváků a hýna rýsků stýně nýde žít.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_18">[18]</a> </strong> (Misha [<a href="http://misha.openid.pl" title="Ověřený uživatel http://misha.openid.pl">openID</a>] - <a href="mailto:misha@hcslezan.cz">Mail</a> - <a href="http://www.czechidea.com">WWW</a>) 11.02.2008, 10:28:50&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1535909">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1535909">D</a>]<br />
+
+když už, tak [tydovać], [týdovat] by řekl zase jenom nějaký tydýt z Brna :)
+<br />
+<br />Speciálně pro misantrop.info, malý lexikologický exkurz do výslovnosti východních národů: Chtěl bych vyvrátil zakořeněný omyl, že svojhlásku [ej] vyslovujeme spisovně [ý]. Stejně tak tady nikdo neřekne tejden, tak neřekne kejda nebo vejce. Větu "Celej tejden jsme si opejkali lejna a kejdu s vejci" bychom vyslovili "Cely tyden zme si opekali hovna s močufkou a vajicama" :)
+<br />
+<br />Uznávám jen slovo hej, bo to se už zkratit fakt neda. Ale třípísmenná slova jsou někdy až moc dlouhá - moje babička mě naučila nejkratší větu rozvitou na světě. "Le, un i!"
+<br />
+<br />Kdo ji správně interpretuje, má u mě pozvánku na zapejkanýho sejra :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_19">[19]</a> </strong> (ringo  ) 11.02.2008, 10:48:11&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1535932">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1535932">D</a>]<br />
+
+<a href="#cmt_18">[18]</a> Teda, co vy na tom východě opékáte za laskominy ;).
+<br />A co třeba písek a kočičika (nezaměňovat s pískem pro kočku), nepřijdou občas k chuti? ;)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_20">[20]</a> </strong> (dond  ) 11.02.2008, 11:00:46&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1535944">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1535944">D</a>]<br />
+
+Tak já taky nejsem příslušník cílovky, ale celkem se mi to líbí (až na ten vzhled, ale zvyknu si, nebo přibudou časem témata). Je to rychlý, pohodlný, asi mi to splňuje většinu většinu potřeb na to, co bych chtěl vykřikovat do světa. Kdybych tedy chtěl. :-)
+<br />
+<br />Arthure, díky!
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_21">[21]</a> </strong> (pixy - <a href="mailto:pixy@pixy.cz">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.pixy.cz">WWW</a>) 11.02.2008, 11:08:27&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1535953">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1535953">D</a>]<br />
+
+Misha, tež sem z rok byval v Ostravě. Ta věta "Le un i" je zbytečně rovinuta, bo postači aji hole "un i". A una tež, jakysik placek s okurkem tlači mezi žgraně.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_22">[22]</a> </strong> (johno - <a href="mailto:johno@jsmf.net">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fjohno.jsmf.net%2F">WWW</a>) 11.02.2008, 11:24:41&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1535971">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1535971">D</a>]<br />
+
+<a href="#cmt_7">[7]</a> Dakujem za nalinkovanie. 
+<br />
+<br /><a href="#cmt_6">[6]</a> "Podobnost ludi" viem vypocitat aj inym sposobom. Napriklad tu je experiment, kde su zdrojom prispevky z fora. <a href="http://forum.vodaci.info/relations/" rel="nofollow">http://forum.vodaci.info...lations/</a>
+<br />
+<br />Ak nieco podobne chces, tak sa ozvi, rad vysvetlim/urobim/predam.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_23">[23]</a> </strong> (Misha [<a href="http://misha.openid.pl" title="Ověřený uživatel http://misha.openid.pl">openID</a>] - <a href="mailto:misha@hcslezan.cz">Mail</a> - <a href="http://www.czechidea.com">WWW</a>) 11.02.2008, 12:47:36&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1536077">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1536077">D</a>]<br />
+
+<a href="#cmt_21">[21]</a> jo, ale to by pak nebyla věta rozvitá, a nejkratší věta holá je pak "i" s nevyjádřeným podmětem :)
+<br />
+<br />Abych se vyjádřil k tydu.cz, z hlavní stránky na mě křičí obrovským písmem výzva "jestli ti někdo dluží tak klikni" a pod tím nějaký boxík "začni tejdovat", tak jsem klikl na ty dlužníky (protože "tejdovat" viz výše:) a vydělal tak Laaru nějakou kačku. Myslím že víc už pro tydu.cz nemůžu udělat :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_24">[24]</a> </strong> (running  ) 13.02.2008, 15:36:48&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1539461">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1539461">D</a>]<br />
+
+musím přiznat, že twitter.com je mi celkem sympatický (a není nijak extra "drahé" ho používat, protože zahraniční SMS se vejdou pod volné SMS a příchozí stojí nula kč), tak teidu je my nesympatické od prvního pohledu těmi texty... proč je tam proboha to "tejdování"? A proč se mnou ten systém mluví jako s debilem? (četl jsem jenom ten krátký help a stačilo) A to jsem jakože vole tahle vole cílová skupyna kámo, ale stejně... proč se služby jako teidu nebo stream domnívají, že všichni "12-22" mají IQ pod 70?
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_25">[25]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://www.misantrop.info">WWW</a>) 13.02.2008, 15:56:45&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1539485">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1539485">D</a>]<br />
+
+<a href="#cmt_24">[24]</a> Odpověď je prostá: Protože jsou zacílené na střed Gaussovy křivky. Kámo.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_26">[26]</a> </strong> (johno - <a href="mailto:johno@jsmf.net">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fjohno.jsmf.net%2F">WWW</a>) 13.02.2008, 17:40:53&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1539662">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1539662">D</a>]<br />
+
+<a href="#cmt_25">[25]</a> Niekedy mám pocit, že sú cielené skôr na priemer. Napríklad na priemer <a href="http://jdem.cz/abhw3" rel="nofollow">http://jdem.cz/abhw3</a> takéhoto rozdelenia. ;-)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_27">[27]</a> </strong> (running  ) 13.02.2008, 18:16:48&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1539711">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1539711">D</a>]<br />
+
+<a href="#cmt_25">[25]</a>: snad jo, ale mám pocit že mikroblogy by obecně mohly mířit i trochu výš.... je fakt, že většina emo-blogů na blog.cz se do téhle cílovky vejde, ale stejně mi to přijde až moc křečovité...
+<br />
+<br />každopádně přeju hodně štěstí, vim, že např. twitter (jak ze začátku získával popularitu) byl pár měsíců hodně nestabilní...
+<br />
+<br />mimochodem, u twitteru se mi strašně líbí to, co Teidu nemá - můžu se k nějaké osobě "přihlásit" a její zprávy mi chodí na mobil, zadarmo, z čísla z UK. Nevýhoda je potom v tom, že všechny updaty musí být pod 140 znaků, aby se to do té SMS vešlo. Používám to docela dost, např. na zprávy z CNN - <a href="http://jdem.cz/abh15#twitter.com" rel="nofollow">http://jdem.cz/abh15#twitter.com</a> .
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_28">[28]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://www.misantrop.info">WWW</a>) 13.02.2008, 18:24:06&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1539724">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1539724">D</a>]<br />
+
+<a href="#cmt_27">[27]</a> Posílání SMS není problém... Technicky... :)
+
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+</div><!-- konec pole -->
+
+
+
+<div id="sidebar">
+
+<h2 id="n_rubriky">Rubriky</h2>
+<ul id="rubriky">
+<li><a href="tema-1-bavim-se-na-vas-ucet.html">Bavím se na váš účet</a></li><li><a href="tema-2-nemam-vas-rad.html">Nemám vás rád</a></li><li><a href="tema-3-pohrdani.html">Pohrdání</a></li><li><a href="tema-4-vase-bludy-na-moji-hlavu.html">Vaše bludy na moji hlavu</a></li><li><a href="tema-5-mym-analfabetum.html">Mým analfabetům...</a></li><li><a href="tema-6-co-me-bavi.html">Co mě baví?</a></li><li><a href="tema-7-to-je-nejaka-hudba-tohleto.html">To je nějaká hudba, tohleto?</a></li><li><a href="tema-8-kdo-umi.html">Kdo umí...</a></li><li><a href="tema-9-mene-kecu-vice-prace.html">Méně keců, více práce</a></li>
+</ul>
+
+<h2 class="bok">Jak se vám to čte?</h2>
+
+<p style="text-align:center">
+<a href="http://feeds.feedburner.com/misantrop"><img src="http://feeds.feedburner.com/~fc/misantrop?bg=99CCFF&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a></p>
+
+<p style="text-align:center">
+<a href="http://twittercounter.com/?username=adent" title="TwitterCounter for @adent"><img src="http://twittercounter.com/counter/?username=adent" width="88" height="26" style="border:none;" alt="TwitterCounter for @adent" /></a></p>
+
+<p style="text-align:center">
+<script type="text/javascript">
+var wsgApiKey = "481349a5-98b9-4d24-b32f-a5729d33840c";
+var wsgStyle = 2;
+var dummy =('<div id="wsgContainer" style="text-align:center"></div>');wsgScript=document.createElement('script');wsgScript.type="text/javascript";wsgScript.src="http://static.hubspot.com/websiteGraderBadge/badge.js?t="+Math.random();setTimeout("document.getElementById('wsgContainer').appendChild(wsgScript);",1);
+</script>
+</p>
+
+<script type="text/javascript" src="http://www.blogcatalog.com/w/services.php?id=150489&amp;width=165&amp;bgcolor=EEEEEE&amp;bcolor=356D79&amp;lcolor=333333&amp;hcolor=FFFFFF&amp;htext=Kde%20mne%20najdete&amp;name=0&amp;brand=0&amp;heading=1"></script>
+
+<h2 id="n_odkazy"><a href="#" class="iface" onclick="$('#odkazy').BlindToggleVertically(500, null, 'bounceout');return false;">Odkazy ...</a></h2>
+<ul id="odkazy" style="display:block">
+<li><a href="http://pixy.cz/pixynergia" rel="acquaintance met">Pixy</a></li><li><a href="http://blok.rozanek.cz" rel="acquaintance">Filip Rožánek</a></li><li><a href="http://www.whitedog.cz" rel="acquaintance met">White Dog</a></li><li><a href="http://kahi.cz/blog/" rel="met">Kahi</a></li><li><a href="http://lokutus.bloguje.cz" rel="met">Lokutus</a></li><li><a href="http://www.katchaba.com/" rel="acquaintance met">Katchaba</a></li><li><a href="http://machinegun.bloguje.cz" rel="acquaintance met">Johnny</a></li><li><a href="http://kokolia.bloguje.cz">Vladimír Kokolia</a></li><li><a href="http://viditelnymacek.cz">Miroslav Macek</a></li><li><a href="http://cina.bloguje.cz" rel="me">Dovolená v Číně</a></li><li><a href="http://bloguneni.bloguje.cz/">Blogu není...</a></li><li><a href="http://hekko.bloguje.cz" rel="acquaintance met">Adminka bloguje</a></li><li><a href="http://www.bloc.cz/default.aspx">Bloc Jiřího Hlavenky</a></li><li><a href="http://apimania.eu" rel="me">Apimania</a></li><li><a href="http://dev20.info" rel="me">Dev::Info</a></li><li><a href="http://dankaj.bloguje.cz/" rel="contact met">Zápisky z Islandu</a></li><li><a href="http://jdem.cz" rel="me">Zkratky pro odkazy</a></li><li><a href="http://davebarry.cz" rel="me">Dave Barry česky</a></li><li><a href="http://uelectronics.info" rel="me">Mikroelektronika</a></li><li><a href="http://www.php-suit.com" rel="me">PHP Suit</a></li><li><a href="http://www.sharp-suit.com" rel="me">Sharp Suit</a></li> 
+<li><a href="http://technorati.com/claim/xnpb5tzhw" rel="me">Technorati Profile</a></li>
+</ul>
+
+<h2 id="n_recommend">Doporučuji</h2>
+<ul id="support">
+<li><a href="http://hostmonster.jdem.cz/">Hosting HostMonster</a></li>
+<li><a href="http://www.jihocestitatkove.cz/">Jihočeští taťkové</a></li>
+<li><a href="http://www.csvts.cz/cns/">Česká nukleární společnost</a></li>
+<li><a href="http://www.prozakladnu.cz/">PRO základnu!</a></li>
+</ul>
+
+<!-- Buzzboot Ads -->
+<!-- / Buzzboot Ads -->
+
+
+<p>
+
+</p>
+
+<h2>Meta</h2>
+<script type="text/javascript" src="http://feedjit.com/popPages/?bc=FFFFFF&amp;tc=008000&amp;brd1=336699&amp;lnk=008000&amp;hc=336699&amp;ww=200"></script><noscript><a href="http://feedjit.com/">Feedjit Live Blog Stats</a></noscript>
+
+<h2 id="n_archiv"><a href="#" class="iface" onclick="$('#archiv').BlindToggleVertically(500, null, 'bounceout');return false;">Archiv ...</a></h2>
+<ul id="archiv" style="display:none">
+<li><a href="0812archiv.html">prosinec 2008</a></li><li><a href="0811archiv.html">listopad 2008</a></li><li><a href="0810archiv.html">říjen 2008</a></li><li><a href="0809archiv.html">září 2008</a></li><li><a href="0808archiv.html">srpen 2008</a></li><li><a href="0807archiv.html">červenec 2008</a></li><li><a href="0806archiv.html">červen 2008</a></li><li><a href="0805archiv.html">květen 2008</a></li><li><a href="0804archiv.html">duben 2008</a></li><li><a href="0803archiv.html">březen 2008</a></li><li><a href="0802archiv.html">únor 2008</a></li><li><a href="0801archiv.html">leden 2008</a></li><li><a href="0712archiv.html">prosinec 2007</a></li><li><a href="0711archiv.html">listopad 2007</a></li><li><a href="0710archiv.html">říjen 2007</a></li><li><a href="0709archiv.html">září 2007</a></li><li><a href="0708archiv.html">srpen 2007</a></li><li><a href="0707archiv.html">červenec 2007</a></li><li><a href="0706archiv.html">červen 2007</a></li><li><a href="0705archiv.html">květen 2007</a></li><li><a href="0704archiv.html">duben 2007</a></li><li><a href="0703archiv.html">březen 2007</a></li><li><a href="0702archiv.html">únor 2007</a></li><li><a href="0701archiv.html">leden 2007</a></li><li><a href="0612archiv.html">prosinec 2006</a></li><li><a href="0611archiv.html">listopad 2006</a></li><li><a href="0610archiv.html">říjen 2006</a></li><li><a href="0609archiv.html">září 2006</a></li><li><a href="0606archiv.html">červen 2006</a></li><li><a href="0604archiv.html">duben 2006</a></li><li><a href="0603archiv.html">březen 2006</a></li><li><a href="0512archiv.html">prosinec 2005</a></li><li><a href="0511archiv.html">listopad 2005</a></li>
+</ul>
+
+
+
+</div><!-- konec sidebar -->
+<div class="clear">&nbsp;</div><!-- cistic -->
+</div><!-- konec obsah -->
+
+
+
+
+
+
+
+<div id="foot">
+<p>&copy; <a href="http://www.maly.cz/o-mn/">Martin Malý</a> (aka Arthur Dent) | Design by &copy; 2007 <a href="http://ash721.cz">ASH721</a> | <a href="http://hostmonster.jdem.cz">HOSTING</a> 3000GB+unlimited domains za 6 dolarů</p>
+
+</div>
+
+</div>
+
+</body></html>

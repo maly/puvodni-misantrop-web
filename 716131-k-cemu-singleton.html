@@ -1,0 +1,380 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="cz">
+<head><link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.misantrop.info/rss.xml" /><link rel="alternate" type="application/rss+xml" title="RSS - Kdo umí..." href="http://www.misantrop.info/tema-8-kdo-umi.xml" /><link rel="alternate" type="application/rss+xml" title="Komentáře" href="http://www.misantrop.info/comments.xml" />
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/misantrop" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+ <title>K čemu singleton? - Misantrop.info</title> 
+
+<link rel="stylesheet" href="css39236.css" type="text/css" title="Styl2" media="screen" />
+<link rel="alternate stylesheet" href="css34066.css" type="text/css" title="Styl1" media="screen" />
+
+<meta name="verify-v1" content="qHyecOmV/BTXodaXkGrOlj7QL+X93dTbTLojG9EU22c=" />
+<link rel="openid.server" href="http://www.myopenid.com/server" />
+<link rel="openid.delegate" href="http://adent.myopenid.com/" />
+<link rel="openid2.local_id" href="http://adent.myopenid.com" />
+<link rel="openid2.provider" href="http://www.myopenid.com/server" />
+<meta http-equiv="X-XRDS-Location" content="http://www.myopenid.com/xrds?username=adent.myopenid.com" />
+
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="keywords" content="Martin Malý, Arthur Dent, weblogy, programování, PHP, blogy, misantrop, Web2.0, technologie, elektronika" />
+
+<meta name="description" content="K čemu singleton? - Misantrop.info" />
+<script type="text/javascript" src="/jdemcz.js"></script>
+<script type="text/javascript" src="http://www.boxmark.cz/tb/jquery.js"></script>
+<script type="text/javascript" src="http://www.boxmark.cz/tb/thickbox.js"></script>
+<script type="text/javascript" src="http://www.boxmark.cz/tb/interface.js"></script>
+<script type="text/javascript" src="http://track2.mybloglog.com/js/jsserv.php?mblID=2007052422462000"></script>
+<link rel="stylesheet" href="http://www.boxmark.cz/tb/thickbox.css" type="text/css" media="screen" />
+</head>
+<body>
+<div id="all">
+<!-- Anal Lizer-->
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-190512-8";
+urchinTracker();
+</script>
+<!--dolizat-->
+<div style="position: fixed; _position:absolute;right: 0; top: 0; width: 163px; height: 163px;"><a href="http://www.misantrop.info/"><img src="http://img.maly.cz/henryk.gif" alt="Neobsahuje názory Henryka Laholy" /></a></div> 
+
+<div id="adx" style="position:fixed;_position:absolute;top:5px;left:5px">
+<script type="text/javascript"><!--
+google_ad_client = "pub-3772893178572611";
+/* 120x600, vytvořeno 15.7.08 */
+google_ad_slot = "1720575805";
+google_ad_width = 120;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+
+<div id="head"><p id="logo"><a href="index.php"><img src="img/2zapisnik-logo.gif" alt="Misantrop.info - Web co vám doudí moudí..." /></a></p></div>
+
+<ul id="menu">
+<li><a href="index.php">Titulní stránka</a></li>
+<li><a href="http://rss.misantrop.info">Oblíbené zdroje</a></li>
+<li><a href="http://www.maly.cz/o-mn/?KeepThis=true&amp;TB_iframe=true&amp;height=500&amp;width=800" class="thickbox">O mně</a></li>
+<li><a href="http://www.bloguje.cz/vzkazy.php?send=47997">Napiš vzkaz</a></li>
+</ul>
+
+<div id="obsah">
+<div id="pole">
+<!-- Pocitadlo -->
+<p><img src="http://counter.cnw.cz/dungeon.cgi?blogmalycz&amp;6&amp;000000&amp;fff1d8&amp;on" alt=" " style="width:1px;height:1px;"/><script type="text/javascript">
+<!-- 
+document.write("<img src=\"http://counter.cnw.cz/trackit.cgi?blogmalycz&t2&" + escape(top.document.referrer) + "\" alt=\" \" border=\"0\" width=\"1\" height=\"1\">"); 
+// --></script>
+
+<script language="JavaScript" type="text/javascript">
+<!--
+document.write ('<a href="http://www.netagent.cz" target="_top"><img src="http://www.netagent.cz/agent.php?id=383&amp;ur='+escape(document.referrer)+'&amp;rw='+escape(window.screen.width)+'&amp;rh='+escape(window.screen.height)+'&amp;cd='+escape(window.screen.colorDepth)+'&amp;pt='+escape(document.title)+'&amp;lc='+escape(document.location)+'" width="1" height="1" border="0" alt="NetAgent" /></a>');
+//--></script>
+
+</p>
+<!-- Pocitadlo konec -->
+
+
+
+
+<h1>K čemu singleton?</h1>
+
+
+
+
+
+
+
+<p>Komentář k <a href="http://phpfashion.com/je-singleton-zlo#hcomments">Davidovu článku</a> o singletonech v PHP, který trošku nakynul, tentokrát na téma &quot;Proč vytvářet třídu, když může mít jen jednu instanci?&quot; aneb Základy návrhových vzorů v PHP </p>
+
+<p style="float:right; margin:0 0 1em 1em;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-3772893178572611";
+
+/* 120x240, vytvořeno 6.7.08 */
+google_ad_slot = "4855232301";
+google_ad_width = 120;
+google_ad_height = 240;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</p>
+
+<p><a href="http://phpfashion.com/je-singleton-zlo#comment-13642">Tomík se ptá</a>: <font face="courier new,courier">Můžu se zeptat, když už jsme u těch singletonů, zda jej někdo z vás někdy opravdu použil, myslím, kromě takových těch papírových příkladů, opravdu v praxi?</font><p><font face="courier new,courier">Vím, že toto existuje, ale nikdy jsem se neocitl v situaci, kdy bych jej potřeboval, nebo by mi usnadnil život. Ptám se tedy, zda jsem o něco přišel? Nebo mi něco uniká?</font></p><p><font face="courier new,courier">Chci tím říct, neztrácí se pak vpodstatě kouzlo OOP? Proč vytvářet třídu, když může mít jen jednu instanci, nemůže se dědit, klonovat?</font></p><p><font face="courier new,courier">Myslím, že asi vždy může nastat situace, kdy je dobré mít min. dvě instance jedné třídy. </font></p><p>Začal jsem psát odpověď k Davidovi, ale trošku nakynula, takže ji dám sem.</p><p>Ano, použil, několikrát. </p><p>Dám příklad, ze života, z PHP a od webů: Doby, kdy si každý kus kódu vypsal na výstup co se mu zachtělo jsou, zaplaťpámbu, pryč. Přesto výstup, holt, vzniká v různých místech kódu. Je třeba mít nějaké místo, kde si mohu tyto data schraňovat a na konci je předat patřičnému systému (&quot;View&quot; terminologií MVC, šablonovacímu systému v terminologii mojí). Je jasné, že takto uložená a připravená data musí být &quot;globálně&quot; a &quot;jednou&quot;. Jako ideální řešení se nabízí statická třída. Jenže já chci na konci všechna data předhodit šablonovacímu nástroji. Stále by to ještě šlo, ale už to poměrně dře, v template engine bude muset být všude odkazováno přes <font face="courier new,courier">Třída::$proměnná</font>... což navíc předpokládá public proměnné, takže lepší řešení je <font face="courier new,courier">Třída::get('proměnná')</font>... všude a natvrdo. A co když se rozhodnu výstup dat zahodit a &quot;podhodit&quot; nějaký testovací soubor dat? Budu je všechna přepisovat?</p><p>A co když mám (a já mám...) víc šablonových nástrojů? Budu do všech psát tyhle obezličky?</p><p>Já si pro tento výstup udělám objekt třídy, řekněme, Response. Třída Response je v zásadě jednoduchá, implementuje jen obecný setter, getter a pak nějakou metodu &quot;vrať vše jako pole&quot; či tak něco. Tam, kde vznikne potřeba poslat nějaké údaje ven, si vezmu instanci Response a nacpu do ni patřičná data. A na konci běhu celý tenhle objekt i se všemi jeho daty předhodím obecnému šablonovacímu nástroji, který očekává na vstupu objekt, co umí &quot;getDataAsArray&quot; (<em>interface IArrayable</em>) ;)&nbsp;&ndash; asi takhle:<font face="courier new,courier"> $template-&gt;data($response)</font>. Zkusíte to nasimulovat se statickou třídou?</p><p>U tohoto objektu, který udržuje data, co mají jít na výstup, jsem přesvědčen, že by opravdu nebylo dobré mít dvě instance téže třídy. A nebylo by dobré nemít žádnou instanci třídy. Je ideální mít jednu a přesně jednu, a je dobré mít ji jako objekt. (A to, jestli je instance uložena ve statické privátní proměnné nebo v globálním skladu, je celkem putna.) </p><p>Jiný příklad: Parsuju si na začátku URL a podle výsledků volím kontroléry a parametry apod. Může to udělat statická třída... Jenže já chci k těm parametrům přistupovat i z jiných tříd... Mohu psát <font face="courier new,courier">URL::$path</font>, ale pak si musím $path definovat jako veřejnou, což NENÍ DOBRÉ. Definuju si ji jako privátní, pak si ale musím napsat sadu statických getterů a setterů... </p><p>Zkrátka: Singleton je dobrý tam, kde chci mít:</p><p>1. Zabalená data, co k sobě patří<br />2. tak, abych s nimi mohl pracovat jako s jedním objektem<br />3. a s jistotou, že jsou v systému jen jednou, že si tedy například výstup neuložím do dvaceti různých instancí. </p><p>A proč místo něj nepoužít statickou třídu? Protože objekt má spoustu výhod: Může implementovat nějaké rozhraní, může být předán coby parametr a dokonce může být &quot;produktem&quot; nějaké Factory metody, takže lze až za běhu určit, čí instancí vlastně bude. </p><p>A PS: Ta Pecinovského kniha je OPRAVDU, ale OPRAVDU dobrá! Sice se věnuje především Javě, ale na otázky jako jsou ty Tomíkovy odpovídá velmi dobře. </p></p>
+
+<div style="text-align:center">
+<script type="text/javascript"><!--
+google_ad_client = "pub-3772893178572611";
+/* 468x60, vytvořeno 15.7.08 */
+google_ad_slot = "3559028762";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+
+
+
+
+
+<p class="more">
+<span class="date">Dne 22.08.2008</span>
+
+</p>
+
+
+
+
+
+<p><a href="http://jdem.cz/tw?text=Zaj%c3%admav%c3%bd+%c4%8dl%c3%a1nek+na+Z%c3%a1pisn%c3%adku%3a+http%3A%2F%2Fwww.misantrop.info%2F716131-k-cemu-singleton.html&amp;redir=1">Twittni</a></p>
+
+<p>Přidej do: 
+<a href="http://www.conota.cz/add.php" onclick="x=document;a=encodeURIComponent(x.location.href);t=encodeURIComponent(x.title);d=encodeURIComponent(window.getSelection());setTimeout('x99.focus()',1000);x99=window.open('http://www.conota.cz/add.php?popup=y&g_title='+t+'&g_url='+a+'&g_desc='+d,'Conota','modal=1,status=0,scrollbars=1,toolbar=0,resizable=1,height=550,width=785,left='+(screen.width-785)/2+',top='+(screen.height-550)/2);return false;"><img src="http://www.conota.cz/images/conote.gif" alt="Přidat na Conota"/><a>  <a href="http://linkuj.cz/?id=linkuj&amp;url=http%3A%2F%2Fwww.misantrop.info%2F716131-k-cemu-singleton.html&amp;title=K+%C4%8Demu+singleton%3F"><img src="http://linkuj.cz/img/badge.png" style="border:0" title="Linkuj si !" alt="Linkuj si !" /></a> <a href="http://vybrali.sme.sk/submit.php?url=http%3A%2F%2Fwww.misantrop.info%2F716131-k-cemu-singleton.html"><img src="http://blog.sme.sk/blog/3/61630/tlacitko.gif" style="border:0" title="asdf.sk" alt="asdf.sk" /></a>
+
+<a href="http://www.stumbleupon.com/submit?url=http%3A%2F%2Fwww.misantrop.info%2F716131-k-cemu-singleton.html&amp;title=K+%E8emu+singleton%3F"> <img border=0 src="http://www.bloguje.cz/icon_su.gif" alt="StumbleUpon Toolbar"> Stumble It!</a>
+
+<script type="text/javascript" src="http://w.sharethis.com/widget/?tabs=web%2Cemail&amp;charset=utf-8&amp;style=rotate&amp;publisher=99a6f76f-7727-4c7b-a906-b91f57f8a706"></script></p>
+
+<script type="text/javascript" src="http://feedjit.com/coFilter/?bc=FFFFFF&amp;tc=008000&amp;brd1=336699&amp;lnk=008000&amp;hc=336699&amp;ww=500"></script>
+
+
+<h2 id="n_koments">Komentáře</h2>
+
+
+
+<p class="comment">
+<strong><a name="cmt_1">[1]</a> </strong> (David Grudl  - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fdavidgrudl.com">WWW</a>) 22.08.2008, 16:06:55&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1732875">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1732875">D</a>]<br />
+
+Budu s tebou polemizovat v zásadní věci: proč by se objekt Response měl rozhodnout a zajistit, že bude existovat jen jednou? Co se změní, když dáš třídě Response veřejný konstruktor a zrušíš všechna omezení na jeho jedinečnost? Nestane se nic. Tvá aplikace bude dál ukládat parametry do té jedné instance, umístěné na známém globálním místě - např. Response::getInstance(), nebo Application::getResponseInstance() nebo dokonce $GLOBALS['response'].
+<br />
+<br />Rozlišujme potřebu globálně dostupného úložiště a potřebu unikátnosti instance. Dle mého to druhé je často neopodstatněné, vede ke zbytečným komplikacím při testování a není ani v "pravomoci" objektu takto globální prostor omezovat.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_2">[2]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 22.08.2008, 17:20:04&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1732907">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1732907">D</a>]<br />
+
+<a href="#cmt_1">[1]</a> Trošku jsme si asi nerozuměli. Já nepolemizoval s tvým "mechanismus unikátnosti v třídě" vs "jiné mechanismy zajištění unikátnosti". Tomík se ptal na to, jaký vůbec smysl má třída, která má jednu a právě jednu instanci, tak jsem se mu snažil vysvětlit, že taková třída praktický smysl má.
+<br />
+<br />To, jestli má privátní konstruktor a getInstance, nebo jestli je objekt vytvářen nějakou globální Factory/Fondem nebo jestli si ho ukládám do globals je (v tuto chvíli a pro potřeby tohoto článku) jedno. Otázka, jak jsem ji pochopil, byla na SMYSL třídy, která má právě jedenu instanci.
+<br />
+<br />Takže polemizuješ s něčím, co neříkám. Já říkám, že SI VEZMU tu JEDNU instanci, nespecifikuju jak, jestli o ní má rozhodnout přímo třída Response nebo jestli to zajistím via globální úložiště, o to nejde a to je téma do jiné diskuse (do té tvé). Jde o to, že má smysl, když v systému existuje JEDNA INSTANCE. ;) Ostatně třeba i to globální úložiště, pokud nebude čistě statické, bude singleton.
+<br />
+<br />Zkus brát "singleton" nikoli jako konkrétní implementaci, ale jako "přístup", jako "vzor" - "Třída s jednou instancí".
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_3">[3]</a> </strong> (David Grudl  - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fdavidgrudl.com">WWW</a>) 22.08.2008, 17:35:39&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1732916">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1732916">D</a>]<br />
+
+<a href="#cmt_2">[2]</a> Tomík se ptal na to, jaký vůbec smysl má třída, která má jednu a právě jednu instanci, a ty jsi jako příklad uvedl objekt, který je globálně dostupný - tedy bez ohledu na to, kolik může mít v systému najednou instancí. Nebo v čem se pletu?
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_4">[4]</a> </strong> (David Grudl  - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fdavidgrudl.com">WWW</a>) 22.08.2008, 17:38:17&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1732917">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1732917">D</a>]<br />
+
+Ještě chci zdůraznit to "jednu a právě jednu instanci". 
+<br />
+<br />Píšeš :
+<br />> Jde o to, že má smysl, když v systému existuje JEDNA INSTANCE. ;) Ostatně třeba i to globální úložiště, pokud nebude čistě statické, bude singleton. 
+<br />
+<br />To chápu jako odpověď na "existuje jedna instance", ale ne už jako odpověď na "jedna a právě jedna instance".
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_5">[5]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 22.08.2008, 18:10:59&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1732938">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1732938">D</a>]<br />
+
+<a href="#cmt_3">[3]</a> Odpovídal jsem na Tomíkovu otázku: "Proč vytvářet třídu, když může mít jen jednu instanci, nemůže se dědit, klonovat?" Pokud bych chtěl šťourat, tak napíšu, že už v Tomíkově otázce je chyba (i od singleton třídy lze odvodit a "podědit"). Ale já jsem si z toho vzal tu část, kde se podivuje nad užitečností třídy, co má jen jednoho objekta. A o to Tomíkovi zjevně šlo, protože o kousek dál říká, že "asi vždy může nastat situace, kdy je dobré mít min. dvě instance jedné třídy."
+<br />
+<br />Uvedl jsem příklad, kdy je vhodné vytvořit třídu, která má v aplikaci (v jednom "request běhu" či jak to nazvat) jednu instanci. Nic z toho, na co ses ptal v <a href="#cmt_1">[1]</a><a href="#cmt_3">[3]</a><a href="#cmt_4">[4]</a> jsem neřešil, protože na to jsem odpovídat nechtěl. Má odpověď se vztahovala na situaci, kdy je lepší místo statické třídy se statickými proměnnými použít třídu, u které:
+<br />- je možno vytvořit instanci
+<br />- je žádoucí, aby po dobu běhu byla vytvořena jen jedna instance.
+<br />
+<br />---
+<br />
+<br />Pokud hovoříš o něčem, o čem píšu já, tak je mi fakt líto, ale netuším, kam míříš. Mám totiž intenzivní dojem, že každý mluvíme o jiném kousku problému. Já tvé poznámky chápu tak, že je zbytečné dělat ve třídě singletonové opičárny, když můžeš zajistit, aby v systému existovala jednou jiným způsobem (např. tak, že si uložíš její instanci kamsi globálně). <strong>O tom se nepřu</strong> a k tomu se nevyjadřuju, k tomu je diskuse u tebe. Já se vyjadřuju k té Tomíkově otázce, tedy <em>"K čemu je třída, která má jen jednu instanci?"</em>
+<br />
+<br />Davide, NA TO se Tomík ptá a NA TO mu odpovídám: <strong>Je dobré ji mít na věci, které se v systému vyskytují jen jednou (třeba to Response) a pokud je potřeba ji někdy třeba předat jako parametr nějaké metodě.</strong>
+<br />
+<br />A prosím neřešme, jestli globálně nebo "samoregulačním mechanismem" nebo tak či onak. Otázka je "Jaký má jednoinstanční třída smysl", ne "jak zajistit že bude jen jednou".
+<br />
+<br />Ale jestli máš dojem, že opravdu polemizuješ s tím co píšu, tak to zkus ještě jednou a, prosím, jak pro blbce, protože já fakt nerozumím. :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_6">[6]</a> </strong> (David Grudl  - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fdavidgrudl.com">WWW</a>) 22.08.2008, 18:24:56&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1732948">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1732948">D</a>]<br />
+
+<a href="#cmt_5">[5]</a> Tomíkovi jsi určitě dal dobrou odpověď, dokonce třídu Response jsem původně chtěl ve svém článku použít místo Database.
+<br />
+<br />Titulní téma je singleton, tedy třída, která (mimojiné) může mít jednu a právě jednu instanci. Tvé vysvětlení pokrývá celé téma kromě toho "právě jednu instanci". Bez "právě jednu instanci" se vlastně nemluví o singletonu, ale o registry nebo jak se těm věcem říká (otázka na Reného). Titulek článku mohl znít "K čemu registry" a celý mohl zůstat tak jak je.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_7">[7]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 22.08.2008, 19:43:59&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1733003">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1733003">D</a>]<br />
+
+<a href="#cmt_6">[6]</a> Registry nejsou. :) A "právě jedna instance" je dobrovolné omezení proti zmatkům a nejednoznačnostem; globální dostupnost je až vedlejší efekt.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_8">[8]</a> </strong> (klok  - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.klok.cz">WWW</a>) 22.08.2008, 20:45:20&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1733057">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1733057">D</a>]<br />
+
+<a href="#cmt_6">[6]</a> ...Titulní téma je singleton, tedy třída, která (mimojiné) může mít jednu a právě jednu instanci...
+<br />
+<br />Odpoved jsem psal u tebe. Primarnim smyslem singletonu je mit jednu instanci a tim zajistovat pristup k unikatnim zdrojum ktere je treba spravovat. Souhlasim s tim ze v PHP dochazi k jeho naduzivani na veci ktere lze resit jinak. 
+<br />
+<br />Ale take tvrdim, ze diky "konvencnosti" tohoto patternu je  programatorum (alespon vetsine ;-) zrejme, ze neni vhodne vytvaret vice instanci dane tridy.
+<br />
+<br />A co se tyce potreby jinych "singletonu" pro potreby testovani, to lze resit napriklad pomoci Factory, ktera mi bude vracet jinou instanci singletonu.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_9">[9]</a> </strong> (klokane [<a href="http://klokane.myopenid.com/" title="Ověřený uživatel http://klokane.myopenid.com/">openID</a>]  - <a href="http://klokane.myopenid.com">WWW</a>) 22.08.2008, 20:59:14&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1733067">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1733067">D</a>]<br />
+
+sry. samozrejme ze ne "jinou instanci singletonu" ale "instanci jineho singletonu" se stejnym rozhranim
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_10">[10]</a> </strong> (Michal Aichinger  - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.czechdesign.cz%2Fblogs%2Faichi%2F">WWW</a>) 22.08.2008, 22:36:55&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1733127">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1733127">D</a>]<br />
+
+Mě se zdá že David nemá rád jakékoli svazování konvencemi :) Prostě singleton je o konvencích. Pokud programátor znalý návrhových vzorů uvidí nějakou třídu s privátním konstruktorem a metodou pro vytvoření objektu a poznámkou, že jde o singleton, tak ví, že autor chtěl aby byla instanciována pouze jednou.
+<br />
+<br />Problém vidím taky v tom, že normálně kód ovlivňují programátoři, ale u Davida jde asi o genetické programování a program se vytváří sám, když pořád píše o tom, že se objekty rozhodují samy :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_11">[11]</a> </strong> (Tomik - <a href="mailto:tomik@jmx.cz">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Ftomik.jmx.cz">WWW</a>) 23.08.2008, 14:06:08&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1733474">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1733474">D</a>]<br />
+
+Díky, Arthure! Přesně takovou odpověď jsem si představoval! :)
+<br />
+<br />Jinak, co se týče testů, myslím, že se to opravdu dá vyřešit jiným singletonem se stejným rozhraním (viz. <a href="#cmt_8">[8]</a>).
+<br />
+<br />P.S.: Jsem Tomik, nikoli Tomík. :)
+
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+</div><!-- konec pole -->
+
+
+
+<div id="sidebar">
+
+<h2 id="n_rubriky">Rubriky</h2>
+<ul id="rubriky">
+<li><a href="tema-1-bavim-se-na-vas-ucet.html">Bavím se na váš účet</a></li><li><a href="tema-2-nemam-vas-rad.html">Nemám vás rád</a></li><li><a href="tema-3-pohrdani.html">Pohrdání</a></li><li><a href="tema-4-vase-bludy-na-moji-hlavu.html">Vaše bludy na moji hlavu</a></li><li><a href="tema-5-mym-analfabetum.html">Mým analfabetům...</a></li><li><a href="tema-6-co-me-bavi.html">Co mě baví?</a></li><li><a href="tema-7-to-je-nejaka-hudba-tohleto.html">To je nějaká hudba, tohleto?</a></li><li><a href="tema-8-kdo-umi.html">Kdo umí...</a></li><li><a href="tema-9-mene-kecu-vice-prace.html">Méně keců, více práce</a></li>
+</ul>
+
+<h2 class="bok">Jak se vám to čte?</h2>
+
+<p style="text-align:center">
+<a href="http://feeds.feedburner.com/misantrop"><img src="http://feeds.feedburner.com/~fc/misantrop?bg=99CCFF&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a></p>
+
+<p style="text-align:center">
+<a href="http://twittercounter.com/?username=adent" title="TwitterCounter for @adent"><img src="http://twittercounter.com/counter/?username=adent" width="88" height="26" style="border:none;" alt="TwitterCounter for @adent" /></a></p>
+
+<p style="text-align:center">
+<script type="text/javascript">
+var wsgApiKey = "481349a5-98b9-4d24-b32f-a5729d33840c";
+var wsgStyle = 2;
+document.write('<div id="wsgContainer" style="text-align:center"></div>');wsgScript=document.createElement('script');wsgScript.type="text/javascript";wsgScript.src="http://static.hubspot.com/websiteGraderBadge/badge.js?t="+Math.random();setTimeout("document.getElementById('wsgContainer').appendChild(wsgScript);",1);
+</script>
+</p>
+
+<script type="text/javascript" src="http://www.blogcatalog.com/w/services.php?id=150489&amp;width=165&amp;bgcolor=EEEEEE&amp;bcolor=356D79&amp;lcolor=333333&amp;hcolor=FFFFFF&amp;htext=Kde%20mne%20najdete&amp;name=0&amp;brand=0&amp;heading=1"></script>
+
+<h2 id="n_odkazy"><a href="#" class="iface" onclick="$('#odkazy').BlindToggleVertically(500, null, 'bounceout');return false;">Odkazy ...</a></h2>
+<ul id="odkazy" style="display:block">
+<li><a href="http://pixy.cz/pixynergia" rel="acquaintance met">Pixy</a></li><li><a href="http://blok.rozanek.cz" rel="acquaintance">Filip Rožánek</a></li><li><a href="http://www.whitedog.cz" rel="acquaintance met">White Dog</a></li><li><a href="http://kahi.cz/blog/" rel="met">Kahi</a></li><li><a href="http://lokutus.bloguje.cz" rel="met">Lokutus</a></li><li><a href="http://www.katchaba.com/" rel="acquaintance met">Katchaba</a></li><li><a href="http://machinegun.bloguje.cz" rel="acquaintance met">Johnny</a></li><li><a href="http://kokolia.bloguje.cz">Vladimír Kokolia</a></li><li><a href="http://viditelnymacek.cz">Miroslav Macek</a></li><li><a href="http://cina.bloguje.cz" rel="me">Dovolená v Číně</a></li><li><a href="http://bloguneni.bloguje.cz/">Blogu není...</a></li><li><a href="http://hekko.bloguje.cz" rel="acquaintance met">Adminka bloguje</a></li><li><a href="http://www.bloc.cz/default.aspx">Bloc Jiřího Hlavenky</a></li><li><a href="http://apimania.eu" rel="me">Apimania</a></li><li><a href="http://dev20.info" rel="me">Dev::Info</a></li><li><a href="http://dankaj.bloguje.cz/" rel="contact met">Zápisky z Islandu</a></li><li><a href="http://jdem.cz" rel="me">Zkratky pro odkazy</a></li><li><a href="http://davebarry.cz" rel="me">Dave Barry česky</a></li><li><a href="http://uelectronics.info" rel="me">Mikroelektronika</a></li><li><a href="http://www.php-suit.com" rel="me">PHP Suit</a></li><li><a href="http://www.sharp-suit.com" rel="me">Sharp Suit</a></li> 
+<li><a href="http://technorati.com/claim/xnpb5tzhw" rel="me">Technorati Profile</a></li>
+</ul>
+
+<h2 id="n_recommend">Doporučuji</h2>
+<ul id="support">
+<li><a href="http://hostmonster.jdem.cz/">Hosting HostMonster</a></li>
+<li><a href="http://www.jihocestitatkove.cz/">Jihočeští taťkové</a></li>
+<li><a href="http://www.csvts.cz/cns/">Česká nukleární společnost</a></li>
+<li><a href="http://www.prozakladnu.cz/">PRO základnu!</a></li>
+</ul>
+
+<!-- Buzzboot Ads -->
+<p><a href="http://buzzboot.com/a/www/delivery/ck.php?n=fbe3418"><img alt="Buzzboot reklama" src="http://buzzboot.com/a/www/delivery/avw.php?zoneid=8&amp;n=fbe3418"/></a></p><!-- / Buzzboot Ads -->
+
+
+<p>
+<script src="http://pub.mybloglog.com/comm3.php?mblID=2007052422462000&amp;r=widget&amp;is=small&amp;o=l&amp;ro=4&amp;cs=brown&amp;ww=200&amp;wc=multiple" type="text/javascript"></script>
+</p>
+
+<h2>Meta</h2>
+<script type="text/javascript" src="http://feedjit.com/popPages/?bc=FFFFFF&amp;tc=008000&amp;brd1=336699&amp;lnk=008000&amp;hc=336699&amp;ww=200"></script><noscript><a href="http://feedjit.com/">Feedjit Live Blog Stats</a></noscript>
+
+<h2 id="n_archiv"><a href="#" class="iface" onclick="$('#archiv').BlindToggleVertically(500, null, 'bounceout');return false;">Archiv ...</a></h2>
+<ul id="archiv" style="display:none">
+<li><a href="0812archiv.html">prosinec 2008</a></li><li><a href="0811archiv.html">listopad 2008</a></li><li><a href="0810archiv.html">říjen 2008</a></li><li><a href="0809archiv.html">září 2008</a></li><li><a href="0808archiv.html">srpen 2008</a></li><li><a href="0807archiv.html">červenec 2008</a></li><li><a href="0806archiv.html">červen 2008</a></li><li><a href="0805archiv.html">květen 2008</a></li><li><a href="0804archiv.html">duben 2008</a></li><li><a href="0803archiv.html">březen 2008</a></li><li><a href="0802archiv.html">únor 2008</a></li><li><a href="0801archiv.html">leden 2008</a></li><li><a href="0712archiv.html">prosinec 2007</a></li><li><a href="0711archiv.html">listopad 2007</a></li><li><a href="0710archiv.html">říjen 2007</a></li><li><a href="0709archiv.html">září 2007</a></li><li><a href="0708archiv.html">srpen 2007</a></li><li><a href="0707archiv.html">červenec 2007</a></li><li><a href="0706archiv.html">červen 2007</a></li><li><a href="0705archiv.html">květen 2007</a></li><li><a href="0704archiv.html">duben 2007</a></li><li><a href="0703archiv.html">březen 2007</a></li><li><a href="0702archiv.html">únor 2007</a></li><li><a href="0701archiv.html">leden 2007</a></li><li><a href="0612archiv.html">prosinec 2006</a></li><li><a href="0611archiv.html">listopad 2006</a></li><li><a href="0610archiv.html">říjen 2006</a></li><li><a href="0609archiv.html">září 2006</a></li><li><a href="0606archiv.html">červen 2006</a></li><li><a href="0604archiv.html">duben 2006</a></li><li><a href="0603archiv.html">březen 2006</a></li><li><a href="0512archiv.html">prosinec 2005</a></li><li><a href="0511archiv.html">listopad 2005</a></li>
+</ul>
+
+
+
+</div><!-- konec sidebar -->
+<div class="clear">&nbsp;</div><!-- cistic -->
+</div><!-- konec obsah -->
+
+
+
+
+
+
+
+<div id="foot">
+<p>&copy; <a href="http://www.maly.cz/o-mn/">Martin Malý</a> (aka Arthur Dent) | Design by &copy; 2007 <a href="http://ash721.cz">ASH721</a> | <a href="http://hostmonster.jdem.cz">HOSTING</a> 3000GB+unlimited domains za 6 dolarů</p>
+<img src="http://www.laar.cz/support/counter/cnt.php?b=34425" alt="Counter" />
+</div>
+
+</div>
+
+</body></html>

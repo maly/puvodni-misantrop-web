@@ -1,0 +1,1012 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="cz">
+<head><link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.misantrop.info/rss.xml" /><link rel="alternate" type="application/rss+xml" title="RSS - Kdo umí..." href="http://www.misantrop.info/tema-8-kdo-umi.xml" /><link rel="alternate" type="application/rss+xml" title="Komentáře" href="http://www.misantrop.info/comments.xml" />
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/misantrop" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+ <title>Programátorský víkend - Misantrop.info</title> 
+
+<link rel="stylesheet" href="css39236.css" type="text/css" title="Styl2" media="screen" />
+<link rel="alternate stylesheet" href="css34066.css" type="text/css" title="Styl1" media="screen" />
+
+<meta name="verify-v1" content="qHyecOmV/BTXodaXkGrOlj7QL+X93dTbTLojG9EU22c=" />
+<link rel="openid.server" href="http://www.myopenid.com/server" />
+<link rel="openid.delegate" href="http://adent.myopenid.com/" />
+<link rel="openid2.local_id" href="http://adent.myopenid.com" />
+<link rel="openid2.provider" href="http://www.myopenid.com/server" />
+<meta http-equiv="X-XRDS-Location" content="http://www.myopenid.com/xrds?username=adent.myopenid.com" />
+
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="keywords" content="Martin Malý, Arthur Dent, weblogy, programování, PHP, blogy, misantrop, Web2.0, technologie, elektronika" />
+
+<meta name="description" content="Programátorský víkend - Misantrop.info" />
+</head>
+<body>
+<div id="all">
+<!-- Anal Lizer-->
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-190512-8";
+urchinTracker();
+</script>
+<!--dolizat-->
+ 
+
+<div id="adx" style="position:fixed;_position:absolute;top:5px;left:5px">
+<script type="text/javascript"><!--
+google_ad_client = "pub-3772893178572611";
+/* 120x600, vytvořeno 15.7.08 */
+google_ad_slot = "1720575805";
+google_ad_width = 120;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript"
+src="">
+</script>
+</div>
+
+<div id="head"><p id="logo"><a href="index.php"><img src="img/2zapisnik-logo.gif" alt="Misantrop.info - Web co vám doudí moudí..." /></a></p></div>
+
+<ul id="menu">
+<li><a href="index.php">Titulní stránka</a></li>
+<li><a href="http://rss.misantrop.info">Oblíbené zdroje</a></li>
+<li><a href="http://www.maly.cz/o-mn/?KeepThis=true&amp;TB_iframe=true&amp;height=500&amp;width=800" class="thickbox">O mně</a></li>
+<li><a href="http://www.bloguje.cz/vzkazy.php?send=47997">Napiš vzkaz</a></li>
+</ul>
+
+<div id="obsah">
+<div id="pole">
+<!-- Pocitadlo -->
+<p><img src="http://counter.cnw.cz/dungeon.cgi?blogmalycz&amp;6&amp;000000&amp;fff1d8&amp;on" alt=" " style="width:1px;height:1px;"/><script type="text/javascript">
+<!-- 
+var dummy =("<img src=\"http://counter.cnw.cz/trackit.cgi?blogmalycz&t2&" + escape(top.document.referrer) + "\" alt=\" \" border=\"0\" width=\"1\" height=\"1\">"); 
+// --></script>
+
+<script language="JavaScript" type="text/javascript">
+<!--
+var dummy = ('<a href="http://www.netagent.cz" target="_top"><img src="http://www.netagent.cz/agent.php?id=383&amp;ur='+escape(document.referrer)+'&amp;rw='+escape(window.screen.width)+'&amp;rh='+escape(window.screen.height)+'&amp;cd='+escape(window.screen.colorDepth)+'&amp;pt='+escape(document.title)+'&amp;lc='+escape(document.location)+'" width="1" height="1" border="0" alt="NetAgent" /></a>');
+//--></script>
+
+</p>
+<!-- Pocitadlo konec -->
+
+
+
+
+<h1>Programátorský víkend</h1>
+
+
+
+
+
+
+
+<p>Nějaký ten prográmek tu, nějaká ta aplikace támhle, komponenta sem, tutoriál tam. </p>
+
+<p style="float:right; margin:0 0 1em 1em;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-3772893178572611";
+
+/* 120x240, vytvořeno 6.7.08 */
+google_ad_slot = "4855232301";
+google_ad_width = 120;
+google_ad_height = 240;
+//-->
+</script>
+<script type="text/javascript"
+src="">
+</script>
+</p>
+
+<p><p>Když už jsem přišel o většinu dat, operační systém a o pracovní maily za poslední tři měsíce, tak jsem si řekl, že si aspoň radost udělám a zaprogramuju si.</p><p>Totiž...</p><p>Jak jsem tak nastavoval svou Vistu (skloňujeme: MáVista, TváVista, JehoVista), tak jsem zjistil, mimo jiné, že třeba nastavení /etc/hosts je docela pěknej opruz, protože ho nelze přímo otevřít, ale je potřeba &quot;otevřít ho jako admin&quot;. Ne že by řešení neexistovalo... Stačí jen kliknout tuhle, kliknout támhle a spustit si editor jako admin. Nebo si lze udělat symbolický odkaz a...</p><p>... no anebo si s chutí zaprogramujete, když už si musíte pocvičit C# kvůlivá nové práci. Takže jsem se ponořil do knih a tutoriálů a manuálů a za odpoledne jsem si sesmolil první verzi hosts editoru, který stačilo jen spustit, nebylo třeba se šmudlat s adminem.</p><p>Fajn, ale textbox není až tak úplně editor, jak si ho představuju. Takže jsem zase sednul a udělal jsem si Opravdový Editor, tedy takovou tu věc, kde nepíšu text, ale připravím si sadu IP adres serverů a pak jen píšu aliasy. Výborná věc na testování, než nastavím DNS. <em>Klik, nový server, doménové jméno, klik na &quot;Hostmonster IP&quot;, uložit...</em> Ptákovina, ale na pocvičení výborná věc. Například jsem si zkusil, jak si napsat vlastní generickou třídu odvozenou od generické Directory, která přidává metody pro serializaci a deserializaci ve formátu XML. Ze začátku se to sice trochu vleklo, ale po jednom odpoledni jsem se do toho vpravil a šlo to jak po másle.</p><p>A abych si trošku odpočinul, tak jsem si pohrál se sidebarem. Hledal jsem nové &quot;miniaplikace&quot; (proboha to je slovo!) a našel jsem tam &quot;Rádio Impuls&quot;. Zeptal jsem se <a href="http://blok.rozanek.cz">Filipa Rožánka</a>, jestli má ČRo taky svůj gadget. Prý ne...</p><p>Hm, to přeci nemůže být tak těžký, řekl jsem si, pohledal zase pár tutoriálů, ukázek a existujících přehrávačů a za večer jsem si sesmolil i &quot;ČRo Sidebar Player&quot;. Teď mi tu hraje Český rozhlas po internetu, což je docela nezvyk. :)</p><p>Mimochodem, moc mě těší, že se různí lidé ptají po smyslu toho či onoho... Například teď&nbsp;&ndash; <em>proč si vypalovat seriál na DVD</em>? Nebo třeba k tomu gadgetu konkrétnější dotaz: <em>Jaký smysl má poslouchat rádio online, když si ho přeci můžu pustit</em>? V takovou chvíli se vždy zarazím a říkám si: Že to VY nepotřebujete a že to VY nechápete přeci ještě neznamená, že někdo jiný ten smysl nevidí! Například já si rádio pustit nemůžu, neboť přijímačem doma neoplývám. (Ne, kecám, mohl bych si ho pustit vedle ze satelitu, ale já chci poslouchat rádio u počítače při práci.) Krom toho Wave ani Leonardo na rádiu nenaladím, že... </p><p>Navíc, a to se vracím, mám rád Český rozhlas, takže jsem gadgetík udělal s chutí. Můžete si ho, máte-li Visty, <a href="http://misc.maly.cz/cro.gadget">nainstalovat</a> a poslouchat rádio se mnou.</p><p>Jo a taky jsem napsal článek o OAuth pro Zdroják a Martin Hassman o mně stvořil tak krásnou <a href="http://zdrojak.root.cz/autori/martin-maly/">autorskou stránku</a>, že jsem si byl skoro sympatický! :) (Ovšem v roztomilosti těžko mohu konkurovat českému maskotovi PHP programátorů&nbsp;&ndash; <a href="http://zdrojak.root.cz/autori/david-grudl/">posuďte sami</a>.)</p><p>Já jsem se sebou za tento víkend spokojený... A co vy? ;)</p></p>
+
+<div style="text-align:center">
+<script type="text/javascript"><!--
+google_ad_client = "pub-3772893178572611";
+/* 468x60, vytvořeno 15.7.08 */
+google_ad_slot = "3559028762";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="">
+</script>
+</div>
+
+
+
+
+
+<p class="more">
+<span class="date">Dne 16.11.2008</span>
+
+</p>
+
+
+
+
+
+<p><a href="http://jdem.cz/tw?text=Zaj%c3%admav%c3%bd+%c4%8dl%c3%a1nek+na+Z%c3%a1pisn%c3%adku%3a+http%3A%2F%2Fwww.misantrop.info%2F742263-programatorsky-vikend.html&amp;redir=1">Twittni</a></p>
+
+<p>Přidej do: 
+ <a href="http://vybrali.sme.sk/submit.php?url=http%3A%2F%2Fwww.misantrop.info%2F742263-programatorsky-vikend.html"><img src="http://blog.sme.sk/blog/3/61630/tlacitko.gif" style="border:0" title="asdf.sk" alt="asdf.sk" /></a>
+
+<a href="http://www.stumbleupon.com/submit?url=http%3A%2F%2Fwww.misantrop.info%2F742263-programatorsky-vikend.html&amp;title=Program%E1torsk%FD+v%EDkend"> <img border=0 src="http://www.bloguje.cz/icon_su.gif" alt="StumbleUpon Toolbar"> Stumble It!</a>
+
+<script type="text/javascript" src="http://w.sharethis.com/widget/?tabs=web%2Cemail&amp;charset=utf-8&amp;style=rotate&amp;publisher=99a6f76f-7727-4c7b-a906-b91f57f8a706"></script></p>
+
+<script type="text/javascript" src="http://feedjit.com/coFilter/?bc=FFFFFF&amp;tc=008000&amp;brd1=336699&amp;lnk=008000&amp;hc=336699&amp;ww=500"></script>
+
+
+<h2 id="n_koments">Komentáře</h2>
+
+
+
+<p class="comment">
+<strong><a name="cmt_1">[1]</a> </strong> (suchosch - <a href="mailto:suchosch@suchosch.net">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fsuchosch.net">WWW</a>) 17.11.2008, 00:32:11&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1814065">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1814065">D</a>]<br />
+
+sidebar jsem vyhodil z plochy hnedle první den. (protože ho nepotřebuju a nechápu!) takže mi teď poraď, kde se zapíná, ať to můžu vyzkoušet :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_2">[2]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 17.11.2008, 00:54:54&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1814076">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1814076">D</a>]<br />
+
+<a href="#cmt_1">[1]</a> My, co máme dva širokoúhlé monitory vedle sebe, my sidebar oceníme... Jinak Start - Spustit - "sidebar" - enter :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_3">[3]</a> </strong> (Tonda - <a href="mailto:danek@antonindanek.cz">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fblog.antonindanek.cz%2F">WWW</a>) 17.11.2008, 01:06:27&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1814079">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1814079">D</a>]<br />
+
+<a href="#cmt_1">[1]</a>Arturovo návod na znovuspuštění sidebaru mi sice nefunguje, ale když si klikneš na jeho link na miniaplikaci, tak se ti nabídne spuštění v sidebaru a tím se spustí. Pak musíš kliknout na link ještě jednou, aby se aplikace skutečně nainstalovala. :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_4">[4]</a> </strong> (rarouš [<a href="http://rarous.myopenid.com/" title="Ověřený uživatel http://rarous.myopenid.com/">openID</a>] - <a href="mailto:ales@roubicek.name">Mail</a> ) 17.11.2008, 07:22:05&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1814105">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1814105">D</a>]<br />
+
+Ale fuj! Podědit vlastní Dictionary, aby uměla serializovat do XML, to se ještě v dnešním civilizovaném světě děje?
+<br />
+<br />Composition over Inheritance! :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_5">[5]</a> </strong> (banán  ) 17.11.2008, 07:39:28&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1814108">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1814108">D</a>]<br />
+
+Dík za gadgetík ČRo, hned jak budu moct, tak si ho tam šoupnu.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_6">[6]</a> </strong> (alfa  ) 17.11.2008, 10:09:57&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1814167">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1814167">D</a>]<br />
+
+super gadget!
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_7">[7]</a> </strong> (JimX - <a href="mailto:jimx@volny.cz">Mail</a> ) 17.11.2008, 10:20:46&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1814175">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1814175">D</a>]<br />
+
+Mne by se ten sidebar i libil, na mym sirokohouhlaci je na nej mista dost, ale stval me, ze si obcas bral 50% CPU ... a to se nedela a dostal proto za vyucenou :)
+<br />
+<br />Nicmene spis by me zajimala ta aplikace na upravu hosts, nebyla by nekde ke stazeni? Ja si ted hosts upravuju pres totalcommander, kterej kvuli jednoduchosti pouzivani spoustim jako admin, ale je to trochu drbani se pravou rukou za levym uchem, takze bych ocenil i neco lepsiho :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_8">[8]</a> </strong> (Solvina - <a href="mailto:solvina@gmail.com">Mail</a> ) 17.11.2008, 10:23:04&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1814176">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1814176">D</a>]<br />
+
+Tak ja si to zkusim: Kdo kudla potrebuje Cesky rozhlas! Takhle kdyby to prehravalo BBC! Nebo CNN! (No a co, ze nevim esiva maji radio!)
+<br />
+<br />Myslim, ze toto je dalsi autoruv utok na obyvatele Brna a mel by psat o necem jinem!
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_9">[9]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 17.11.2008, 10:47:33&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1814205">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1814205">D</a>]<br />
+
+<a href="#cmt_7">[7]</a> Já ti řeknu proč... Protožes tam měl počasí od Meteopressu, co? :) Přesně z toho důvodu jsem ho vyrazil já - bral si příliš mnoho prostředků.
+<br />
+<br />Aplikace by k dispozici i byla - teda zatím ta "prostá textboxovská". Bez veškerých záruk zde: <a href="http://misc.maly.cz/vistahosts.zip" rel="nofollow">http://misc.maly.cz...istahosts.zip</a>. "Full" editor až příště. :)
+<br />
+<br /><a href="#cmt_4">[4]</a> Rád se nechám poučit. Odkaz či vysvětlení by nebylo?
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_10">[10]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 17.11.2008, 11:15:52&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1814228">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1814228">D</a>]<br />
+
+<a href="#cmt_8">[8]</a> Je tam i Český rozhlas Brno! Na druhou stranu se opakuje sprostý útok, protože je až ZA stanicí Praha! 
+<br />
+<br />Ovšem správná reakce by byla: "Četl jsem tu mnoho slov od Solviny, ale nevidím tam nic pozitivního, co by nás někam posunulo. Čím Solvina přispěla k naší snaze o zkvalitnění služeb ČRo?" (znalci vědí) ;)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_11">[11]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 17.11.2008, 11:38:25&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1814246">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1814246">D</a>]<br />
+
+<a href="#cmt_4">[4]</a> Už nehledej, už vím co tím myslíš. :) Ono by to šlo taky, ale přišlo mi to (v tom konkrétním případě) jako škrábání se levým uchem za pravou nohou. Samozřejmě jsem si mohl napsat i kašpárkovskou třídu, co má dvě statické metody (Serializuj a Deserializuj) a veřejný parametr "Dictionary"... šlo by to vyřešit mnoha způsoby, lišícími se co do pracnosti, elegance a efektivity, a já se rozhodl nedělat "composition blackbox", ale podědit třídu - především proto, že bych musel zpřístupňovat spoustu veřejných metod od původní generiky, nebo deklarovat vložený objekt jako veřejný.
+<br />
+<br />Nebo má VS nějaký refactoring na composite třídy? Že by rovnou vygeneroval všechny wrappery pro všechny metody? Pak bych to chápal, ale tohle: <a href="http://jdem.cz/ahhc2" rel="nofollow">http://jdem.cz/ahhc2</a> - to se mi přepisovat vážně nechtělo! :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_12">[12]</a> </strong> (Borek - <a href="mailto:borekb@gmail.com">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.borber.com%2F">WWW</a>) 17.11.2008, 12:07:53&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1814272">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1814272">D</a>]<br />
+
+<a href="#cmt_11">[11]</a> Můžeš vysvětlit, proč bys musel přidávat wrappery pro všechny metody? Rovněž se podívej na mechanizmus extension methods, v .NETu velmi užitečná věc.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_13">[13]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 17.11.2008, 12:33:02&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1814290">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1814290">D</a>]<br />
+
+<a href="#cmt_12">[12]</a> Jasně že to můžu vysvětlit: Když se jazyk učíš a nevíš, že nějaké extension methods v C#3 jsou, tak používáš postupy, které jsou, jaksi, univerzální a o kterých se dočteš v knihách. To je celé.
+<br />
+<br />PS: Kdyby ten komentář začínal třeba slovy "Nemusíš přidávat wrappery, dá se to řešit jinak..." tak by vypadal víc jako rada a míň jako peskování... ;)
+<br />
+<br />PPS: Každopádně aby to nevyznělo, že jsem zaujal nějakou začátečnickou defenzivu vůči profesionálům: To ani náhodou, já děkuju za tipy (vám oběma) a s chutí se od vás nechám poučit.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_14">[14]</a> </strong> (Borek - <a href="mailto:borekb@gmail.com">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.borber.com%2F">WWW</a>) 17.11.2008, 12:54:24&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1814308">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1814308">D</a>]<br />
+
+<a href="#cmt_13">[13]</a> Promiň, vůbec to nemělo vyznít jako peskování, já se ptal čistě neutrálně. Bez návaznosti na C# nebo .NET, proč by utility třída, která vezme Dictionary a nějak ho serializuje, měla implementovat wrappery pro všechny metody? Je možné, že mi něco uniká, proto jsem se zeptal (nebyla v tom ani špetka ironie nebo čehokoliv jiného).
+<br />
+<br />Rovněž s těmi extension methods to bylo míněno jako prostý odkaz na něco, na co jsi možná zatím nenarazil (není divu, C# je rozsáhlý jazyk).
+<br />
+<br />Jestli můj předchozí komentář vyzněl urážlivě, promiň, vůbec to tak nebylo myšleno, jen mi asi dnes příliš dobře nefunguje mozkové centrum zdvořilosti :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_15">[15]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 17.11.2008, 13:21:01&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1814329">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1814329">D</a>]<br />
+
+<a href="#cmt_14">[14]</a> Aha, tak to se omlouvám já, já to nepochopil jako prostý dotaz... Neber to, prosím, zle, už jsem holt vycvičen tak, že "můžeš mi vysvětlit, proč...?" nevnímám jako dotaz, ale jako peskování (vzor: "Můžeš mi vysvětlit, proč máš na triku kečup?") ;)
+<br />
+<br />Ale tedy k věci: Situace je takováto - mám rozepsanou aplikaci, v níž používám k uložení dvojic "server - jeho IP" dictionary. Používám metody pro vyhledávání, procházení, hledání klíčů a hodnot, přidávání, ... A teď by se mi hodilo tohle všechno uložit na disk. Jaké mám možnosti?
+<br />
+<br />1. Můžu si napsat prostou metodu do hlavní aplikace, která vezme dict a projde ho prvek po prvku a uloží.
+<br />2. Můžu si napsat třídu, která bude obsahovat původní dictionary a publikuje k ní nějaké rozhraní
+<br />3. Můžu si napsat statickou utility třídu, která dělá totéž co 1 (to je to o čem mluvíš, předpokládám, ty)
+<br />4. Můžu si podědit a rozšířit.
+<br />
+<br />... a určitě i další by se našly. Ale páč jsem si chtěl procvičit práci s generickými třídami a s jejich děděním, tak jsem zvolil 4. A drobné plus navíc: Mám "XML serializovatelný generický dictionary", až ho budu potřebovat. :)
+<br />
+<br />Pokud bych to pojal tak jak píšeš, tedy jako "utility třídu", tak ta samosebou nemusí wrapovat nic. Kdybych to ale udělal jako "composition", tak buď musím zveřejnit funkce pro přístup k embednutému objektu, nebo ho musím deklarovat jako veřejný (a přepsat všude "servery.add" na "servery.seznam.add" - já vím, refaktorizace, ale stejně...)
+<br />
+<br />Ještě jednou - omlouvám se, vazba "můžeš mi vysvětlit..." evokovala něco co evokovat neměla. :) A za extension opravdu děkuju, o tom jsem neměl ani zdání. To tak chodí, když se rozhodneš, že se podíváš na nějaký jazyk, nakoupíš učebnice a knihy, a než se k tomu opravdu dostaneš, tak vydají novou verzi. :) Aspoň vidíš, jaké knížky mám: Hlavně ty o VS2005 a C#2 (znám generické třídy). Ale k "C#3 novinkám" jsem se ještě nedostal, takže díky!
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_16">[16]</a> </strong> (Radek Hulán - <a href="mailto:admin@hulan.eu">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fhulan.cz%2F">WWW</a>) 17.11.2008, 13:36:20&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1814345">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1814345">D</a>]<br />
+
+"pracovní maily za poslední tři měsíce"
+<br />
+<br />C:\Users\rADo>nslookup -q=mx maly.cz
+<br />
+<br />maly.cz MX preference = 1, mail exchanger = aspmx.l.google.com
+<br />maly.cz MX preference = 5, mail exchanger = alt1.aspmx.l.google.com
+<br />
+<br />Pokud se jedná o Gmail, ty jej používáš jako "průchozí", tedy s downloadem zpráv na klienta a jejich smazáním u Google?
+<br />
+<br />Na tomto miluji Exchange či Live.com email, člověk instaluje nové PC, nastaví profil, půl hodiny počká a 2GB zpráv jsou doma :-) Také je príma, že se v tom dá vyhledávat z mobilu, klidně 2 roky stará zpráva syncu či downloadu všeho lokálně...
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_17">[17]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 17.11.2008, 13:42:06&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1814349">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1814349">D</a>]<br />
+
+<a href="#cmt_16">[16]</a> Radku, Radku... Ještě extra kvůli tomu tam píšu: "pracovní". Tedy mailová schránka "v práci". U zaměstnavatele. O mailech pro maly.cz nepadlo ani slovo, tam jsem zapnul IMAP a jelo se dál, ale zprávy z mailserveru v práci, stahované přes pop3, jsou v rici.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_18">[18]</a> </strong> (Radek Hulán - <a href="mailto:admin@hulan.eu">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fhulan.cz%2F">WWW</a>) 17.11.2008, 14:02:55&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1814372">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1814372">D</a>]<br />
+
+<a href="#cmt_17">[17]</a> většinou bývá nezodpovědný či neznalý jednotlivec (POP3 download na lokál s mazáním na serveru), firmy se chovají tak, že emaily zálohují a nepoužívají jako "průchozí" :)  To je zvláště u IT firmy (zaměstnavatele) dost mimo.
+<br />
+<br />Budiž to poučením pro ostatní...
+<br />
+<br />Každopádně přeji hodně úspěchů u zaměstnavatele nového, včetně lépe koncipovaného mail serveru! :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_19">[19]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 17.11.2008, 14:04:45&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1814374">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1814374">D</a>]<br />
+
+<a href="#cmt_18">[18]</a> Ale možná to tam někde mají, nevím, zjistím až zítra. :)
+<br />
+<br />U nového si to rovnou FWDnu na gmail :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_20">[20]</a> </strong> (Borek - <a href="mailto:borekb@gmail.com">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.borber.com%2F">WWW</a>) 17.11.2008, 14:51:04&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1814404">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1814404">D</a>]<br />
+
+<a href="#cmt_15">[15]</a> Není zač se omlouvat, můj komentář byl nešťastně formulovaný.
+<br />
+<br />Jinak C# 3.0 je paráda, bude se ti líbit. Pokud hákuješ v nějaké vyšší edici Visual Studia (ne v Express), doporučuji stáhnout trial verzi Resharperu - jak budeš psát svůj naučený (nebo právě učený) C# 2.0 kód, Resharper tě bude nenápadně upozorňovat, co a jak by šlo napsat pomocí nové syntaxe. Pro učení perfektní nástroj (a pro reálný vývoj neocenitelný :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_21">[21]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 17.11.2008, 14:57:34&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1814411">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1814411">D</a>]<br />
+
+<a href="#cmt_20">[20]</a> Zrovna Resharper tu mám a potvrzuju, je perfektní. Automatické přidávání using klauzulí je fakt příjemná věc. (A nejen to, samosebou). Každopádně pokud u C# budu zůstávat (míněno i doma), tak je Resharper jasný "must have".
+<br />
+<br />Ale zaboha si nevzpomínám, kde jsem na něj přišel... Nepsals o něm náhodou?
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_22">[22]</a> </strong> (Borek - <a href="mailto:borekb@gmail.com">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.borber.com%2F">WWW</a>) 17.11.2008, 15:26:02&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1814427">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1814427">D</a>]<br />
+
+<a href="#cmt_21">[21]</a> To nevím, ale Resharper se zmiňuje snad v každé diskusi o Visual Studiu.
+<br />
+<br />Tak ať se ve světě .NETu daří!
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_23">[23]</a> </strong> (Dmagician.myopenid.com [<a href="http://dmagician.myopenid.com/" title="Ověřený uživatel http://dmagician.myopenid.com/">openID</a>] - <a href="mailto:creamd@c64.sk">Mail</a> - <a href="http://Dmagician.myopenid.com">WWW</a>) 17.11.2008, 16:23:53&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1814464">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1814464">D</a>]<br />
+
+Ja som spokojny so svojim vikendom. V sobotu som pracoval asi 3 hod na svojom projekte (ked bude vonku dam vediet). V nedelu som nepsravil nic (az na to ze som ho stravil so svojou  manzelkou prechadzkou po meste, dceru sme nechali na par hodin u babky). Takze som zasa poriadne nic nestihol a tym padom teraz sedim v robote pocas takeho doleziteho sviatku a aj tak som dokopy nic neurobil ;-) Ok ale toto je hlavne test openid.. ci to vobec funguje. (Roman)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_24">[24]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 17.11.2008, 16:27:46&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1814467">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1814467">D</a>]<br />
+
+<a href="#cmt_22">[22]</a> Tak jsme udrželi tradici a zmínili ho i tady! :) Díky za přání, doufám že to bude příjemná změna, co mě zas na nějakou dobu motivuje. A když ne, tak mám v záloze furt tu variantu "salaš na Šumavě". :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_25">[25]</a> </strong> (Michal - <a href="mailto:michal@vyvojar.cz">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.ontheroad.to">WWW</a>) 17.11.2008, 17:13:22&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1814511">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1814511">D</a>]<br />
+
+<a href="#cmt_22">[22]</a> Tedy kluci, zda se , ze Resharper se nejak pohnul dopredu (za posledni 2 roky). Ja jsem uz leta na DevExpress CodeRush a Refactor! a velmi spokojen. Ale takto mi neradi ;-).
+<br />
+<br />Resharper byval u vetsich projektu (stovky tisic radek, 10 projektu ruznych typu v solution) velmi velmi pomaly (nejen poprve pri "analyze kodu", ale i po ni). 
+<br />Jak je na tom ted?
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_26">[26]</a> </strong> (Michal - <a href="mailto:michal@vyvojar.cz">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.ontheroad.to">WWW</a>) 17.11.2008, 17:15:21&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1814513">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1814513">D</a>]<br />
+
+Arthure, a co takova "obecna" trida pro XML serializace jakekoliv serializovatelne tridy? Pak se to hodi vzdy a vsude
+<br />
+<br />Neco jako toto :
+<br />
+<br />namespace Devmasters.OTR.Messaging
+<br />{
+<br />    using System;
+<br />    using System.IO;
+<br />    using System.Runtime.CompilerServices;
+<br />    using System.Text;
+<br />    using System.Xml.Serialization;
+<br />
+<br />    [Serializable]
+<br />    public abstract class XMLSerializator
+<br />    {
+<br />        public static object FromXml(string xml, Type type)
+<br />        {
+<br />            object objectValue = null;
+<br />			if (xml == null)
+<br />				return null;
+<br />
+<br />            if (xml.Length == 0)
+<br />            {
+<br />                return null;
+<br />            }
+<br />            StringReader textReader = new StringReader(xml);
+<br />            if (xml.Trim().Length == 0)
+<br />            {
+<br />                return null;
+<br />            }
+<br />            try
+<br />            {
+<br />                XmlSerializer serializer = new XmlSerializer(type);
+<br />                objectValue = RuntimeHelpers.GetObjectValue(serializer.Deserialize(textReader));
+<br />            }
+<br />            catch (Exception exception1)
+<br />            {
+<br />                Exception innerException = exception1;
+<br />                throw new ApplicationException("Deserialization problem", innerException);
+<br />            }
+<br />            return objectValue;
+<br />        }
+<br />
+<br />        public static string GetClassXMLRootAttribute(Type type)
+<br />        {
+<br />            XmlRootAttribute customAttribute = (XmlRootAttribute) Attribute.GetCustomAttribute(type, typeof(XmlRootAttribute));
+<br />            if (customAttribute == null)
+<br />            {
+<br />                return "";
+<br />            }
+<br />            return customAttribute.ElementName;
+<br />        }
+<br />
+<br />        public virtual string ToXml()
+<br />        {
+<br />            return this.ToXml(this.GetType());
+<br />        }
+<br />
+<br />        protected string ToXml(Type type)
+<br />        {
+<br />            XmlSerializer serializer = new XmlSerializer(type);
+<br />            StringBuilder sb = new StringBuilder(0x400);
+<br />            StringWriter writer = new StringWriter(sb);
+<br />            serializer.Serialize((TextWriter) writer, this);
+<br />            writer.Close();
+<br />            return sb.ToString();
+<br />        }
+<br />
+<br />        public static string ToXml(object Obj, Type type)
+<br />        {
+<br />            XmlSerializer serializer = new XmlSerializer(type);
+<br />            StringBuilder sb = new StringBuilder(0x400);
+<br />            StringWriter writer = new StringWriter(sb);
+<br />            serializer.Serialize((TextWriter) writer, RuntimeHelpers.GetObjectValue(Obj));
+<br />            writer.Close();
+<br />            return sb.ToString();
+<br />        }
+<br />    }
+<br />}
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_27">[27]</a> </strong> (ringo - <a href="mailto:ringo1@centrum.cz">Mail</a> ) 17.11.2008, 17:48:29&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1814545">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1814545">D</a>]<br />
+
+Gatget ČRo přišel vhod. Přišel, nainstaloval, spokojen. Díky.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_28">[28]</a> </strong> (Borek - <a href="mailto:borekb@gmail.com">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.borber.com%2F">WWW</a>) 17.11.2008, 18:44:36&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1814606">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1814606">D</a>]<br />
+
+<a href="#cmt_25">[25]</a> Resharper se po výkonnostní stránce lepší s každou novou verzí, u projektů rozumné velikosti není jeho přítomnost na lepší mašině skoro znát, u velký projektů asi může nastat problém při solution-wide analýze, ale to se dá vypnout. Jinak co se vlastností týče, je Resharper super, ačkoliv s konkurencí od DevExpressu porovnat nemůžu. No VS2010 snad rapidně sníží potřebu pro různé pluginy od třetích stran aneb "control dot to rule them all" :)
+<br />
+<br /><a href="#cmt_26">[26]</a> Pro .NET od verze 3 je doporučenou strategií Data Contract Serializer, který technicky vzato spadá pod WCF (tam je potřeba serializovat kde co). Viz <a href="http://jdem.cz/ahij5#msdn2.microsoft.com" rel="nofollow">http://jdem.cz...sdn2.microsoft.com</a>
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_29">[29]</a> </strong> (Trupik - <a href="mailto:jakub.maly@atlas.cz">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fblog.jakubmaly.cz">WWW</a>) 17.11.2008, 21:03:36&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1814779">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1814779">D</a>]<br />
+
+25 Resharper 4.1 mám nainstalovaný ve VS 2008 - je sice skvělý (ano, zmiňovaný wrapper všech metod jde vygenerovat pomocí několika příkazů), ale u větších projektů skutečně silně zpomaluje - v Solution s cca 120 projekty je vypnutí 
+<br />Solution Wide Analysis nutností a práce je skoro o nervy. 
+<br />
+<br />Pokud pracuju s celou solution, Resharper obvykle vypínám. Pokud pracuju jen s částí (cca 25 projektů zbytek unloadlý), tak se dá pracovat docela dobře (SWA ale stejně vypínám). Občas se to ale stejně nechutně zpomalí (především při debugování), takže ho i tak musím někdy vypnout. 
+<br />
+<br />Pro vypínání používám dvě makra, namapovaná na tlačítka v toolbaru - pokud bude zájem, tak je najdete zde (spolu s recenzí Resharperu): <a href="http://blog.jakubmaly.cz/programovani/csharp-aspnet/resharper-uzitecny-visual-studio-add-in.aspx" rel="nofollow">http://blog.jakubmaly.cz...-in.aspx</a>
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_30">[30]</a> </strong> (Trupik - <a href="mailto:jakub.maly@atlas.cz">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fblog.jakubmaly.cz">WWW</a>) 17.11.2008, 21:09:24&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1814789">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1814789">D</a>]<br />
+
+A ještě - gadget by byl fajn, kdybych si mohl vybrat jinou stanici - třeba právě Wave, je to už v kečupové zóně reakcí? :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_31">[31]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 17.11.2008, 21:11:22&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1814792">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1814792">D</a>]<br />
+
+<a href="#cmt_30">[30]</a> Eh? A zkusils kliknout na takové to tlačítko co vypadá jako "recyklace"?
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_32">[32]</a> </strong> (Michal - <a href="mailto:michal@vyvojar.cz">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.ontheroad.to">WWW</a>) 17.11.2008, 21:57:53&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1814860">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1814860">D</a>]<br />
+
+<a href="#cmt_28">[28]</a> Muj kod byla primarne reakce na <a href="#cmt_11">[11]</a>. Cest k vysledku je spousta. Dik za tip na DataContractSerializer, podle dokumentace dela v zakladu to same (+ umi neco malo navic)
+<br />
+<br />Muj kod je jeste pamatka z doby .net 1.1 ;-), kterou cas od casu oprasim a nekde pouziju....
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_33">[33]</a> </strong> (Trupik - <a href="mailto:jakub.maly@atlas.cz">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fblog.jakubmaly.cz">WWW</a>) 17.11.2008, 22:07:46&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1814871">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1814871">D</a>]<br />
+
+<a href="#cmt_31">[31]</a>: omlouvám se, moje chyba - hledal jsem to pod tlačítkem co vypadá jako "francouzák".
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_34">[34]</a> </strong> (Radek Hulán - <a href="mailto:admin@hulan.eu">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fhulan.cz%2F">WWW</a>) 17.11.2008, 22:54:45&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1814936">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1814936">D</a>]<br />
+
+Pokud by to někomu vyhovovalo lépe, doplnil jsem do XML asi 20 dalších českých (ne ČRo) rádií a pozadí přebarvil do černa. Vždy 128kbps, nižší bitrate nemá smysl poslouchat.
+<br />
+<br /><a href="http://myego.cz/download/ceska.radia.gadget" rel="nofollow">http://myego.cz...eska.radia.gadget</a>
+<br />
+<br />Dávám ten odkaz jen sem, pokud s tím máš Martine jakýkoliv problém, smaž to.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_35">[35]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 17.11.2008, 23:03:23&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1814945">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1814945">D</a>]<br />
+
+<a href="#cmt_34">[34]</a> Díky, problém s tím rozhodně nemám.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_36">[36]</a> </strong> (rarouš [<a href="http://rarous.myopenid.com/" title="Ověřený uživatel http://rarous.myopenid.com/">openID</a>] - <a href="mailto:ales@roubicek.name">Mail</a> ) 18.11.2008, 08:51:12&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1815098">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1815098">D</a>]<br />
+
+Kompozicí jsem nemyslel návrhý vzor Composition, ale jednoduché skládání objektů. Statické helpery, jsou defacto špatné, vždycky je lepší použít nestatické řešení. Dá se pak snadno použít v řešeních, kde sáhneme po IoC kontejnerech, nebo chceme psát testy a statická třída se z principu nedá podědit, nebo mockovat. :)
+<br />
+<br />Problém s neserializovatelností dictionary netrápí jen tebe. Tipuji, že tvé řešení vypadá nějak tak: <a href="http://jdem.cz/ahj81" rel="nofollow">http://jdem.cz/ahj81</a>
+<br />
+<br />Je to jeden z možných přístupů, ale osobně mám problém, že se to objektu zanáší příliš mnoho funkcionality, která ji nenáleží. Když to převedu ad absurdum, tak to je jako, kdyby jsi se uměl sám rozložit na jednotlivé molekuly a opět zase složit, bez cizí pomoci. :) 
+<br />
+<br />Single responsibility principle! :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_37">[37]</a> </strong> (smad  ) 18.11.2008, 10:41:11&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1815185">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1815185">D</a>]<br />
+
+Pekna app. Skusim tam dat nejake slovenske radia. Da sa hodit niekde aj zdrojacik?
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_38">[38]</a> </strong> (smad  ) 18.11.2008, 11:55:01&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1815253">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1815253">D</a>]<br />
+
+Co som nasiel slovenske radia cez asx, doplnil som do xml: <a href="http://jdem.cz/ahkh5" rel="nofollow">http://jdem.cz/ahkh5</a>
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_39">[39]</a> </strong> (marek - <a href="mailto:marek@jogini.cz">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.jogini.cz">WWW</a>) 18.11.2008, 12:01:57&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1815258">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1815258">D</a>]<br />
+
+s tím sidebarem jsem si teď taky hrál, musel jsem všechno formátovat, tak jsem jel taky nanovo. ale ono těch aplikací neni zrovna moc, každopádně rádio mam rockzone :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_40">[40]</a> </strong> (jules - <a href="mailto:jules@kapibara.sk">Mail</a> ) 18.11.2008, 12:50:17&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1815298">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1815298">D</a>]<br />
+
+dakujem ze paekny gadget :)
+<br />
+<br /><a href="#cmt_38">[38]</a> len pre info, player zvláda aj mp3 teda napr. aj <a href="http://live.slovakradio.sk:8000/sro1_64kb_mp3" rel="nofollow">http://live.slovakradio.sk:8000...3</a>
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_41">[41]</a> </strong> (smad  ) 18.11.2008, 13:14:20&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1815306">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1815306">D</a>]<br />
+
+<a href="#cmt_40">[40]</a> neskusal som, dik
+<br />
+<br /><a href="#cmt_37">[37]</a> - gadgety pre vista sidebar som este nerobil, preto taka zbytocna otazka
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_42">[42]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 18.11.2008, 13:16:04&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1815307">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1815307">D</a>]<br />
+
+<a href="#cmt_41">[41]</a> ad <a href="#cmt_37">[37]</a> - stáhni, přejmenuj ".gadget" na ".zip" a rozbal :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_43">[43]</a> </strong> (Džoukr - <a href="mailto:dzoukr@dzoukr.cz">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.radiomix.cz">WWW</a>) 18.11.2008, 14:21:12&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1815387">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1815387">D</a>]<br />
+
+Když už je tu řeč o rádiích, doporučuju mkrnout na službu www.radiomix.cz, kde si lze vybírat rádia podle aktuálně hraného obsahu. ;) Ale ČRo tam teda není... :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_44">[44]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 18.11.2008, 18:23:13&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1815648">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1815648">D</a>]<br />
+
+<a href="#cmt_36">[36]</a> <em>Když to převedu ad absurdum, tak to je jako, kdyby jsi se uměl sám rozložit na jednotlivé molekuly a opět zase složit, bez cizí pomoci.</em> No a kdo by to měl, ve světě OOP, dělat? Kdo jiný by měl serializovat objekt než on sám? Ba co dím: Kdo jiný SMÍ něco takového dělat? Kdo jiný má přístup ke kontextu objektu?
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_45">[45]</a> </strong> (Michal - <a href="mailto:michal@vyvojar.cz">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.ontheroad.to">WWW</a>) 18.11.2008, 20:32:14&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1815771">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1815771">D</a>]<br />
+
+<a href="#cmt_36">[36]</a> oprava <a href="#cmt_45">[45]</a>: 
+<br />Pod tvrzeni "staticke helpery jsou defacto spatne" bych se ROZHODNE nepodepsal. Ja nejsem zastance bezhlaveho mnohonasobneho dedeni.
+<br />Po tech letech uz dokazu dobre odhadnout kdy pouzit statickou metodu a kdy ne. V tomto pripade a me potreby (tak 4 roky zpet) mi staticka metoda plne vyhovovala.
+<br />
+<br />Snad krome mockovani (fake u opravdu rozsahlych objektu) mi u XML serializace a deserializace potreba dedeni rozhodne nechybi. A urcite se shodneme, ze obalit statickou tridou instacni metodou v potrebne tride je az smesne snadne.....
+<br />
+<br />BTW, co potom rikas na tridy jako System.IO.File a spousty podobnych?
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_46">[46]</a> </strong> (eLKa - <a href="mailto:elkacz@gmail.com">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fedenik.elka.cz">WWW</a>) 19.11.2008, 06:13:19&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1816037">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1816037">D</a>]<br />
+
+Pro "nešťastníky" bez Vist řešení pro XP <a href="http://jdem.cz/ahmp9#lifehacker.com" rel="nofollow">http://jdem.cz...mp9#lifehacker.com</a>
+<br />
+<br />Jen je škoda, že těch použitelných gadgetů je zatím tak málo <a href="http://jdem.cz/ahmq0#gallery.live.com" rel="nofollow">http://jdem.cz...0#gallery.live.com</a>
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_47">[47]</a> </strong> (rarouš [<a href="http://rarous.myopenid.com/" title="Ověřený uživatel http://rarous.myopenid.com/">openID</a>] - <a href="mailto:ales@roubicek.name">Mail</a> ) 19.11.2008, 11:35:14&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1816181">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1816181">D</a>]<br />
+
+<a href="#cmt_44">[44]</a> Ve světe OO prošpikovaném reflexí to může být rozhodně kdokoli, kdo na to má dostatečné znalosti. Ale mělo by to být jeho jediná dovednost. :) 
+<br />
+<br />Když se mi zanese komín sazema, tak taky zavolám kominíka, ať mi ho protáhne, komín to sám udělat nemůže. :) Sice by bylo hezké, kdybychom měli komín co se umí sám čistit, měnit svůj průměr a výšku tak, aby reguloval svůj tah podle okolních povětrnostních podmínek, ale za jakou cenu by to bylo?
+<br />
+<br /><a href="#cmt_45">[45]</a> Přesně System.IO.File a spol jsou velice nešťastné, tejně tak FormsAuthentikace v ASP.NET. Pokud přijmeš praktiky jako testování jednotek, nebo dependecy injection musíš tyto věci abstrhovat nějakým wrapperem = práce na víc. 
+<br />
+<br />Tuším, že ve čtvrté verzi frameworku s tím možná bude něco uděláno. :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_48">[48]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 19.11.2008, 11:53:06&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1816199">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1816199">D</a>]<br />
+
+<a href="#cmt_47">[47]</a> ... a to jsem se jako s chutí zasmál, to zase jo. :) Ne tomu, co říkáš, ale taknějak... světu. 
+<br />
+<br />Pravda, reflexe... :) Zase se ta houpačka zhoupla na druhou stranu, dosti bylo zapouzdření, nyní máme zapouzdření a reflexi. Dosti bylo soukromí, nyní máme na baráku vyvěšené plány. Dosti bylo "objektů coby blackboxu"... Kdybys náhodou nevěděl co že to melu, tak to jsou všechno poučky OO, na které se před, řekněme, deseti lety přísahalo jako na fundament OO a programátorští guruové té doby (Virius, Pecinovský, Kryl) bez konceptu "zapouzdření" nedali ani ránu. I když náznaky byly - všelijaké "friend" třídy apod. :)
+<br />
+<br />Ale taknějak v tom vidím paralely... Pokud v "moderním, ochranou prošpikovaném světě" chci, aby mi soused vrátil vrtačku, co si ode mne půjčil, tak nepůjdu zazvonit a zavolat metodu "Sousede, vrať vrtačku", ale zavolám odborníka, který si sežene plán sousedovic domu, a tu vrtačku mi přinese! A bude to jeho jediná dovednost. Inu, ten krásný svět špikovaný reflexí a povinnostmi vše o sobě hlásit "nahoru". :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_49">[49]</a> </strong> (David Grudl [<a href="http://grudl.myopenid.com" title="Ověřený uživatel http://grudl.myopenid.com">openID</a>]  - <a href="http://www.latrine.cz">WWW</a>) 19.11.2008, 12:20:46&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1816222">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1816222">D</a>]<br />
+
+<a href="#cmt_48">[48]</a> serializace má minimálně dvě stránky - vstup a výstup. Zatímco ta dekompozitní část, ten vstup, mi připadá nejvhodnější právě v rukou samotného objektu, výstup, který je spojen s volbou formátu a nástroje pro jeho generování, by už naopak neměl být věcí objektů. A teď babo raď.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_50">[50]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 19.11.2008, 12:41:02&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1816241">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1816241">D</a>]<br />
+
+<a href="#cmt_49">[49]</a> Baba povídá: Serializátor objektu dostane jako parametr delegát (ve světě PHP "callback"), kterému předává serializovaná data v dohodnutém meziformátu, a dotyčný delegát tato data uloží jak potřebuje (v XML, v JSON, v plain stringu, v PHP-serialized formátu apod.)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_51">[51]</a> </strong> (rarouš [<a href="http://rarous.myopenid.com/" title="Ověřený uživatel http://rarous.myopenid.com/">openID</a>] - <a href="mailto:ales@roubicek.name">Mail</a> ) 19.11.2008, 12:52:21&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1816250">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1816250">D</a>]<br />
+
+<a href="#cmt_48">[48]</a> V naprosté většině případů se bez reflexe obejdu, ale ve speciálních připadech - třeba jako je serializace - je nezbytná. K popisu toho, jak se má serializovat poslouží metadata (v C# atributy), které říkají co se má použít. Serializator pak už jen dostane objekt, ten očuchá a uloží v potřebném formátu.
+<br />
+<br />Ad vrtačka: Ale to je zase jiná pohádka, ta je o sdílení prostředků a komunikačních protokolech. :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_52">[52]</a> </strong> (David Grudl [<a href="http://grudl.myopenid.com" title="Ověřený uživatel http://grudl.myopenid.com">openID</a>]  - <a href="http://davidgrudl.com">WWW</a>) 19.11.2008, 13:58:39&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1816327">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1816327">D</a>]<br />
+
+<a href="#cmt_50">[50]</a> Meziformátem &amp; delegátem pak mohou být třeba anotace zjistitelné přes reflection.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_53">[53]</a> </strong> (Radek Hulán - <a href="mailto:admin@hulan.eu">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fhulan.cz%2F">WWW</a>) 19.11.2008, 14:07:18&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1816336">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1816336">D</a>]<br />
+
+<a href="#cmt_46">[46]</a> gadgetů jsou tisíce, ale pokud máš český jazyk prohlížeče, Microsoft ti zobrazí jen české...
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_54">[54]</a> </strong> (Borek - <a href="mailto:borekb@gmail.com">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.borber.com%2F">WWW</a>) 19.11.2008, 15:57:29&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1816428">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1816428">D</a>]<br />
+
+Předchozí debatě úplně nerozumím, přidání XML serializace do dictionary je jasným porušením Single Reponsibility principu, přičemž využití externího pomocníka princip zapouzdření nijak neporušuje (Dictionary má metodu GetObjectData).
+<br />
+<br />Pro jednoduchý prográmek popsaný v článku zcela chápu, že není potřeba podobné "prkotiny" řešit a podědění od Dictionary se nabízelo, ale objektivně vzato to moc čisté řešení není. Proto mě v tomto kontextu překvapila otázka "Kdo jiný by měl serializovat objekt než on sám?"...
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_55">[55]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 19.11.2008, 16:47:21&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1816463">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1816463">D</a>]<br />
+
+<a href="#cmt_54">[54]</a> Však říkám: Houpačka se přehoupla na druhou stranu, od extrému "objekt si dělá všechno sám a je to blackbox, je to dobré a bezpečné, když si to objekt udělá sám, tak je to lepší než kdyby tam někdo koukal" k "některé třídy smí koukat do jiných tříd, je to lepší než kdyby si to objekt měl dělat sám, dobré a bezpečné a". Netrápil bych se tím o moc víc než řečmi "mléko je zdravé - mléko je nezdravé", protože praxe je, jako vždycky, mnohem prozaičtější. To je ale všude. U databází taky: Třetí normální forma, vše jako stored procedure... a pak ejhle, v praxi to tak zcela nefunguje a je potřeba udělat trošku obchůzku jinudy...
+<br />
+<br />A navíc - když si chci pocvičit dědění tříd a generování XML, tak si podědím Dictionary a přidám k němu generování XML, i kdyby čert na agilní koze jezdil! :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_56">[56]</a> </strong> (Rene - <a href="mailto:rene@renestein.net">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fblog.renestein.net">WWW</a>) 19.11.2008, 18:21:40&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1816560">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1816560">D</a>]<br />
+
+Jednou z mých oblíbených činností je dekonstrukce zásady "objekty jsou černé skříňky, které se nestarají o své okolí a jsou oslňujícími kandidáty na - magické zaklínadlo - znovupoužitelnost". Mnoho autorů je neustále od sebe opisuje a přitom ani nejsou schopni ve svých knihách  vysvětlit, jak se zbavit smížené soudržnosti rolí (opravdu má zákazník v tom nejtriviálnějším příkladu v sobě "přirozeně" a vždy obsahovat kolekci objednávek)? Jo to jsou lahůdky.
+<br />
+<br />A  co se týče odpovědnosti objektu a jen proto, aby  se debata zase rozproudila - pokud byste Arture trval na tom, že neporušíte zapouzdření a nedovolíte sousedům lézt pod spodničku cudných objektů, co takhle využít "single responsibility" :) privátní třídu (která může být klidně v některém scénáři)dostupná okolí přes nějaké veřejné rozhraní. A privátní třída má samozřejmě přístup  k potřebnému "kontextu". :)
+<br />
+<br />
+<br />BTW: Resharper je u malých projektů skvělý. U větších začíná být VS.NET neskutečně pomalé a podle mě Resharper způsobuje současné pády mého VS.NET 2008.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_57">[57]</a> </strong> (Rene - <a href="mailto:rene@renestein.net">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fblog.renestein.net">WWW</a>) 19.11.2008, 18:23:40&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1816561">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1816561">D</a>]<br />
+
+"jak se zbavit smížené soudržnosti" má být samozřejmě smíšené, omlouvám se.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_58">[58]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 19.11.2008, 18:51:50&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1816582">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1816582">D</a>]<br />
+
+<a href="#cmt_56">[56]</a> Asi tak o 30 komentářů výš jsem psal, že možných řešení je mnoho. Asi o 20 komentářů výš jsem psal, že si pamatuju základní poučky, které v roce 1996 psal (například) Virius a s nimiž futroval svůj výklad o C++, a ty zněly téměř skoro přesně obráceně. ;)
+<br />
+<br />Asi o deset komentářů výš jsem psal, že se holt pohled na objekty mění, chvíli všichni přísahají na zapouzdření a dědění, pak na návrhové vzory a reflexi, a že mi to je v zásadě jedno, jen mě to zaujalo. Tenký klient, tlustý klient...
+<br />
+<br />Kam byste chtěl tedy diskusi proudit... ehm, rozpruzovat... rozproudit?! ;)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_59">[59]</a> </strong> (David Grudl [<a href="http://grudl.myopenid.com" title="Ověřený uživatel http://grudl.myopenid.com">openID</a>]  - <a href="http://www.latrine.cz">WWW</a>) 19.11.2008, 22:38:13&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1816900">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1816900">D</a>]<br />
+
+Borkovi možná skromnost (jedna z nehorších špatných vlastností) nedovolila, tak pastnu odkaz za něj <a href="http://www.borber.com/blog/zapouzdreni-vs-single-responsibility-principle" rel="nofollow">http://www.borber.com...y-principle</a>
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_60">[60]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 19.11.2008, 23:52:28&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1816974">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1816974">D</a>]<br />
+
+<a href="#cmt_59">[59]</a> Nikoli skromnost, ale antispam filter na Bloguje mu nedovolily, alespoň nakolik jsem pochopil... Snad pošle tetě Hekko svoji IP, ať na to koukne okem adminským.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_61">[61]</a> </strong> (Borek - <a href="mailto:borekb@gmail.com">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.borber.com%2F">WWW</a>) 20.11.2008, 11:49:27&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1817272">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1817272">D</a>]<br />
+
+Skromnost s tím skutečně neměla co dělat :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_62">[62]</a> </strong> (Michal - <a href="mailto:michal@vyvojar.cz">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.ontheroad.to">WWW</a>) 20.11.2008, 14:45:29&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1817431">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1817431">D</a>]<br />
+
+<a href="#cmt_47">[47]</a> ano, o tom to je. u 100 programatoru najdes 105 nazoru. Asi jako u pravniku.
+<br />A kupodivu - z tech 100 nazoru jich tak 40 bude spravnych. 
+<br />
+<br />Zalezi na kontextu, pouziti a osobnich preferencich. a to vse je individualni.
+<br />
+<br />Pravo statickych trid (metod) "na zivot" je zrejmy, a nejen z hlediska "prehlednosti, syntax sugar", ale i z hlediska vykonu (coz bys zrovna ty se zkusenostmi z Atlasu a praci na soucasnem projektu mel vedet ;-) )
+<br />
+<br />PS: nechapu, jak ti staticka metoda znemoznuje jeji otestovani unit testy. To mi rozhodne unika
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_63">[63]</a> </strong> (Zdenek - <a href="mailto:zkotrous@seznam.cz">Mail</a> ) 04.12.2008, 22:56:44&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1831165">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1831165">D</a>]<br />
+
+Dobrý den,stáhl jsem si vámi vytvořený gadget ČRO a velice se mi líbí.Protože jsem pouze starý penzista a jenom uživatel PC ,dovoluji se vás zeptat,zda by bylo možné do tohoto progranu přidat stanice Blaník a CountryRadio - já to ovšem neumím a tak,kdyby to bylo možné,popište mi přesně,jak to mám udělat - potřebuji to z.zv.po lopatě.
+<br />Předem vám děkuji za ochotu a případnou odpověď - myslím,že by to využilo více lidí a nejenom já.
+<br />Děkuji ještě jednou a přeji hezký den Zdenek
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_64">[64]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://www.misantrop.info">WWW</a>) 05.12.2008, 00:59:36&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1831265">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1831265">D</a>]<br />
+
+<a href="#cmt_63">[63]</a> Radkova verze to umí, viz komentář <a href="#cmt_34">[34]</a>, pro jistotu ještě zopakuju odkaz: <a href="http://myego.cz/download/ceska.radia.gadget" rel="nofollow">http://myego.cz...eska.radia.gadget</a>
+
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+</div><!-- konec pole -->
+
+
+
+<div id="sidebar">
+
+<h2 id="n_rubriky">Rubriky</h2>
+<ul id="rubriky">
+<li><a href="tema-1-bavim-se-na-vas-ucet.html">Bavím se na váš účet</a></li><li><a href="tema-2-nemam-vas-rad.html">Nemám vás rád</a></li><li><a href="tema-3-pohrdani.html">Pohrdání</a></li><li><a href="tema-4-vase-bludy-na-moji-hlavu.html">Vaše bludy na moji hlavu</a></li><li><a href="tema-5-mym-analfabetum.html">Mým analfabetům...</a></li><li><a href="tema-6-co-me-bavi.html">Co mě baví?</a></li><li><a href="tema-7-to-je-nejaka-hudba-tohleto.html">To je nějaká hudba, tohleto?</a></li><li><a href="tema-8-kdo-umi.html">Kdo umí...</a></li><li><a href="tema-9-mene-kecu-vice-prace.html">Méně keců, více práce</a></li>
+</ul>
+
+<h2 class="bok">Jak se vám to čte?</h2>
+
+<p style="text-align:center">
+<a href="http://feeds.feedburner.com/misantrop"><img src="http://feeds.feedburner.com/~fc/misantrop?bg=99CCFF&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a></p>
+
+<p style="text-align:center">
+<a href="http://twittercounter.com/?username=adent" title="TwitterCounter for @adent"><img src="http://twittercounter.com/counter/?username=adent" width="88" height="26" style="border:none;" alt="TwitterCounter for @adent" /></a></p>
+
+<p style="text-align:center">
+<script type="text/javascript">
+var wsgApiKey = "481349a5-98b9-4d24-b32f-a5729d33840c";
+var wsgStyle = 2;
+var dummy =('<div id="wsgContainer" style="text-align:center"></div>');wsgScript=document.createElement('script');wsgScript.type="text/javascript";wsgScript.src="http://static.hubspot.com/websiteGraderBadge/badge.js?t="+Math.random();setTimeout("document.getElementById('wsgContainer').appendChild(wsgScript);",1);
+</script>
+</p>
+
+<script type="text/javascript" src="http://www.blogcatalog.com/w/services.php?id=150489&amp;width=165&amp;bgcolor=EEEEEE&amp;bcolor=356D79&amp;lcolor=333333&amp;hcolor=FFFFFF&amp;htext=Kde%20mne%20najdete&amp;name=0&amp;brand=0&amp;heading=1"></script>
+
+<h2 id="n_odkazy"><a href="#" class="iface" onclick="$('#odkazy').BlindToggleVertically(500, null, 'bounceout');return false;">Odkazy ...</a></h2>
+<ul id="odkazy" style="display:block">
+<li><a href="http://pixy.cz/pixynergia" rel="acquaintance met">Pixy</a></li><li><a href="http://blok.rozanek.cz" rel="acquaintance">Filip Rožánek</a></li><li><a href="http://www.whitedog.cz" rel="acquaintance met">White Dog</a></li><li><a href="http://kahi.cz/blog/" rel="met">Kahi</a></li><li><a href="http://lokutus.bloguje.cz" rel="met">Lokutus</a></li><li><a href="http://www.katchaba.com/" rel="acquaintance met">Katchaba</a></li><li><a href="http://machinegun.bloguje.cz" rel="acquaintance met">Johnny</a></li><li><a href="http://kokolia.bloguje.cz">Vladimír Kokolia</a></li><li><a href="http://viditelnymacek.cz">Miroslav Macek</a></li><li><a href="http://cina.bloguje.cz" rel="me">Dovolená v Číně</a></li><li><a href="http://bloguneni.bloguje.cz/">Blogu není...</a></li><li><a href="http://hekko.bloguje.cz" rel="acquaintance met">Adminka bloguje</a></li><li><a href="http://www.bloc.cz/default.aspx">Bloc Jiřího Hlavenky</a></li><li><a href="http://apimania.eu" rel="me">Apimania</a></li><li><a href="http://dev20.info" rel="me">Dev::Info</a></li><li><a href="http://dankaj.bloguje.cz/" rel="contact met">Zápisky z Islandu</a></li><li><a href="http://jdem.cz" rel="me">Zkratky pro odkazy</a></li><li><a href="http://davebarry.cz" rel="me">Dave Barry česky</a></li><li><a href="http://uelectronics.info" rel="me">Mikroelektronika</a></li><li><a href="http://www.php-suit.com" rel="me">PHP Suit</a></li><li><a href="http://www.sharp-suit.com" rel="me">Sharp Suit</a></li> 
+<li><a href="http://technorati.com/claim/xnpb5tzhw" rel="me">Technorati Profile</a></li>
+</ul>
+
+<h2 id="n_recommend">Doporučuji</h2>
+<ul id="support">
+<li><a href="http://hostmonster.jdem.cz/">Hosting HostMonster</a></li>
+<li><a href="http://www.jihocestitatkove.cz/">Jihočeští taťkové</a></li>
+<li><a href="http://www.csvts.cz/cns/">Česká nukleární společnost</a></li>
+<li><a href="http://www.prozakladnu.cz/">PRO základnu!</a></li>
+</ul>
+
+<!-- Buzzboot Ads -->
+<!-- / Buzzboot Ads -->
+
+
+<p>
+
+</p>
+
+<h2>Meta</h2>
+<script type="text/javascript" src="http://feedjit.com/popPages/?bc=FFFFFF&amp;tc=008000&amp;brd1=336699&amp;lnk=008000&amp;hc=336699&amp;ww=200"></script><noscript><a href="http://feedjit.com/">Feedjit Live Blog Stats</a></noscript>
+
+<h2 id="n_archiv"><a href="#" class="iface" onclick="$('#archiv').BlindToggleVertically(500, null, 'bounceout');return false;">Archiv ...</a></h2>
+<ul id="archiv" style="display:none">
+<li><a href="0812archiv.html">prosinec 2008</a></li><li><a href="0811archiv.html">listopad 2008</a></li><li><a href="0810archiv.html">říjen 2008</a></li><li><a href="0809archiv.html">září 2008</a></li><li><a href="0808archiv.html">srpen 2008</a></li><li><a href="0807archiv.html">červenec 2008</a></li><li><a href="0806archiv.html">červen 2008</a></li><li><a href="0805archiv.html">květen 2008</a></li><li><a href="0804archiv.html">duben 2008</a></li><li><a href="0803archiv.html">březen 2008</a></li><li><a href="0802archiv.html">únor 2008</a></li><li><a href="0801archiv.html">leden 2008</a></li><li><a href="0712archiv.html">prosinec 2007</a></li><li><a href="0711archiv.html">listopad 2007</a></li><li><a href="0710archiv.html">říjen 2007</a></li><li><a href="0709archiv.html">září 2007</a></li><li><a href="0708archiv.html">srpen 2007</a></li><li><a href="0707archiv.html">červenec 2007</a></li><li><a href="0706archiv.html">červen 2007</a></li><li><a href="0705archiv.html">květen 2007</a></li><li><a href="0704archiv.html">duben 2007</a></li><li><a href="0703archiv.html">březen 2007</a></li><li><a href="0702archiv.html">únor 2007</a></li><li><a href="0701archiv.html">leden 2007</a></li><li><a href="0612archiv.html">prosinec 2006</a></li><li><a href="0611archiv.html">listopad 2006</a></li><li><a href="0610archiv.html">říjen 2006</a></li><li><a href="0609archiv.html">září 2006</a></li><li><a href="0606archiv.html">červen 2006</a></li><li><a href="0604archiv.html">duben 2006</a></li><li><a href="0603archiv.html">březen 2006</a></li><li><a href="0512archiv.html">prosinec 2005</a></li><li><a href="0511archiv.html">listopad 2005</a></li>
+</ul>
+
+
+
+</div><!-- konec sidebar -->
+<div class="clear">&nbsp;</div><!-- cistic -->
+</div><!-- konec obsah -->
+
+
+
+
+
+
+
+<div id="foot">
+<p>&copy; <a href="http://www.maly.cz/o-mn/">Martin Malý</a> (aka Arthur Dent) | Design by &copy; 2007 <a href="http://ash721.cz">ASH721</a> | <a href="http://hostmonster.jdem.cz">HOSTING</a> 3000GB+unlimited domains za 6 dolarů</p>
+
+</div>
+
+</div>
+
+</body></html>

@@ -1,0 +1,672 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="cz">
+<head><link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.misantrop.info/rss.xml" /><link rel="alternate" type="application/rss+xml" title="RSS - Nemám vás rád" href="http://www.misantrop.info/tema-2-nemam-vas-rad.xml" /><link rel="alternate" type="application/rss+xml" title="Komentáře" href="http://www.misantrop.info/comments.xml" />
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/misantrop" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+ <title>Proč nebýt správcem, díl 71 - Misantrop.info</title> 
+
+<link rel="stylesheet" href="css39236.css" type="text/css" title="Styl2" media="screen" />
+<link rel="alternate stylesheet" href="css34066.css" type="text/css" title="Styl1" media="screen" />
+
+<meta name="verify-v1" content="qHyecOmV/BTXodaXkGrOlj7QL+X93dTbTLojG9EU22c=" />
+<link rel="openid.server" href="http://www.myopenid.com/server" />
+<link rel="openid.delegate" href="http://adent.myopenid.com/" />
+<link rel="openid2.local_id" href="http://adent.myopenid.com" />
+<link rel="openid2.provider" href="http://www.myopenid.com/server" />
+<meta http-equiv="X-XRDS-Location" content="http://www.myopenid.com/xrds?username=adent.myopenid.com" />
+
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="keywords" content="Martin Malý, Arthur Dent, weblogy, programování, PHP, blogy, misantrop, Web2.0, technologie, elektronika" />
+
+<meta name="description" content="Proč nebýt správcem, díl 71 - Misantrop.info" />
+</head>
+<body>
+<div id="all">
+<!-- Anal Lizer-->
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-190512-8";
+urchinTracker();
+</script>
+<!--dolizat-->
+ 
+
+<div id="adx" style="position:fixed;_position:absolute;top:5px;left:5px">
+<script type="text/javascript"><!--
+google_ad_client = "pub-3772893178572611";
+/* 120x600, vytvořeno 15.7.08 */
+google_ad_slot = "1720575805";
+google_ad_width = 120;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript"
+src="">
+</script>
+</div>
+
+<div id="head"><p id="logo"><a href="index.php"><img src="img/2zapisnik-logo.gif" alt="Misantrop.info - Web co vám doudí moudí..." /></a></p></div>
+
+<ul id="menu">
+<li><a href="index.php">Titulní stránka</a></li>
+<li><a href="http://rss.misantrop.info">Oblíbené zdroje</a></li>
+<li><a href="http://www.maly.cz/o-mn/?KeepThis=true&amp;TB_iframe=true&amp;height=500&amp;width=800" class="thickbox">O mně</a></li>
+<li><a href="http://www.bloguje.cz/vzkazy.php?send=47997">Napiš vzkaz</a></li>
+</ul>
+
+<div id="obsah">
+<div id="pole">
+<!-- Pocitadlo -->
+<p><img src="http://counter.cnw.cz/dungeon.cgi?blogmalycz&amp;6&amp;000000&amp;fff1d8&amp;on" alt=" " style="width:1px;height:1px;"/><script type="text/javascript">
+<!-- 
+var dummy =("<img src=\"http://counter.cnw.cz/trackit.cgi?blogmalycz&t2&" + escape(top.document.referrer) + "\" alt=\" \" border=\"0\" width=\"1\" height=\"1\">"); 
+// --></script>
+
+<script language="JavaScript" type="text/javascript">
+<!--
+var dummy = ('<a href="http://www.netagent.cz" target="_top"><img src="http://www.netagent.cz/agent.php?id=383&amp;ur='+escape(document.referrer)+'&amp;rw='+escape(window.screen.width)+'&amp;rh='+escape(window.screen.height)+'&amp;cd='+escape(window.screen.colorDepth)+'&amp;pt='+escape(document.title)+'&amp;lc='+escape(document.location)+'" width="1" height="1" border="0" alt="NetAgent" /></a>');
+//--></script>
+
+</p>
+<!-- Pocitadlo konec -->
+
+
+
+
+<h1>Proč nebýt správcem, díl 71</h1>
+
+
+
+
+
+
+
+<p>Pošuci, paranoici, psychopati, stalkeři... Rekapitulace týdne ex-adminova života. </p>
+
+<p style="float:right; margin:0 0 1em 1em;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-3772893178572611";
+
+/* 120x240, vytvořeno 6.7.08 */
+google_ad_slot = "4855232301";
+google_ad_width = 120;
+google_ad_height = 240;
+//-->
+</script>
+<script type="text/javascript"
+src="">
+</script>
+</p>
+
+<p><p>Kdyby vás, moji milí čtenářové, někdy napadlo dělat správce serveru, který má nějaké uživatele, tak mi zavolejte a smluvte si se mnou schůzku. Já vám proplesknu hubu rovnou, ať se pak nedivíte...</p><p>Dělat službu &quot;pro lidi&quot; znamená setkávat se nejen s lidmi normálními, ale i s akcentovanými jedinci. Někteří akcentovaní jsou i milí a příjemní, ale já se spíš setkával s psychopaty.</p><p>Že jsem byl vděčným cílem coby admin, s tím jsem taknějak počítal&nbsp;&ndash; vždycky se najde někdo, komu stojíte na kuřím oku a kdo si s vámi chce své, skutečné či domnělé, křivdy vyříkat.</p><p>Ovšem nechápu, proč jsem cílem těhle psychopatů skoro rok poté, co jsem s adminováním skončil... Prý &quot;škodím Bloguje&quot;&nbsp;&ndash; jo, fajn, jako soukromá osoba toho hodně jistě napáchám. Prý &quot;zneužívám postavení&quot;&nbsp;&ndash; které rok nemám. :) </p><p>U normálních lidí stačí říct: <em>Nezlobte se, ale já s tím už nemám nic společného, takže těžko můžu dělat něco z toho, z čeho mě obviňujete...</em> </p><p>Ale vy jste admin serveru, kam choděj lidi, na to nezapomeňte! Takže se klidně můžete nadít i něčeho takového:</p><strong>Když budu uživatel vašeho serveru, musím mít názory stejné jako vy, abych nebyl sankcionován?</strong><br /><em>Prosím?</em><br /><strong>No, X.Y. byl donucen váš server opustit!</strong><br /><em>X.Y. odešel sám, protože nesnáší mě. I když ví, že se serverem nemám delší dobu nic společného, tak odešel. Já nikoho nesankcionuju, pro mne za mne si uživatelem buďte, já už server skoro rok nespravuju.</em><br /><strong>Nemusel, nechtěl jsem nikomu podsouvat vinu, pokud to tak vypadalo, tak se omlouvám.</strong><br /><em>Ano, vypadalo, navíc to těžko mohlo vypadat jakkoli jinak.</em><br /><strong>Jak vidím, omluva je u vás výraz slabosti, dobrá lekce.</strong> <br /><em>Kdybyste mě neobviňoval ze zneužívání (neexistujícího) postavení, tak se nemusíte omlouvat.</em> <br /><strong>A když už jsme u toho, jak je to s vaším účinkováním u serveru? Je pravda, že s ním nemáte nic společného? Že jste mi takový detail nesdělil a odpovídal jste tak, jako byste nám tuto službu poskytoval velkoryse zdarma... Je to smutné, že svým chováním odrazujete od serveru lidi, se kterými máte problém! </strong><br /><em>Napsal jsem vám to dvakrát, takže buď neumíte číst, nebo lžete. S panem X.Y. problém nemám, on má problém se mnou. Se serverem nemám už rok nic společného. Nevím jak to říct jasněji. Pokud vám to udělá dobře, můžete si spánembohem vykládat tu svou verzi, jen mě s ní prosím neobtěžujte.</em><br /><strong>Nemám žádnou potřebu k vám chodit nebo vás hodnotit. Pokud se do mne přestanete navážet, navrhuji, abychom to ukončili a jeden na druhého zapomněli.</strong><br /><em>Vy jste sem přišel a navezl se do mne, hodil na mne absurdní obvinění, zkoušel tu lhát do očí...</em><br /><strong>Jste malicherný pišišvor, co chytá za slovíčko...</strong><br /><em>Jen jsem vám na citacích demonstroval, že lžete a kde lžete.</em><br /><strong>No, já takovéhle malichernosti nechci rozebírat. Ale stejně jsem si oddechl, že váš server nepoužívám, byl by to blbý pocit, když neváháte takhle zneužít své převahy.</strong><p>&nbsp;</p><p>To pak jen sedíte a říkáte si: <em>No co to kurva je?</em> No, to je jen nějaký člověk, který nebude používat server, co už dávno nespravujete, a přišel vám dokázat, že to je jen kvůli vám.</p><p>Takže si vy všichni, co právě teď zakládáte úžasné komunitní služby, představte, že ji opravdu rozjedete, že ji pak prodáte, přestanete se o ni starat, a jednoho dne se objeví takovéhle nukleární plezmero a bude předvádět takovéhle scénky. Ne že by to jednoho trápilo, ale stejně: <strong>Rozmyslete se!</strong> </p><p><em>Má to člověk zapotřebí? Není lepší se na všechno a všechny zvysoka...? Nezapomeňte, že každý dobrý skutek bude po zásluze trestán! </em></p></p>
+
+<div style="text-align:center">
+<script type="text/javascript"><!--
+google_ad_client = "pub-3772893178572611";
+/* 468x60, vytvořeno 15.7.08 */
+google_ad_slot = "3559028762";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="">
+</script>
+</div>
+
+
+
+
+
+<p class="more">
+<span class="date">Dne 17.07.2008</span>
+
+</p>
+
+
+
+
+
+<p><a href="http://jdem.cz/tw?text=Zaj%c3%admav%c3%bd+%c4%8dl%c3%a1nek+na+Z%c3%a1pisn%c3%adku%3a+http%3A%2F%2Fwww.misantrop.info%2F707382-proc-nebyt-spravcem-dil-71.html&amp;redir=1">Twittni</a></p>
+
+<p>Přidej do: 
+ <a href="http://vybrali.sme.sk/submit.php?url=http%3A%2F%2Fwww.misantrop.info%2F707382-proc-nebyt-spravcem-dil-71.html"><img src="http://blog.sme.sk/blog/3/61630/tlacitko.gif" style="border:0" title="asdf.sk" alt="asdf.sk" /></a>
+
+<a href="http://www.stumbleupon.com/submit?url=http%3A%2F%2Fwww.misantrop.info%2F707382-proc-nebyt-spravcem-dil-71.html&amp;title=Pro%E8+neb%FDt+spr%E1vcem%2C+d%EDl+71"> <img border=0 src="http://www.bloguje.cz/icon_su.gif" alt="StumbleUpon Toolbar"> Stumble It!</a>
+
+<script type="text/javascript" src="http://w.sharethis.com/widget/?tabs=web%2Cemail&amp;charset=utf-8&amp;style=rotate&amp;publisher=99a6f76f-7727-4c7b-a906-b91f57f8a706"></script></p>
+
+<script type="text/javascript" src="http://feedjit.com/coFilter/?bc=FFFFFF&amp;tc=008000&amp;brd1=336699&amp;lnk=008000&amp;hc=336699&amp;ww=500"></script>
+
+
+<h2 id="n_koments">Komentáře</h2>
+
+
+
+<p class="comment">
+<strong><a name="cmt_1">[1]</a> </strong> (Erik - <a href="mailto:erik.galambos@gmail.com">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fgalambos.blog.sme.sk%2F">WWW</a>) 18.07.2008, 00:27:50&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1703970">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1703970">D</a>]<br />
+
+Nepopulárna strana popularity. Keď si to človek prečíta raz, je to zábava, ale prežívať to x-krát/za týždeň ... Tlak krvi je ešte v pohode?
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_2">[2]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 18.07.2008, 00:30:35&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1703973">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1703973">D</a>]<br />
+
+<a href="#cmt_1">[1]</a> Popularita vypadá jinak. To že je člověk trochu známý ještě neznamená, že je populární... O to větší memento mori pro zakladatele dalších serverů. :)
+<br />
+<br />U mne tlak v normálu, ale pan Kodet by si měl dávat pozor... :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_3">[3]</a> </strong> (@Teo  - <a href="http://chucpe.bloguje.cz">WWW</a>) 18.07.2008, 00:50:11&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1703985">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1703985">D</a>]<br />
+
+Kontrolní otázka: A svou nástupkyni jsi profackoval? :o)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_4">[4]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 18.07.2008, 00:53:18&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1703987">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1703987">D</a>]<br />
+
+<a href="#cmt_3">[3]</a> Nabídka je určena výhradně mužům... :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_5">[5]</a> </strong> (Gimli2 [<a href="http://openid.cz/gimli2" title="Ověřený uživatel http://openid.cz/gimli2">openID</a>]  - <a href="http://gimli2.gipix.net">WWW</a>) 18.07.2008, 01:01:41&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1703989">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1703989">D</a>]<br />
+
+Uff, jako jedinny autor a admin online hry se s timto obcas setkavam. Jen by me zajimalo, vekove rozvrzeni techto lidi. Bohuzel se mi to nedari vysledovat. Kazdy novy pripad je vekove zase jinde. Jedine co se da povazovat za spolecnou vlastnost veku takovychto individui je, ze jsem se zatim nesetkal se starsim nez zhruba 30-35 let. Zeby pak byli lide rozumnejsi?
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_6">[6]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 18.07.2008, 01:09:42&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1703991">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1703991">D</a>]<br />
+
+<a href="#cmt_5">[5]</a> Kdepak. Zmiňovaný X.Y. je ročník 1945, u člověka z ukázky předpokládám 35+, neměl jsem potřebu pátrat víc.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_7">[7]</a> </strong> (Radek Hulán - <a href="mailto:radek@hulan.cz">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fhulan.cz%2F">WWW</a>) 18.07.2008, 02:21:35&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1703999">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1703999">D</a>]<br />
+
+<a href="#cmt_5">[5]</a> psychopati jsou většinou starší, klidně 40+. Aby se u takového jedince rozvinula pokročilá psychiatrická diagnóza, chce to svůj čas, kdy prožívá frustraci z vlastní neschopnosti (nemá děti, jeho blog nikdo nečte, zatímco jiný blogger či majitel serveru se tváří spokojeně, což psychopata nasere k nepříčetnosti). 
+<br />
+<br />Mladí jsou -jen- nevzdělaní a horkokrevní, navíc z toho často vyrostou, ale někteří staří jsou neskonale blbí a závistiví, což je horší, a projevuje se to třeba pořváváním na toho, kdo je zjevně lepší :-)
+<br />
+<br />Na druhou stranu, těch zasranů není tak moc, třeba z mé zkušenosti - z počtu cca 100.000 "unikátních" lidí, co znají můj web odhaduji počet psychopatických zasranů na zhruba 20 (paradoxně 2 z nich mají příjmení Kocan, nevím, zda to něco znamená v rozvoji duševní poruchy, jeden si zase říká "zralá žena" - Milf, i když je to starej soustružník).
+<br />
+<br />0.02% psychopatů volně na svobodě je vlastně velice pozitivní věc :-)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_8">[8]</a> </strong> (danaketh - <a href="mailto:mail@danaketh.com">Mail</a> ) 18.07.2008, 03:29:45&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1704002">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1704002">D</a>]<br />
+
+Nj, ale s tím nic neuděláme. Já už taky neadminuju jedné herní TV a přitom mi neustále někdo nadává že TV nejde, laguje a tak vůbec (jedna z věcí které jsem nikdy neměl nastarosti). Dělat admina je nevděčná práce ale někdo to dělat musí.
+<br />
+<br />BTW: teď adminuju oficiální diskusi jedné velmi oblíbené české kapely a tam jsem zatím žádného magora nepotkal. Samí slušní a vychovaní lidé - i za opravu špatně se zobrazujícího datumu poděkovali :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_9">[9]</a> </strong> (Radka - <a href="mailto:x1234x1234@centrum.cz">Mail</a> ) 18.07.2008, 07:15:00&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1704012">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1704012">D</a>]<br />
+
+6- tak to jí uděláš velkou radost:-) musel bys hooodně přitlačit. Ledaže bys měl na mysli ročník 35+.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_10">[10]</a> Smazaný komentář</strong> (<em>Kdosi</em> - <a href="mailto:--DEL--">Mail</a> ) 18.07.2008, 07:41:18&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1704023">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1704023">D</a>]<br />
+
+<em>Komentář smazán autorem stránek</em>
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_11">[11]</a> </strong> (rony [<a href="http://rony.myopenid.com/" title="Ověřený uživatel http://rony.myopenid.com/">openID</a>] - <a href="mailto:rony@mailinator.com">Mail</a> - <a href="http://rony.myopenid.com">WWW</a>) 18.07.2008, 07:57:20&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1704031">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1704031">D</a>]<br />
+
+Dialog by bol bezny, v podstate prijemny a nevybocujuci z teorie, ze ludia nevnimaju, co hovori druhy a melu si svoje. Tato osoba to v zavere doviedla do dokonalosti poslednou vetou, az tato naznacila, ze je to pacient :-)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_12">[12]</a> </strong> (Radka - <a href="mailto:x1234x1234@centrum.cz">Mail</a> ) 18.07.2008, 07:58:27&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1704032">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1704032">D</a>]<br />
+
+9-omlouvám se za tykání:-)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_13">[13]</a> </strong> (David Grudl  - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fdavidgrudl.com">WWW</a>) 18.07.2008, 08:07:27&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1704034">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1704034">D</a>]<br />
+
+Prodals Bloguje zatímco ostatní programovali zadarmo!
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_14">[14]</a> </strong> (jááá  ) 18.07.2008, 09:13:04&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1704072">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1704072">D</a>]<br />
+
+Psychopati jsou především lidé 14-35 let. Jejich jedinou náplní dne je psát příspěvky o ničem, nadávat ostatním a pak se jen bavit tím, jak se strhává lavina. Něčí priority jsou blog a vysoký počet navštěvujících (nemluvím o těch, kteří falšují počítadla), někdo jiný má priority prostě jiné.
+<br />Oblíbenou formou argumentace je následující (převzato odsud):
+<br />"Je to argumentační postup, který jsem popsal v Udržitelné krávě a který se jmenuje Hastroš (též Imago) - Spočívá v tom, že místo argumentace proti tvrzení je tvrzení nahraženo zjednodušenou či pokroucenou a zjevně nesmyslnou variantou a je vyvracena ta."
+<br />Dělají to pravidelně ti, kteří mají problém v životě a tak se snaží ostatním něco dokazovat. Jsou to například lidé, kteří se dlouho pyšnili falešným vysokoškolským titulem, nebo lidé jež ve skutečnosti dělají jinou profesi, než kterou na internetu prezentují.
+<br />Takový člověk je sám psychopatem, ale postižený si nikdy své postižení či úchylku neuvědomuje. Pokud si to však uvědomuje, obviňuje ostatní z osobního problému
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_15">[15]</a> </strong> (spacák - <a href="mailto:spacak@centrum.cz">Mail</a> ) 18.07.2008, 09:13:41&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1704075">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1704075">D</a>]<br />
+
+obdivuju tvoji trpělivost! odpovědí na třetí zprávu se zdá být vše podstatné vyřízeno. na čtvrtou zprávu bych už asi odpovědět nedokázal. vždyť to je jak bavit s někým fest namletým. ty se snažíš a on má pořád něco, páté přes deváté.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_16">[16]</a> </strong> (pixy.myopenid.com - <a href="mailto:pixy@pixy.cz">Mail</a> ) 18.07.2008, 09:26:06&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1704084">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1704084">D</a>]<br />
+
+Překlad MILF = "zralá žena" je opravdu kulervoucí. Vtipné!
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_17">[17]</a> </strong> (Roman - <a href="mailto:creamd@c64.sk">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.c64.sk">WWW</a>) 18.07.2008, 10:11:18&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1704131">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1704131">D</a>]<br />
+
+Chyba je v tebe Martin. Si mizantrop, a si prilis inteligentny. Reagujes prehnane a kazdy tvoj argument (a zvycajne uz ten prvy) je formulovany tak aby neomracil, ale rovno oponentovi zasadil smrtiaci uder. Bohuzial vacsina respondentov su tvrde polena od ktory sa takyto uder odrazi s takmer nezmenenou silou  (aj keď s daleko vyššou tuposťou).
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_18">[18]</a> </strong> (@Teo  ) 18.07.2008, 10:17:05&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1704138">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1704138">D</a>]<br />
+
+<a href="#cmt_4">[4]</a>  Pozitivní diskriminace?
+<br /><a href="#cmt_17">[17]</a> Normální return, ne? :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_19">[19]</a> Smazaný komentář</strong> (<em>Kdosi</em> - <a href="mailto:--DEL--">Mail</a> ) 18.07.2008, 10:21:19&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1704148">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1704148">D</a>]<br />
+
+<em>Komentář smazán autorem stránek</em>
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_20">[20]</a> </strong> (#13  - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fmmister.com">WWW</a>) 18.07.2008, 10:22:25&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1704149">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1704149">D</a>]<br />
+
+<a href="#cmt_16">[16]</a> V čem všem se ten Pixy nevyzná :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_21">[21]</a> </strong> (Roman - <a href="mailto:creamd@c64.sk">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.c64.sk">WWW</a>) 18.07.2008, 10:29:09&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1704156">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1704156">D</a>]<br />
+
+<a href="#cmt_18">[18]</a> Treba sa naučiť to spomaliť a zahrať to tesne za sieť aby to dotyčný nedobehol. Ale chápem, že po tých rokoch práce s určitou komunitou sa na človeka nalepí tolko srdu a odporu, že sa technika práce s raketou zmení na zúfalé smečovanie. Bohužial v takýchto prípadoch sa človek ocitá v akomsi squahovom zajatí a akokoľvek silné trieskanie do rakety tú loptičku neodpáli z dosahu súpera.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_22">[22]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 18.07.2008, 10:29:26&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1704157">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1704157">D</a>]<br />
+
+<a href="#cmt_17">[17]</a> Chyba? Možná, jen si nejsem tak jednoznačně jist tím, že zrovna moje.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_23">[23]</a> </strong> (Radim Hasalík - <a href="mailto:radim@hasalik.cz">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.hasalik.cz">WWW</a>) 18.07.2008, 10:47:38&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1704175">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1704175">D</a>]<br />
+
+Naučil jsem se být slušný a korektní k uživatelům, kteří respektují pravidla a rázný k provokatérům a internetovým trollům. S internetovým trollem nemá cenu diskutovat, nejde mu o diskusi, ale pouze vyprovokování vášnivé diskuse. 
+<br />
+<br />Viz:
+<br />
+<br /><a href="http://brouzdej.cz/blogy/har/6953.html" rel="nofollow">http://brouzdej.cz.../har/6953.html</a>
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_24">[24]</a> Smazaný komentář</strong> (<em>Kdosi</em> - <a href="mailto:--DEL--">Mail</a> ) 18.07.2008, 10:49:43&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1704178">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1704178">D</a>]<br />
+
+<em>Komentář smazán autorem stránek</em>
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_25">[25]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 18.07.2008, 10:50:51&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1704179">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1704179">D</a>]<br />
+
+<a href="#cmt_21">[21]</a> Myslím, Romane, žes ne zcela přesně pochopil situaci, popisovanou v článku... :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_26">[26]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 18.07.2008, 10:52:45&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1704182">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1704182">D</a>]<br />
+
+<a href="#cmt_24">[24]</a> Aha, neptal ses, jen jsi měl nějaký komentář k mé osobě. OK, mažeme...
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_27">[27]</a> </strong> (Roman - <a href="mailto:creamd@c64.sk">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.c64.sk">WWW</a>) 18.07.2008, 10:55:06&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1704185">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1704185">D</a>]<br />
+
+<a href="#cmt_22">[22]</a> Záleží na cieli. Napriek tomu si to ale uťal výborne pretože posledná reč v citovanom dialógu patrila dotyčnému. 
+<br />
+<br />Inak mám pocit že otázka dotyčného č. 5 ako keby reagovala na nejaký váš starší dialóg kde si mu na niečo odpovedal. Nechápem totiž ako mohol takéto niečo vyprodukovať: "Že jste mi takový detail nesdělil a odpovídal jste tak, jako byste nám tuto službu poskytoval velkoryse zdarma... Je to smutné, že svým chováním odrazujete od serveru lidi, se kterými máte problém!"  Len na základe toho vášho krátkeho dialógu.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_28">[28]</a> </strong> (Roman - <a href="mailto:creamd@c64.sk">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.c64.sk">WWW</a>) 18.07.2008, 11:00:28&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1704188">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1704188">D</a>]<br />
+
+<a href="#cmt_25">[25]</a> Hyperbolizovanie a za vlasy pritiahnuté metafory s tým som mal vždy problém. ;-) Viď teatrálne odchádzajúci blogeri.. <a href="http://roman.blog.hokejportal.sk/?212/ako-skoncit-s-blogovanim" rel="nofollow">http://roman.blog.hokejportal.sk...</a>
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_29">[29]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 18.07.2008, 11:02:00&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1704190">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1704190">D</a>]<br />
+
+<a href="#cmt_27">[27]</a> Ta otázka reaguje na předchozí výměnu 1-4. :)
+<br />
+<br />Pokud chceš full-version, tak zde: <a href="http://www.misantrop.info/705724-pohled-za-hranici-svetu.html#cmt_47" rel="nofollow">http://www.misantrop.info...#cmt_47</a> - komentář 47 a d.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_30">[30]</a> </strong> (Milf  ) 18.07.2008, 11:03:34&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1704191">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1704191">D</a>]<br />
+
+Ok, zkusím to jinak, lépe. Ano, lepší je se na všechny vysrat.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_31">[31]</a> </strong> (Roman - <a href="mailto:creamd@c64.sk">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.c64.sk">WWW</a>) 18.07.2008, 11:15:48&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1704203">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1704203">D</a>]<br />
+
+<a href="#cmt_29">[29]</a> Ach. Ako som mohol prešvihnúť takú krásnu diskusiu ;-(
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_32">[32]</a> </strong> (rony [<a href="http://rony.myopenid.com/" title="Ověřený uživatel http://rony.myopenid.com/">openID</a>] - <a href="mailto:rony@mailinator.com">Mail</a> - <a href="http://rony.myopenid.com">WWW</a>) 18.07.2008, 12:19:58&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1704260">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1704260">D</a>]<br />
+
+<a href="#cmt_30">[30]</a> no slava, pochopil. Este keby to vysranie nebolo sprevadzane pisanim do komentarovych formularov, to by uz potom bolo velice fajn, no nie? :-)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_33">[33]</a> </strong> (Fext  ) 18.07.2008, 12:53:13&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1704293">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1704293">D</a>]<br />
+
+Já bych ho asi kdyby měl takhle pomatené názory poslal někam a byl by klid... proč se rozčilovat když už s tím serverem nemám nic společného žejo...
+<br />a když se objeví další tak ho znova kamsi pošlu a ono je časem přejde mluvit do zdi
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_34">[34]</a> </strong> (http://www.matesola.com  ) 18.07.2008, 14:17:56&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1704380">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1704380">D</a>]<br />
+
+To jsem sám, který má pocit, že té jejich holčičí (jak se sami nazývají) squadře(zřejmě OSVČ účetních) jde ve finále jen a jen o to "KRÁÁSNÉ USMIŘOVÁNÍ" (ano zap*chat si)?
+<br />Náznaků tam není zrovna málo :))
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_35">[35]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 18.07.2008, 14:45:24&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1704400">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1704400">D</a>]<br />
+
+<a href="#cmt_34">[34]</a> V téhle konkrétní diskusi mám spíš dojem, že mají děvenky nějakej problém s chlapama, že je ten jejich třeba nějaké hovado či tak, tak si to kompenzují na internetu - viz ta stylizace do role feminní bojovnice, co chlapům bourá jejich ješitná ega... :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_36">[36]</a> </strong> (matesola  - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.matesola.com">WWW</a>) 18.07.2008, 15:15:37&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1704425">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1704425">D</a>]<br />
+
+<a href="#cmt_35">[35]</a>Promiň sice souhlas, ale nečteš mezi řádky hysteriku ;) Za těmi tunami smajlíků jsou zralý holky (Milfky), který už naprosto přesně vědí jak a na koho útočit. Chlapi jako ty, aTeo apod. je prostě fascinujou. Kdo to neviděl mezi řádky, dostal návdavkem ještě nějaký ty péra, živočišný zážitky a i to píchání. Když se nechytíte a nakonec ještě přijde pán s hajzlíkama, kusem skutečné práce a rvačkama s hovnem, ujistíte je jen v tom, že stejně jsou všichni chlapi stejný jako ten jejich doma a je po nerváku :)
+<br />Resumé je, že vitězství Pyrhy z celé diskuze získává pan domácí na gauči :)
+<br />P.S. Ale propobavil jsem si celé čtvrteční odpoledne, to zas jo :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_37">[37]</a> </strong> (  ) 18.07.2008, 15:19:23&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1704429">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1704429">D</a>]<br />
+
+"Úsměvná" komunikace mi připomněla komunikaci s leckterým uživatelem, kterou jsem zažil, ale ještě Vám zde nevyhrožuje fyzickým násilím, takžeto ještě hodnotím jako mírnější komunikaci ;)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_38">[38]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 18.07.2008, 15:30:40&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1704438">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1704438">D</a>]<br />
+
+<a href="#cmt_37">[37]</a> Fyzickým násilím vyhrožoval jeden šulínek nemytý hned druhý měsíc po spuštění Bloguje. Abych byl konkrétní, tak psal: "Do mýho blogu se srát nebudeš, nebo ti podřežu celou rodinu". Inu tak :)
+<br />
+<br />Tohle je opravdu mírná rozcvička, takovou si dávám ke svačině. :) Až teda na toho X.Y., tam mi právník radí postupovat razantněji...
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_39">[39]</a> </strong> (Roman - <a href="mailto:creamd@c64.sk">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.c64.sk">WWW</a>) 18.07.2008, 15:34:31&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1704447">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1704447">D</a>]<br />
+
+<a href="#cmt_36">[36]</a> Význam slova milf je dosť odlišný od slova "zrelá žena". Preto je dosť nevhodné používať tieto slová ako synonymá. Milf = "mom I'd like to fuck" je  žáner internetovej pornografie. Základom je poloamatérska kamera. Obsahom je sex mladších mužov (vzhľadovo zhruba do 30) so staršími ženami ktoré by mohli byť ich maminami. Je možné že tento termín zdomácnel vďaka erotickému server amateri.cz kde by mohol byť teoreticky hojne používaný? Tak či onak, pokiaľ tým chceš povaedať že sú to pre teba milfky, v tom prípade žiaden dišputát. Čo sa týka záverečného zhrnutia, myslím že si na omyle. Ten domáci pán zostane (zasa bez sexu) žene totiž online komunikácia poskytne daleko viac vzrušenia a uspokoenia ako manželský sex. ;-)))
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_40">[40]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 18.07.2008, 15:38:09&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1704453">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1704453">D</a>]<br />
+
+<a href="#cmt_39">[39]</a> Jak se říká lidem, co neznají souvislosti, takže pak nechápou vtip a snaží se ho rozebrat? :) Viz třeba <a href="http://www.misantrop.info/707382-proc-nebyt-spravcem-dil-71.html#cmt_16" rel="nofollow">http://www.misantrop.info...#cmt_16</a> atd. Jinak zažitý překlad slova MILF je "MCBP - Matka Co Bych Píchal" ;)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_41">[41]</a> </strong> (Roman - <a href="mailto:creamd@c64.sk">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.c64.sk">WWW</a>) 18.07.2008, 15:44:59&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1704458">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1704458">D</a>]<br />
+
+<a href="#cmt_40">[40]</a> Ak mas na mysli ze nechapem dvojzmysel, tak ok. Som zvyknuty ze mi to ludia ulahcia smajlikmi alebo aspon uvodzovkami, aj ked je pravda ze aj ja castokrat zostavam vo svojej ironii nepochopeny kedze ju v reci nijak neddelim ci uz tonom reci alebo akcentom. Za vtipny povazujem pixyho komentar aj som sa na tom pousmial. Takze ak to myslel ako dvojzmysel, velice sa ospravedlnujem, som sproste nechapave. Co sa tyka MCPB tak to je dost nemotorne. Radsej uz to "milf".
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_42">[42]</a> </strong> (ondra.knezour - <a href="mailto:knezour@weboutsourcing.cz">Mail</a> ) 18.07.2008, 16:03:31&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1704470">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1704470">D</a>]<br />
+
+To, že se jako slušný a logicky uvažující člověk snažíš slušně odpovídat a svůj postoj vysvětlovat nebo obhajovat je právě ta chyba, která vede k výše napsané odpovědi na položenou otázku "No co to kurva je?"
+<br />
+<br />Kdybys na začátku debatu uzavřel přátelským "Vážený pane, vyližte si anus", pak by se nic nezměnilo - tazatel by tě měl stále za povýšeneckého hulváta Q.E.D. a ty bys ušetřil nemálo energie a nechápavého poulení očima nad tím, co z takového člověka ještě vypadne :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_43">[43]</a> </strong> (LACO  - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Flaco.cz">WWW</a>) 18.07.2008, 16:54:29&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1704527">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1704527">D</a>]<br />
+
+Arthure, nejen z článku, ale i z diskuse je patrné, že toho <strong>svým uživatelům ještě hodně dlužíš!</strong>
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_44">[44]</a> </strong> (rony [<a href="http://rony.myopenid.com/" title="Ověřený uživatel http://rony.myopenid.com/">openID</a>] - <a href="mailto:rony@mailinator.com">Mail</a> - <a href="http://rony.myopenid.com">WWW</a>) 18.07.2008, 22:14:29&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1704739">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1704739">D</a>]<br />
+
+<a href="#cmt_42">[42]</a> a my by sme prisli o dalsi pekny obrazok o ludom, medzi ktorymi zijeme :-)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_45">[45]</a> </strong> (Hekko [<a href="http://hekko.myopenid.com/" title="Ověřený uživatel http://hekko.myopenid.com/">openID</a>] - <a href="mailto:hekko@centrum.cz">Mail</a> - <a href="http://hekko.bloguje.cz">WWW</a>) 18.07.2008, 22:58:02&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1704767">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1704767">D</a>]<br />
+
+<a href="#cmt_3">[3]</a> Ne, neprofackoval. Vždycky akorát slibuje, že mi k profackování někoho pošle, ale ještě nikdo nedorazil ;)
+<br />
+<br /><a href="#cmt_43">[43]</a> Jakým (kterým, čím) svým? ;)
+
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+</div><!-- konec pole -->
+
+
+
+<div id="sidebar">
+
+<h2 id="n_rubriky">Rubriky</h2>
+<ul id="rubriky">
+<li><a href="tema-1-bavim-se-na-vas-ucet.html">Bavím se na váš účet</a></li><li><a href="tema-2-nemam-vas-rad.html">Nemám vás rád</a></li><li><a href="tema-3-pohrdani.html">Pohrdání</a></li><li><a href="tema-4-vase-bludy-na-moji-hlavu.html">Vaše bludy na moji hlavu</a></li><li><a href="tema-5-mym-analfabetum.html">Mým analfabetům...</a></li><li><a href="tema-6-co-me-bavi.html">Co mě baví?</a></li><li><a href="tema-7-to-je-nejaka-hudba-tohleto.html">To je nějaká hudba, tohleto?</a></li><li><a href="tema-8-kdo-umi.html">Kdo umí...</a></li><li><a href="tema-9-mene-kecu-vice-prace.html">Méně keců, více práce</a></li>
+</ul>
+
+<h2 class="bok">Jak se vám to čte?</h2>
+
+<p style="text-align:center">
+<a href="http://feeds.feedburner.com/misantrop"><img src="http://feeds.feedburner.com/~fc/misantrop?bg=99CCFF&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a></p>
+
+<p style="text-align:center">
+<a href="http://twittercounter.com/?username=adent" title="TwitterCounter for @adent"><img src="http://twittercounter.com/counter/?username=adent" width="88" height="26" style="border:none;" alt="TwitterCounter for @adent" /></a></p>
+
+<p style="text-align:center">
+<script type="text/javascript">
+var wsgApiKey = "481349a5-98b9-4d24-b32f-a5729d33840c";
+var wsgStyle = 2;
+var dummy =('<div id="wsgContainer" style="text-align:center"></div>');wsgScript=document.createElement('script');wsgScript.type="text/javascript";wsgScript.src="http://static.hubspot.com/websiteGraderBadge/badge.js?t="+Math.random();setTimeout("document.getElementById('wsgContainer').appendChild(wsgScript);",1);
+</script>
+</p>
+
+<script type="text/javascript" src="http://www.blogcatalog.com/w/services.php?id=150489&amp;width=165&amp;bgcolor=EEEEEE&amp;bcolor=356D79&amp;lcolor=333333&amp;hcolor=FFFFFF&amp;htext=Kde%20mne%20najdete&amp;name=0&amp;brand=0&amp;heading=1"></script>
+
+<h2 id="n_odkazy"><a href="#" class="iface" onclick="$('#odkazy').BlindToggleVertically(500, null, 'bounceout');return false;">Odkazy ...</a></h2>
+<ul id="odkazy" style="display:block">
+<li><a href="http://pixy.cz/pixynergia" rel="acquaintance met">Pixy</a></li><li><a href="http://blok.rozanek.cz" rel="acquaintance">Filip Rožánek</a></li><li><a href="http://www.whitedog.cz" rel="acquaintance met">White Dog</a></li><li><a href="http://kahi.cz/blog/" rel="met">Kahi</a></li><li><a href="http://lokutus.bloguje.cz" rel="met">Lokutus</a></li><li><a href="http://www.katchaba.com/" rel="acquaintance met">Katchaba</a></li><li><a href="http://machinegun.bloguje.cz" rel="acquaintance met">Johnny</a></li><li><a href="http://kokolia.bloguje.cz">Vladimír Kokolia</a></li><li><a href="http://viditelnymacek.cz">Miroslav Macek</a></li><li><a href="http://cina.bloguje.cz" rel="me">Dovolená v Číně</a></li><li><a href="http://bloguneni.bloguje.cz/">Blogu není...</a></li><li><a href="http://hekko.bloguje.cz" rel="acquaintance met">Adminka bloguje</a></li><li><a href="http://www.bloc.cz/default.aspx">Bloc Jiřího Hlavenky</a></li><li><a href="http://apimania.eu" rel="me">Apimania</a></li><li><a href="http://dev20.info" rel="me">Dev::Info</a></li><li><a href="http://dankaj.bloguje.cz/" rel="contact met">Zápisky z Islandu</a></li><li><a href="http://jdem.cz" rel="me">Zkratky pro odkazy</a></li><li><a href="http://davebarry.cz" rel="me">Dave Barry česky</a></li><li><a href="http://uelectronics.info" rel="me">Mikroelektronika</a></li><li><a href="http://www.php-suit.com" rel="me">PHP Suit</a></li><li><a href="http://www.sharp-suit.com" rel="me">Sharp Suit</a></li> 
+<li><a href="http://technorati.com/claim/xnpb5tzhw" rel="me">Technorati Profile</a></li>
+</ul>
+
+<h2 id="n_recommend">Doporučuji</h2>
+<ul id="support">
+<li><a href="http://hostmonster.jdem.cz/">Hosting HostMonster</a></li>
+<li><a href="http://www.jihocestitatkove.cz/">Jihočeští taťkové</a></li>
+<li><a href="http://www.csvts.cz/cns/">Česká nukleární společnost</a></li>
+<li><a href="http://www.prozakladnu.cz/">PRO základnu!</a></li>
+</ul>
+
+<!-- Buzzboot Ads -->
+<!-- / Buzzboot Ads -->
+
+
+<p>
+
+</p>
+
+<h2>Meta</h2>
+<script type="text/javascript" src="http://feedjit.com/popPages/?bc=FFFFFF&amp;tc=008000&amp;brd1=336699&amp;lnk=008000&amp;hc=336699&amp;ww=200"></script><noscript><a href="http://feedjit.com/">Feedjit Live Blog Stats</a></noscript>
+
+<h2 id="n_archiv"><a href="#" class="iface" onclick="$('#archiv').BlindToggleVertically(500, null, 'bounceout');return false;">Archiv ...</a></h2>
+<ul id="archiv" style="display:none">
+<li><a href="0812archiv.html">prosinec 2008</a></li><li><a href="0811archiv.html">listopad 2008</a></li><li><a href="0810archiv.html">říjen 2008</a></li><li><a href="0809archiv.html">září 2008</a></li><li><a href="0808archiv.html">srpen 2008</a></li><li><a href="0807archiv.html">červenec 2008</a></li><li><a href="0806archiv.html">červen 2008</a></li><li><a href="0805archiv.html">květen 2008</a></li><li><a href="0804archiv.html">duben 2008</a></li><li><a href="0803archiv.html">březen 2008</a></li><li><a href="0802archiv.html">únor 2008</a></li><li><a href="0801archiv.html">leden 2008</a></li><li><a href="0712archiv.html">prosinec 2007</a></li><li><a href="0711archiv.html">listopad 2007</a></li><li><a href="0710archiv.html">říjen 2007</a></li><li><a href="0709archiv.html">září 2007</a></li><li><a href="0708archiv.html">srpen 2007</a></li><li><a href="0707archiv.html">červenec 2007</a></li><li><a href="0706archiv.html">červen 2007</a></li><li><a href="0705archiv.html">květen 2007</a></li><li><a href="0704archiv.html">duben 2007</a></li><li><a href="0703archiv.html">březen 2007</a></li><li><a href="0702archiv.html">únor 2007</a></li><li><a href="0701archiv.html">leden 2007</a></li><li><a href="0612archiv.html">prosinec 2006</a></li><li><a href="0611archiv.html">listopad 2006</a></li><li><a href="0610archiv.html">říjen 2006</a></li><li><a href="0609archiv.html">září 2006</a></li><li><a href="0606archiv.html">červen 2006</a></li><li><a href="0604archiv.html">duben 2006</a></li><li><a href="0603archiv.html">březen 2006</a></li><li><a href="0512archiv.html">prosinec 2005</a></li><li><a href="0511archiv.html">listopad 2005</a></li>
+</ul>
+
+
+
+</div><!-- konec sidebar -->
+<div class="clear">&nbsp;</div><!-- cistic -->
+</div><!-- konec obsah -->
+
+
+
+
+
+
+
+<div id="foot">
+<p>&copy; <a href="http://www.maly.cz/o-mn/">Martin Malý</a> (aka Arthur Dent) | Design by &copy; 2007 <a href="http://ash721.cz">ASH721</a> | <a href="http://hostmonster.jdem.cz">HOSTING</a> 3000GB+unlimited domains za 6 dolarů</p>
+
+</div>
+
+</div>
+
+</body></html>

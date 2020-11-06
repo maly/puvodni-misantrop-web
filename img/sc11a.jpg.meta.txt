@@ -1,0 +1,1 @@
+a:12:{s:8:"filepath";s:58:"/data/web/virtuals/bloguje.cz/www/blogy/maly/img/sc11a.jpg";s:5:"title";s:9:"sc11a.jpg";s:4:"desc";s:9:"sc11a.jpg";s:4:"size";i:70468;s:5:"width";i:800;s:6:"height";i:520;s:3:"url";s:37:"http://zapisnik.maly.cz/img/sc11a.jpg";s:4:"tags";s:0:"";s:10:"exif_maker";s:0:"";s:10:"exif_model";s:0:"";s:8:"exif_exp";s:0:"";s:7:"exif_fn";s:0:"";}

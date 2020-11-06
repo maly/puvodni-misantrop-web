@@ -1,0 +1,608 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="cz">
+<head><link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.misantrop.info/rss.xml" /><link rel="alternate" type="application/rss+xml" title="RSS - Kdo umí..." href="http://www.misantrop.info/tema-8-kdo-umi.xml" /><link rel="alternate" type="application/rss+xml" title="Komentáře" href="http://www.misantrop.info/comments.xml" />
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/misantrop" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+ <title>Pod kapotou systému - Misantrop.info</title> 
+
+<link rel="stylesheet" href="css39236.css" type="text/css" title="Styl2" media="screen" />
+<link rel="alternate stylesheet" href="css34066.css" type="text/css" title="Styl1" media="screen" />
+
+<meta name="verify-v1" content="qHyecOmV/BTXodaXkGrOlj7QL+X93dTbTLojG9EU22c=" />
+<link rel="openid.server" href="http://www.myopenid.com/server" />
+<link rel="openid.delegate" href="http://adent.myopenid.com/" />
+<link rel="openid2.local_id" href="http://adent.myopenid.com" />
+<link rel="openid2.provider" href="http://www.myopenid.com/server" />
+<meta http-equiv="X-XRDS-Location" content="http://www.myopenid.com/xrds?username=adent.myopenid.com" />
+
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="keywords" content="Martin Malý, Arthur Dent, weblogy, programování, PHP, blogy, misantrop, Web2.0, technologie, elektronika" />
+
+<meta name="description" content="Pod kapotou systému - Misantrop.info" />
+</head>
+<body>
+<div id="all">
+<!-- Anal Lizer-->
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-190512-8";
+urchinTracker();
+</script>
+<!--dolizat-->
+ 
+
+<div id="adx" style="position:fixed;_position:absolute;top:5px;left:5px">
+<script type="text/javascript"><!--
+google_ad_client = "pub-3772893178572611";
+/* 120x600, vytvořeno 15.7.08 */
+google_ad_slot = "1720575805";
+google_ad_width = 120;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript"
+src="">
+</script>
+</div>
+
+<div id="head"><p id="logo"><a href="index.php"><img src="img/2zapisnik-logo.gif" alt="Misantrop.info - Web co vám doudí moudí..." /></a></p></div>
+
+<ul id="menu">
+<li><a href="index.php">Titulní stránka</a></li>
+<li><a href="http://rss.misantrop.info">Oblíbené zdroje</a></li>
+<li><a href="http://www.maly.cz/o-mn/?KeepThis=true&amp;TB_iframe=true&amp;height=500&amp;width=800" class="thickbox">O mně</a></li>
+<li><a href="http://www.bloguje.cz/vzkazy.php?send=47997">Napiš vzkaz</a></li>
+</ul>
+
+<div id="obsah">
+<div id="pole">
+<!-- Pocitadlo -->
+<p><img src="http://counter.cnw.cz/dungeon.cgi?blogmalycz&amp;6&amp;000000&amp;fff1d8&amp;on" alt=" " style="width:1px;height:1px;"/><script type="text/javascript">
+<!-- 
+var dummy =("<img src=\"http://counter.cnw.cz/trackit.cgi?blogmalycz&t2&" + escape(top.document.referrer) + "\" alt=\" \" border=\"0\" width=\"1\" height=\"1\">"); 
+// --></script>
+
+<script language="JavaScript" type="text/javascript">
+<!--
+var dummy = ('<a href="http://www.netagent.cz" target="_top"><img src="http://www.netagent.cz/agent.php?id=383&amp;ur='+escape(document.referrer)+'&amp;rw='+escape(window.screen.width)+'&amp;rh='+escape(window.screen.height)+'&amp;cd='+escape(window.screen.colorDepth)+'&amp;pt='+escape(document.title)+'&amp;lc='+escape(document.location)+'" width="1" height="1" border="0" alt="NetAgent" /></a>');
+//--></script>
+
+</p>
+<!-- Pocitadlo konec -->
+
+
+
+
+<h1>Pod kapotou systému</h1>
+
+
+
+
+
+
+
+<p>Jak funguje framework uvnitř Bloguje? Souvisí nějak s API? Třeba to někoho inspiruje... </p>
+
+<p style="float:right; margin:0 0 1em 1em;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-3772893178572611";
+
+/* 120x240, vytvořeno 6.7.08 */
+google_ad_slot = "4855232301";
+google_ad_width = 120;
+google_ad_height = 240;
+//-->
+</script>
+<script type="text/javascript"
+src="">
+</script>
+</p>
+
+<p><p>Po prvotní &quot;ad hoc&quot; verzi Bloguje přišel čas (a potřeba) systém poněkud překopat. Jak to tedy uvnitř Bloguje vypadá?<br /><br />Systém obsahuje (kromě drobností) dvě základní části: Zobrazovací jádro (engine) <em>Blox</em> a redakční systém. Zobrazovací jádro vyšlo z původního jádra <em>Převážně neškodného</em>, které bylo od začátku koncipováno jako víceautorské a &quot;víceblogové&quot; jádro se šablonovým systémem kompatibilním s Blogger.com. (<em>Pro zajímavost dodám, že původně jsem počítal s tím, že systém nabídne i možnost blogu na Bloxxy.</em>) Toto původní jádro jsem upravil tak, aby generovalo statické HTML stránky (od počátku se na Bloguje počítalo s FTP uploadem stránek) a stalo se základem pro Bloguje. Postupem času bylo rozšiřováno a rozšiřováno a jak rostl počet blogů, začaly se projevovat jeho slabiny, především pomalost.<br /><br />Nové jádro Blox2 jsem napsal v roce 2005. Bylo moderní, voňavé a objektové, bohužel se ukázalo, že je líné jako vandrácká veš v srpnu. Udělal jsem si pár testů a zjistil jsem, že režie objektů v PHP není tak strašná jak jsem si myslel. Zjistil jsem že je mnohem strašnější. Během čtrnácti dnů jsem napsal od základů nové jádro Blox3, které je &quot;<em>smradlavě-procedurální</em>&quot; a neobsahuje jediný řádek vysoce kvalitního objektového kódu, ale je rychlé a snadno rozšiřovatelné. <em>Kdyby měl někdo zájem, mohu zveřejnit API pro psaní vlastních PHP modulů do Bloguje.</em> ;)<br /><br />Druhou částí je redakční systém. To je ta část, co obhospodařuje psaní příspěvků a komunikaci s bložérem. To je ta na které dělám teď. Ale není to jen tak... Většina práce navíc zůstává skryta pod kapotou a tvoří tzv. framework. (<em>Framework je slovo, které pochází ze staré programátorské latiny a sestává ze dvou částí: &quot;Fra&quot;, což znamená &quot;Funkce&quot;, a &quot;mework&quot;, což znamená &quot;které se budou ještě někdy hodit&quot;.</em>)<br /><br />Framework na Bloguje nemá jméno, říkám mu &quot;framework&quot;. Je postaven z několika vrstev. Nejnižší vrstva je jádro. (<em>Jádro taky nemá jméno, říkám mu &quot;core&quot;.</em>) Jádro se stará o ty nejzákladnější funkce systému.<br /><br />Každý skript, který na Bloguje běží, začne tím, že si includuje <strong>core.php</strong>. <strong>Core.php</strong> začne tím, že si načte konfigurační soubor pro server. Protože mi běží doma na serveru identická kopie Bloguje kvůli ladění a z té kopie dělám update serveru Bloguje, tak <strong>core.php</strong> rozlišuje konfigurační soubory podle IP adresy na které běží ($_SERVER[&#39;SERVER_ADDR&#39;]). Na svém PC doma tak mám soubor <em>127_0_0_1.cfg.php</em> a v něm údaje pro připojení k domácí databázi a domácí absolutní cestu k souborům, na Bloguje si core.php načte konfiguraci tamního serveru. Nemusím proto přepisovat neustále nějaký config.inc.php nebo dávat pozor, abych si při změně v db.php nepřepsal ten na serveru...<br /><br />Core.php si definuje z absolutní cesty k souborům některé své cesty&nbsp;&ndash; k syslib, k sysinc, k ap a k cache.<br /><br /><strong>Sysinc</strong> je adresář, který obsahuje &quot;vždy includované&quot; soubory. Core si je načte vždycky a všechny.<br /><br /><strong>Syslib</strong> je adresář, který obsahuje soubory, které jsou includovány pouze tehdy, když je volána funkce v nich obsažená. Dělám to jednoduchým trikem, prozradím později.<br /><br /><strong>Ap</strong> je adresář, který obsahuje &quot;aplikaci&quot;, tedy funkce, které nejsou součástí jádra, ale jsou specifické pro daný web. Na Bloguje to jsou funkce spojené s uživateli, příspěvky a všemi těmi věcmi okolo.<br /><br /><strong>Cache</strong> je systémový cache adresář. Kvůli výkonu si cachuju kde co. Co? No, například funkce ze syslib (jsme u toho triku). Dejme tomu,že mám funkci &quot;<em>udělej z názvu příspěvku hezké URL</em>&quot;, co se jmenuje <em>niceurl</em> a má jeden parametr (<em>title</em>). U takové funkce je zbytečné, aby byla vždy includována, na druhou stranu je pohodlné, když ji mám po ruce vždy když potřebuju, nemusím přemýšlet <em>KDE JE</em> a nemusím kvůli ní načítat velký include soubor. Tak si vytvořím soubor &quot;<em>niceurl.php</em>&quot;, který obsahuje právě jen tuto funkci, a umístím si ho do syslib. Ptáte se kde je ten trik? :)<br /><br />V souborech v SYSLIB jsou funkce pojmenovány jako &quot;sl__***&quot;, tedy např. &quot;sl__niceurl&quot;. Core.php si vždycky includuje z cache adresáře soubor syslib.cache.php. V tomto souboru jsou všechny funkce ze všech souborů v syslib dohromady a jsou v podobě:<br /><br /><font face="courier new,courier">function niceurl($title){<br /> include_once(&#39;niceurl.php&#39;);<br /> sl__niceurl($title);<br />}</font> <br /><br />(Lze použít i verzi s <em>if function_exists</em>.)<br /><br />No a v jádru je integrován cache manager, který čas od času zkontroluje, zda se v syslib něco nezměnilo. Pokud se změnilo, tak přegeneruje soubor syslib.cache.php. Já mám tak ve skriptech k dispozici funkci niceurl až tehdy, když ji zavolám, a systém si může navíc syslib.cache.php předpřipravit a &quot;předparsovat&quot;. Zpoždění je podle měření minimální, úspora času programátora veliká. :)<br /><br />Část, která s touto vrstvou frameworku souvisí, je tvořená &quot;application-specific&quot; skripty, uloženými v adresáři ap. Zde je<em> aplikační sysinc</em>, <em>aplikační syslib</em>, <em>aplikační cache</em> a adresář <strong>fn</strong>, kde jsou funkce, které manipulují s daty aplikace. Aplikační funkce jsou, podobně jako syslib funkce, cachovány a pojmenovány.<br /><br />Důležitou zásadou je &quot;<strong>nesahat na data aplikace jinak než funkcemi v <em>ap/fn</em></strong>&quot;.<br /><br />Tak mohu na jedné doméně spustit několik více či méně oddělených služeb, které budou využívat společné jádro.<br /><br />Kromě jádra obsahuje framework i další části, např.:<br /><br />- <strong>lokalizační modul</strong>. Stačí mi tak ve skriptu uzavřít český text do dohodnuté sekvence znaků. Framework je před výstupem odstraní a pokud má nastavenou jinou jazykovou mutaci, tak nahradí řetězec ekvivalentem z jiného jazyka. Nemusím se starat o nějaké speciální řetězce, textové konstanty ani nahrazovat každý řetězec voláním funkce.<br /><br />- <strong>uživatelskou cache</strong>. Kde to má smysl, tam si cachuji data nebo výstup skriptu do souboru. Data si ukládám jako serializovaná pole, načítám je zpět pomocí <font face="courier new,courier">$data=unserialize(join(&#39;&#39;,file($souborcache)));</font> Necachované skripty měním na cachované tím, že na jejich začátek umístím <font face="courier new,courier">if (need_recache(&quot;jmenocache&quot;,3600)){</font> a na konec  <font face="courier new,courier">ob_end_flush();}</font>. Funkce need_recache vrátí 0, pokud je cache &quot;ještě čerstvá&quot;, a při té příležitosti pošle uložená data na výstup. Pokud je cache už stará, tak funkce zaHOOKuje obsluhu pro OB (ob_handler) a vrátí 1. Obsluha OB pak uloží zachycená data do cache pro budoucí použití a pošle je na výstup.<br /> <br />- <strong>API modul</strong>. Díky oddělení aplikačních funkcí a jejich přesné specifikaci mohu velmi jednoduchým způsobem poskytnout webové API založené na RESTu. V podstatě pouze ošetřím autorizaci klienta, ostatní volání mapuju rovnou na aplikační funkce v <em>ap/fn</em>. Mám to o to jednodušší, že funkce v <em>ap/fn</em> se jmenují tak, jak by to API očekávalo, tedy např. &quot;post.delete&quot;, &quot;post.create&quot; apod.<br /><br />- <strong>HTML helpery</strong>. Funkce, které mi pomáhají s generováním HTML kódu. Např. onen modul na formuláře, který jsem zmínil v diskusi u DGX. Ve skriptu mám nadefinovaný formulář, jeho prvky, obsah těchto prvků, povolené hodnoty, kde to má smysl tak i GET a SET aplikační funkce s mapováním <em>položka&lt;=&gt;parametr</em> a vůbec všechno, co s formulářem souvisí. Skript se tak zjednoduší na definici formuláře a zavolání funkce &quot;<em>form_gen_html</em>&quot; s touto definicí jako parametrem. <em>form_gen_html</em> se postará o vygenerování formuláře, o jeho provázání s AJAX JS částí, o přidání JS kódu na kontrolu povolených hodnot, o případné úvodní načtení GET funkcí, o správnou definici submit AJAX funkce apod. Submit skript pak zavolá <em>form_get_data</em> (podle definice předpřipraví pole s daty převzatými z formuláře) nebo rovnou <em>form_process</em> (podle definice formuláře převezme data z POST a zavolá patřičnou SET funkci; já se už ve skriptu nemusím o nic starat).<br /><br />Tak, toto byla blesková procházka po frameworku Bloguje se zastávkami u věcí, o nichž si myslím, že by se jimi mohl někdo inspirovat. </p><p>--- </p><p>A na závěr tohoto drobného nakouknutí pod pokličku rovnou zodpovím na vybrané komentáře:<br /><br /><strong>Kde se to dá stáhnout?</strong><br /><em>Zapomeňte!</em><br /><br /><strong>Proč jsi o tom tedy napsal?</strong><br /><em>Protože si říkám, že by se někdo mohl inspirovat nebo že by naopak mohl inspirovat mne.</em><br /><br /><strong>Viděls framework XYZ? Je mnohem lepší...</strong><br /><em>Nezajímá mne. Potřebuju svůj, na míru svým aplikacím.</em><br /><br /><strong>Podle mne bys měl... Podle mne je chyba dělat... Proč jsi to neudělal jinak... </strong><br /><em>Je mi jedno co si o tom myslíte. Nesnažím se nikoho přesvědčit o tom, že je to nejlepší možné řešení, jen jsem chtěl pustit pár námětů, které se možná někdy budou někomu hodit.<br /></em><br /><strong>Já ve svém systému dělám ještě .... a dělám to tak a tak...</strong><br /><em>Do komentářů s tím! Děkuji. :)</em></p><p><strong>Jak děláš ****? Podělíš se?</strong><br /><em>Ano,  proč ne?</em></p><p><strong>Autor by se měl zamyslet... Autor si tu hraje na... což vypovídá o jeho charakteru.</strong><br /><em>Jsi zapráskaný idiot.</em></p></p>
+
+<div style="text-align:center">
+<script type="text/javascript"><!--
+google_ad_client = "pub-3772893178572611";
+/* 468x60, vytvořeno 15.7.08 */
+google_ad_slot = "3559028762";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="">
+</script>
+</div>
+
+
+
+
+
+<p class="more">
+<span class="date">Dne 16.02.2007</span>
+
+</p>
+
+
+
+
+
+<p><a href="http://jdem.cz/tw?text=Zaj%c3%admav%c3%bd+%c4%8dl%c3%a1nek+na+Z%c3%a1pisn%c3%adku%3a+http%3A%2F%2Fwww.misantrop.info%2F486256-pod-kapotou-systemu.html&amp;redir=1">Twittni</a></p>
+
+<p>Přidej do: 
+ <a href="http://vybrali.sme.sk/submit.php?url=http%3A%2F%2Fwww.misantrop.info%2F486256-pod-kapotou-systemu.html"><img src="http://blog.sme.sk/blog/3/61630/tlacitko.gif" style="border:0" title="asdf.sk" alt="asdf.sk" /></a>
+
+<a href="http://www.stumbleupon.com/submit?url=http%3A%2F%2Fwww.misantrop.info%2F486256-pod-kapotou-systemu.html&amp;title=Pod+kapotou+syst%E9mu"> <img border=0 src="http://www.bloguje.cz/icon_su.gif" alt="StumbleUpon Toolbar"> Stumble It!</a>
+
+<script type="text/javascript" src="http://w.sharethis.com/widget/?tabs=web%2Cemail&amp;charset=utf-8&amp;style=rotate&amp;publisher=99a6f76f-7727-4c7b-a906-b91f57f8a706"></script></p>
+
+<script type="text/javascript" src="http://feedjit.com/coFilter/?bc=FFFFFF&amp;tc=008000&amp;brd1=336699&amp;lnk=008000&amp;hc=336699&amp;ww=500"></script>
+
+
+<h2 id="n_koments">Komentáře</h2>
+
+
+
+<p class="comment">
+<strong><a name="cmt_1">[1]</a> </strong> (dond  ) 16.02.2007, 14:04:11&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1072081">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1072081">D</a>]<br />
+
+Já ve svém systému dělám (dělal jsem, když jsem ho dělal) ještě to, že jsem si připravil rozhraní (ehm, tedy tři funkce) pro práci s URL - docela často se stránky přesouvají z hlavního obsahu do archivu (zprávy z akcí atp.), takže jsem si na AP úrovni vymyslel mapovací tabulku mezi jednotlivými URL (která je kešovaná) a pomocí těch tří funkcí snadno zařídím mapování ze "staré" URL na novou (nebo výjimečně obráceně). A ta tabulka se samozřejmě může průběžně sama měnit (řadit) podle toho, na jaké "špatné" URL mi uživatelé lezou.
+<br />
+<br />Funguje to samozřejmě i pro různé časově omezené formuláře, neexistující stránky a tak podobně, ale vlastně se to moc netýká PHP a v případě Bloguje to navíc nebude příliš zajímavý případ.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_2">[2]</a> </strong> (Arthur Dent  ) 16.02.2007, 14:09:00&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1072088">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1072088">D</a>]<br />
+
+<a href="#cmt_1">[1]</a> "vlastně se to moc netýká PHP a v případě Bloguje to navíc nebude příliš zajímavý případ" - to je jedno, třeba se inspiruje i někdo jiný.
+<br />
+<br />Jinými slovy: Tvůj systém nemá perzistentní URL (trvalé odkazy), tak je takto přemapováváš?
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_3">[3]</a> </strong> (dond  ) 16.02.2007, 14:14:48&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1072099">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1072099">D</a>]<br />
+
+<a href="#cmt_2">[2]</a> Ano, v podstatě to tak je. Většina URL je perzistentních, tj. jakmile stránka jednou vznikne, už se URL nezmění. Ale principiálně se přesunout může, pak vznikne nová URL a z té staré se stane alias pro novou, přičemž uvnitř systému se automaticky používá ta nová.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_4">[4]</a> </strong> (johno - <a href="mailto:johno@jsmf.net">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fjohno.jsmf.net%2F">WWW</a>) 16.02.2007, 15:15:14&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1072221">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1072221">D</a>]<br />
+
+Skvelá finta na cache je ešte toto:
+<br />
+<br />$raw = '';
+<br />
+<br />Toto potom stačí zapísať do nejakého PHP súboru a ten načítavať cez include();
+<br />
+<br />Super na tom je to, že to parsuje rýchly PHP a automaticky fungujú všetky tie PHP akselerátorz a optimajzerz.
+<br />
+<br />Ja takto includujem pri každom requeste na môj ngram generátor asi 300KB PHP súbor a je to bleskové.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_5">[5]</a> </strong> (johno - <a href="mailto:johno@jsmf.net">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fjohno.jsmf.net%2F">WWW</a>) 16.02.2007, 15:16:52&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1072225">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1072225">D</a>]<br />
+
+Nejako mi to zozralo môj skvelý PHP kód. Sakra Arthure!
+<br />
+<br />
+<br /> 
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_6">[6]</a> </strong> (dgx - <a href="mailto:dave@dgx.cz">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.dgx.cz%2Ftrine">WWW</a>) 16.02.2007, 15:44:11&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1072279">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1072279">D</a>]<br />
+
+johno, zjistil jsem, že načítat struktury přes include() je kupodivu velmi pomalé. Rychlejší je serializace. Avšak úplně bleskové je parse_ini_file, což se samozřejmě hodí jen na jednodušší struktury, a (opět kupodivu!) DOMDocument::loadXML(). To je drak.
+<br />
+<br />
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_7">[7]</a> </strong> (Havran  - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.fem.uniag.sk%2Fhavran%2F">WWW</a>) 16.02.2007, 20:31:07&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1072710">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1072710">D</a>]<br />
+
+Během čtrnácti dnů jsem napsal od základů nové jádro Blox3, které je "smradlavě-procedurální" a neobsahuje jediný řádek vysoce kvalitního objektového kódu, ale je rychlé a snadno rozšiřovatelné.
+<br />
+<br />Heh, pripomina mi to Drupal - tiez je napisany proceduralne. <a href="http://api.drupal.org/api/5/file/developer/topics/oop.html" rel="nofollow">http://api.drupal.org/api/5/file/developer/topics/oop.html</a>
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_8">[8]</a> </strong> (Johnny  ) 16.02.2007, 23:46:21&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1073001">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1073001">D</a>]<br />
+
+Pánové Programátoř, promiňte, že vám vpadám do diskuse já, laik, ale nechtěl by už někdo konečně vymyslet UPJPB (Univerzální Programovací Jazyk Pro Blbce), který by měl asi takovouhle syntaxi:
+<br />
+<br />--začátek kódu--
+<br />Prosím vás pěkně, já bych chtěl aby tenhle program udělal todle, todle a tamhléto a to asi tak, aby to vypadalo třeba nějak takhle. díky.
+<br />--konec kódu--
+<br />
+<br />??
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_9">[9]</a> Žiadny problém</strong> (Kozo  - <a href="http://kozo.bloguje.sk">WWW</a>) 17.02.2007, 09:02:47&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1073166">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1073166">D</a>]<br />
+
+<a href="#cmt_8">[8]</a> Takých jazykov sú mrte. (Námatkovo napr.brainfuck). Problem trochu je, že napísať v tom nieco väčšie je už o hubu. :-{)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_10">[10]</a> CAPTCHA</strong> (#13 - <a href="mailto:mmister@gmail.com">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fmmister.com">WWW</a>) 17.02.2007, 16:13:43&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1073564">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1073564">D</a>]<br />
+
+Arthure, tohle bude OT, ale týká se to blguje ;). Pokud po odeslání komentáře vyplňuju CAPTCHA v Opeře, vždycky projdu. Když to ale vyplňuju v IE 7, napíše mi to ERR a stránka divně problikavá. A komentář není vložen.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_11">[11]</a> </strong> (Arthur Dent  ) 17.02.2007, 17:20:25&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1073636">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1073636">D</a>]<br />
+
+<a href="#cmt_10">[10]</a> Odesílej kliknutím na tlačítko, nikoli ENTERem... Taky jsem si všiml, důvod nechápu
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_12">[12]</a> Submit button vs. ENTER</strong> (Roman Pištěk - <a href="mailto:tmb@nr.cz">Mail</a> ) 18.02.2007, 01:53:12&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1074108">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1074108">D</a>]<br />
+
+Nebude to tím, že odeslání formuláře testuješ na hodnotu submit prvku v $_POST? Kdysi jsem narazil na to, že IE submit prvek a jeho hodnotu do POST dat odešle, jen pokud je na tlačítko kliknuto - při odenterování nikoliv :-/
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_13">[13]</a> </strong> (Arthur Dent  ) 18.02.2007, 01:59:03&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1074109">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1074109">D</a>]<br />
+
+<a href="#cmt_12">[12]</a> Díky, to bylo ono! :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_14">[14]</a> </strong> (  - <a href="http://vfb.bloguje.cz">WWW</a>) 18.02.2007, 09:22:43&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1074213">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1074213">D</a>]<br />
+
+já bych uvítal v bloguje nějakou funkci pro generování náhodných čísel, stejně jednoduchou jako je v php, že bych mohl při každém znovunačtení blogu, například zobrazovat jiný obrázek (z několika), mít několik sloganů a ty rotovat atd...
+<br />
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_15">[15]</a> OOP vs procedural</strong> (Hds  ) 18.02.2007, 10:14:13&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1074253">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1074253">D</a>]<br />
+
+Smím ze zeptat, jak zhruba velký byl (je) rychlostní rozdíl mezi OOP verzí a novou procedurální verzí, kterou jste napsal? Sám si píšu takový malý framework v OOP a tohle mě docela vylekalo :-)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_16">[16]</a> </strong> (dgx - <a href="mailto:dave@dgx.cz">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.dgx.cz%2Ftrine">WWW</a>) 18.02.2007, 11:57:28&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1074336">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1074336">D</a>]<br />
+
+<a href="#cmt_12">[12]</a> zajímavé. IE tlačítko neodešle, pokud je formulář odeslán enterem v textovém poli a zároveň pokud je formulář tvořen pouze jedním textovým políčkem a odesílacím tlačítkem. 
+<br />
+<br />Evidentně formulář může být tvořen i hidden prvky, to jsem netušil a proto jsem tuto úvahu zamítl (v Captcha formuláři jsou tuším dva hidden prvky).
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_17">[17]</a> </strong> (dgx - <a href="mailto:dave@dgx.cz">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.dgx.cz%2Ftrine">WWW</a>) 18.02.2007, 12:12:52&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1074355">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1074355">D</a>]<br />
+
+<a href="#cmt_15">[15]</a> PHP4 a PHP5 se v tomhle dost liší, například volání statických metod je v PHP5 stejně rychlé jako volání funkcí, $this je v PHP5 jakoby-klíčové slovo, nepoužívají se reference u objektů, atd. To vše OOP značně pomohlo. Rychlostní bariéry mohou být skryty úplně jinde a velmi nenápadné - <a href="http://www.dgx.cz/trine/item/php-cerna-magie-optimalizace" rel="nofollow">http://www.dgx.cz/trine/item/php-cerna-magie-optimalizace</a>
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_18">[18]</a> </strong> (Arthur Dent  ) 18.02.2007, 12:15:43&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1074357">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1074357">D</a>]<br />
+
+<a href="#cmt_14">[14]</a> Bude, Vincente, bude. Rotátor jest připraven.
+<br /><a href="#cmt_15">[15]</a> Asi tak: Úkoly, které dělá nové jádro 15ms dělala objektová verze 30-100ms v závislosti na složitosti úlohy. (PHP5)
+<br /><a href="#cmt_16">[16]</a> Ano. Udělal jsem jednoduchou úpravu, kdy jsem prvek SUBMIT přejmenoval a jeho původní jméno jsem dal dalšímu HIDDEN prvku
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_19">[19]</a> </strong> (Arthur Dent  ) 18.02.2007, 12:31:13&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1074371">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1074371">D</a>]<br />
+
+<a href="#cmt_17">[17]</a> Ani toto není článek "OOP vs procedurální". :) Takže stručná odpověď, poslední na toto téma zde, prosím!
+<br />
+<br />Když jsem zjistil, že je cosi shnilého v OOP FW, tak jsem si udělal jednoduché měřičské skripty. Třeba 100.000x vytvořit instanci jednoduchého objektu a zrušit ji. Pak 100.000x vytvořit jednoduché pole a zrušit. A měřit čas. Když jsem to viděl, tak jsem hlavou pokýval a zkoušel jsem dál: 100.000x vytvořit instanci objektu, zavolat jeho metodu a zrušit. 100.000x vytvořit pole, zavolat na něj funkci, zrušit. A další a další. Přepisoval jsem kousky reálných kódů do OOP a vice versa. Plodné dopoledne strávené psaním naprosto neužitečných skriptů, ale na konci jsem věděl, že na věci, kde je potřeba rychlost, rychlost a rychlost použiju:
+<br />
+<br />a) OOP (1 bod)
+<br />b) Procedurální přístup (5 bodů)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_20">[20]</a> </strong> (dgx - <a href="mailto:dave@dgx.cz">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.dgx.cz%2Ftrine">WWW</a>) 18.02.2007, 13:52:51&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1074443">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1074443">D</a>]<br />
+
+> Ani toto není článek "OOP vs procedurální"
+<br />
+<br />O tom také vůbec není řeč. Nezmínil jsi totiž podstatou skutečnost, jestli jsi testy dělal v PHP 4 nebo PHP 5. Soudím, že šlo o verzi 4, a dodávám, že ve verzi 5 je to zase trošku jinak. Ok? 
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_21">[21]</a> </strong> (Arthur Dent  ) 18.02.2007, 14:16:46&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1074473">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1074473">D</a>]<br />
+
+<a href="#cmt_20">[20]</a> Davide, já vím že máš ooPHP rád, ale - soudíš špatně. Šlo o verzi 5.0.4, ty testy jsem dělal loni na jaře. :-/
+<br />
+<br />Pro pořádek doplním, že šlo o build z 31.3.2005, 02:44:34, systém WinXPpro/build 2600 a Apache/2.0.50 ;)
+<br />
+<br />Jinak samosebou mezi PHP4 a PHP5 je v rychlosti objektových operací opravdu VELKÝ rozdíl, o tom sporu není.
+<br />
+<br />A už nechci o OOP/PHP ani slyšet, debata nechť pokračuje na tom odkazu ze <a href="#cmt_7">[7]</a>. Děkuji!
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_22">[22]</a> lokalizačný modul</strong> (jules - <a href="mailto:julius.vekony@gmail.com">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.kapibara.sk">WWW</a>) 18.02.2007, 18:56:19&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1074845">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1074845">D</a>]<br />
+
+lokalizačný modul (LM) - to znie zaujimavo... zaujimali by ma podrobnosti.... LM nahradzuje statické texty a aj texty z db ? 
+<br />vacsinou to riesim práve konstantami ;-), alebo zvlast stlpacom alebo zanamom v tabulke .... 
+<br />
+<br />
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_23">[23]</a> </strong> (Arthur Dent  ) 18.02.2007, 19:02:16&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1074855">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1074855">D</a>]<br />
+
+<a href="#cmt_22">[22]</a> Ano. LM vezme výslednou HTML stránku a nahradí všechny výskyty označených řetězců (zhruba něco jako ) svými. Je jedno, jestli se ten řetězec objevil na stránce proto, že tam je staticky napsaný nebo z databáze (pokud je už v DB označen) :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_24">[24]</a> </strong> (Wu  - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fblog.wuwej.net">WWW</a>) 19.02.2007, 09:50:47&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1075485">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1075485">D</a>]<br />
+
+Ještě tu chybí pochvalný komentář, tak ho přihodím. Zajímavý článek plný dobrých tipů, díky. Nejvíc mě zaujala cache. 
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_25">[25]</a> </strong> (llook - <a href="mailto:vaclav.sir@gmail.com">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fllook.wz.cz%2Fweblog%2F">WWW</a>) 19.02.2007, 12:19:41&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1075661">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1075661">D</a>]<br />
+
+<a href="#cmt_23">[23]</a> Nemůže se pak stát, že nějaký uživatel něco v článku označí stejným způsobem a pak se mu to nahradí? Rozhodne se upravit nějaký článek a ve formuláři najde něco jiného než napsal?
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_26">[26]</a> </strong> (Arthur Dent  ) 19.02.2007, 12:54:47&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1075730">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1075730">D</a>]<br />
+
+<a href="#cmt_25">[25]</a> Může. Proto jsem zvolil jako značku velmi nepravděpodobnou kombinaci znaků. Ale uživatelé jsou vynalézaví a už se stalo, že ji kdosi použil. Řešení 2 je zabránit uživatelům ve vložení podobné značky.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_27">[27]</a> </strong> (dgx - <a href="mailto:dave@dgx.cz">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.dgx.cz%2Ftrine">WWW</a>) 19.02.2007, 13:35:18&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1075810">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1075810">D</a>]<br />
+
+<a href="#cmt_26">[26]</a> pro ISO-8859-2 je osvědčená kombinace trojice znaků chr(262)+chr(257)+chr(-1)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_28">[28]</a> </strong> (Arthur Dent  ) 19.02.2007, 13:55:58&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1075858">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1075858">D</a>]<br />
+
+<a href="#cmt_26">[26]</a> Používám chr(67214)+chr(3.1415)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_29">[29]</a> </strong> (rony  - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fspravodaj.madaj.net%2F">WWW</a>) 19.02.2007, 15:59:27&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1076060">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1076060">D</a>]<br />
+
+<a href="#cmt_14">[14]</a> navrhy k novym funkciam Bloguje uvitame v systeme Mantis, ja viem, objavili ste, ze Arthur znovu vnima nase kecy a vyuzivate to na to, aby ste to tu zasypali podnetnymi myslienkami :-) ale mame tu Mantis, kde vas zmrska naraz viac ludi :-)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_30">[30]</a> </strong> (rony  - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fspravodaj.madaj.net%2F">WWW</a>) 19.02.2007, 16:03:49&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1076071">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1076071">D</a>]<br />
+
+mna osobne z clanku zaujal prave lokalizacny modul, hodne odlisne riesenie od roznych poli, premennych ci podobnych zalezitosti.
+<br />
+<br />co urobi v pripade, ze mu znacky vyhovuju ale to, co je medzi nimi uz nie? Ponecha to tak ako to je?
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_31">[31]</a> </strong> (Arthur Dent  ) 19.02.2007, 16:25:12&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1076125">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1076125">D</a>]<br />
+
+<a href="#cmt_30">[30]</a> Ano. Funkce je zhruba takováto:
+<br />
+<br />1. Regulárním výrazem najdu řetězce "BEG xxxx END" (BEG a END jsou ty značky)
+<br />2. Kouknu se zda to mezi nima není fráze ze slovníku. Pokud ano, nahradím ji, pokud ne, tak vrátím původní obsah.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_32">[32]</a> </strong> (matejcik  - <a href="http://matejcik.bloguje.cz/">WWW</a>) 20.02.2007, 00:14:00&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1076985">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1076985">D</a>]<br />
+
+a to api pro uživatelské moduly na bloguje.cz bude ? jestli "pokud je zájem", tak tímto zájem projevuji.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_33">[33]</a> </strong> (Arthur Dent  ) 20.02.2007, 00:29:14&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1077002">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1077002">D</a>]<br />
+
+<a href="#cmt_32">[32]</a> OK, napíšu vo tom článeček a budeme ho brát jako "referenční příručku" :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_34">[34]</a> </strong> (LLook - <a href="mailto:vaclav.sir@gmail.com">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fllook.wz.cz%2Fweblog%2F">WWW</a>) 20.02.2007, 00:45:28&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1077019">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1077019">D</a>]<br />
+
+<a href="#cmt_26">[26]</a> Jedná se vlastně o klasickou injekci, řešení 3 je stejné jako u ostatních injekcí.
+<br />
+<br />Prostě by se v uživatelském vstupu tyto značky nahradily za odkazy do slovníku. Před výstupem by se s pomocí slovníku zase zpátky přeložily, stejný princip jako u slashování nebo HTML entit:
+<br />
+<br />"Řetězec BEG od uživatele END" by se před uložením přeložil na "Řetězec BEG počáteční značka END od uživatele BEG koncová značka END".
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_35">[35]</a> </strong> (Kvakoš - <a href="mailto:m.brecher@volny.cz">Mail</a> ) 08.06.2008, 22:51:05&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1670033">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1670033">D</a>]<br />
+
+Velmi pěkný a zajímavý článek, autorovi dík, překvapila mne velká režie objektů v PHP. Já píši PHP procedurálně, na OOP/PHP5 se chystám,. Zatím jsem rychlost PHP exaktně neměřil, jenom u svých procedurek párkrát a vždy jsem byl s celým skriptíkem do 2 tisícin sekundy. U některých OpenSource slavných implementací jsem se divil, proč na úvodní stránku musím čekat i několik sekund. Menším měřením jsem zjistil, že chyba není v PHP, ale kombinaci dvou nepříznivých faktorů -> CSS soubor generovaný PHP skriptem měl 114 KB a hosting, kde jsme systém instalovali měl omezenu rychlost odesílání CSS souborů, což zapříčinilo tu velkou prodlevu.
+<br />
+<br />Je ale fakt, že rychlé namíru ušité PHPO skriptíky zaberou množství programátorova času. Takže se asi vyplatí koupit silnější počítač a jít do OOP.
+<br />
+<br />Ještě jednou chválím autora za pěkný článek a připojuji, že to je na PHP i CSS pěkné, že vždy existuje mnoho cest jak dojít k cíli.
+
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+</div><!-- konec pole -->
+
+
+
+<div id="sidebar">
+
+<h2 id="n_rubriky">Rubriky</h2>
+<ul id="rubriky">
+<li><a href="tema-1-bavim-se-na-vas-ucet.html">Bavím se na váš účet</a></li><li><a href="tema-2-nemam-vas-rad.html">Nemám vás rád</a></li><li><a href="tema-3-pohrdani.html">Pohrdání</a></li><li><a href="tema-4-vase-bludy-na-moji-hlavu.html">Vaše bludy na moji hlavu</a></li><li><a href="tema-5-mym-analfabetum.html">Mým analfabetům...</a></li><li><a href="tema-6-co-me-bavi.html">Co mě baví?</a></li><li><a href="tema-7-to-je-nejaka-hudba-tohleto.html">To je nějaká hudba, tohleto?</a></li><li><a href="tema-8-kdo-umi.html">Kdo umí...</a></li><li><a href="tema-9-mene-kecu-vice-prace.html">Méně keců, více práce</a></li>
+</ul>
+
+<h2 class="bok">Jak se vám to čte?</h2>
+
+<p style="text-align:center">
+<a href="http://feeds.feedburner.com/misantrop"><img src="http://feeds.feedburner.com/~fc/misantrop?bg=99CCFF&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a></p>
+
+<p style="text-align:center">
+<a href="http://twittercounter.com/?username=adent" title="TwitterCounter for @adent"><img src="http://twittercounter.com/counter/?username=adent" width="88" height="26" style="border:none;" alt="TwitterCounter for @adent" /></a></p>
+
+<p style="text-align:center">
+<script type="text/javascript">
+var wsgApiKey = "481349a5-98b9-4d24-b32f-a5729d33840c";
+var wsgStyle = 2;
+var dummy =('<div id="wsgContainer" style="text-align:center"></div>');wsgScript=document.createElement('script');wsgScript.type="text/javascript";wsgScript.src="http://static.hubspot.com/websiteGraderBadge/badge.js?t="+Math.random();setTimeout("document.getElementById('wsgContainer').appendChild(wsgScript);",1);
+</script>
+</p>
+
+<script type="text/javascript" src="http://www.blogcatalog.com/w/services.php?id=150489&amp;width=165&amp;bgcolor=EEEEEE&amp;bcolor=356D79&amp;lcolor=333333&amp;hcolor=FFFFFF&amp;htext=Kde%20mne%20najdete&amp;name=0&amp;brand=0&amp;heading=1"></script>
+
+<h2 id="n_odkazy"><a href="#" class="iface" onclick="$('#odkazy').BlindToggleVertically(500, null, 'bounceout');return false;">Odkazy ...</a></h2>
+<ul id="odkazy" style="display:block">
+<li><a href="http://pixy.cz/pixynergia" rel="acquaintance met">Pixy</a></li><li><a href="http://blok.rozanek.cz" rel="acquaintance">Filip Rožánek</a></li><li><a href="http://www.whitedog.cz" rel="acquaintance met">White Dog</a></li><li><a href="http://kahi.cz/blog/" rel="met">Kahi</a></li><li><a href="http://lokutus.bloguje.cz" rel="met">Lokutus</a></li><li><a href="http://www.katchaba.com/" rel="acquaintance met">Katchaba</a></li><li><a href="http://machinegun.bloguje.cz" rel="acquaintance met">Johnny</a></li><li><a href="http://kokolia.bloguje.cz">Vladimír Kokolia</a></li><li><a href="http://viditelnymacek.cz">Miroslav Macek</a></li><li><a href="http://cina.bloguje.cz" rel="me">Dovolená v Číně</a></li><li><a href="http://bloguneni.bloguje.cz/">Blogu není...</a></li><li><a href="http://hekko.bloguje.cz" rel="acquaintance met">Adminka bloguje</a></li><li><a href="http://www.bloc.cz/default.aspx">Bloc Jiřího Hlavenky</a></li><li><a href="http://apimania.eu" rel="me">Apimania</a></li><li><a href="http://dev20.info" rel="me">Dev::Info</a></li><li><a href="http://dankaj.bloguje.cz/" rel="contact met">Zápisky z Islandu</a></li><li><a href="http://jdem.cz" rel="me">Zkratky pro odkazy</a></li><li><a href="http://davebarry.cz" rel="me">Dave Barry česky</a></li><li><a href="http://uelectronics.info" rel="me">Mikroelektronika</a></li><li><a href="http://www.php-suit.com" rel="me">PHP Suit</a></li><li><a href="http://www.sharp-suit.com" rel="me">Sharp Suit</a></li> 
+<li><a href="http://technorati.com/claim/xnpb5tzhw" rel="me">Technorati Profile</a></li>
+</ul>
+
+<h2 id="n_recommend">Doporučuji</h2>
+<ul id="support">
+<li><a href="http://hostmonster.jdem.cz/">Hosting HostMonster</a></li>
+<li><a href="http://www.jihocestitatkove.cz/">Jihočeští taťkové</a></li>
+<li><a href="http://www.csvts.cz/cns/">Česká nukleární společnost</a></li>
+<li><a href="http://www.prozakladnu.cz/">PRO základnu!</a></li>
+</ul>
+
+<!-- Buzzboot Ads -->
+<!-- / Buzzboot Ads -->
+
+
+<p>
+
+</p>
+
+<h2>Meta</h2>
+<script type="text/javascript" src="http://feedjit.com/popPages/?bc=FFFFFF&amp;tc=008000&amp;brd1=336699&amp;lnk=008000&amp;hc=336699&amp;ww=200"></script><noscript><a href="http://feedjit.com/">Feedjit Live Blog Stats</a></noscript>
+
+<h2 id="n_archiv"><a href="#" class="iface" onclick="$('#archiv').BlindToggleVertically(500, null, 'bounceout');return false;">Archiv ...</a></h2>
+<ul id="archiv" style="display:none">
+<li><a href="0812archiv.html">prosinec 2008</a></li><li><a href="0811archiv.html">listopad 2008</a></li><li><a href="0810archiv.html">říjen 2008</a></li><li><a href="0809archiv.html">září 2008</a></li><li><a href="0808archiv.html">srpen 2008</a></li><li><a href="0807archiv.html">červenec 2008</a></li><li><a href="0806archiv.html">červen 2008</a></li><li><a href="0805archiv.html">květen 2008</a></li><li><a href="0804archiv.html">duben 2008</a></li><li><a href="0803archiv.html">březen 2008</a></li><li><a href="0802archiv.html">únor 2008</a></li><li><a href="0801archiv.html">leden 2008</a></li><li><a href="0712archiv.html">prosinec 2007</a></li><li><a href="0711archiv.html">listopad 2007</a></li><li><a href="0710archiv.html">říjen 2007</a></li><li><a href="0709archiv.html">září 2007</a></li><li><a href="0708archiv.html">srpen 2007</a></li><li><a href="0707archiv.html">červenec 2007</a></li><li><a href="0706archiv.html">červen 2007</a></li><li><a href="0705archiv.html">květen 2007</a></li><li><a href="0704archiv.html">duben 2007</a></li><li><a href="0703archiv.html">březen 2007</a></li><li><a href="0702archiv.html">únor 2007</a></li><li><a href="0701archiv.html">leden 2007</a></li><li><a href="0612archiv.html">prosinec 2006</a></li><li><a href="0611archiv.html">listopad 2006</a></li><li><a href="0610archiv.html">říjen 2006</a></li><li><a href="0609archiv.html">září 2006</a></li><li><a href="0606archiv.html">červen 2006</a></li><li><a href="0604archiv.html">duben 2006</a></li><li><a href="0603archiv.html">březen 2006</a></li><li><a href="0512archiv.html">prosinec 2005</a></li><li><a href="0511archiv.html">listopad 2005</a></li>
+</ul>
+
+
+
+</div><!-- konec sidebar -->
+<div class="clear">&nbsp;</div><!-- cistic -->
+</div><!-- konec obsah -->
+
+
+
+
+
+
+
+<div id="foot">
+<p>&copy; <a href="http://www.maly.cz/o-mn/">Martin Malý</a> (aka Arthur Dent) | Design by &copy; 2007 <a href="http://ash721.cz">ASH721</a> | <a href="http://hostmonster.jdem.cz">HOSTING</a> 3000GB+unlimited domains za 6 dolarů</p>
+
+</div>
+
+</div>
+
+</body></html>

@@ -1,0 +1,987 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="cz">
+<head><link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.misantrop.info/rss.xml" /><link rel="alternate" type="application/rss+xml" title="RSS - Kdo umí..." href="http://www.misantrop.info/tema-8-kdo-umi.xml" /><link rel="alternate" type="application/rss+xml" title="Komentáře" href="http://www.misantrop.info/comments.xml" />
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/misantrop" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+ <title>Bloguje.cz implementovalo technologii OpenID - Misantrop.info</title> 
+
+<link rel="stylesheet" href="css39236.css" type="text/css" title="Styl2" media="screen" />
+<link rel="alternate stylesheet" href="css34066.css" type="text/css" title="Styl1" media="screen" />
+
+<meta name="verify-v1" content="qHyecOmV/BTXodaXkGrOlj7QL+X93dTbTLojG9EU22c=" />
+<link rel="openid.server" href="http://www.myopenid.com/server" />
+<link rel="openid.delegate" href="http://adent.myopenid.com/" />
+<link rel="openid2.local_id" href="http://adent.myopenid.com" />
+<link rel="openid2.provider" href="http://www.myopenid.com/server" />
+<meta http-equiv="X-XRDS-Location" content="http://www.myopenid.com/xrds?username=adent.myopenid.com" />
+
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="keywords" content="Martin Malý, Arthur Dent, weblogy, programování, PHP, blogy, misantrop, Web2.0, technologie, elektronika" />
+
+<meta name="description" content="Bloguje.cz implementovalo technologii OpenID - Misantrop.info" />
+</head>
+<body>
+<div id="all">
+<!-- Anal Lizer-->
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-190512-8";
+urchinTracker();
+</script>
+<!--dolizat-->
+ 
+
+<div id="adx" style="position:fixed;_position:absolute;top:5px;left:5px">
+<script type="text/javascript"><!--
+google_ad_client = "pub-3772893178572611";
+/* 120x600, vytvořeno 15.7.08 */
+google_ad_slot = "1720575805";
+google_ad_width = 120;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript"
+src="">
+</script>
+</div>
+
+<div id="head"><p id="logo"><a href="index.php"><img src="img/2zapisnik-logo.gif" alt="Misantrop.info - Web co vám doudí moudí..." /></a></p></div>
+
+<ul id="menu">
+<li><a href="index.php">Titulní stránka</a></li>
+<li><a href="http://rss.misantrop.info">Oblíbené zdroje</a></li>
+<li><a href="http://www.maly.cz/o-mn/?KeepThis=true&amp;TB_iframe=true&amp;height=500&amp;width=800" class="thickbox">O mně</a></li>
+<li><a href="http://www.bloguje.cz/vzkazy.php?send=47997">Napiš vzkaz</a></li>
+</ul>
+
+<div id="obsah">
+<div id="pole">
+<!-- Pocitadlo -->
+<p><img src="http://counter.cnw.cz/dungeon.cgi?blogmalycz&amp;6&amp;000000&amp;fff1d8&amp;on" alt=" " style="width:1px;height:1px;"/><script type="text/javascript">
+<!-- 
+var dummy =("<img src=\"http://counter.cnw.cz/trackit.cgi?blogmalycz&t2&" + escape(top.document.referrer) + "\" alt=\" \" border=\"0\" width=\"1\" height=\"1\">"); 
+// --></script>
+
+<script language="JavaScript" type="text/javascript">
+<!--
+var dummy = ('<a href="http://www.netagent.cz" target="_top"><img src="http://www.netagent.cz/agent.php?id=383&amp;ur='+escape(document.referrer)+'&amp;rw='+escape(window.screen.width)+'&amp;rh='+escape(window.screen.height)+'&amp;cd='+escape(window.screen.colorDepth)+'&amp;pt='+escape(document.title)+'&amp;lc='+escape(document.location)+'" width="1" height="1" border="0" alt="NetAgent" /></a>');
+//--></script>
+
+</p>
+<!-- Pocitadlo konec -->
+
+
+
+
+<h1>Bloguje.cz implementovalo technologii OpenID</h1>
+
+
+
+
+
+
+
+<p>aneb <em>Téměř tisková zpráva pro velmi zaměstnané redaktory</em> </p>
+
+<p style="float:right; margin:0 0 1em 1em;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-3772893178572611";
+
+/* 120x240, vytvořeno 6.7.08 */
+google_ad_slot = "4855232301";
+google_ad_width = 120;
+google_ad_height = 240;
+//-->
+</script>
+<script type="text/javascript"
+src="">
+</script>
+</p>
+
+<p><p><strong>OpenID</strong> je technologie, která umožňuje jednoduché, sdílené a šifrované přihlášení pod jedním &quot;<em>uživatelským kontem</em>&quot; na různé stránky bez nutnosti opakovných registrací. Stačí, když se jednoduše zaregistrujete u některého z <strong>poskytovatelů</strong> <strong>OpenID</strong>. Registrace je zdarma, je snadná a velmi rychlá&nbsp;&ndash; své <strong>OpenID</strong> můžete mít za pouhou minutu. Stačí si pouze zvolit svůj identifikátor a heslo. <br /><br /><strong>OpenID</strong> se skládá z adresy registrátora a vašeho osobního identifikátoru a má tvar podobný jako adresa WWW stránky, tedy například &quot;openid.cz/bloguje&quot;. Svůj <strong>OpenID</strong> si můžete zaregistrovat např. na českém serveru <a href="http://openid.cz" target="_blank">openid.cz</a>  nebo na anglickém <a href="http://myopenid.com" target="_blank">myopenid.com</a>. Jako <strong>OpenID</strong> můžete použít i adresu svých stránek, a to <a href="http://openid.cz/server/?action=bloggers" target="_blank">velmi jednoduchým způsobem</a>. <br /><br />Jak se s <strong>OpenID</strong> pracuje? Na serverech, které podporují tuto technologii, se můžete &quot;podepsat&quot; svým <strong>OpenID</strong>. Budete přesměrováni na stránky <strong>poskytovatele</strong> vaší <strong>OpenID</strong> identity, kde zadáte heslo. Po ověření zadáte, jaké informace o vás může ten který server dostat, a určíte, zda je dostane jen jednorázově nebo pokaždé, když o ně požádá. <strong>Poskytovatel</strong> <strong>OpenID</strong> pak předá tyto informace zabezpečeným kanálem zpátky serveru. OpenID server si vás navíc pamatuje, takže heslo zadáváte jen při prvním přihlášení.<br /><br /><a href="http://www.bloguje.cz/" target="_blank">Bloguje.cz</a> nyní implementuje tuto technologii pro přidávání komentářů. Co to znamená pro uživatele v praxi? Uživatel, který má své <strong>OpenID</strong>, napíše komentář, jen do rubriky <em>Jméno</em> místo svého jména zadá <strong>OpenID</strong>. Po odeslání komentáře je uživatel přesměrován na stránky <strong>OpenID poskytovatele</strong>. Zde uživatel určí, jaké informace o něm má server Bloguje dostat (vyžadována je pouze přezdívka). Po potvrzení se uživatel dostane zpět na stránky, kam svůj komentář vložil. Vedle jeho jména se v komentáři objeví i označení <strong>[OpenID]</strong> jako potvrzení toho, že komentář vložil ověřený uživatel. K většímu pohodlí jistě přispěje i to, že takto podepsané komentáře nemusí být ověřovány spamovým filtrem, což znamená, že uživatelé nemusí opisovat znaky z obrázku.</p><p>Pokud má uživatel vloženy správné OpenID údaje do svých stránek, stačí, když jejich URL zadá do rubriky k tomu určené (adresa stránek).</p><p>Pokud se používání <strong>OpenID</strong> ujme, nabídne <a href="http://www.bloguje.cz/" target="_blank">Bloguje.cz</a>  i další služby autentifikované tímto způsobem, např. přihlašování do systému.<br /><br /><strong>OpenID</strong> je rozhodně zajímavá technologie. Jsem rád, že <a href="http://www.bloguje.cz/" target="_blank">Bloguje.cz</a> je jeden z prvních českých serverů, který tuto možnost ověření identity uživatele nabízí, a zároveň doufám, že se brzy s možností přihlásit se svým OpenID setkám na dalších stránkách.<br /><br /><font color="#cc0000"><strong><em>Důležité!!! Nezapomeňte si ve svém OpenID profilu vyplnit správně Nickname. Zatím se to jeví jako nejčastější problém...</em></strong></font></p><p><em>Upozornění: Systém Bloguje rozpozná v políčku Jméno pouze OpenID poskytované servery myopenid.com a openid.cz. Pokud máte OpenID od jiného serveru nebo pokud jako openid používáte adresu svých stránek, tak je zadejte do rubriky &quot;URL Vašich stránek&quot;.</em></p><p style="background-color: #ff9900"><strong>PROSÍM</strong> všechny komentující, aby se zdrželi dalších komentářů na téma &quot;smysl OpenID&quot; či &quot;kvalita stránek openid.cz&quot; u tohoto článku. Tento článek by se měl týkat implementace OpenID na Bloguje. Obecné komentáře k OpenID prosím k článku <a href="http://zapisnik.maly.cz/493148-co-to-je-openid.html" target="_blank">Co to je OpenID</a>. Děkuji. Komentáře podobného typu zde budu mazat.  </p></p>
+
+<div style="text-align:center">
+<script type="text/javascript"><!--
+google_ad_client = "pub-3772893178572611";
+/* 468x60, vytvořeno 15.7.08 */
+google_ad_slot = "3559028762";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="">
+</script>
+</div>
+
+
+
+
+
+<p class="more">
+<span class="date">Dne 27.02.2007</span>
+
+</p>
+
+
+
+
+
+<p><a href="http://jdem.cz/tw?text=Zaj%c3%admav%c3%bd+%c4%8dl%c3%a1nek+na+Z%c3%a1pisn%c3%adku%3a+http%3A%2F%2Fwww.misantrop.info%2F493002-bloguje-cz-implementovalo-technologii-openid.html&amp;redir=1">Twittni</a></p>
+
+<p>Přidej do: 
+ <a href="http://vybrali.sme.sk/submit.php?url=http%3A%2F%2Fwww.misantrop.info%2F493002-bloguje-cz-implementovalo-technologii-openid.html"><img src="http://blog.sme.sk/blog/3/61630/tlacitko.gif" style="border:0" title="asdf.sk" alt="asdf.sk" /></a>
+
+<a href="http://www.stumbleupon.com/submit?url=http%3A%2F%2Fwww.misantrop.info%2F493002-bloguje-cz-implementovalo-technologii-openid.html&amp;title=Bloguje.cz+implementovalo+technologii+OpenID"> <img border=0 src="http://www.bloguje.cz/icon_su.gif" alt="StumbleUpon Toolbar"> Stumble It!</a>
+
+<script type="text/javascript" src="http://w.sharethis.com/widget/?tabs=web%2Cemail&amp;charset=utf-8&amp;style=rotate&amp;publisher=99a6f76f-7727-4c7b-a906-b91f57f8a706"></script></p>
+
+<script type="text/javascript" src="http://feedjit.com/coFilter/?bc=FFFFFF&amp;tc=008000&amp;brd1=336699&amp;lnk=008000&amp;hc=336699&amp;ww=500"></script>
+
+
+<h2 id="n_koments">Komentáře</h2>
+
+
+
+<p class="comment">
+<strong><a name="cmt_1">[1]</a> </strong> (Vitas76 [<a href="http://" title="Ověřený uživatel ">openID</a>]  - <a href="http://vitas76.net">WWW</a>) 27.02.2007, 02:07:54&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1088207">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1088207">D</a>]<br />
+
+OpenID je velice zajímavá technologie.
+<br />A dle mého názoru přesně naznačuje kam bude IT a Network směřovat v dalších letech a to že veškeré dění nebude probíhat na deskoptech ale na síti.
+<br />Díky za aktuální Info a podmětné články.
+<br />Vitas76
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_2">[2]</a> </strong> (ASH721 [<a href="http://openid.cz/ash721" title="Ověřený uživatel http://openid.cz/ash721">openID</a>] - <a href="mailto:ash721@gmail.com">Mail</a> - <a href="http://ash721.cz">WWW</a>) 27.02.2007, 02:35:23&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1088209">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1088209">D</a>]<br />
+
+Velmi zajímavý.. Natož kdyby se to ujalo ve velkém. 
+<br />To se ovšem nestane, dokud sekce "pro webmastery" na webu openid bude namísto blbuvzdorného návodu na implementaci nabízet pouhou sumaruzaci "co je openid". Obávám se, že málokdo z téhle stránky pochopí, proč je vůbec "pro webmastery".
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_3">[3]</a> </strong> ([[openidhttp://openid.cz/flappy]]  ) 27.02.2007, 02:37:13&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1088210">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1088210">D</a>]<br />
+
+Báječné, tímto zkouším a doufám, že se to ujme. Díky za tip.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_4">[4]</a> </strong> (Arthur Dent [<a href="http://openid.cz/adent" title="Ověřený uživatel http://openid.cz/adent">openID</a>]  ) 27.02.2007, 02:43:34&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1088211">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1088211">D</a>]<br />
+
+<a href="#cmt_3">[3]</a>Špatný, špatný. Nemělo by to být bez toho http? Zítra prozkouším, opravím...
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_5">[5]</a> </strong> (Flappy [<a href="http://openid.cz/flappy" title="Ověřený uživatel http://openid.cz/flappy">openID</a>]  ) 27.02.2007, 02:46:25&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1088212">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1088212">D</a>]<br />
+
+Neměl jsem v profilu vyplněno nic, ani nickname. Teď už ano, tak s dovolením ještě jeden pokus.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_6">[6]</a> </strong> (dgx - <a href="mailto:dave@dgx.cz">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.dgx.cz%2Ftrine">WWW</a>) 27.02.2007, 03:23:00&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1088218">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1088218">D</a>]<br />
+
+V profilu openID není možné uvést webovou adresu a jméno musí mít 5 znaků, což jej činní hned ze dvou důvodů nepoužitelným. Škoda.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_7">[7]</a> </strong> (jf.myopenid.com  ) 27.02.2007, 06:43:38&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1088240">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1088240">D</a>]<br />
+
+super! myslím že propagaci openID u nás by určitě prospěl článek o tom jak ho integrovat
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_8">[8]</a> </strong> (Roj  - <a href="http://roj.bloguje.cz">WWW</a>) 27.02.2007, 07:17:45&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1088269">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1088269">D</a>]<br />
+
+<a href="#cmt_6">[6]</a> Taky nesnasis vynucena podtrzitka pred/za nickem? 
+<br />"Username must be at least 5 characters long."
+<br />Tak cau... :-(
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_9">[9]</a> </strong> (Tokugawa [<a href="http://openid.cz/tokugawa" title="Ověřený uživatel http://openid.cz/tokugawa">openID</a>]  - <a href="http://uke-banjo.info">WWW</a>) 27.02.2007, 07:23:57&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1088276">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1088276">D</a>]<br />
+
+<a href="#cmt_6">[6]</a> Souhlasím. Chybějící pole pro adresu (nebo víc) je nešťastné. Stejně tak limit pro jméno. Ovšem adresu lze obejít tak, že se prostě do formuláře u komentáře vypíše.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_10">[10]</a> </strong> ([[openidhttp://openid.cz/waffen.ms]]  ) 27.02.2007, 07:36:36&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1088289">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1088289">D</a>]<br />
+
+konec capchi? už bylo na čase
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_11">[11]</a> </strong> (Elvis [<a href="http://openid.cz/elvis" title="Ověřený uživatel http://openid.cz/elvis">openID</a>]  - <a href="http://wow.spiknuti.org">WWW</a>) 27.02.2007, 07:43:02&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1088300">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1088300">D</a>]<br />
+
+Ano, tohle vypadá velmi rozumně, jako rozumný kompromis mezi úplně anonymním a paranoidním internetem.  Mimochodem, kdyby se tak tady "přihlašovalo do systému", tak by to dalo úplně nové dimenze tomu boxmarku, který jsem dosud moc nechápal.
+<br />
+<br />Jen mi trochu vadí, že na openid.cz nejde změnit heslo...  Naopak pět povinných znaků mi nevadí vůbec :-)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_12">[12]</a> </strong> (PiDiBi  - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.strelectvi.cz">WWW</a>) 27.02.2007, 08:18:32&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1088346">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1088346">D</a>]<br />
+
+me vadi ze nemaji duveryhodny certifikat
+<br />jinak je to dalsi variace na MS passport, ted tomu rijkaji tusim jinak
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_13">[13]</a> </strong> (rony [<a href="http://rony.myopenid.com/" title="Ověřený uživatel http://rony.myopenid.com/">openID</a>]  - <a href="http://spravodaj.madaj.net/">WWW</a>) 27.02.2007, 08:18:02&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1088347">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1088347">D</a>]<br />
+
+testovacia sprava.
+<br />
+<br />trosku je problem, ze vo formulari nie je naznacena moznost, ze je mozne vlozit aj OpenId.
+<br />
+<br />co tak dat tomu prvku pozadie s nejakou znackou - tak nejako to ma napr. magnolia.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_14">[14]</a> </strong> (HroĹĄĂ­k [<a href="http://openid.cz/hrosik" title="Ověřený uživatel http://openid.cz/hrosik">openID</a>]  ) 27.02.2007, 08:56:24&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1088395">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1088395">D</a>]<br />
+
+Hezká služba a rozhodně bych byl pro širší využití. 
+<br />Trochu mi vadí možnost mít jen jeden profil (resp. jen jednu hodnotu každého pole). Jde mi o to, že některé údaje nechci některým serverům říct a když je vyžadují tak si je prostě vymyslím - to při použití této služby nejde. Ještě by mě zajímal jeden detail z implementace služby, jak se řeší důvěryhodnost poskytovatelů - když si spammer vytvoří vlastní openid server. Nebo přijímáte openid jen od vybraných poskytovatelů?
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_15">[15]</a> </strong> (HroĹĄĂ­k [<a href="http://openid.cz/hrosik" title="Ověřený uživatel http://openid.cz/hrosik">openID</a>]  ) 27.02.2007, 08:57:31&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1088397">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1088397">D</a>]<br />
+
+A ještě nějak nefunguje čeština :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_16">[16]</a> </strong> (Jamesek [<a href="http://openid.cz/jamesek" title="Ověřený uživatel http://openid.cz/jamesek">openID</a>]  - <a href="http://james@pidiweb.cz">WWW</a>) 27.02.2007, 09:19:19&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1088418">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1088418">D</a>]<br />
+
+Jen si zde s dovolením vyzkouším jak to funguje .. ;)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_17">[17]</a> </strong> (OpenID  ) 27.02.2007, 09:22:42&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1088424">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1088424">D</a>]<br />
+
+Můžete odkazovat i na vlastní stránku, ne profil. S tímto postupem: <a href="http://openid.cz/server/?action=bloggers" rel="nofollow">http://openid.cz/server/?action=bloggers</a> (taky to zkouším)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_18">[18]</a> </strong> (Jamesek [<a href="http://openid.cz/jamesek" title="Ověřený uživatel http://openid.cz/jamesek">openID</a>]  - <a href="http://james@pidiweb.cz">WWW</a>) 27.02.2007, 09:30:11&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1088435">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1088435">D</a>]<br />
+
+<a href="#cmt_6">[6]</a><a href="#cmt_8">[8]</a> Jestli jsem se dobře díval, tak rony je na tom anglickém (<a href="http://myopenid.com/" rel="nofollow">http://myopenid.com/</a>) a má čtyřpísmený nick. Zkoušel jsem tři písmena a nijak se to neohradilo .. ;)
+<br />Registraci jsem nedokončil, takže jsem možná o nějakou tu chybovou hlášku přišel .. ;)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_19">[19]</a> </strong> (Milf [<a href="http://openid.cz/milfcz" title="Ověřený uživatel http://openid.cz/milfcz">openID</a>]  ) 27.02.2007, 09:32:00&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1088437">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1088437">D</a>]<br />
+
+IMHO je třeba ještě napsat pár vět, protože zmíněné popisy "Jak na to" jsou zřejmě pro ty s vyšším IQ než běžný standard (a to se nechci nikoho dotknout).
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_20">[20]</a> </strong> (http://james.pidiweb.cz  - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fjames.pidiweb.cz">WWW</a>) 27.02.2007, 09:39:30&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1088445">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1088445">D</a>]<br />
+
+A zkusím jak to funguje s tou soukromou adresou .. ;)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_21">[21]</a> </strong> (Jamesek [<a href="http://openid.cz/jamesek" title="Ověřený uživatel http://openid.cz/jamesek">openID</a>]  - <a href="http://james.pidiweb.cz">WWW</a>) 27.02.2007, 09:40:13&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1088446">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1088446">D</a>]<br />
+
+nefunguje ;(
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_22">[22]</a> </strong> (Yxen  ) 27.02.2007, 09:51:30&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1088473">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1088473">D</a>]<br />
+
+tak s mojim nickem taky ne.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_23">[23]</a> </strong> (pixy (vulgo openid.cz/pixycz)  ) 27.02.2007, 09:55:35&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1088481">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1088481">D</a>]<br />
+
+To jsou teda dárečky. A to jsem v poslední době placený hlavně coby "expert na použitelnost"... Bych blil, velebnosti. Jsou to umělcí.
+<br />
+<br />openid.cz => Nelze ověřit certifikát => Ser na certifikáty nebo Konec, vyber si? K čemu tam pak nějaký "certifikát" je? Zatímco kvalitu hesla to ověřuje a ukazuje za chodu, tak že je krátké jméno, to řekne až ex post. Když se dopíše podruhé heslo, tak se nedá nic udělat. Že musím zmáčknout tab, aby se objevila kaptcha a odesílací tlačítko, jsem zjistil po velmi dlouhém nechápání. Kaptcha je tak zběsilá, že se mi povedla až napotřetí. Neumi čésky, neumi čésky: "Bezpečnostní kód neodpovídá. Prosím pokuste se o správné zadáníUsername must be at least 5 characters long." --- 10 bodov za umelecký dojem. Fakt miluju tyhle nové progresivní cool služby, ze kterých se mám posadit... :/
+<br />
+<br />Jo aha, supr! Ja se tady ani podepsat nemůžu - při odeslání jsem přesměrován na Error. Nejspíš to bude tím, že tahle RSS čtečka neumí https, že... Hm, takže celý openid si přeložte napůl a ještě jednou napůl a složte na táákhle malinkatý čtvereček a ten si hezky pomaloučku strčte.......
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_24">[24]</a> </strong> (johno  - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fjohno.myopenid.com%2F">WWW</a>) 27.02.2007, 09:57:31&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1088485">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1088485">D</a>]<br />
+
+Skuska.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_25">[25]</a> </strong> (johno [<a href="http://johno.myopenid.com/" title="Ověřený uživatel http://johno.myopenid.com/">openID</a>]  ) 27.02.2007, 09:58:10&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1088486">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1088486">D</a>]<br />
+
+Aha, skuska 2.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_26">[26]</a> </strong> (pixy  ) 27.02.2007, 09:58:53&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1088487">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1088487">D</a>]<br />
+
+Promiň Arthure, rozhodně nechci znevažovat tvoji práci, máslo není na tvé hlavě. Určitě bude spousta šťastných spokojených uživatelů bez ohledu na to, co se líbí a nelíbí sebestřednému kverulantujícímu Staníčkovi (SsQ.)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_27">[27]</a> </strong> (ShadoW [<a href="http://openid.cz/shadow" title="Ověřený uživatel http://openid.cz/shadow">openID</a>]  ) 27.02.2007, 10:21:24&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1088519">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1088519">D</a>]<br />
+
+Test openID.
+<br />
+<br />Že by to fakt fungovalo? Nápad zajímavý, ale chybí mi možnost přidat odkaz na web. :-(
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_28">[28]</a> </strong> (dgx - <a href="mailto:dave@dgx.cz">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.dgx.cz%2Ftrine">WWW</a>) 27.02.2007, 10:47:03&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1088567">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1088567">D</a>]<br />
+
+<a href="#cmt_18">[18]</a> ta anglická verze bere i třípísmenná jména, v tom je lepší. Bohužel opět bez možnosti zadat URL webu (oj, to je hrubý nedostatek). Chybou je, že neřeší ani avatary. K čemu pak to celé, že?
+<br />
+<br />Česká verze sice má pěknou grafiku, ale jak píše Pixy, je šíleně zmatená, Captcha jsem pochopil tak na patnáctý pokus ;) 
+<br />
+<br />Tak nevím, napsat lepší verzi nebo počkat až tohle vylepší? :-)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_29">[29]</a> </strong> (Huhla  ) 27.02.2007, 10:49:08&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1088569">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1088569">D</a>]<br />
+
+Pochopil jsem to správně tak, že výhoda (pro použití u Bloguje) je ta, že místo 5tipísmenný captchi budu muset vždy uvádět heslo, které je nejspíš povinně delší? To mi žádnou velkou výhodou nezavání. 
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_30">[30]</a> </strong> (ShadoW [<a href="http://openid.cz/shadow" title="Ověřený uživatel http://openid.cz/shadow">openID</a>]  ) 27.02.2007, 10:54:19&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1088578">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1088578">D</a>]<br />
+
+<a href="#cmt_29">[29]</a> Výhoda je v tom, že jsi autentizovaný, tedy že je zaručena tvá identita. :-)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_31">[31]</a> </strong> (Ivan  - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.openid.sk">WWW</a>) 27.02.2007, 10:55:57&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1088581">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1088581">D</a>]<br />
+
+Tak toto teda mozem len a len privitat :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_32">[32]</a> </strong> (Arthur Dent [<a href="http://openid.cz/adent" title="Ověřený uživatel openid.cz/adent">openID</a>]  ) 27.02.2007, 11:23:38&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1088626">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1088626">D</a>]<br />
+
+Přátelé!
+<br />
+<br /><a href="#cmt_6">[6]</a><a href="#cmt_9">[9]</a><a href="#cmt_27">[27]</a> MyOpenId bez problémů vezme i dvě písmena nicku. URL z logiky věci nechybí.
+<br /><a href="#cmt_8">[8]</a> MyOpenId.com. Čau.
+<br /><a href="#cmt_11">[11]</a> Doporučuji psát přímo na openid.cz
+<br /><a href="#cmt_12">[12]</a> Udělej si vlastní OpenID server s důvěryhodným certifikátem
+<br /><a href="#cmt_13">[13]</a> Jak to vyřešit pro VŠECHNY blogy?
+<br /><a href="#cmt_14">[14]</a> Jejda, čeština bude asi UTF, opravím. Když nechceš sdělit, nesdělíš. Chceš-li další profil, vytvoř si ho.
+<br /><a href="#cmt_20">[20]</a> Omlouvám se, z této verze to vypadlo. Je to na <a href="http://bloguje.bloguje.cz/493003-openid-pro-komentare.php" rel="nofollow">http://bloguje.bloguje.cz/493003-openid-pro-komentare.php</a>
+<br /><a href="#cmt_23">[23]</a> Sepsuj openid.cz! To není NOVÁ JEJICH služba, to je KONEČNĚ ČESKÁ implementace.
+<br /><a href="#cmt_28">[28]</a> Spusť vlastní  lepší implementaci OpenID. :)
+<br /><a href="#cmt_29">[29]</a> OpenID si pamatuje
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_33">[33]</a> </strong> (Arthur Dent [<a href="http://openid.cz/adent" title="Ověřený uživatel openid.cz/adent">openID</a>]  ) 27.02.2007, 11:25:26&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1088629">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1088629">D</a>]<br />
+
+Jinak jen tři poznámky.
+<br />
+<br />1. Asi budu muset napsat ten článek hned
+<br />2. Probůh, nikdo vás NENUTÍ to používat
+<br />3. Je to otevřený systém, vašim iniciativám se meze nekladou.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_34">[34]</a> </strong> (Solvina [<a href="http://openid.cz/solvina" title="Ověřený uživatel http://openid.cz/solvina">openID</a>] - <a href="mailto:solvina@gmail.com">Mail</a> ) 27.02.2007, 11:34:18&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1088645">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1088645">D</a>]<br />
+
+Test, sorry
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_35">[35]</a> </strong> (johno [<a href="http://johno.myopenid.com/" title="Ověřený uživatel http://johno.myopenid.com/">openID</a>]  ) 27.02.2007, 12:02:56&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1088683">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1088683">D</a>]<br />
+
+Arthure, dalo by sa to spraviť tak, že by ten [openId] odkaz nesmeroval na openid.cz, ale na stránku profilu? U mňa napríklad johno.myopenid.com.
+<br />
+<br />Alebo som to nepochopil a je to forma propagácie openid.cz ?
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_36">[36]</a> </strong> (Arthur Dent [<a href="http://openid.cz/adent" title="Ověřený uživatel http://openid.cz/adent">openID</a>]  ) 27.02.2007, 12:15:47&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1088695">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1088695">D</a>]<br />
+
+<a href="#cmt_35">[35]</a> Ano, upravím, díky
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_37">[37]</a> </strong> (Arthur Dent [<a href="http://openid.cz/adent" title="Ověřený uživatel http://openid.cz/adent">openID</a>]  ) 27.02.2007, 12:45:38&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1088737">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1088737">D</a>]<br />
+
+Johno - takto: openid:johno.sxipper.com
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_38">[38]</a> </strong> (Arthur Dent [<a href="http://openid.cz/adent" title="Ověřený uživatel openid.cz/adent">openID</a>]  ) 27.02.2007, 12:50:41&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1088746">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1088746">D</a>]<br />
+
+Tak, pozměněno, mělo by to fungovat i na tvar "<a href="http://xxxx" rel="nofollow">http://xxxx</a>"
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_39">[39]</a> </strong> ([[openidhttp://johno.sxipper.com]] - <a href="mailto:johno@jsmf.net">Mail</a> ) 27.02.2007, 13:18:48&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1088817">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1088817">D</a>]<br />
+
+Posledny test.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_40">[40]</a> </strong> (ofr [<a href="http://ofr.myopenid.com" title="Ověřený uživatel http://ofr.myopenid.com">openID</a>]  ) 27.02.2007, 13:26:42&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1088833">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1088833">D</a>]<br />
+
+Test...
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_41">[41]</a> </strong> (Arthur Dent [<a href="http://openid.cz/adent" title="Ověřený uživatel http://openid.cz/adent">openID</a>]  ) 27.02.2007, 13:28:35&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1088841">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1088841">D</a>]<br />
+
+Zkouším, Johnno, toho sxippera, a vypadá to, že to máš jen blbě nastavený. Změň si "form map".
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_42">[42]</a> </strong> (zirafka [<a href="http://openid.cz/zirafka" title="Ověřený uživatel openid.cz/zirafka">openID</a>]  ) 27.02.2007, 14:00:48&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1088903">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1088903">D</a>]<br />
+
+ted uz by to snad mohlo fakt vyjit...
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_43">[43]</a> </strong> (johno.sxipper.com - <a href="mailto:johno@jsmf.net">Mail</a> ) 27.02.2007, 14:01:10&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1088906">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1088906">D</a>]<br />
+
+<a href="#cmt_41">[41]</a> Asi som sprostý, ale neviem ako.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_44">[44]</a> </strong> (Arthur Dent [<a href="http://openid.cz/adent" title="Ověřený uživatel openid.cz/adent">openID</a>]  - <a href="http://zapisnik.maly.cz">WWW</a>) 27.02.2007, 14:15:37&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1088934">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1088934">D</a>]<br />
+
+<a href="#cmt_43">[43]</a> Johno, je to prosté... Nejspíš sis zapomněl vyplnit Nickname nebo Fullname... :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_45">[45]</a> </strong> (Arthur Dent [<a href="http://openid.cz/adent" title="Ověřený uživatel openid.cz/adent">openID</a>]  - <a href="http://zapisnik.maly.cz">WWW</a>) 27.02.2007, 14:43:02&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1088988">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1088988">D</a>]<br />
+
+Zdá se že teď gfunguje rozpoznávání OpenID i v poli URL
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_46">[46]</a> </strong> (Flappy [<a href="http://openid.cz/flappy" title="Ověřený uživatel openid.cz/flappy">openID</a>]  - <a href="http://sweb.cz/flappyworld/">WWW</a>) 27.02.2007, 15:06:24&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1089035">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1089035">D</a>]<br />
+
+test OpenID v URL
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_47">[47]</a> </strong> (Arthur Dent [<a href="http://openid.cz/adent" title="Ověřený uživatel openid.cz/adent">openID</a>]  - <a href="http://zapisnik.maly.cz">WWW</a>) 27.02.2007, 15:10:43&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1089051">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1089051">D</a>]<br />
+
+<a href="#cmt_46">[46]</a> Zdá se že vyšel... Hurá... :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_48">[48]</a> </strong> (Yxen.myopenid.com  ) 27.02.2007, 15:12:13&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1089056">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1089056">D</a>]<br />
+
+tak to zkusím
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_49">[49]</a> </strong> (Flappy [<a href="http://openid.cz/flappy" title="Ověřený uživatel openid.cz/flappy">openID</a>]  - <a href="http://sweb.cz/flappyworld/">WWW</a>) 27.02.2007, 15:13:10&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1089058">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1089058">D</a>]<br />
+
+<a href="#cmt_47">[47]</a> vyšel, akorát se vloudila mezírka do OpenID identity, ale to asi ničemu nevadí
+<br />
+<br />jo a bacha na to, že po tom kolečku na openid.cz a zpět tam zůstanete přihlášení
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_50">[50]</a> </strong> (Yxen.myopenid.com  ) 27.02.2007, 15:13:30&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1089059">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1089059">D</a>]<br />
+
+druhý pokus
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_51">[51]</a> </strong> (Yxen  - <a href="http://www.bloguje.cz/redir2.php?r=https%3A%2F%2Fyxen.myopenid.com%2F">WWW</a>) 27.02.2007, 15:15:06&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1089063">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1089063">D</a>]<br />
+
+jsu asi ňáké pomalé :(
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_52">[52]</a> </strong> (https://yxen.myopenid.com/  - <a href="http://www.bloguje.cz/redir2.php?r=https%3A%2F%2Fyxen.myopenid.com%2F">WWW</a>) 27.02.2007, 15:15:45&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1089065">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1089065">D</a>]<br />
+
+já na to přijdu!
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_53">[53]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com" title="Ověřený uživatel http://adent.myopenid.com">openID</a>]  - <a href="http://adent.myopenid.com">WWW</a>) 27.02.2007, 15:18:34&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1089072">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1089072">D</a>]<br />
+
+<a href="#cmt_48">[48]</a><a href="#cmt_50">[50]</a><a href="#cmt_51">[51]</a><a href="#cmt_52">[52]</a> 
+<br />1. Vyplň si Nickname ve svém OpenID profilu
+<br />2. Zadávej to jako http://, ne jako https://
+<br />
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_54">[54]</a> </strong> (Yxen [<a href="http://yxen.myopenid.com/" title="Ověřený uživatel http://yxen.myopenid.com/">openID</a>]  - <a href="http://yxen.myopenid.com/">WWW</a>) 27.02.2007, 15:59:07&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1089139">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1089139">D</a>]<br />
+
+Nickname tam je, s jsem vyhodila a uvidíme
+<br />Promiň, že Tě používám jako sandbox - však to pak vymaž
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_55">[55]</a> </strong> (Yxen [<a href="http://yxen.myopenid.com/" title="Ověřený uživatel http://yxen.myopenid.com/">openID</a>]  - <a href="http://yxen.myopenid.com/">WWW</a>) 27.02.2007, 16:00:32&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1089143">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1089143">D</a>]<br />
+
+no, s pomocí <a href="#cmt_53">[53]</a> se zadařilo. Díky
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_56">[56]</a> </strong> (Lukas - <a href="mailto:lfodyna@gmail.com">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Farat.cz">WWW</a>) 27.02.2007, 17:03:11&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1089257">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1089257">D</a>]<br />
+
+Aspoň by nemuseli kopírovat cizí desing  <a href="http://www.wishlistr.com/" rel="nofollow">http://www.wishlistr.com/</a>
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_57">[57]</a> </strong> (Arthur Dent [<a href="http://openid.cz/adent" title="Ověřený uživatel openid.cz/adent">openID</a>]  - <a href="http://zapisnik.maly.cz">WWW</a>) 27.02.2007, 17:20:40&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1089281">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1089281">D</a>]<br />
+
+<a href="#cmt_56">[56]</a> Koukám, že někteří mají svérázný postup čtení článku, tzv. "Pitomec Reading Method". Vypadá nějak takto:
+<br />
+<br />- přečtu článek až k prvnímu odkazu
+<br />- kliknu na odkaz
+<br />- mám něco proti odkazované stránce
+<br />- odscroluju do komentářů, abych sdělil všem, co se mi na odkazované stránce nelíbí
+<br />
+<br />(Díky, Žirafko)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_58">[58]</a> </strong> (MiSHAK [<a href="http://openid.cz/mishak" title="Ověřený uživatel openid.cz/mishak">openID</a>] - <a href="mailto:imishak@gmail.com">Mail</a> - <a href="http://www.mishak.net">WWW</a>) 27.02.2007, 17:41:56&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1089322">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1089322">D</a>]<br />
+
+Hm je to super!
+<br />
+<br />S registraci sem neměl sebemenší problém, asi to není pro starší internetovou půlgeneraci a bota propagující La Trine :-D
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_59">[59]</a> </strong> (Misha  - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.esports.cz">WWW</a>) 27.02.2007, 23:38:11&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1089965">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1089965">D</a>]<br />
+
+komu se nelíbí openID.cz, a´t si založí identitu kdekoli jinde, viz seznam poskytovatelů: <a href="http://openid.net/wiki/index.php/OpenIDServers" rel="nofollow">http://openid.net/wiki/index.php/OpenIDServers</a>
+<br />
+<br />jinak by bylo fajn, kdyby bloguje bralo ve jméně jakoukoli identitu, nejen openID.cz a myopenid
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_60">[60]</a> </strong> (Arthur Dent [<a href="http://openid.cz/adent" title="Ověřený uživatel openid.cz/adent">openID</a>]  - <a href="http://zapisnik.maly.cz">WWW</a>) 27.02.2007, 23:43:39&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1089972">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1089972">D</a>]<br />
+
+<a href="#cmt_59">[59]</a> Bere, jen je potřeba explicitně napsat, že jde o openID. Ale třeba to předělám... :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_61">[61]</a> </strong> (dgx - <a href="mailto:dave@dgx.cz">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.dgx.cz%2Ftrine">WWW</a>) 28.02.2007, 01:56:12&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1090065">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1090065">D</a>]<br />
+
+Arthure, openID odkazy obsahují mezery a nelze je otevřít.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_62">[62]</a> </strong> (Arthur Dent [<a href="http://openid.cz/adent" title="Ověřený uživatel openid.cz/adent">openID</a>]  - <a href="http://zapisnik.maly.cz">WWW</a>) 28.02.2007, 10:41:38&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1090418">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1090418">D</a>]<br />
+
+<a href="#cmt_61">[61]</a> Mizera odstraněna
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_63">[63]</a> </strong> (vladaman [<a href="http://openid.cz/vlad" title="Ověřený uživatel http://openid.cz/vlad">openID</a>]  - <a href="http://openid.cz/vlad">WWW</a>) 28.02.2007, 12:09:14&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1090581">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1090581">D</a>]<br />
+
+dovolte mi reagovat k OpenID.cz jako admin:
+<br />* jiz lze registrovat jmena od 3 pismen
+<br />* captcha vylepsena tak a je moznost vygenerovat znovu, pokud nelze precist
+<br />* pracujeme na vice profilech
+<br />* certifikat SSL je platny a overeny certifikacni autoritou ale vykazuje chyby ve Firefox 1.5 z nejakeho duvodu - na tom pracujeme.
+<br />* OpenID neni boj proti spamu, jen jednotne prihlaseni na webu - prihlasis se jednou a pak uz jsou registrace jednodussi
+<br />
+<br />Panove a snad i damy na vecech pracujeme, mejte trpelivost. Vylepsujeme! Podnety vitany!
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_64">[64]</a> </strong> (Tomik [<a href="http://openid.cz/tomik.vitek" title="Ověřený uživatel http://openid.cz/tomik.vitek">openID</a>] - <a href="mailto:tomik@jmx.cz">Mail</a> - <a href="http://tomik.jmx.cz">WWW</a>) 01.03.2007, 16:08:59&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1092938">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1092938">D</a>]<br />
+
+Zkouška OPENID.. :-)
+<br />
+<br />(Omlouvám se, za zbytečný příspěvek, nemám jak to jinak vyzkoušet.)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_65">[65]</a> </strong> (matejcik [<a href="http://openid.cz/matejcik" title="Ověřený uživatel http://openid.cz/matejcik">openID</a>]  - <a href="http://matejcik.bloguje.cz/">WWW</a>) 03.03.2007, 16:45:38&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1096271">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1096271">D</a>]<br />
+
+ten odkaz v $BlogCmtAuthor$ je velmi špatný nápad. já třeba dělám ze jmen odkazy, a openid mi to rozbije.
+<br />nešlo by zavést něco jako $BlogCmtNick$ kde by byl čistě textový popis, a pak IfOpenid a $BlogCmtOpenid$ ?
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_66">[66]</a> </strong> (Arthur Dent [<a href="http://openid.cz/adent" title="Ověřený uživatel http://openid.cz/adent">openID</a>]  - <a href="http://zapisnik.maly.cz">WWW</a>) 03.03.2007, 17:13:46&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1096294">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1096294">D</a>]<br />
+
+<a href="#cmt_65">[65]</a> Zamyslím se
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_67">[67]</a> </strong> (r1 [<a href="http://r1.myopenid.com" title="Ověřený uživatel http://r1.myopenid.com">openID</a>]  ) 05.06.2007, 11:06:32&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1228007">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1228007">D</a>]<br />
+
+<a href="#cmt_65">[65]</a> Možná by stačilo, kdyby se openID jen dalo stylovat šlo by odkazu na OpenID přiřadit nějakou třídu?
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_68">[68]</a> </strong> (miloso [<a href="http://openid.cz/miloso" title="Ověřený uživatel http://openid.cz/miloso">openID</a>]  ) 20.06.2007, 08:21:44&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1247876">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1247876">D</a>]<br />
+
+Jen bych to taky chtěl ozkoušet, kdyby Ti už to věčné zkoušení lezlo na nervy, smaž mě :-)
+<br />
+<br />Ale díky moc za článek, o OpenID jsem ještě včera neměl ani tušení a dnes ho považuji za skvělý nápad.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_69">[69]</a> </strong> (miloso [<a href="http://openid.cz/miloso" title="Ověřený uživatel http://openid.cz/miloso">openID</a>]  ) 20.06.2007, 08:27:41&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1247881">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1247881">D</a>]<br />
+
+Ještě mě napadlo, zda-li by nebylo možné, abych zde nevyplňoval e-mailovou adresu a adresu svých stránek, po odeslání komentáře na openid.cz povolil Tvému zápisníku, aby viděl můj e-mail a web a tyto údaje by se následně u komentáře zobrazily stejně, jako bych je zadal zde, ve formuláři pro komentování - nebo to tak již funguje a já něco zeslonil?
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_70">[70]</a> Smazaný komentář</strong> (<em>Kdosi</em> - <a href="mailto:--DEL--">Mail</a> ) 03.07.2007, 05:00:21&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1262755">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1262755">D</a>]<br />
+
+<em>Komentář smazán autorem stránek</em>
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_71">[71]</a> </strong> (http://openid.cz/jamesek  ) 01.10.2007, 16:44:05&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1369794">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1369794">D</a>]<br />
+
+Jenom zkouška, zdá se že to už nefunguje ...
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_72">[72]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>]  - <a href="http://www.misantrop.info">WWW</a>) 01.10.2007, 17:13:01&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1369833">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1369833">D</a>]<br />
+
+<a href="#cmt_71">[71]</a> Funguje, jen byly problémy s odezvou od openid.cz.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_73">[73]</a> </strong> (otaznik [<a href="http://xmppid.net/otaznik@otaznik.net" title="Ověřený uživatel http://xmppid.net/otaznik@otaznik.net">openID</a>]  ) 20.10.2007, 00:44:30&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1393818">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1393818">D</a>]<br />
+
+Kdyby někdo hledal testovátko a nechtel otravovat u Misantropa(kde to funguje ale taky moc hezky =) ), tady je odkaz - <a href="http://openidenabled.com/resources/openid-test/diagnose-server/" rel="nofollow">http://openidenabled.com/resources/openid-test/diagnose-server/</a>
+<br />
+<br />mozna by to chtelo nejak dat najevo..napriklad "Vase jmeno (nebo OpenID)", nebo jenom v titulku po najeti na "vase jmeno" - googlil jsem, nez jsem se dozvedel kam openid zadat a to je asi skoda)
+<br />
+<br />Mohl byste, prosim, smazat nesmyslne prispevky (momentalne tri nad timto). Predem dekuji, otaznik
+<br />
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_74">[74]</a> </strong> (pavlix [<a href="http://xmppid.net/pavlix@pavlix.net" title="Ověřený uživatel http://xmppid.net/pavlix@pavlix.net">openID</a>] - <a href="mailto:pavlix(at)pavlix.net">Mail</a> - <a href="http://www.pavlix.net/">WWW</a>) 20.10.2007, 00:43:41&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1393819">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1393819">D</a>]<br />
+
+Tak... Nickname uz nam funguje, jinak doporucuju podivat se na <a href="http://xmppid.net/" rel="nofollow">http://xmppid.net/</a>
+<br />
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_75">[75]</a> </strong> (KinDo [<a href="http://openid.cz/kindo" title="Ověřený uživatel http://openid.cz/kindo">openID</a>]  ) 29.10.2007, 13:11:52&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1405680">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1405680">D</a>]<br />
+
+fajn clanok
+<br />fajn stranky
+
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+</div><!-- konec pole -->
+
+
+
+<div id="sidebar">
+
+<h2 id="n_rubriky">Rubriky</h2>
+<ul id="rubriky">
+<li><a href="tema-1-bavim-se-na-vas-ucet.html">Bavím se na váš účet</a></li><li><a href="tema-2-nemam-vas-rad.html">Nemám vás rád</a></li><li><a href="tema-3-pohrdani.html">Pohrdání</a></li><li><a href="tema-4-vase-bludy-na-moji-hlavu.html">Vaše bludy na moji hlavu</a></li><li><a href="tema-5-mym-analfabetum.html">Mým analfabetům...</a></li><li><a href="tema-6-co-me-bavi.html">Co mě baví?</a></li><li><a href="tema-7-to-je-nejaka-hudba-tohleto.html">To je nějaká hudba, tohleto?</a></li><li><a href="tema-8-kdo-umi.html">Kdo umí...</a></li><li><a href="tema-9-mene-kecu-vice-prace.html">Méně keců, více práce</a></li>
+</ul>
+
+<h2 class="bok">Jak se vám to čte?</h2>
+
+<p style="text-align:center">
+<a href="http://feeds.feedburner.com/misantrop"><img src="http://feeds.feedburner.com/~fc/misantrop?bg=99CCFF&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a></p>
+
+<p style="text-align:center">
+<a href="http://twittercounter.com/?username=adent" title="TwitterCounter for @adent"><img src="http://twittercounter.com/counter/?username=adent" width="88" height="26" style="border:none;" alt="TwitterCounter for @adent" /></a></p>
+
+<p style="text-align:center">
+<script type="text/javascript">
+var wsgApiKey = "481349a5-98b9-4d24-b32f-a5729d33840c";
+var wsgStyle = 2;
+var dummy =('<div id="wsgContainer" style="text-align:center"></div>');wsgScript=document.createElement('script');wsgScript.type="text/javascript";wsgScript.src="http://static.hubspot.com/websiteGraderBadge/badge.js?t="+Math.random();setTimeout("document.getElementById('wsgContainer').appendChild(wsgScript);",1);
+</script>
+</p>
+
+<script type="text/javascript" src="http://www.blogcatalog.com/w/services.php?id=150489&amp;width=165&amp;bgcolor=EEEEEE&amp;bcolor=356D79&amp;lcolor=333333&amp;hcolor=FFFFFF&amp;htext=Kde%20mne%20najdete&amp;name=0&amp;brand=0&amp;heading=1"></script>
+
+<h2 id="n_odkazy"><a href="#" class="iface" onclick="$('#odkazy').BlindToggleVertically(500, null, 'bounceout');return false;">Odkazy ...</a></h2>
+<ul id="odkazy" style="display:block">
+<li><a href="http://pixy.cz/pixynergia" rel="acquaintance met">Pixy</a></li><li><a href="http://blok.rozanek.cz" rel="acquaintance">Filip Rožánek</a></li><li><a href="http://www.whitedog.cz" rel="acquaintance met">White Dog</a></li><li><a href="http://kahi.cz/blog/" rel="met">Kahi</a></li><li><a href="http://lokutus.bloguje.cz" rel="met">Lokutus</a></li><li><a href="http://www.katchaba.com/" rel="acquaintance met">Katchaba</a></li><li><a href="http://machinegun.bloguje.cz" rel="acquaintance met">Johnny</a></li><li><a href="http://kokolia.bloguje.cz">Vladimír Kokolia</a></li><li><a href="http://viditelnymacek.cz">Miroslav Macek</a></li><li><a href="http://cina.bloguje.cz" rel="me">Dovolená v Číně</a></li><li><a href="http://bloguneni.bloguje.cz/">Blogu není...</a></li><li><a href="http://hekko.bloguje.cz" rel="acquaintance met">Adminka bloguje</a></li><li><a href="http://www.bloc.cz/default.aspx">Bloc Jiřího Hlavenky</a></li><li><a href="http://apimania.eu" rel="me">Apimania</a></li><li><a href="http://dev20.info" rel="me">Dev::Info</a></li><li><a href="http://dankaj.bloguje.cz/" rel="contact met">Zápisky z Islandu</a></li><li><a href="http://jdem.cz" rel="me">Zkratky pro odkazy</a></li><li><a href="http://davebarry.cz" rel="me">Dave Barry česky</a></li><li><a href="http://uelectronics.info" rel="me">Mikroelektronika</a></li><li><a href="http://www.php-suit.com" rel="me">PHP Suit</a></li><li><a href="http://www.sharp-suit.com" rel="me">Sharp Suit</a></li> 
+<li><a href="http://technorati.com/claim/xnpb5tzhw" rel="me">Technorati Profile</a></li>
+</ul>
+
+<h2 id="n_recommend">Doporučuji</h2>
+<ul id="support">
+<li><a href="http://hostmonster.jdem.cz/">Hosting HostMonster</a></li>
+<li><a href="http://www.jihocestitatkove.cz/">Jihočeští taťkové</a></li>
+<li><a href="http://www.csvts.cz/cns/">Česká nukleární společnost</a></li>
+<li><a href="http://www.prozakladnu.cz/">PRO základnu!</a></li>
+</ul>
+
+<!-- Buzzboot Ads -->
+<!-- / Buzzboot Ads -->
+
+
+<p>
+
+</p>
+
+<h2>Meta</h2>
+<script type="text/javascript" src="http://feedjit.com/popPages/?bc=FFFFFF&amp;tc=008000&amp;brd1=336699&amp;lnk=008000&amp;hc=336699&amp;ww=200"></script><noscript><a href="http://feedjit.com/">Feedjit Live Blog Stats</a></noscript>
+
+<h2 id="n_archiv"><a href="#" class="iface" onclick="$('#archiv').BlindToggleVertically(500, null, 'bounceout');return false;">Archiv ...</a></h2>
+<ul id="archiv" style="display:none">
+<li><a href="0812archiv.html">prosinec 2008</a></li><li><a href="0811archiv.html">listopad 2008</a></li><li><a href="0810archiv.html">říjen 2008</a></li><li><a href="0809archiv.html">září 2008</a></li><li><a href="0808archiv.html">srpen 2008</a></li><li><a href="0807archiv.html">červenec 2008</a></li><li><a href="0806archiv.html">červen 2008</a></li><li><a href="0805archiv.html">květen 2008</a></li><li><a href="0804archiv.html">duben 2008</a></li><li><a href="0803archiv.html">březen 2008</a></li><li><a href="0802archiv.html">únor 2008</a></li><li><a href="0801archiv.html">leden 2008</a></li><li><a href="0712archiv.html">prosinec 2007</a></li><li><a href="0711archiv.html">listopad 2007</a></li><li><a href="0710archiv.html">říjen 2007</a></li><li><a href="0709archiv.html">září 2007</a></li><li><a href="0708archiv.html">srpen 2007</a></li><li><a href="0707archiv.html">červenec 2007</a></li><li><a href="0706archiv.html">červen 2007</a></li><li><a href="0705archiv.html">květen 2007</a></li><li><a href="0704archiv.html">duben 2007</a></li><li><a href="0703archiv.html">březen 2007</a></li><li><a href="0702archiv.html">únor 2007</a></li><li><a href="0701archiv.html">leden 2007</a></li><li><a href="0612archiv.html">prosinec 2006</a></li><li><a href="0611archiv.html">listopad 2006</a></li><li><a href="0610archiv.html">říjen 2006</a></li><li><a href="0609archiv.html">září 2006</a></li><li><a href="0606archiv.html">červen 2006</a></li><li><a href="0604archiv.html">duben 2006</a></li><li><a href="0603archiv.html">březen 2006</a></li><li><a href="0512archiv.html">prosinec 2005</a></li><li><a href="0511archiv.html">listopad 2005</a></li>
+</ul>
+
+
+
+</div><!-- konec sidebar -->
+<div class="clear">&nbsp;</div><!-- cistic -->
+</div><!-- konec obsah -->
+
+
+
+
+
+
+
+<div id="foot">
+<p>&copy; <a href="http://www.maly.cz/o-mn/">Martin Malý</a> (aka Arthur Dent) | Design by &copy; 2007 <a href="http://ash721.cz">ASH721</a> | <a href="http://hostmonster.jdem.cz">HOSTING</a> 3000GB+unlimited domains za 6 dolarů</p>
+
+</div>
+
+</div>
+
+</body></html>

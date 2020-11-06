@@ -1,0 +1,666 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="cz">
+<head><link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.misantrop.info/rss.xml" /><link rel="alternate" type="application/rss+xml" title="RSS - Méně keců, více práce" href="http://www.misantrop.info/tema-9-mene-kecu-vice-prace.xml" /><link rel="alternate" type="application/rss+xml" title="Komentáře" href="http://www.misantrop.info/comments.xml" />
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/misantrop" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+ <title>Jdem (cé zet) na Bloguje - Misantrop.info</title> 
+
+<link rel="stylesheet" href="css39236.css" type="text/css" title="Styl2" media="screen" />
+<link rel="alternate stylesheet" href="css34066.css" type="text/css" title="Styl1" media="screen" />
+
+<meta name="verify-v1" content="qHyecOmV/BTXodaXkGrOlj7QL+X93dTbTLojG9EU22c=" />
+<link rel="openid.server" href="http://www.myopenid.com/server" />
+<link rel="openid.delegate" href="http://adent.myopenid.com/" />
+<link rel="openid2.local_id" href="http://adent.myopenid.com" />
+<link rel="openid2.provider" href="http://www.myopenid.com/server" />
+<meta http-equiv="X-XRDS-Location" content="http://www.myopenid.com/xrds?username=adent.myopenid.com" />
+
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="keywords" content="Martin Malý, Arthur Dent, weblogy, programování, PHP, blogy, misantrop, Web2.0, technologie, elektronika" />
+
+<meta name="description" content="Jdem (cé zet) na Bloguje - Misantrop.info" />
+</head>
+<body>
+<div id="all">
+<!-- Anal Lizer-->
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-190512-8";
+urchinTracker();
+</script>
+<!--dolizat-->
+ 
+
+<div id="adx" style="position:fixed;_position:absolute;top:5px;left:5px">
+<script type="text/javascript"><!--
+google_ad_client = "pub-3772893178572611";
+/* 120x600, vytvořeno 15.7.08 */
+google_ad_slot = "1720575805";
+google_ad_width = 120;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript"
+src="">
+</script>
+</div>
+
+<div id="head"><p id="logo"><a href="index.php"><img src="img/2zapisnik-logo.gif" alt="Misantrop.info - Web co vám doudí moudí..." /></a></p></div>
+
+<ul id="menu">
+<li><a href="index.php">Titulní stránka</a></li>
+<li><a href="http://rss.misantrop.info">Oblíbené zdroje</a></li>
+<li><a href="http://www.maly.cz/o-mn/?KeepThis=true&amp;TB_iframe=true&amp;height=500&amp;width=800" class="thickbox">O mně</a></li>
+<li><a href="http://www.bloguje.cz/vzkazy.php?send=47997">Napiš vzkaz</a></li>
+</ul>
+
+<div id="obsah">
+<div id="pole">
+<!-- Pocitadlo -->
+<p><img src="http://counter.cnw.cz/dungeon.cgi?blogmalycz&amp;6&amp;000000&amp;fff1d8&amp;on" alt=" " style="width:1px;height:1px;"/><script type="text/javascript">
+<!-- 
+var dummy =("<img src=\"http://counter.cnw.cz/trackit.cgi?blogmalycz&t2&" + escape(top.document.referrer) + "\" alt=\" \" border=\"0\" width=\"1\" height=\"1\">"); 
+// --></script>
+
+<script language="JavaScript" type="text/javascript">
+<!--
+var dummy = ('<a href="http://www.netagent.cz" target="_top"><img src="http://www.netagent.cz/agent.php?id=383&amp;ur='+escape(document.referrer)+'&amp;rw='+escape(window.screen.width)+'&amp;rh='+escape(window.screen.height)+'&amp;cd='+escape(window.screen.colorDepth)+'&amp;pt='+escape(document.title)+'&amp;lc='+escape(document.location)+'" width="1" height="1" border="0" alt="NetAgent" /></a>');
+//--></script>
+
+</p>
+<!-- Pocitadlo konec -->
+
+
+
+
+<h1>Jdem (cé zet) na Bloguje</h1>
+
+
+
+
+
+
+
+<p>Šumaváci, pozor! Aneb Jak umožnit komentátorům snadno vkládat Hovadně Dlouhé Odkazy </p>
+
+<p style="float:right; margin:0 0 1em 1em;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-3772893178572611";
+
+/* 120x240, vytvořeno 6.7.08 */
+google_ad_slot = "4855232301";
+google_ad_width = 120;
+google_ad_height = 240;
+//-->
+</script>
+<script type="text/javascript"
+src="">
+</script>
+</p>
+
+<p><p>Protože <a href="http://jdem.cz/">Jdem.cz</a> nabízí <a href="http://www.jdem.cz/api.html">API</a>, tak není problém udělat si jednoduchý AJAXový nástroj pro vkládání dlouhých odkazů do komentářů. Vidíte to třeba u tohodle článku dole. Princip je jednoduchý...</p><p>Uživatel klikne, objeví se mu dialog pro vložení dlouhého odkazu, po odeslání předá JavaScriptový kód tento odkaz PHP skriptu na serveru. PHP skript si od <a href="http://jdem.cz/">jdem.cz</a> vyžádá zkratku a vrátí jeho adresu. javaScript ji na klientské straně přidá do textarea / inputu.</p><p>Zdrojové kódy dám na Jdem.cz, ale předtím si povíme, jak udělat takovéhle zkracovátko pro blogy na Bloguje. A napíšu to jako návod pro <a href="http://sumavak.bloguje.cz/">Šumaváka</a>, poněvadž právě <a href="http://sumavak.bloguje.cz/">Šumavák</a> má komentátory, co vkládají dlouhé odkazy. Takže tedy, <a href="http://sumavak.bloguje.cz/">Šumaváku</a>:</p><p>V administraci si vyberte Vzhled a Úpravu šablony. Někam do hlavičky HTML kódu, třeba před značku <em>&lt;/head&gt;</em>, dejte tohle:</p><p><font face="courier new,courier">&lt;ItemOnly&gt;&lt;script type=&quot;text/javascript&quot; src=&quot;http://bloguje.cz/jdemcz.js&quot;&gt;&lt;/script&gt;&lt;/ItemOnly&gt;</font></p><p>Pak najděte v té HTML šabloně formulář pro vkládání komentáře a někam za &lt;/textarea&gt; vložte toto:</p><p><font face="courier new,courier"> &lt;script type=&quot;text/javascript&quot;&gt;jdemczInput(&quot;Vložit odkaz do komentáře&quot;,&quot;textcmt&quot;);&lt;/script&gt;</font></p><p>(Samosebou lze text změnit).</p><p>Ti co mají textarea vlastní si musí přidat atribut ID, popřípadě, pokud jejich textarea atribut ID už má, musí odpovídajícím způsobem změnit volání <em>jdemczInput</em>&nbsp;&ndash; přepsat &quot;textcmt&quot; na jejich ID. </p><p>Uživatelům se u formuláře objeví &quot;Vložit odkaz do komentáře&quot;, a když na něj kliknou, stane se to co píšu výše: Objeví se formulář pro vložení adresy, tam tu adresu vloží, <a href="http://jdem.cz/">jdem.cz</a> si ji přechroupá, vytvoří zkratku&nbsp;&ndash; a tu zkratku vloží skript do okénka pro text komentáře. Prosté, jednoduché, elegantní&nbsp;&ndash; a vůbec...</p><p>Funkci možno vyzkoušet zde u mne v komentářích.<br /> </p></p>
+
+<div style="text-align:center">
+<script type="text/javascript"><!--
+google_ad_client = "pub-3772893178572611";
+/* 468x60, vytvořeno 15.7.08 */
+google_ad_slot = "3559028762";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="">
+</script>
+</div>
+
+
+
+
+
+<p class="more">
+<span class="date">Dne 25.01.2008</span>
+
+</p>
+
+
+
+
+
+<p><a href="http://jdem.cz/tw?text=Zaj%c3%admav%c3%bd+%c4%8dl%c3%a1nek+na+Z%c3%a1pisn%c3%adku%3a+http%3A%2F%2Fwww.misantrop.info%2F648144-jdem-ce-zet-na-bloguje.html&amp;redir=1">Twittni</a></p>
+
+<p>Přidej do: 
+ <a href="http://vybrali.sme.sk/submit.php?url=http%3A%2F%2Fwww.misantrop.info%2F648144-jdem-ce-zet-na-bloguje.html"><img src="http://blog.sme.sk/blog/3/61630/tlacitko.gif" style="border:0" title="asdf.sk" alt="asdf.sk" /></a>
+
+<a href="http://www.stumbleupon.com/submit?url=http%3A%2F%2Fwww.misantrop.info%2F648144-jdem-ce-zet-na-bloguje.html&amp;title=Jdem+%28c%E9+zet%29+na+Bloguje"> <img border=0 src="http://www.bloguje.cz/icon_su.gif" alt="StumbleUpon Toolbar"> Stumble It!</a>
+
+<script type="text/javascript" src="http://w.sharethis.com/widget/?tabs=web%2Cemail&amp;charset=utf-8&amp;style=rotate&amp;publisher=99a6f76f-7727-4c7b-a906-b91f57f8a706"></script></p>
+
+<script type="text/javascript" src="http://feedjit.com/coFilter/?bc=FFFFFF&amp;tc=008000&amp;brd1=336699&amp;lnk=008000&amp;hc=336699&amp;ww=500"></script>
+
+
+<h2 id="n_koments">Komentáře</h2>
+
+
+
+<p class="comment">
+<strong><a name="cmt_1">[1]</a> </strong> (Hekko [<a href="http://hekko.myopenid.com" title="Ověřený uživatel hekko.myopenid.com">openID</a>] - <a href="mailto:hekko@centrum.cz">Mail</a> - <a href="http://hekko.bloguje.cz">WWW</a>) 25.01.2008, 22:17:37&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1513824">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1513824">D</a>]<br />
+
+Jaký hovadsky dlouhý odkazy v komentářích? Bloguje hovadsky dlouhý komentáře zkracuje. Fakt, že je přitom vidět, kam ten odkaz směřuje, beru jako plus ;)
+<br />
+<br />Nerada ti kazím radost z dobře vykonané práce, ale... :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_2">[2]</a> </strong> (Trupik  - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Ftrupik.aspweb.cz">WWW</a>) 25.01.2008, 22:18:37&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1513825">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1513825">D</a>]<br />
+
+Funkce je to chytrá, ale jako čtenáři se mi moc nelíbí. Aspoň ne pro všechny odkazy - takhle vůbec nepoznám, kam odkaz vede, dokud na odkaz nekliknu. Proč aspoň krátké odkazy nevkládají normálně? 
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_3">[3]</a> </strong> (Tomik - <a href="mailto:tomik@jmx.cz">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Ftomik.jmx.cz">WWW</a>) 25.01.2008, 22:21:47&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1513832">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1513832">D</a>]<br />
+
+- Sím, mě to nefunguje paní učitelko.
+<br />- To bude tím blbým Firefoxem.
+<br />- No jo no.
+<br />
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_4">[4]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://www.misantrop.info">WWW</a>) 25.01.2008, 22:28:07&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1513840">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1513840">D</a>]<br />
+
+<a href="#cmt_3">[3]</a> To asi těžko, bo na FF to bylo odladěno.
+<br />
+<br /><a href="#cmt_1">[1]</a> Ale to ti nikdo neupírá, já si jen pamatuju, že byly nějaké problémy s Opravdu Dlouhými A Zmatenými Odkazy
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_5">[5]</a> </strong> (Hekko [<a href="http://hekko.myopenid.com" title="Ověřený uživatel hekko.myopenid.com">openID</a>] - <a href="mailto:hekko@centrum.cz">Mail</a> - <a href="http://hekko.bloguje.cz">WWW</a>) 25.01.2008, 22:31:20&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1513849">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1513849">D</a>]<br />
+
+<a href="#cmt_4">[4]</a> O tom já nic nevím :(
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_6">[6]</a> </strong> (Gringo  ) 25.01.2008, 22:46:55&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1513875">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1513875">D</a>]<br />
+
+<a href="#cmt_4">[4]</a> Sím, mě to taky na Firefoxu nefunguje.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_7">[7]</a> </strong> (lummox  ) 25.01.2008, 23:32:52&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1513917">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1513917">D</a>]<br />
+
+Mně to ve Firefoxu taky nefunguje. Funguje to až když změním typ XMLHttpRequestu ze synchronního na asynchronní.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_8">[8]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 25.01.2008, 23:32:51&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1513918">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1513918">D</a>]<br />
+
+<a href="#cmt_6">[6]</a>, <a href="#cmt_3">[3]</a> Už je to lepší?
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_9">[9]</a> </strong> (lummox  ) 25.01.2008, 23:43:14&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1513924">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1513924">D</a>]<br />
+
+Vypadá to, že ve Firefoxu se u synchronních XMLHttpRequestů nevolá funkce onreadystatechange - pokud tedy nemáš nainstalovaný Firebug, pak se z nějakého důvodu volá. (Nebo pokud nemáš betu Firefoxu 3.) Viz <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=412112" rel="nofollow">https://bugzilla.mozilla.org...2112</a>
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_10">[10]</a> </strong> (Tomik - <a href="mailto:tomik@jmx.cz">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Ftomik.jmx.cz">WWW</a>) 25.01.2008, 23:48:33&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1513934">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1513934">D</a>]<br />
+
+<a href="#cmt_8">[8]</a> Bohužel stále nic. Ani F5 nepomáhá.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_11">[11]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://www.misantrop.info">WWW</a>) 26.01.2008, 07:12:38&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1514017">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1514017">D</a>]<br />
+
+<a href="#cmt_9">[9]</a><a href="#cmt_7">[7]</a> Změnil jsem typ requestu na asynchronní, tak su zvědavé. Jinak: Firebugem to není. Včera mi to na pracovním PC fungovalo, na PC s Linuxem, kde koukám na filmy, ne. První co jsem udělal bylo to, že jsem si tam nainstaloval Firebug, výsledek stále stejný...
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_12">[12]</a> </strong> (karf - <a href="mailto:karel.fucik@atlas.cz">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.sixtimesnine.com">WWW</a>) 26.01.2008, 09:13:58&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1514060">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1514060">D</a>]<br />
+
+<a href="#cmt_11">[11]</a> Já teda nejsem uživatel bloguje, ale jen ze zvědavosti: jaký vůbec může existovat důvod k použítí synchronního requestu? Co vím, tak je to v 99 % případů cesta do pekel.
+<br />
+<br />Jinak jako uživateli se mi taky moc nelíbí, že nevidím skutečnou adresu, ale jen jakousi kamufláž.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_13">[13]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://www.misantrop.info">WWW</a>) 26.01.2008, 10:54:35&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1514115">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1514115">D</a>]<br />
+
+<a href="#cmt_12">[12]</a> To už se tu řešilo, takže shrnu:
+<br />
+<br />1. Někdy je každý znak dobrý (posílám odkaz SMSkou, píšu ho do mikroblogu, diktuju po telefonu...)
+<br />
+<br />2. Některé RS (Bloguje už tedy ne, ale některé stále ano) dlouhé URL nezkrátí a buď jim "přeteče" mimo layout (diskuse na některých fórech jsou zářným příkladem) nebo ho rozlámou na víc řádků a člověk pak musí copypastit a skládat adresu do původní podoby
+<br />
+<br />3. Když ho vložím do mailu, tak leckdy přijde adresátovi URL na několik řádků a pak se diví, že odkaz nefunguje.
+<br />
+<br />Typickým příkladem dlouhých URL jsou mapy nebo třeba vyhledávání trasy via Michelin.
+<br />
+<br />Proti tomu stojí výhrada: Nevidím skutečnou adresu.
+<br />
+<br />Vaši výhradu chápu. Teď prosím vy srovnejte, jestli je rychlejší říct kolegovi: "Dej si viamichelin, zadej odjezd z Budějovic, cíl v Mnichově, nastav si parametry takatak...", nebo mu nadiktovat:
+<br />
+<br />www.viamichelin.com/viamichelin/int/dyn/controller/Itineraires?options=1&amp;strStartMerged=&amp;strStartAddress=Ceske%20Budejovice&amp;strStartCityCountry=1694&amp;strDestMerged=&amp;strDestAddress=Munich&amp;strDestCityCountry=240
+<br />
+<br />nebo mu nadiktovat: jdem.cz/aatf0
+<br />
+<br />Je pravda, že z toho druhého odkazu není vidět, že to je přes ViaMichelin. Ovšem do fóra mohu tu adresu napsat jako jdem.cz/aatf0/viamichelin.com - a je vidět kam to vede.
+<br />
+<br />Jaké že jsou ty další nevýhody?
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_14">[14]</a> </strong> (dgx  - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Flatrine.dgx.cz">WWW</a>) 26.01.2008, 11:33:19&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1514160">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1514160">D</a>]<br />
+
+Tedy nechci do toho nějak kecat, jo, ale právě tohle využití jdem.cz považuju za velmi nešťastné, možná by se dalo říci kurevsky nešťastné. Má tohle fórum problém se velmi dlouhými odkazy? Tak oprav fórum. 
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_15">[15]</a> </strong> (monarcha  - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fmonarcha.wz.cz">WWW</a>) 26.01.2008, 11:40:02&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1514165">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1514165">D</a>]<br />
+
+Možná by mohl skriptík jednoduše zkontrolovat, o jak dlouhou adresu se jedná, a v případě, že neobsahuje žádné parametry za ? vkládat adresu původní. Zkracovat např. <a href="http://www.google.com" rel="nofollow">http://www.google.com</a> na <a href="http://jdem.cz/aarw0" rel="nofollow">http://jdem.cz/aarw0</a> mi přijde celkem nesmyslené.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_16">[16]</a> </strong> (monarcha  - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fmonarcha.wz.cz">WWW</a>) 26.01.2008, 11:43:07&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1514169">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1514169">D</a>]<br />
+
+ehm:) došlo mi to hned po odeslání:)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_17">[17]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://www.misantrop.info">WWW</a>) 26.01.2008, 12:34:40&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1514220">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1514220">D</a>]<br />
+
+<a href="#cmt_15">[15]</a> No... :)))
+<br />
+<br />Mohl, ale proč by to dělal? Že tu možnost MŮŽETE použít neznamená přeci že ji MUSÍTE použít za každou cenu. Stačí trošku uvažovat a ne dělat věci mechanicky... :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_18">[18]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://www.misantrop.info">WWW</a>) 26.01.2008, 12:40:21&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1514229">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1514229">D</a>]<br />
+
+<a href="#cmt_14">[14]</a> Tohle fórum nemá problémy s dlouhými odkazy. Zkrátí je tak, že nechá jejich začátek a konec a doprostřed plácne tři tečky. Jediný problém, co s nimi je, je ten, když si dotyčný komentář vytiskneš, přepošleš, zkopíruješ... ;) V textu ti zůstane jen <em>"www.viamichelin.com/vi...strDestAddress"</em> - a ty si toho buď všimneš a včas si zkopíruješ adresu odkazu (znáš to... pravým tlačítkem, Kopírovat adresu odkazu... já vím že ty to znáš, ale <em>znají to všichni</em>?) - nebo si toho nevšimneš, uložíš / pošleš či cokoli s tím uděláš, a pak se tlučeš do hlavy, protože ti je ta adresa na pendrek a přemejšlíš, odkud sis to zkopíroval. A jak píšu kolegovi výš: Možnost tu je, neznamená to nutnost a je to na zdravém uvážení.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_19">[19]</a> </strong> (paranid  ) 26.01.2008, 12:47:28&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1514234">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1514234">D</a>]<br />
+
+<a href="#cmt_14">[14]</a> já bych byl taky rád, kdyby šly vkládat odkazy alespoň jako BB kód: [url=<a href="http://www.dlouhyodkaz.cz" rel="nofollow">http://www.dlouhyodkaz.cz</a>]popis[/url] a pak jdem.cz nebo jiná služba nebude pro tento účel potřeba
+<br />
+<br />Jako čtenáři je mi ale úplně jedno, proč nefunguje ten odkaz v <a href="#cmt_13">[13]</a> nebo kdy bloguje bude mít nějaké formátování komentářů nebo alespoň nějaké tlačítko pro vkládání odkazů, které si bloguje vnitřně převede na html odkaz a v komentáři zůstane jen popis
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_20">[20]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://www.misantrop.info">WWW</a>) 26.01.2008, 13:01:43&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1514254">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1514254">D</a>]<br />
+
+To je tu zas rozumbradů po ránu... :)
+<br />
+<br />Odkaz 13 nefunguje proto, že před ním nebylo ono magické HTTP://. Když to tam dám, dopadne to takto:
+<br />
+<br /><a href="http://www.viamichelin.com/viamichelin/int/dyn/controller/Itineraires?options=1&amp;strStartMerged=&amp;strStartAddress=Ceske%20Budejovice&amp;strStartCityCountry=1694&amp;strDestMerged=&amp;strDestAddress=Munich&amp;strDestCityCountry=240" rel="nofollow">http://www.viamichelin.com...ry=240</a>
+<br />
+<br />A dál to je viz <a href="#cmt_18">[18]</a>...
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_21">[21]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://www.misantrop.info">WWW</a>) 26.01.2008, 13:05:15&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1514258">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1514258">D</a>]<br />
+
+<a href="#cmt_19">[19]</a> Jinak samosebou Bloguje možnost vkládání odkazů má, jak ví každý, kdo se o to pokusil. Na druhou stranu - jak odkaz vložený via BBcode vyřeší to, co jsem psal v <a href="#cmt_13">[13]</a> a <a href="#cmt_18">[18]</a>?
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_22">[22]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://www.misantrop.info">WWW</a>) 26.01.2008, 13:09:37&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1514264">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1514264">D</a>]<br />
+
+mailto: paranid
+<br />subject: Ten komentář s odkazem
+<br />Text: Ahoj Paranide, tady je ten komentář, zkopíroval jsem ho z Dentova zápisníku: 
+<br />
+<br />"Nasel jsem nejlepsi cestu, kudy v utery pojedem. Koukni: 
+<br />
+<br /><a href="http://www.viamichelin.com...ry=240" rel="nofollow">...p://www.viamichelin.com...ry=240</a>"
+<br />
+<br />--- idea je jasná, ne? :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_23">[23]</a> </strong> (paranid  ) 26.01.2008, 14:01:50&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1514325">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1514325">D</a>]<br />
+
+Já jsem pochopil, k čemu použít jdem.cz i vím, jak fungují odkazy viz <a href="#cmt_20">[20]</a> :-)
+<br />
+<br />dgx ve <a href="#cmt_14">[14]</a> kritizuje (aspoň doufám, že dobře čtu), že odkazy viz <a href="#cmt_13">[13]</a> (zářný příklad jsou komentáře u d-fense) lezou za roh. Proto "blbé" odkazy vkládám pod WWW, protože NEVÍM (zkusím projít nápovědy), jak na bloguje vložit do komentáře odkaz v html značkách jako bych to udělal na normální web stránce. pokus
+<br />
+<br /><a href="#cmt_21">[21]</a> Nepomůže to.
+<br /><a href="#cmt_22">[22]</a> Ano. :-)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_24">[24]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://www.misantrop.info">WWW</a>) 26.01.2008, 14:15:22&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1514333">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1514333">D</a>]<br />
+
+<a href="#cmt_23">[23]</a> Ušetřím práci: Bloguje NEumožňuje vkládat odkaz jako "a href..." atd. Má to nějaké důvody, na které si teď už nevzpomínám, ale určitě tam padlo minimálně něco o BFU a o spambotech...
+<br />
+<br />Jinak - pokud "dlouhé" odkazy lezou za roh a já chci vložit k D-Fensovi takový dlouhý odkaz (pomíjím, že jsem už několik let neměl touhu u něj do diskusí vůbec nahlížet), tak použiju jdem.cz a dám ho do textu komentáře, kam patří, místo toho abych ho cpal odkaz do pole, které je určené pro adresu MÝCH stránek. A to nemluvím o případech, kdy chci vložit DVA dlouhé odkazy ;)
+<br />
+<br />Jojo, na Denta si kdekdo votevře hubu a řve "Oprav fórum", ale k D-Fensovi si to nedovolej! ;)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_25">[25]</a> </strong> (ringo  ) 26.01.2008, 15:19:04&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1514373">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1514373">D</a>]<br />
+
+citace:"Jojo, na Denta si kdekdo votevře hubu a řve "Oprav fórum", ale k D-Fensovi si to nedovolej! ;)"
+<br />Jo jo, všichni zneužívají tvé nekonečné dobroty a laskavosti ;).
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_26">[26]</a> </strong> (karf - <a href="mailto:karel.fucik@atlas.cz">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.sixtimesnine.com">WWW</a>) 26.01.2008, 16:51:52&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1514458">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1514458">D</a>]<br />
+
+<a href="#cmt_13">[13]</a> Děkuji za vysvětlení, já proti tomu nechtěl nijak vystupovat, popsané výhody chápu. Napsal jsem to jen jako dovětek mého komentáře, který se týkal spíš toho synchronního requestu. BTW: teď mě napadlo - pokud to má být uživatelsky co nejpřívětivější, pouvažoval bych, zda z toho generovaného URL nevyloučit znaky 0 a O.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_27">[27]</a> </strong> (Šumavák  ) 26.01.2008, 17:08:20&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1514476">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1514476">D</a>]<br />
+
+Šumaváci zaregistrovali, Někteří dokonce i jmenovitě poděkovali autorovi, ale spamový filtr něco ze slov "jdem.cz", nebo "Malý" vyhodnotil jako spam.... :-))))
+<br />Jinak zatím úspěšně využíváme fce nabídnuté Bloguje.cz ( viz <a href="#cmt_1">[1]</a>) akorát jeden, zřejmě nepoučitelný architekt, používá Tiny.
+<br />
+<br />A v každém případě dík! a doufám že tady to projde.....:-)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_28">[28]</a> </strong> (Šumavák  - <a href="http://sumavak.bloguje.cz">WWW</a>) 26.01.2008, 17:28:21&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1514491">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1514491">D</a>]<br />
+
+Ještě něco: o <a href="#cmt_19">[19]</a> - doporučuji nahlédnout do nápovědy a zkusit využít fce nabízené systémem Bloguje.cz. Tam je jich.....
+<br />Včetně formátování komentářů.
+<br />Nebo ke mně, tam to snad pochopí každý.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_29">[29]</a> </strong> (R2r - <a href="mailto:ptacek.j@gmail.com">Mail</a> ) 26.01.2008, 20:18:39&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1514644">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1514644">D</a>]<br />
+
+a co třeba zrovna u zkracování komentářů na bloguje nacpat do titulku toho odkazu kam skutečně vede? Bude pak krátký, ale pořád bude možnost zjistit, kam vede. Takovej nápad
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_30">[30]</a> </strong> (rony [<a href="http://rony.myopenid.com" title="Ověřený uživatel http://rony.myopenid.com">openID</a>] - <a href="mailto:rony@mailinator.com">Mail</a> - <a href="http://spravodaj.madaj.net/">WWW</a>) 26.01.2008, 23:08:46&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1514829">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1514829">D</a>]<br />
+
+sposob ako kratky odkaz spravit cez jdem.cz dlhsi :-)))
+<br />
+<br /><a href="http://jdem.cz/aaue0" rel="nofollow">http://jdem.cz/aaue0</a>
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_31">[31]</a> </strong> (Hekko [<a href="http://hekko.myopenid.com" title="Ověřený uživatel hekko.myopenid.com">openID</a>] - <a href="mailto:hekko@centrum.cz">Mail</a> - <a href="http://hekko.bloguje.cz">WWW</a>) 27.01.2008, 00:32:38&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1514886">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1514886">D</a>]<br />
+
+<a href="#cmt_25">[25]</a> To ale dělají blbě, protože Arthur vám už na Bloguje nic opravovat nebude ;)
+<br />
+<br /><a href="#cmt_29">[29]</a> Já to teda vidím ve stavovým řádku po najetí myší, takže mě to zase tolik nevzrušovalo.
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_32">[32]</a> </strong> (danaketh - <a href="mailto:mail@danaketh.com">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fwww.danaketh.com">WWW</a>) 27.01.2008, 20:09:40&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1515757">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1515757">D</a>]<br />
+
+Hlásím, že Iceweasel v Debianu pobral bez obtíží a script funguje :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_33">[33]</a> </strong> (otaznik [<a href="http://xmppid.net/otaznik@otaznik.net" title="Ověřený uživatel http://xmppid.net/otaznik@otaznik.net">openID</a>]  - <a href="http://blog.otaznik.net">WWW</a>) 28.01.2008, 10:24:54&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1516358">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1516358">D</a>]<br />
+
+<a href="http://jdem.cz/aavf1" rel="nofollow">http://jdem.cz/aavf1</a>
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_34">[34]</a> </strong> (Test - <a href="mailto:test@test.cz">Mail</a> - <a href="http://www.bloguje.cz/redir2.php?r=http%3A%2F%2Fjdem.cz%2Faavm3">WWW</a>) 28.01.2008, 11:35:39&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1516443">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1516443">D</a>]<br />
+
+Spíše tohle: <a href="http://jdem.cz/aavm3" rel="nofollow">http://jdem.cz/aavm3</a>
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_35">[35]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://www.misantrop.info">WWW</a>) 28.01.2008, 11:50:52&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1516464">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1516464">D</a>]<br />
+
+<a href="#cmt_33">[33]</a>, <a href="#cmt_34">[34]</a>:
+<br /><a href="http://jdem.cz/aavf1?kam" rel="nofollow">http://jdem.cz/aavf1?kam</a>
+<br /><a href="http://jdem.cz/aavm3?kam" rel="nofollow">http://jdem.cz/aavm3?kam</a>
+<br />
+<br />Znáte...?
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_36">[36]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://www.misantrop.info">WWW</a>) 28.01.2008, 12:11:21&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1516486">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1516486">D</a>]<br />
+
+<a href="#cmt_29">[29]</a> Ano, přesně to mne napadlo a přesně to jsem i udělal... :)
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_37">[37]</a> </strong> (gale  ) 28.01.2008, 14:53:24&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1516716">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1516716">D</a>]<br />
+
+a co problem s neznamou adresou vyresit tak ze by v odkazu byla originalni adresa uvedena v TITLE. a pri najeti mysi by se puvodni adresa zobrazila ve zlutem boxu...
+<br />
+<br />mimochodem, testoval jsem zda jde u tagu "a" vubec pouzit title. explorer to sezere ale ve firefoxu jsem musel dat za title jeste mezeru (napr. title="Abc"_>) aby to fungovalo, zajimave...
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_38">[38]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://www.misantrop.info">WWW</a>) 28.01.2008, 14:57:28&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1516719">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1516719">D</a>]<br />
+
+<a href="#cmt_37">[37]</a> i tak by šlo... ale ne na Bloguje. API od Jdem.cz je otevřené když by někdo tu potřebu měl, může si implementovat...
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_39">[39]</a> </strong> (otaznik [<a href="http://xmppid.net/otaznik@otaznik.net" title="Ověřený uživatel http://xmppid.net/otaznik@otaznik.net">openID</a>]  - <a href="http://blog.otaznik.net">WWW</a>) 28.01.2008, 20:31:05&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1517239">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1517239">D</a>]<br />
+
+<a href="#cmt_35">[35]</a> hezké, to vědět předtím než jsem si zahlasoval =/
+
+</p>
+
+
+
+<p class="comment">
+<strong><a name="cmt_40">[40]</a> </strong> (Bruinee  ) 29.01.2008, 08:48:57&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1517776">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1517776">D</a>]<br />
+
+Ja se teda vetsinou podle adresy rozhodnu, zdali na dany odkaz kliknu, nebo ne. Pokud mi nekdo posle <a href="http://jdem.cz/aavm3?kam" rel="nofollow">http://jdem.cz/aavm3?kam</a>, tak opravdu nemam sebemensi duvod na to kliknout. Leda, ze by pripojil radny pruvodni text, co tam najdu.
+
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+</div><!-- konec pole -->
+
+
+
+<div id="sidebar">
+
+<h2 id="n_rubriky">Rubriky</h2>
+<ul id="rubriky">
+<li><a href="tema-1-bavim-se-na-vas-ucet.html">Bavím se na váš účet</a></li><li><a href="tema-2-nemam-vas-rad.html">Nemám vás rád</a></li><li><a href="tema-3-pohrdani.html">Pohrdání</a></li><li><a href="tema-4-vase-bludy-na-moji-hlavu.html">Vaše bludy na moji hlavu</a></li><li><a href="tema-5-mym-analfabetum.html">Mým analfabetům...</a></li><li><a href="tema-6-co-me-bavi.html">Co mě baví?</a></li><li><a href="tema-7-to-je-nejaka-hudba-tohleto.html">To je nějaká hudba, tohleto?</a></li><li><a href="tema-8-kdo-umi.html">Kdo umí...</a></li><li><a href="tema-9-mene-kecu-vice-prace.html">Méně keců, více práce</a></li>
+</ul>
+
+<h2 class="bok">Jak se vám to čte?</h2>
+
+<p style="text-align:center">
+<a href="http://feeds.feedburner.com/misantrop"><img src="http://feeds.feedburner.com/~fc/misantrop?bg=99CCFF&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a></p>
+
+<p style="text-align:center">
+<a href="http://twittercounter.com/?username=adent" title="TwitterCounter for @adent"><img src="http://twittercounter.com/counter/?username=adent" width="88" height="26" style="border:none;" alt="TwitterCounter for @adent" /></a></p>
+
+<p style="text-align:center">
+<script type="text/javascript">
+var wsgApiKey = "481349a5-98b9-4d24-b32f-a5729d33840c";
+var wsgStyle = 2;
+var dummy =('<div id="wsgContainer" style="text-align:center"></div>');wsgScript=document.createElement('script');wsgScript.type="text/javascript";wsgScript.src="http://static.hubspot.com/websiteGraderBadge/badge.js?t="+Math.random();setTimeout("document.getElementById('wsgContainer').appendChild(wsgScript);",1);
+</script>
+</p>
+
+<script type="text/javascript" src="http://www.blogcatalog.com/w/services.php?id=150489&amp;width=165&amp;bgcolor=EEEEEE&amp;bcolor=356D79&amp;lcolor=333333&amp;hcolor=FFFFFF&amp;htext=Kde%20mne%20najdete&amp;name=0&amp;brand=0&amp;heading=1"></script>
+
+<h2 id="n_odkazy"><a href="#" class="iface" onclick="$('#odkazy').BlindToggleVertically(500, null, 'bounceout');return false;">Odkazy ...</a></h2>
+<ul id="odkazy" style="display:block">
+<li><a href="http://pixy.cz/pixynergia" rel="acquaintance met">Pixy</a></li><li><a href="http://blok.rozanek.cz" rel="acquaintance">Filip Rožánek</a></li><li><a href="http://www.whitedog.cz" rel="acquaintance met">White Dog</a></li><li><a href="http://kahi.cz/blog/" rel="met">Kahi</a></li><li><a href="http://lokutus.bloguje.cz" rel="met">Lokutus</a></li><li><a href="http://www.katchaba.com/" rel="acquaintance met">Katchaba</a></li><li><a href="http://machinegun.bloguje.cz" rel="acquaintance met">Johnny</a></li><li><a href="http://kokolia.bloguje.cz">Vladimír Kokolia</a></li><li><a href="http://viditelnymacek.cz">Miroslav Macek</a></li><li><a href="http://cina.bloguje.cz" rel="me">Dovolená v Číně</a></li><li><a href="http://bloguneni.bloguje.cz/">Blogu není...</a></li><li><a href="http://hekko.bloguje.cz" rel="acquaintance met">Adminka bloguje</a></li><li><a href="http://www.bloc.cz/default.aspx">Bloc Jiřího Hlavenky</a></li><li><a href="http://apimania.eu" rel="me">Apimania</a></li><li><a href="http://dev20.info" rel="me">Dev::Info</a></li><li><a href="http://dankaj.bloguje.cz/" rel="contact met">Zápisky z Islandu</a></li><li><a href="http://jdem.cz" rel="me">Zkratky pro odkazy</a></li><li><a href="http://davebarry.cz" rel="me">Dave Barry česky</a></li><li><a href="http://uelectronics.info" rel="me">Mikroelektronika</a></li><li><a href="http://www.php-suit.com" rel="me">PHP Suit</a></li><li><a href="http://www.sharp-suit.com" rel="me">Sharp Suit</a></li> 
+<li><a href="http://technorati.com/claim/xnpb5tzhw" rel="me">Technorati Profile</a></li>
+</ul>
+
+<h2 id="n_recommend">Doporučuji</h2>
+<ul id="support">
+<li><a href="http://hostmonster.jdem.cz/">Hosting HostMonster</a></li>
+<li><a href="http://www.jihocestitatkove.cz/">Jihočeští taťkové</a></li>
+<li><a href="http://www.csvts.cz/cns/">Česká nukleární společnost</a></li>
+<li><a href="http://www.prozakladnu.cz/">PRO základnu!</a></li>
+</ul>
+
+<!-- Buzzboot Ads -->
+<!-- / Buzzboot Ads -->
+
+
+<p>
+
+</p>
+
+<h2>Meta</h2>
+<script type="text/javascript" src="http://feedjit.com/popPages/?bc=FFFFFF&amp;tc=008000&amp;brd1=336699&amp;lnk=008000&amp;hc=336699&amp;ww=200"></script><noscript><a href="http://feedjit.com/">Feedjit Live Blog Stats</a></noscript>
+
+<h2 id="n_archiv"><a href="#" class="iface" onclick="$('#archiv').BlindToggleVertically(500, null, 'bounceout');return false;">Archiv ...</a></h2>
+<ul id="archiv" style="display:none">
+<li><a href="0812archiv.html">prosinec 2008</a></li><li><a href="0811archiv.html">listopad 2008</a></li><li><a href="0810archiv.html">říjen 2008</a></li><li><a href="0809archiv.html">září 2008</a></li><li><a href="0808archiv.html">srpen 2008</a></li><li><a href="0807archiv.html">červenec 2008</a></li><li><a href="0806archiv.html">červen 2008</a></li><li><a href="0805archiv.html">květen 2008</a></li><li><a href="0804archiv.html">duben 2008</a></li><li><a href="0803archiv.html">březen 2008</a></li><li><a href="0802archiv.html">únor 2008</a></li><li><a href="0801archiv.html">leden 2008</a></li><li><a href="0712archiv.html">prosinec 2007</a></li><li><a href="0711archiv.html">listopad 2007</a></li><li><a href="0710archiv.html">říjen 2007</a></li><li><a href="0709archiv.html">září 2007</a></li><li><a href="0708archiv.html">srpen 2007</a></li><li><a href="0707archiv.html">červenec 2007</a></li><li><a href="0706archiv.html">červen 2007</a></li><li><a href="0705archiv.html">květen 2007</a></li><li><a href="0704archiv.html">duben 2007</a></li><li><a href="0703archiv.html">březen 2007</a></li><li><a href="0702archiv.html">únor 2007</a></li><li><a href="0701archiv.html">leden 2007</a></li><li><a href="0612archiv.html">prosinec 2006</a></li><li><a href="0611archiv.html">listopad 2006</a></li><li><a href="0610archiv.html">říjen 2006</a></li><li><a href="0609archiv.html">září 2006</a></li><li><a href="0606archiv.html">červen 2006</a></li><li><a href="0604archiv.html">duben 2006</a></li><li><a href="0603archiv.html">březen 2006</a></li><li><a href="0512archiv.html">prosinec 2005</a></li><li><a href="0511archiv.html">listopad 2005</a></li>
+</ul>
+
+
+
+</div><!-- konec sidebar -->
+<div class="clear">&nbsp;</div><!-- cistic -->
+</div><!-- konec obsah -->
+
+
+
+
+
+
+
+<div id="foot">
+<p>&copy; <a href="http://www.maly.cz/o-mn/">Martin Malý</a> (aka Arthur Dent) | Design by &copy; 2007 <a href="http://ash721.cz">ASH721</a> | <a href="http://hostmonster.jdem.cz">HOSTING</a> 3000GB+unlimited domains za 6 dolarů</p>
+
+</div>
+
+</div>
+
+</body></html>
