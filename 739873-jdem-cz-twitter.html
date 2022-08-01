@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="cz">
-<head><link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.misantrop.info/rss.xml" /><link rel="alternate" type="application/rss+xml" title="RSS - Méně keců, více práce" href="http://www.misantrop.info/tema-9-mene-kecu-vice-prace.xml" /><link rel="alternate" type="application/rss+xml" title="Komentáře" href="http://www.misantrop.info/comments.xml" />
+<head><link rel="alternate" type="application/rss+xml" title="RSS" href="http://misantrop.eu/rss.xml" /><link rel="alternate" type="application/rss+xml" title="RSS - Méně keců, více práce" href="http://misantrop.eu/tema-9-mene-kecu-vice-prace.xml" /><link rel="alternate" type="application/rss+xml" title="Komentáře" href="http://misantrop.eu/comments.xml" />
 <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/misantrop" />
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
  <title>Jdem.cz + Twitter - Misantrop.info</title> 
@@ -50,7 +50,7 @@ src="">
 
 <ul id="menu">
 <li><a href="index.php">Titulní stránka</a></li>
-<li><a href="http://rss.misantrop.info">Oblíbené zdroje</a></li>
+<li><a href="http://rss.misantrop.eu">Oblíbené zdroje</a></li>
 <li><a href="http://www.maly.cz/o-mn/?KeepThis=true&amp;TB_iframe=true&amp;height=500&amp;width=800" class="thickbox">O mně</a></li>
 <li><a href="http://www.bloguje.cz/vzkazy.php?send=47997">Napiš vzkaz</a></li>
 </ul>
@@ -99,7 +99,7 @@ src="">
 </script>
 </p>
 
-<p><p><a href="http://citron.blueboard.cz/">Medhi</a> přišel se zajímavým nápadem: <em>Mít na Jdem.cz funkci, která by převzala text, našla v něm odkazy, ty zkrátila a vrátila výsledek.</em></p><p>Když jsem se ptal <em>K čemu to?</em>, tak prý hlavně pro Twitter. Nakonec slovo dalo slovo a já to implementoval i s Twitter rozhraním. Funguje to tedy takto:</p><p><strong>http://jdem.cz/tw?text=URL-ENCODED-TEXT</strong></p><p>Vrátí text se zkrácenými odkazy. Text musí být <a href="http://cs.wikipedia.org/wiki/URL_k%C3%B3dov%C3%A1n%C3%AD">URL-enkódován</a>. Takže například takovýto dotaz:</p><p><font face="courier new,courier">http://jdem.cz/tw?text=Zaj%c3%admav%c3%bd+%c4%8dl%c3%a1nek+na+Z%c3%a1pisn%c3%adku%3a+http%3A%2F%2Fwww.misantrop.info%2F739335-kreativni-titulky.html</font></p><p>vrátí následující text:<em> Zajímavý článek na Zápisníku: http://jdem.cz/agrv6 </em></p><p>Pokud přidáte do URL parametr &quot;&amp;redir=1&quot;, tak vás Jdem přesměruje rovnou na domovskou stránku Twitteru a předvyplní text. URL tedy bude vypadat takto:</p><p><font face="courier new,courier">http://jdem.cz/tw?text=Zaj%c3%admav%c3%bd+%c4%8dl%c3%a1nek+na+Z%c3%a1pisn%c3%adku%3a+http%3A%2F%2Fwww.misantrop.info%2F739335-kreativni-titulky.html&amp;redir=1 </font></p><p>a výsledek <a href="http://twitter.com/home?status=Zaj%C3%ADmav%C3%BD+%C4%8Dl%C3%A1nek+na+Z%C3%A1pisn%C3%ADku%3A+http%3A%2F%2Fjdem.cz%2Fagrv6">takto</a>.</p><p>Příjemná funkce. Dokonce ji lze snadno implementovat do Bloguje (jak vidíte pod článkem). Stačí si jen do šablony dát odkaz ve správném formátu. Já použil tento:</p><p><font face="courier new,courier">&lt;a href=&quot;http://jdem.cz/tw?text=Zaj%c3%admav%c3%bd+%c4%8dl%c3%a1nek+na+Z%c3%a1pisn%c3%adku%3a+&lt;$BlogItemCommentsUrl$&gt;&amp;redir=1&quot;&gt;Twittni&lt;/a&gt;</font></p><p>Jak je vidět, žádná magie...URL začíná &quot;http://jdem.cz/tw?text=&quot;, následuje zakódovaný text (UTF-8) a místo URL je vložena značka BlogItemCommentsUrl (=URLencoded odkaz na článek). To je celé, prosté a jednoduché.</p><p><em>A já mám pro neděli splněno. ;) </em></p></p>
+<p><p><a href="http://citron.blueboard.cz/">Medhi</a> přišel se zajímavým nápadem: <em>Mít na Jdem.cz funkci, která by převzala text, našla v něm odkazy, ty zkrátila a vrátila výsledek.</em></p><p>Když jsem se ptal <em>K čemu to?</em>, tak prý hlavně pro Twitter. Nakonec slovo dalo slovo a já to implementoval i s Twitter rozhraním. Funguje to tedy takto:</p><p><strong>http://jdem.cz/tw?text=URL-ENCODED-TEXT</strong></p><p>Vrátí text se zkrácenými odkazy. Text musí být <a href="http://cs.wikipedia.org/wiki/URL_k%C3%B3dov%C3%A1n%C3%AD">URL-enkódován</a>. Takže například takovýto dotaz:</p><p><font face="courier new,courier">http://jdem.cz/tw?text=Zaj%c3%admav%c3%bd+%c4%8dl%c3%a1nek+na+Z%c3%a1pisn%c3%adku%3a+http%3A%2F%2Fmisantrop.eu%2F739335-kreativni-titulky.html</font></p><p>vrátí následující text:<em> Zajímavý článek na Zápisníku: http://jdem.cz/agrv6 </em></p><p>Pokud přidáte do URL parametr &quot;&amp;redir=1&quot;, tak vás Jdem přesměruje rovnou na domovskou stránku Twitteru a předvyplní text. URL tedy bude vypadat takto:</p><p><font face="courier new,courier">http://jdem.cz/tw?text=Zaj%c3%admav%c3%bd+%c4%8dl%c3%a1nek+na+Z%c3%a1pisn%c3%adku%3a+http%3A%2F%2Fmisantrop.eu%2F739335-kreativni-titulky.html&amp;redir=1 </font></p><p>a výsledek <a href="http://twitter.com/home?status=Zaj%C3%ADmav%C3%BD+%C4%8Dl%C3%A1nek+na+Z%C3%A1pisn%C3%ADku%3A+http%3A%2F%2Fjdem.cz%2Fagrv6">takto</a>.</p><p>Příjemná funkce. Dokonce ji lze snadno implementovat do Bloguje (jak vidíte pod článkem). Stačí si jen do šablony dát odkaz ve správném formátu. Já použil tento:</p><p><font face="courier new,courier">&lt;a href=&quot;http://jdem.cz/tw?text=Zaj%c3%admav%c3%bd+%c4%8dl%c3%a1nek+na+Z%c3%a1pisn%c3%adku%3a+&lt;$BlogItemCommentsUrl$&gt;&amp;redir=1&quot;&gt;Twittni&lt;/a&gt;</font></p><p>Jak je vidět, žádná magie...URL začíná &quot;http://jdem.cz/tw?text=&quot;, následuje zakódovaný text (UTF-8) a místo URL je vložena značka BlogItemCommentsUrl (=URLencoded odkaz na článek). To je celé, prosté a jednoduché.</p><p><em>A já mám pro neděli splněno. ;) </em></p></p>
 
 <div style="text-align:center">
 <script type="text/javascript"><!--
@@ -128,12 +128,12 @@ src="">
 
 
 
-<p><a href="http://jdem.cz/tw?text=Zaj%c3%admav%c3%bd+%c4%8dl%c3%a1nek+na+Z%c3%a1pisn%c3%adku%3a+http%3A%2F%2Fwww.misantrop.info%2F739873-jdem-cz-twitter.html&amp;redir=1">Twittni</a></p>
+<p><a href="http://jdem.cz/tw?text=Zaj%c3%admav%c3%bd+%c4%8dl%c3%a1nek+na+Z%c3%a1pisn%c3%adku%3a+http%3A%2F%2Fmisantrop.eu%2F739873-jdem-cz-twitter.html&amp;redir=1">Twittni</a></p>
 
 <p>Přidej do: 
- <a href="http://vybrali.sme.sk/submit.php?url=http%3A%2F%2Fwww.misantrop.info%2F739873-jdem-cz-twitter.html"><img src="http://blog.sme.sk/blog/3/61630/tlacitko.gif" style="border:0" title="asdf.sk" alt="asdf.sk" /></a>
+ <a href="http://vybrali.sme.sk/submit.php?url=http%3A%2F%2Fmisantrop.eu%2F739873-jdem-cz-twitter.html"><img src="http://blog.sme.sk/blog/3/61630/tlacitko.gif" style="border:0" title="asdf.sk" alt="asdf.sk" /></a>
 
-<a href="http://www.stumbleupon.com/submit?url=http%3A%2F%2Fwww.misantrop.info%2F739873-jdem-cz-twitter.html&amp;title=Jdem.cz+%2B+Twitter"> <img border=0 src="http://www.bloguje.cz/icon_su.gif" alt="StumbleUpon Toolbar"> Stumble It!</a>
+<a href="http://www.stumbleupon.com/submit?url=http%3A%2F%2Fmisantrop.eu%2F739873-jdem-cz-twitter.html&amp;title=Jdem.cz+%2B+Twitter"> <img border=0 src="http://www.bloguje.cz/icon_su.gif" alt="StumbleUpon Toolbar"> Stumble It!</a>
 
 <script type="text/javascript" src="http://w.sharethis.com/widget/?tabs=web%2Cemail&amp;charset=utf-8&amp;style=rotate&amp;publisher=99a6f76f-7727-4c7b-a906-b91f57f8a706"></script></p>
 
@@ -163,7 +163,7 @@ Přemýšlím nad významem, když twitter sám hazí odkazy do tinyurl ;)
 
 
 <p class="comment">
-<strong><a name="cmt_3">[3]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 10.11.2008, 08:45:09&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1807150">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1807150">D</a>]<br />
+<strong><a name="cmt_3">[3]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.eu">WWW</a>) 10.11.2008, 08:45:09&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1807150">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1807150">D</a>]<br />
 
 <a href="#cmt_2">[2]</a> Přemýšlím nad významem tohoto komentáře, když máme Lupu! ;)
 

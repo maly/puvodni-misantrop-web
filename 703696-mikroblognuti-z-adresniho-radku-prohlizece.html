@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="cz">
-<head><link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.misantrop.info/rss.xml" /><link rel="alternate" type="application/rss+xml" title="RSS - Kdo umí..." href="http://www.misantrop.info/tema-8-kdo-umi.xml" /><link rel="alternate" type="application/rss+xml" title="Komentáře" href="http://www.misantrop.info/comments.xml" />
+<head><link rel="alternate" type="application/rss+xml" title="RSS" href="http://misantrop.eu/rss.xml" /><link rel="alternate" type="application/rss+xml" title="RSS - Kdo umí..." href="http://misantrop.eu/tema-8-kdo-umi.xml" /><link rel="alternate" type="application/rss+xml" title="Komentáře" href="http://misantrop.eu/comments.xml" />
 <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/misantrop" />
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
  <title>Mikroblognutí z adresního řádku prohlížeče - Misantrop.info</title> 
@@ -36,7 +36,7 @@ _uacct = "UA-190512-8";
 urchinTracker();
 </script>
 <!--dolizat-->
-<div style="position: fixed; _position:absolute;right: 0; top: 0; width: 163px; height: 163px;"><a href="http://www.misantrop.info/"><img src="http://img.maly.cz/henryk.gif" alt="Neobsahuje názory Henryka Laholy" /></a></div> 
+<div style="position: fixed; _position:absolute;right: 0; top: 0; width: 163px; height: 163px;"><a href="http://misantrop.eu/"><img src="http://img.maly.cz/henryk.gif" alt="Neobsahuje názory Henryka Laholy" /></a></div> 
 
 <div id="adx" style="position:fixed;_position:absolute;top:5px;left:5px">
 <script type="text/javascript"><!--
@@ -56,7 +56,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 
 <ul id="menu">
 <li><a href="index.php">Titulní stránka</a></li>
-<li><a href="http://rss.misantrop.info">Oblíbené zdroje</a></li>
+<li><a href="http://rss.misantrop.eu">Oblíbené zdroje</a></li>
 <li><a href="http://www.maly.cz/o-mn/?KeepThis=true&amp;TB_iframe=true&amp;height=500&amp;width=800" class="thickbox">O mně</a></li>
 <li><a href="http://www.bloguje.cz/vzkazy.php?send=47997">Napiš vzkaz</a></li>
 </ul>
@@ -105,7 +105,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </script>
 </p>
 
-<p><p>Na počátku byla moje <a href="http://www.misantrop.info/703020-php-posilani-prispevku-na-mikroblogy.html">knihovnička pro mikroblogy</a>. Tu <a href="http://www.misantrop.info/703020-php-posilani-prispevku-na-mikroblogy.html#cmt_2">použil Timy</a> a stvořil <a href="http://nastroje.havrlant.net/twitter/">formulář pro odesílání</a>, a to včetně návodu, jak si udělat twitterovátko (to jsou novotvary!) v příkazním řádku <em>a la vyhledávání v Opeře. </em>Mrkněte se, nápad to je zajímavý...</p><p>Koukali jsme na to s Davidem Grudlem a shodli se, že <em>nápad to je dobrý</em>. Ovšem nelíbila se mi jedna věc. Davidovi se zcela zjevně nelíbila taky, protože před pár minutami přišel s vlastním řešením, kdy řeší totéž co já, ale jinou cestou. Dostaneme se k tomu.</p><p>O co jde? Nelíbí se mi představa, že posílám jméno a heslo otevřeným kanálem. Co s tím?</p><ul><li>A: Mohu si vše přesunout na svůj server</li><li>B: Mohu jméno a heslo zašifrovat</li></ul><p>Pokud chci, aby služba byla &quot;obecně použitelná&quot;, tak nelze nasadit řešení A, protože ne každý má svůj server. Přemýšlel jsem tedy, jak udělat řešení B.</p><p>Nakonec jsem zvolil následující postup, s mírnými obměnami použitelný i v jiných případech (podobně řeším např. <em>trvalé přihlášení</em>):</p><p>1. Uživatel si na <a href="https://secure.hostmonster.com/~phpsuitc/apps/aes/index.php">zabezpečené stránce</a> vygeneruje svůj <em>klíč</em>, který obsahuje jeho přihlašovací údaje. Klíč obsahuje jméno, heslo, a protože mám třídu pro pět mikroblogů, tak i server. Údaje jsou v klíči zašifrovány metodou <a href="http://en.wikipedia.org/wiki/Advanced_Encryption_Standard">AES256</a>. Jméno a heslo tak jdou po síti jen jednou, navíc šifrovaným spojením a nejsou ukládány do logu. </p><p>2. Vygenerovaný klíč pak uživatel může použít k posílání svých textů na Twitter, Jaiku, Pownce, Tumblr či Teidu. Prostě jen zadá adresu <strong>http://apps.php-suit.com/microblog/index.php?kod=<em>klíč</em>&amp;text=</strong><em><strong>TEXT</strong>.</em> Aplikace dekóduje z klíče potřebné údaje a pošle data tam, kam má.</p><p>Tím se vyhnete nutnosti posílat otevřeným textem jméno a heslo, vaše údaje nejsou nikde logovány a případný <em>man-in-the-middle</em>, který odchytí váš požadavek, nezíská plný přístup k vašemu účtu, maximálně tak pošle příspěvek vaším jménem.</p><p>Ironické je, že nakonec je vaše heslo na cestě z aplikace na cílový server opět přenášeno jako prostý text. Ale takový je už život. :) Za domácí úkol zjistím, jestli by šlo přistupovat na API mikroblogovacích serverů přes SSL. (Aktualizace: David hlásí, že na Twitter to jde. Aktualizace 2: Jinam to nejde.)</p><p>Formulář je na <a href="http://apps.php-suit.com/microblog/index.php">odesílací stránce</a>, tak si to můžete i vyzkoušet... Pokud chcete zkusit přímo ten řádek, nezapomeňte text url-enkódovat a zapsat ho v kódování UTF-8. Předpokládám, že nebude problém si upravit moje řešení pro Operu dle Timyho návodu, určitě by nebyl ani velký problém napsat generátor &quot;vyhledávacích modulů&quot; pro Firefox/IE, takže by bylo možné twitterovat (powncovat, jajkat, ...) z hledacího políčka prohlížeče...</p><p>Na závěr se podívejte na <a href="http://phpfashion.com/piste-na-twitter-z-adresniho-radku-prohlizece">Davidovo řešení</a>, ovšem způsobem A (a pouze pro Twitter, ovšem úprava pro další systémy bude jistě triviální).</p><p>Samosebou, takový přístup je možný pouze ve světě, kde věříte, že provozovatel podobné služby nemá důvod si vaše údaje zapisovat. Pokud nevěříte, použijte Davidovo řešení a použijte vlastní server.</p><p>Popsané řešení je jen hříčka s hesly, ale třeba inspiruje. A mimochodem&nbsp;&ndash; schválně, jak VY řešíte trvalé přihlášení uživatele? ;)</p></p>
+<p><p>Na počátku byla moje <a href="http://misantrop.eu/703020-php-posilani-prispevku-na-mikroblogy.html">knihovnička pro mikroblogy</a>. Tu <a href="http://misantrop.eu/703020-php-posilani-prispevku-na-mikroblogy.html#cmt_2">použil Timy</a> a stvořil <a href="http://nastroje.havrlant.net/twitter/">formulář pro odesílání</a>, a to včetně návodu, jak si udělat twitterovátko (to jsou novotvary!) v příkazním řádku <em>a la vyhledávání v Opeře. </em>Mrkněte se, nápad to je zajímavý...</p><p>Koukali jsme na to s Davidem Grudlem a shodli se, že <em>nápad to je dobrý</em>. Ovšem nelíbila se mi jedna věc. Davidovi se zcela zjevně nelíbila taky, protože před pár minutami přišel s vlastním řešením, kdy řeší totéž co já, ale jinou cestou. Dostaneme se k tomu.</p><p>O co jde? Nelíbí se mi představa, že posílám jméno a heslo otevřeným kanálem. Co s tím?</p><ul><li>A: Mohu si vše přesunout na svůj server</li><li>B: Mohu jméno a heslo zašifrovat</li></ul><p>Pokud chci, aby služba byla &quot;obecně použitelná&quot;, tak nelze nasadit řešení A, protože ne každý má svůj server. Přemýšlel jsem tedy, jak udělat řešení B.</p><p>Nakonec jsem zvolil následující postup, s mírnými obměnami použitelný i v jiných případech (podobně řeším např. <em>trvalé přihlášení</em>):</p><p>1. Uživatel si na <a href="https://secure.hostmonster.com/~phpsuitc/apps/aes/index.php">zabezpečené stránce</a> vygeneruje svůj <em>klíč</em>, který obsahuje jeho přihlašovací údaje. Klíč obsahuje jméno, heslo, a protože mám třídu pro pět mikroblogů, tak i server. Údaje jsou v klíči zašifrovány metodou <a href="http://en.wikipedia.org/wiki/Advanced_Encryption_Standard">AES256</a>. Jméno a heslo tak jdou po síti jen jednou, navíc šifrovaným spojením a nejsou ukládány do logu. </p><p>2. Vygenerovaný klíč pak uživatel může použít k posílání svých textů na Twitter, Jaiku, Pownce, Tumblr či Teidu. Prostě jen zadá adresu <strong>http://apps.php-suit.com/microblog/index.php?kod=<em>klíč</em>&amp;text=</strong><em><strong>TEXT</strong>.</em> Aplikace dekóduje z klíče potřebné údaje a pošle data tam, kam má.</p><p>Tím se vyhnete nutnosti posílat otevřeným textem jméno a heslo, vaše údaje nejsou nikde logovány a případný <em>man-in-the-middle</em>, který odchytí váš požadavek, nezíská plný přístup k vašemu účtu, maximálně tak pošle příspěvek vaším jménem.</p><p>Ironické je, že nakonec je vaše heslo na cestě z aplikace na cílový server opět přenášeno jako prostý text. Ale takový je už život. :) Za domácí úkol zjistím, jestli by šlo přistupovat na API mikroblogovacích serverů přes SSL. (Aktualizace: David hlásí, že na Twitter to jde. Aktualizace 2: Jinam to nejde.)</p><p>Formulář je na <a href="http://apps.php-suit.com/microblog/index.php">odesílací stránce</a>, tak si to můžete i vyzkoušet... Pokud chcete zkusit přímo ten řádek, nezapomeňte text url-enkódovat a zapsat ho v kódování UTF-8. Předpokládám, že nebude problém si upravit moje řešení pro Operu dle Timyho návodu, určitě by nebyl ani velký problém napsat generátor &quot;vyhledávacích modulů&quot; pro Firefox/IE, takže by bylo možné twitterovat (powncovat, jajkat, ...) z hledacího políčka prohlížeče...</p><p>Na závěr se podívejte na <a href="http://phpfashion.com/piste-na-twitter-z-adresniho-radku-prohlizece">Davidovo řešení</a>, ovšem způsobem A (a pouze pro Twitter, ovšem úprava pro další systémy bude jistě triviální).</p><p>Samosebou, takový přístup je možný pouze ve světě, kde věříte, že provozovatel podobné služby nemá důvod si vaše údaje zapisovat. Pokud nevěříte, použijte Davidovo řešení a použijte vlastní server.</p><p>Popsané řešení je jen hříčka s hesly, ale třeba inspiruje. A mimochodem&nbsp;&ndash; schválně, jak VY řešíte trvalé přihlášení uživatele? ;)</p></p>
 
 <div style="text-align:center">
 <script type="text/javascript"><!--
@@ -134,12 +134,12 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 
 
 
-<p><a href="http://jdem.cz/tw?text=Zaj%c3%admav%c3%bd+%c4%8dl%c3%a1nek+na+Z%c3%a1pisn%c3%adku%3a+http%3A%2F%2Fwww.misantrop.info%2F703696-mikroblognuti-z-adresniho-radku-prohlizece.html&amp;redir=1">Twittni</a></p>
+<p><a href="http://jdem.cz/tw?text=Zaj%c3%admav%c3%bd+%c4%8dl%c3%a1nek+na+Z%c3%a1pisn%c3%adku%3a+http%3A%2F%2Fmisantrop.eu%2F703696-mikroblognuti-z-adresniho-radku-prohlizece.html&amp;redir=1">Twittni</a></p>
 
 <p>Přidej do: 
-<a href="http://www.conota.cz/add.php" onclick="x=document;a=encodeURIComponent(x.location.href);t=encodeURIComponent(x.title);d=encodeURIComponent(window.getSelection());setTimeout('x99.focus()',1000);x99=window.open('http://www.conota.cz/add.php?popup=y&g_title='+t+'&g_url='+a+'&g_desc='+d,'Conota','modal=1,status=0,scrollbars=1,toolbar=0,resizable=1,height=550,width=785,left='+(screen.width-785)/2+',top='+(screen.height-550)/2);return false;"><img src="http://www.conota.cz/images/conote.gif" alt="Přidat na Conota"/><a>  <a href="http://linkuj.cz/?id=linkuj&amp;url=http%3A%2F%2Fwww.misantrop.info%2F703696-mikroblognuti-z-adresniho-radku-prohlizece.html&amp;title=Mikroblognut%C3%AD+z+adresn%C3%ADho+%C5%99%C3%A1dku+prohl%C3%AD%C5%BEe%C4%8De"><img src="http://linkuj.cz/img/badge.png" style="border:0" title="Linkuj si !" alt="Linkuj si !" /></a> <a href="http://vybrali.sme.sk/submit.php?url=http%3A%2F%2Fwww.misantrop.info%2F703696-mikroblognuti-z-adresniho-radku-prohlizece.html"><img src="http://blog.sme.sk/blog/3/61630/tlacitko.gif" style="border:0" title="asdf.sk" alt="asdf.sk" /></a>
+<a href="http://www.conota.cz/add.php" onclick="x=document;a=encodeURIComponent(x.location.href);t=encodeURIComponent(x.title);d=encodeURIComponent(window.getSelection());setTimeout('x99.focus()',1000);x99=window.open('http://www.conota.cz/add.php?popup=y&g_title='+t+'&g_url='+a+'&g_desc='+d,'Conota','modal=1,status=0,scrollbars=1,toolbar=0,resizable=1,height=550,width=785,left='+(screen.width-785)/2+',top='+(screen.height-550)/2);return false;"><img src="http://www.conota.cz/images/conote.gif" alt="Přidat na Conota"/><a>  <a href="http://linkuj.cz/?id=linkuj&amp;url=http%3A%2F%2Fmisantrop.eu%2F703696-mikroblognuti-z-adresniho-radku-prohlizece.html&amp;title=Mikroblognut%C3%AD+z+adresn%C3%ADho+%C5%99%C3%A1dku+prohl%C3%AD%C5%BEe%C4%8De"><img src="http://linkuj.cz/img/badge.png" style="border:0" title="Linkuj si !" alt="Linkuj si !" /></a> <a href="http://vybrali.sme.sk/submit.php?url=http%3A%2F%2Fmisantrop.eu%2F703696-mikroblognuti-z-adresniho-radku-prohlizece.html"><img src="http://blog.sme.sk/blog/3/61630/tlacitko.gif" style="border:0" title="asdf.sk" alt="asdf.sk" /></a>
 
-<a href="http://www.stumbleupon.com/submit?url=http%3A%2F%2Fwww.misantrop.info%2F703696-mikroblognuti-z-adresniho-radku-prohlizece.html&amp;title=Mikroblognut%ED+z+adresn%EDho+%F8%E1dku+prohl%ED%BEe%E8e"> <img border=0 src="http://www.bloguje.cz/icon_su.gif" alt="StumbleUpon Toolbar"> Stumble It!</a>
+<a href="http://www.stumbleupon.com/submit?url=http%3A%2F%2Fmisantrop.eu%2F703696-mikroblognuti-z-adresniho-radku-prohlizece.html&amp;title=Mikroblognut%ED+z+adresn%EDho+%F8%E1dku+prohl%ED%BEe%E8e"> <img border=0 src="http://www.bloguje.cz/icon_su.gif" alt="StumbleUpon Toolbar"> Stumble It!</a>
 
 <script type="text/javascript" src="http://w.sharethis.com/widget/?tabs=web%2Cemail&amp;charset=utf-8&amp;style=rotate&amp;publisher=99a6f76f-7727-4c7b-a906-b91f57f8a706"></script></p>
 
@@ -160,7 +160,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 
 
 <p class="comment">
-<strong><a name="cmt_2">[2]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 04.07.2008, 20:10:47&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1693560">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1693560">D</a>]<br />
+<strong><a name="cmt_2">[2]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.eu">WWW</a>) 04.07.2008, 20:10:47&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1693560">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1693560">D</a>]<br />
 
 <a href="#cmt_1">[1]</a> A co třeba Googlu, tomu ho řekneš? :) Takový ten firefoxí plugin na úschovu/obnovu profilu od Google je taky moc hezkej...
 <br />
@@ -182,7 +182,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 
 
 <p class="comment">
-<strong><a name="cmt_4">[4]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 04.07.2008, 20:54:44&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1693600">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1693600">D</a>]<br />
+<strong><a name="cmt_4">[4]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.eu">WWW</a>) 04.07.2008, 20:54:44&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1693600">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1693600">D</a>]<br />
 
 <a href="#cmt_3">[3]</a> A v čem že je přesně ten rozdíl? A z čeho pramení víra, že malí logují a ukládají, ale velcí ne? Nebo snad je víra opřena o přesvědčení, že "velcí mají tolik dat, že na jednoho Tondu nepřijdou"? ;)
 <br />
@@ -202,7 +202,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 
 
 <p class="comment">
-<strong><a name="cmt_6">[6]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://www.misantrop.info">WWW</a>) 04.07.2008, 22:03:14&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1693656">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1693656">D</a>]<br />
+<strong><a name="cmt_6">[6]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.eu">WWW</a>) 04.07.2008, 22:03:14&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1693656">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1693656">D</a>]<br />
 
 <a href="#cmt_5">[5]</a> I kdepak, to jsou jen takové svalnaté řečičky. V praxi stačí, když budu mít s.r.o. a provozovat hostingovou společnost. Jaký je pak rozdíl v tom "poslat heslo na můj server přes SSL" nebo "uložit ho (třeba) ke Kalužovi"? ;)
 
@@ -231,7 +231,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 
 
 <p class="comment">
-<strong><a name="cmt_9">[9]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://www.misantrop.info">WWW</a>) 04.07.2008, 23:09:21&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1693711">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1693711">D</a>]<br />
+<strong><a name="cmt_9">[9]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.eu">WWW</a>) 04.07.2008, 23:09:21&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1693711">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1693711">D</a>]<br />
 
 <a href="#cmt_8">[8]</a> Nevidět si do huby a komentovat... :-/ Mám to vzít bod po bodu ("kde se bere přesvědčení, že malí logují a velcí ne" vs "malí samozřejmě taky logujou" - hezká odpověď, ale poněkud mimo, že?) nebo to můžeme uzavřít s tím, že plácáš a nevíš o čem?
 <br />
@@ -264,7 +264,7 @@ Už sa tu rozbehla diskusia o absurdnej a iracionálnej dôvere v iného, ktorá
 
 
 <p class="comment">
-<strong><a name="cmt_12">[12]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 05.07.2008, 10:29:41&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1693849">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1693849">D</a>]<br />
+<strong><a name="cmt_12">[12]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.eu">WWW</a>) 05.07.2008, 10:29:41&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1693849">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1693849">D</a>]<br />
 
 <a href="#cmt_10">[10]</a> Ale notak... :) Rozdíl je v řešení "man-in-the-middle" problému. Celá hříčka má následující pointu: Pokud posíláš citlivá data v GET, tak je lépe posílat je kryptovaně, obzvlášť když je možno ty kryptované údaje vygenerovat jednou, pomocí bezpečného kanálu, a použít víckrát. Šmytec.
 <br />
@@ -288,7 +288,7 @@ Už sa tu rozbehla diskusia o absurdnej a iracionálnej dôvere v iného, ktorá
 
 
 <p class="comment">
-<strong><a name="cmt_14">[14]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 05.07.2008, 11:04:00&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1693865">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1693865">D</a>]<br />
+<strong><a name="cmt_14">[14]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.eu">WWW</a>) 05.07.2008, 11:04:00&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1693865">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1693865">D</a>]<br />
 
 <a href="#cmt_13">[13]</a> Ano, já vím, a omlouvám se, ta věta měla znít "Pokud posíláš citlivá data v HTTP požadavku NEBO PŘÍMO V GET, tak je lépe..." atd.
 
@@ -306,7 +306,7 @@ Už sa tu rozbehla diskusia o absurdnej a iracionálnej dôvere v iného, ktorá
 
 
 <p class="comment">
-<strong><a name="cmt_16">[16]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 05.07.2008, 22:10:32&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1694263">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1694263">D</a>]<br />
+<strong><a name="cmt_16">[16]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.eu">WWW</a>) 05.07.2008, 22:10:32&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1694263">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1694263">D</a>]<br />
 
 <a href="#cmt_15">[15]</a> A pokud tam ty data odvezeš na disketě (a po cestě ti ji neukradnou), tak to je úplně nejbezpečnější! Achich ouvej. A co když není HTTPS k dispozici? Ostatně, v dnešním článku jsem právě na tohle narazil.
 <br />
@@ -338,7 +338,7 @@ Už sa tu rozbehla diskusia o absurdnej a iracionálnej dôvere v iného, ktorá
 
 
 <p class="comment">
-<strong><a name="cmt_18">[18]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://www.misantrop.info">WWW</a>) 05.07.2008, 23:31:49&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1694362">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1694362">D</a>]<br />
+<strong><a name="cmt_18">[18]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.eu">WWW</a>) 05.07.2008, 23:31:49&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1694362">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1694362">D</a>]<br />
 
 <a href="#cmt_17">[17]</a> Takže ještě jednou já: "Pokud Timyho skript přesunu na HTTPS" - je tam? Není. Vyhneš se tak výhradě, kterou jsi mi předložil hned na začátku v <a href="#cmt_1">[1]</a>, tedy "nebudu Dentovi nebo Timymu posílat heslo!"? Ne. Tak - jaká je pointa, prosím, když nejde, jak říkáš, o slovíčkaření? :)
 <br />
@@ -357,7 +357,7 @@ Už sa tu rozbehla diskusia o absurdnej a iracionálnej dôvere v iného, ktorá
 
 
 <p class="comment">
-<strong><a name="cmt_19">[19]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://www.misantrop.info">WWW</a>) 05.07.2008, 23:43:56&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1694371">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1694371">D</a>]<br />
+<strong><a name="cmt_19">[19]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.eu">WWW</a>) 05.07.2008, 23:43:56&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1694371">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1694371">D</a>]<br />
 
 <a href="#cmt_17">[17]</a> Pardon, teď jsem si to pročetl zpětně a uvědomil jsem si, na cos narážel, takže beru zpět některé formulace v <a href="#cmt_18">[18]</a>...
 <br />
@@ -392,7 +392,7 @@ Už sa tu rozbehla diskusia o absurdnej a iracionálnej dôvere v iného, ktorá
 
 
 <p class="comment">
-<strong><a name="cmt_22">[22]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://www.misantrop.info">WWW</a>) 06.07.2008, 00:37:20&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1694402">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1694402">D</a>]<br />
+<strong><a name="cmt_22">[22]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.eu">WWW</a>) 06.07.2008, 00:37:20&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1694402">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1694402">D</a>]<br />
 
 <a href="#cmt_20">[20]</a> Ad token v URL: Ano, ale... :) Serverlog je akademická otázka, vzhledem k výhradě z <a href="#cmt_1">[1]</a>. Cache prohlížeče je vážnější výhrada. Timyho řešení via POST tímto netrpí, trpí ale "posíláním hesla v plaintextu". ;) Když se vrátím ke svému příkladu, tak by implementace via HTTP + data a token v POST mohla být rozumným kompromisem.
 <br />
@@ -416,7 +416,7 @@ Už sa tu rozbehla diskusia o absurdnej a iracionálnej dôvere v iného, ktorá
 
 
 <p class="comment">
-<strong><a name="cmt_24">[24]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://www.misantrop.info">WWW</a>) 06.07.2008, 01:22:08&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1694409">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1694409">D</a>]<br />
+<strong><a name="cmt_24">[24]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.eu">WWW</a>) 06.07.2008, 01:22:08&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1694409">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1694409">D</a>]<br />
 
 <a href="#cmt_23">[23]</a> Jojo, o logách na proxy žádná, to už tu ale taky padlo...
 <br />
@@ -455,7 +455,7 @@ Ještě ad <a href="#cmt_1">[1]</a>:
 
 
 <p class="comment">
-<strong><a name="cmt_27">[27]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://www.misantrop.info">WWW</a>) 06.07.2008, 02:01:25&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1694422">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1694422">D</a>]<br />
+<strong><a name="cmt_27">[27]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.eu">WWW</a>) 06.07.2008, 02:01:25&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1694422">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1694422">D</a>]<br />
 
 <a href="#cmt_26">[26]</a> Ne, nepřijdu, vůbec netuším, kterým směrem míříš a co přesně je to TO, co řešíš. Navíc koukám na Přátele, ležím, smrkám, kašlu, slzej mi oči a bolí mě hlava, takže na nějaké mentální cvičení v tuhle chvíli kašlu (a smrkám a slzím)... Ale nahoď, třeba se chytím. ;)
 
@@ -477,7 +477,7 @@ Ještě ad <a href="#cmt_1">[1]</a>:
 
 
 <p class="comment">
-<strong><a name="cmt_29">[29]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://www.misantrop.info">WWW</a>) 06.07.2008, 02:36:25&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1694430">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1694430">D</a>]<br />
+<strong><a name="cmt_29">[29]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.eu">WWW</a>) 06.07.2008, 02:36:25&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1694430">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1694430">D</a>]<br />
 
 <a href="#cmt_28">[28]</a> Elegantní, klobouk dolů. Pokud tedy nějaký prohlížeč není tak aktivní a nepošle i fragment. :)
 
@@ -495,7 +495,7 @@ Ještě ad <a href="#cmt_1">[1]</a>:
 
 
 <p class="comment">
-<strong><a name="cmt_31">[31]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 07.07.2008, 17:42:59&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1695586">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1695586">D</a>]<br />
+<strong><a name="cmt_31">[31]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.eu">WWW</a>) 07.07.2008, 17:42:59&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1695586">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1695586">D</a>]<br />
 
 <a href="#cmt_30">[30]</a> Proto říkám, že by mě zajímal názor kryptografa. A pokud by ho dokázal napsat bez grup a lidsky popsat, jaké je nebezpečí v meet-in-the-middle, tak by to bylo skvělé :)
 <br />
@@ -523,7 +523,7 @@ Ještě ad <a href="#cmt_1">[1]</a>:
 
 
 <p class="comment">
-<strong><a name="cmt_33">[33]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.info">WWW</a>) 07.07.2008, 21:33:38&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1695830">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1695830">D</a>]<br />
+<strong><a name="cmt_33">[33]</a> </strong> (Arthur Dent [<a href="http://adent.myopenid.com/" title="Ověřený uživatel http://adent.myopenid.com/">openID</a>] - <a href="mailto:blog@maly.cz">Mail</a> - <a href="http://misantrop.eu">WWW</a>) 07.07.2008, 21:33:38&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt.php?id=1695830">X</a>]&nbsp;[<a href="http://www.bloguje.cz/blox/killcmt2.php?id=1695830">D</a>]<br />
 
 <a href="#cmt_32">[32]</a> Ano. Děkuji za vysvětlení. Je mi to jedno, pro popisované účely je to dostatečné. :)
 
